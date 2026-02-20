@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Jupiter India: A Conviction Bet on India's Structural Growth Story</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "th-sand": "#f4f1ee",
+                        "th-beige": "#e8e4e0",
+                        "th-charcoal": "#1a1a1a",
+                        "th-clay": "#d9c5b2",
+                        "th-sage": "#b7c4b6",
+                        "th-accent": "#e67e5f",
+                        "th-india": "#10b981",
+                        "th-india-dark": "#059669",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-th-sand text-th-charcoal font-sans antialiased;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .mono-label {
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+<header class="sticky top-0 z-50 w-full bg-th-sand/80 backdrop-blur-md border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="font-display font-semibold text-lg tracking-tight">Kris Rajah</span>
+            <span class="text-th-charcoal/30">|</span>
+            <a href="index.html" class="mono-label text-th-charcoal/50 hover:text-th-charcoal transition-colors">Home</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="mono-label hover:text-th-india transition-colors" href="#opportunity">The Opportunity</a>
+            <a class="mono-label hover:text-th-india transition-colors" href="#fund">Fund Analysis</a>
+            <a class="mono-label hover:text-th-india transition-colors" href="#macro">India Macro</a>
+            <a class="mono-label hover:text-th-india transition-colors" href="#risks">Risk Assessment</a>
+            <a class="mono-label hover:text-th-india transition-colors" href="#recommendation">Verdict</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[70vh] flex items-center justify-center py-24 px-8">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 rounded-full border border-black/10 mb-10">
+            <span class="mono-label text-th-charcoal/60">Investment Thesis &bull; January 2026</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-display font-medium tracking-tight mb-8">
+            Jupiter India:<br/>The Growth Story
+        </h1>
+        <p class="text-xl md:text-2xl text-th-charcoal/70 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+            A conviction bet on India's structural growth via Avinash Vazirani's GARP discipline. 18 years of consistent alpha at +5% pa over MSCI India.
+        </p>
+        <div class="flex flex-col items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="h-[1px] w-12 bg-black/20"></div>
+                <span class="mono-label text-th-charcoal/40 tracking-[0.3em]">Kris Rajah</span>
+                <div class="h-[1px] w-12 bg-black/20"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KEY METRICS STRIP -->
+<section class="py-12 px-8 border-y border-black/5 bg-th-beige/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="glass-card p-8 rounded-3xl text-center border-th-india/20">
+                <span class="text-4xl font-display text-th-india block mb-2">0.70%</span>
+                <h4 class="text-sm font-display mb-1">Net OCF</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">via HL loyalty bonus &bull; As of Jan 29, 2026</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl text-center">
+                <span class="text-4xl font-display text-th-charcoal block mb-2">+5.0%</span>
+                <h4 class="text-sm font-display mb-1">5yr Alpha (pa)</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">vs MSCI India benchmark</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl text-center">
+                <span class="text-4xl font-display text-th-charcoal block mb-2">16.7x</span>
+                <h4 class="text-sm font-display mb-1">Portfolio P/E</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">vs 20x MSCI India benchmark</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl text-center">
+                <span class="text-4xl font-display text-th-sage block mb-2">2041</span>
+                <h4 class="text-sm font-display mb-1">Demographic Peak</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">59% working-age population</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 01 / THE OPPORTUNITY -->
+<section class="py-32 px-8 border-b border-black/5" id="opportunity">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">01 / The Opportunity</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">A Conviction Bet on India&rsquo;s Structural Growth Story</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                Jupiter India Class X (Acc) is managed by Avinash Vazirani since February 2008, delivering +5% annualised alpha over MSCI India across 18 years through a consistent GARP (Growth at a Reasonable Price) discipline. It offers active management at a competitive 0.70% net OCF via the Hargreaves Lansdown platform.
+            </p>
+        </div>
+
+        <!-- Executive Summary Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-india">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-india mt-0.5">trending_up</span>
+                    <h4 class="font-display text-lg">Alpha Generation</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    143% cumulative return over 5 years vs MSCI India&rsquo;s 93%. Vazirani&rsquo;s GARP discipline avoids expensive momentum names, buying structural growth at reasonable valuations.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-india">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-india mt-0.5">diversity_3</span>
+                    <h4 class="font-display text-lg">Demographic Tailwind</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    India&rsquo;s median age is 28 with a working-age population share projected to reach 59% by 2041. The demographic dividend window runs 2005&ndash;2055 &mdash; the longest among major economies.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-india">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-india mt-0.5">balance</span>
+                    <h4 class="font-display text-lg">Valuation Discount</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    While MSCI India trades at 20x forward P/E (64% EM premium), Jupiter&rsquo;s portfolio sits at 16.7x &mdash; capturing India&rsquo;s growth without paying the full benchmark premium.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 02 / FUND ANALYSIS -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="fund">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">02 / Fund Analysis</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">18 Years of Consistent Alpha at 0.70% Net</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                Avinash Vazirani has managed Jupiter India since February 2008, navigating the GFC, taper tantrum, demonetisation, COVID, and multiple EM selloffs. His GARP approach &mdash; buying structural growth at reasonable valuations &mdash; has delivered persistent alpha through full market cycles.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Top 5 Holdings -->
+            <div class="glass-card p-10 rounded-3xl border-l-4 border-l-th-india">
+                <h3 class="mono-label text-th-india mb-6">Top 5 Holdings</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                        <span class="mono-label text-th-charcoal/40 w-8 shrink-0">01</span>
+                        <span class="font-display flex-1">HDFC Bank</span>
+                        <div class="flex-1">
+                            <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                                <div class="h-full bg-th-india rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <span class="font-display text-th-india w-16 text-right">7.8%</span>
+                    </div>
+                    <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                        <span class="mono-label text-th-charcoal/40 w-8 shrink-0">02</span>
+                        <span class="font-display flex-1">ICICI Bank</span>
+                        <div class="flex-1">
+                            <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                                <div class="h-full bg-th-india/80 rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <span class="font-display text-th-charcoal w-16 text-right">6.4%</span>
+                    </div>
+                    <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                        <span class="mono-label text-th-charcoal/40 w-8 shrink-0">03</span>
+                        <span class="font-display flex-1">Infosys</span>
+                        <div class="flex-1">
+                            <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                                <div class="h-full bg-th-charcoal/40 rounded-full" style="width: 69%"></div>
+                            </div>
+                        </div>
+                        <span class="font-display text-th-charcoal w-16 text-right">5.4%</span>
+                    </div>
+                    <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                        <span class="mono-label text-th-charcoal/40 w-8 shrink-0">04</span>
+                        <span class="font-display flex-1">Reliance Industries</span>
+                        <div class="flex-1">
+                            <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                                <div class="h-full bg-th-charcoal/40 rounded-full" style="width: 59%"></div>
+                            </div>
+                        </div>
+                        <span class="font-display text-th-charcoal w-16 text-right">4.6%</span>
+                    </div>
+                    <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                        <span class="mono-label text-th-charcoal/40 w-8 shrink-0">05</span>
+                        <span class="font-display flex-1">Axis Bank</span>
+                        <div class="flex-1">
+                            <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                                <div class="h-full bg-th-charcoal/40 rounded-full" style="width: 51%"></div>
+                            </div>
+                        </div>
+                        <span class="font-display text-th-charcoal w-16 text-right">4.0%</span>
+                    </div>
+                </div>
+                <p class="mt-6 text-sm text-th-charcoal/50 font-light">
+                    91 holdings. Top 10 = 42.4% of fund. Financials-heavy with significant small/mid-cap bias &mdash; higher alpha potential but elevated volatility.
+                </p>
+            </div>
+
+            <!-- Performance & Fees -->
+            <div class="space-y-8">
+                <div class="glass-card p-10 rounded-3xl border-l-4 border-l-th-sage">
+                    <h3 class="mono-label text-th-sage mb-6">Performance vs MSCI India</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-light">1-Year Return</span>
+                                <span class="mono-label text-th-charcoal/60">Jupiter: +18.2% &bull; MSCI: +14.1%</span>
+                            </div>
+                            <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                                <div class="h-full bg-th-india rounded-full" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-light">3-Year Return</span>
+                                <span class="mono-label text-th-charcoal/60">Jupiter: +72.5% &bull; MSCI: +51.3%</span>
+                            </div>
+                            <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                                <div class="h-full bg-th-india rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-light">5-Year Return</span>
+                                <span class="mono-label text-th-india">Jupiter: +143% &bull; MSCI: +93%</span>
+                            </div>
+                            <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                                <div class="h-full bg-th-india rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-10 rounded-3xl">
+                    <h3 class="mono-label text-th-charcoal/40 mb-6">Fee Comparison</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 rounded-xl border border-th-india/20 bg-th-india/5">
+                            <span class="font-display text-sm">Jupiter India X (Acc)</span>
+                            <span class="font-display text-th-india">0.70% OCF</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 rounded-xl border border-black/5 bg-white/30">
+                            <span class="font-display text-sm">Ashoka India Equity (AIE)</span>
+                            <span class="font-display text-th-charcoal/60">0.20% OCF</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 rounded-xl border border-black/5 bg-white/30">
+                            <span class="font-display text-sm">iShares MSCI India ETF (INDA)</span>
+                            <span class="font-display text-th-charcoal/60">0.65% OCF</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 rounded-xl border border-black/5 bg-white/30">
+                            <span class="font-display text-sm">Stewart Investors Indian Sub.</span>
+                            <span class="font-display text-th-charcoal/60">0.87% OCF</span>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-sm text-th-charcoal/50 font-light">
+                        Jupiter&rsquo;s 0.70% net OCF (via HL loyalty bonus) is competitive for active management. Ashoka AIE at 0.20% offers the best fee-adjusted India exposure.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl mt-8">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-accent mt-1">warning</span>
+                <div>
+                    <h4 class="font-display text-lg mb-2">Key-Man Risk: Morningstar &ldquo;Average&rdquo; People Pillar</h4>
+                    <p class="text-th-charcoal/60 font-light">
+                        Vazirani is the sole decision-maker for the fund. Morningstar rates the People Pillar as &ldquo;Average&rdquo; due to single-manager concentration. If Vazirani departs, the fund&rsquo;s alpha-generating track record becomes unreliable. This is the single biggest idiosyncratic risk in the position.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 03 / INDIA MACRO THESIS -->
+<section class="py-32 px-8 border-b border-black/5" id="macro">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-india mb-4 block">03 / India Macro Thesis</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Fastest Major Economy. 40-Year Demographic Tailwind.</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                India is the world&rsquo;s fastest-growing major economy with a demographic dividend that won&rsquo;t peak until 2041. The structural drivers &mdash; GDP growth, digital payments, infrastructure capex, and a youthful workforce &mdash; are multi-decade in nature.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-india">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-india mt-0.5">show_chart</span>
+                    <h4 class="font-display text-lg">GDP Growth</h4>
+                </div>
+                <span class="text-3xl font-display text-th-india block mb-2">7.4%</span>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    FY26 GDP growth forecast. RBI has cut rates 125bps to 5.25% in 2025, providing monetary tailwind. Ahead of China (4.5%), U.S. (2.3%), and EU (0.8%).
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-india">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-india mt-0.5">groups</span>
+                    <h4 class="font-display text-lg">Demographics</h4>
+                </div>
+                <span class="text-3xl font-display text-th-india block mb-2">Age 28</span>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    Median age of 28 years. Working-age population projected to reach 59% by 2041. Demographic dividend window runs 2005&ndash;2055 &mdash; longest among major economies.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-india">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-india mt-0.5">phone_android</span>
+                    <h4 class="font-display text-lg">Digital Payments</h4>
+                </div>
+                <span class="text-3xl font-display text-th-india block mb-2">83%</span>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    UPI&rsquo;s share of digital transactions. 21.63 billion transactions in December 2025 alone. India leads the world in real-time payments infrastructure.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-charcoal/20">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-charcoal/40 mt-0.5">construction</span>
+                    <h4 class="font-display text-lg">Infrastructure</h4>
+                </div>
+                <span class="text-3xl font-display text-th-charcoal block mb-2">800%</span>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    Capex surge over the last decade. Government spending at &pound;10 trillion (3.5% of GDP) with a fiscal multiplier of 2.45x &mdash; roads, rail, airports, and smart cities.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-charcoal/20">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-charcoal/40 mt-0.5">factory</span>
+                    <h4 class="font-display text-lg">Make in India</h4>
+                </div>
+                <span class="text-3xl font-display text-th-charcoal block mb-2">15.9%</span>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    Manufacturing&rsquo;s share of GDP &mdash; missed the 25% target. However, selective China+1 wins in electronics, pharmaceuticals, and auto components are accelerating.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-accent">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5">currency_exchange</span>
+                    <h4 class="font-display text-lg">Rupee Headwind</h4>
+                </div>
+                <span class="text-3xl font-display text-th-accent block mb-2">-5%</span>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    INR depreciated ~5% vs GBP in 2025. Structural 1&ndash;2% annual currency drag for GBP-denominated investors. A persistent but manageable cost of India exposure.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 04 / RISK ASSESSMENT (DARK SECTION) -->
+<section class="bg-th-charcoal text-th-sand py-32 px-8" id="risks">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <span class="mono-label text-th-sand/40 mb-4 block">04 / Risk Assessment</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal">Valuation Premium. Key-Man Risk. Currency Headwinds.</h2>
+            <p class="text-lg text-th-sand/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                India is not without risk. The market trades at a significant premium to emerging market peers, governance relies on a single fund manager, and currency depreciation is structural. The honest assessment: strong structural tailwinds offset by real near-term vulnerabilities.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Bull Arguments -->
+            <div class="bg-white/5 border border-white/10 p-12 rounded-3xl">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="material-symbols-outlined text-th-sage text-3xl">trending_up</span>
+                    <h3 class="text-2xl font-display">Bull Arguments</h3>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-display text-sm mb-2 text-th-sage">1. Structural Growth Is Multi-Decade</h4>
+                        <p class="text-sm font-light text-th-sand/60">
+                            India&rsquo;s demographic dividend, digital infrastructure, and urbanisation wave are <strong class="font-medium text-th-sand/80">30+ year trends</strong>. Even with near-term volatility, the direction of travel is unambiguous.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-sm mb-2 text-th-sage">2. Jupiter&rsquo;s GARP Discipline Protects Downside</h4>
+                        <p class="text-sm font-light text-th-sand/60">
+                            At 16.7x P/E vs the 20x benchmark, the fund avoids the worst of India&rsquo;s valuation premium. <strong class="font-medium text-th-sand/80">Max drawdown of -38.2%</strong> vs -42.1% for MSCI India during COVID &mdash; demonstrating downside resilience.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-sm mb-2 text-th-sage">3. Monetary Policy Tailwind</h4>
+                        <p class="text-sm font-light text-th-sand/60">
+                            RBI&rsquo;s 125bps of rate cuts in 2025 provide a meaningful boost to credit growth and equity valuations. India is <strong class="font-medium text-th-sand/80">cutting while the West holds</strong> &mdash; a rare divergence favouring EM assets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bear Arguments -->
+            <div class="bg-white/5 border border-white/10 p-12 rounded-3xl">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="material-symbols-outlined text-th-accent text-3xl">trending_down</span>
+                    <h3 class="text-2xl font-display">Bear Arguments</h3>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-display text-sm mb-2 text-th-accent">1. India&rsquo;s Valuation Premium Is Stretched</h4>
+                        <p class="text-sm font-light text-th-sand/60">
+                            MSCI India at 20x P/E represents a <strong class="font-medium text-th-sand/80">64% premium to the EM average</strong> of 12.2x. If global risk appetite fades, the premium compresses first &mdash; India falls further than peers.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-sm mb-2 text-th-accent">2. Key-Man Risk Is Real</h4>
+                        <p class="text-sm font-light text-th-sand/60">
+                            Vazirani is the sole decision-maker. Morningstar&rsquo;s <strong class="font-medium text-th-sand/80">&ldquo;Average&rdquo; People Pillar</strong> rating reflects this concentration. 18 years of alpha could evaporate with a single departure.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-sm mb-2 text-th-accent">3. China Competition Looms Large</h4>
+                        <p class="text-sm font-light text-th-sand/60">
+                            China controls <strong class="font-medium text-th-sand/80">45% of global manufacturing</strong> vs India&rsquo;s 3.3%. &ldquo;Make in India&rdquo; has underdelivered at 15.9% of GDP vs the 25% target. The China+1 thesis is selective, not structural.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk Factor Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                <span class="mono-label text-th-accent block mb-3">Valuation Premium</span>
+                <span class="text-3xl font-display text-th-sand block mb-2">20x P/E</span>
+                <p class="text-sm text-th-sand/50 font-light">
+                    64% premium to EM (12.2x). Jupiter mitigates at 16.7x, but a rising-rate or risk-off environment would compress multiples across the board.
+                </p>
+            </div>
+            <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                <span class="mono-label text-th-accent block mb-3">Key-Man Risk</span>
+                <span class="text-3xl font-display text-th-sand block mb-2">1 Manager</span>
+                <p class="text-sm text-th-sand/50 font-light">
+                    Vazirani is sole decision-maker. Morningstar &ldquo;Average&rdquo; People Pillar. No clear succession plan publicly disclosed.
+                </p>
+            </div>
+            <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                <span class="mono-label text-th-accent block mb-3">Coalition Government</span>
+                <span class="text-3xl font-display text-th-sand block mb-2">BJP -40</span>
+                <p class="text-sm text-th-sand/50 font-light">
+                    BJP lost outright majority in June 2024, now governing via coalition. Reform pace may slow. Key risk: dilution of GST reforms and infrastructure pipeline.
+                </p>
+            </div>
+            <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                <span class="mono-label text-th-sand/40 block mb-3">Currency Exposure</span>
+                <span class="text-3xl font-display text-th-sand block mb-2">1.5&ndash;2%</span>
+                <p class="text-sm text-th-sand/50 font-light">
+                    Annual GBP drag from INR depreciation. Structural and persistent &mdash; not hedgeable at reasonable cost for retail investors. Accepted as cost of India exposure.
+                </p>
+            </div>
+            <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                <span class="mono-label text-th-sand/40 block mb-3">China Competition</span>
+                <span class="text-3xl font-display text-th-sand block mb-2">45% vs 3.3%</span>
+                <p class="text-sm text-th-sand/50 font-light">
+                    China&rsquo;s global manufacturing share dwarfs India&rsquo;s. China+1 benefits are real but limited to specific sectors (electronics, pharma, auto components).
+                </p>
+            </div>
+            <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                <span class="mono-label text-th-sage block mb-3">Mitigating Factor</span>
+                <span class="text-3xl font-display text-th-sage block mb-2">16.7x</span>
+                <p class="text-sm text-th-sand/50 font-light">
+                    Jupiter&rsquo;s portfolio P/E trades at a meaningful discount to the 20x benchmark. GARP discipline provides a partial buffer against India-wide valuation risk.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 05 / CONCLUSION & RECOMMENDATION -->
+<section class="bg-th-beige/30 py-32 px-8" id="recommendation">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-india mb-4 block">05 / Verdict</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">HOLD and Hedge via Diversification</h2>
+        </div>
+
+        <!-- Scenario Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="glass-card p-8 rounded-2xl text-center border-2 border-th-india/30">
+                <span class="mono-label text-th-india block mb-2">Base Case</span>
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-3">60% Probability</span>
+                <span class="text-4xl font-display text-th-india block mb-1">+42.7%</span>
+                <p class="text-sm text-th-charcoal/50 font-light">over 3 years</p>
+                <p class="mono-label text-[10px] text-th-india/60 mt-3">IRR: 12.6%</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl text-center border-2 border-th-sage/30">
+                <span class="mono-label text-th-sage block mb-2">Bull Case</span>
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-3">25% Probability</span>
+                <span class="text-4xl font-display text-th-sage block mb-1">+100%</span>
+                <p class="text-sm text-th-charcoal/50 font-light">over 3 years</p>
+                <p class="mono-label text-[10px] text-th-sage/60 mt-3">IRR: 26.0%</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl text-center border-2 border-th-accent/30">
+                <span class="mono-label text-th-accent block mb-2">Bear Case</span>
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-3">15% Probability</span>
+                <span class="text-4xl font-display text-th-accent block mb-1">-30.3%</span>
+                <p class="text-sm text-th-charcoal/50 font-light">over 3 years</p>
+                <p class="mono-label text-[10px] text-th-accent/60 mt-3">IRR: -11.3%</p>
+            </div>
+        </div>
+
+        <!-- Action Items -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="glass-card p-8 rounded-2xl border-t-4 border-t-th-india">
+                <span class="material-symbols-outlined text-th-india mb-4 block">check_circle</span>
+                <h4 class="font-display text-lg mb-2">HOLD Current</h4>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    Maintain the existing position. The thesis remains intact: structural growth, proven manager, reasonable valuation. Near-term drawdowns are within normal parameters for single-country EM.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-t-4 border-t-th-sage">
+                <span class="material-symbols-outlined text-th-sage mb-4 block">add_circle</span>
+                <h4 class="font-display text-lg mb-2">ADD Below 18x P/E</h4>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    If the portfolio P/E drops below 18x, add to the position through new contributions. Split future India allocation 50/50 between Jupiter and Ashoka AIE.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-t-4 border-t-th-accent">
+                <span class="material-symbols-outlined text-th-accent mb-4 block">block</span>
+                <h4 class="font-display text-lg mb-2">DO NOT EXCEED 10%</h4>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    Total India exposure (all vehicles) must not exceed 10% of total portfolio. Single-country EM concentration risk requires a hard ceiling.
+                </p>
+            </div>
+        </div>
+
+        <!-- Exit Triggers -->
+        <div class="glass-card p-10 rounded-3xl mb-12">
+            <h3 class="mono-label text-th-accent mb-6">Exit Triggers &mdash; When the Thesis Breaks</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">Vazirani departs</strong> &mdash; sell 100% within 30 days. The alpha track record is inseparable from the manager.</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">3-year rolling alpha turns negative by &gt;3%</strong> &mdash; GARP discipline no longer generating excess returns.</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">Portfolio P/E exceeds 25x</strong> &mdash; GARP discipline abandoned. Paying growth multiples without the valuation discipline.</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">India GDP &lt;5% for 2 consecutive quarters</strong> &mdash; structural growth thesis fundamentally impaired.</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">MSCI India P/E exceeds 28x</strong> &mdash; market-wide bubble territory. Entire India exposure becomes fragile.</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">Position exceeds 12% of total portfolio</strong> &mdash; trim back to 10%. Concentration risk ceiling enforced.</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5 md:col-span-2">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">Liquidity needs within 12&ndash;24 months</strong> &mdash; EM equity is not a liquidity instrument. Sell and move to cash if capital is needed near-term.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Verdict -->
+        <div class="glass-card p-12 rounded-3xl border-2 border-th-india/30 text-center">
+            <span class="mono-label text-th-india block mb-4">Verdict</span>
+            <h3 class="text-3xl md:text-4xl font-display font-normal mb-6">HOLD. India&rsquo;s Story Is a Marathon, Not a Sprint.</h3>
+            <p class="text-lg text-th-charcoal/60 font-light leading-relaxed max-w-3xl mx-auto mb-8">
+                The structural growth thesis is intact. Vazirani&rsquo;s GARP discipline provides alpha at a reasonable cost. The current drawdown is within normal EM parameters. The risk is not the position size &mdash; <strong class="font-medium text-th-charcoal">it is abandoning a multi-decade thesis over a single-year drawdown.</strong>
+            </p>
+            <div class="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto">
+                <div>
+                    <p class="mono-label text-th-charcoal/40 mb-1">Action</p>
+                    <span class="text-3xl font-display text-th-india">HOLD</span>
+                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Add below 18x P/E</p>
+                </div>
+                <div>
+                    <p class="mono-label text-th-charcoal/40 mb-1">Max Sizing</p>
+                    <span class="text-3xl font-display text-th-india">10%</span>
+                    <p class="text-xs text-th-charcoal/40 font-light mt-1">of total portfolio</p>
+                </div>
+                <div>
+                    <p class="mono-label text-th-charcoal/40 mb-1">Vehicle Split</p>
+                    <span class="text-3xl font-display text-th-india">50/50</span>
+                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Jupiter &bull; Ashoka AIE</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- METHODOLOGY & CITATIONS -->
+<section class="bg-th-sand py-20 px-8">
+    <div class="max-w-7xl mx-auto">
+        <h3 class="mono-label text-th-charcoal/40 mb-8">Sources &amp; Citations (19 references)</h3>
+        <div class="border-t border-black/10 pt-12">
+            <div class="grid md:grid-cols-2 gap-x-16 gap-y-10">
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-india text-lg shrink-0">01</span>
+                    <div>
+                        <p class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">Hargreaves Lansdown &mdash; Jupiter India Class X Fund Factsheet, Holdings Data, and Loyalty Bonus OCF Disclosure.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <a href="https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/j/jupiter-india-class-x-accumulation" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">HL Fund Page &nearr;</a>
+                            <a href="https://www.hl.co.uk/shares/shares-search-results/a/ashoka-india-equity-inv-trust-ord-gbp0.01" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">HL Ashoka AIE &nearr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-india text-lg shrink-0">02</span>
+                    <div>
+                        <p class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">Morningstar &mdash; Jupiter India Fund Rating, Key-Man Risk Assessment (&ldquo;Average&rdquo; People Pillar), Maximum Drawdown Analysis, and Performance Snapshot.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <a href="https://lt.morningstar.com/1c6qh1t6k9/snapshotpdf/default.aspx?LanguageId=en-GB&Id=F00000MWK9" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">Morningstar Snapshot &nearr;</a>
+                            <a href="https://global.morningstar.com/en-gb/funds/five-uk-funds-that-beat-the-market" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">Five Funds That Beat the Market &nearr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-india text-lg shrink-0">03</span>
+                    <div>
+                        <p class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">MSCI &amp; Market Data &mdash; India Index Valuation (Forward P/E, EM Premium), FT Holdings Data, Investing.com Fund Profile.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <a href="https://www.niftytrader.in/markets/indias-valuation-gap-narrows-but-remains-costly-vs-em-averages/" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">India Valuation Gap &nearr;</a>
+                            <a href="https://markets.ft.com/data/etfs/tearsheet/holdings?s=GB00B4TZHH95%3AGBP" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">FT Holdings &nearr;</a>
+                            <a href="https://uk.investing.com/funds/jupiter-india-x-gbp-acc-holdings" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">Investing.com Profile &nearr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-india text-lg shrink-0">04</span>
+                    <div>
+                        <p class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">Reserve Bank of India &amp; India Macro &mdash; Monetary Policy (125bps Cuts), GDP Forecasts (7.4% FY26), Infrastructure Capex Multiplier (2.45x), Rupee Trajectory.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <a href="https://tradingeconomics.com/india/interest-rate" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">RBI Rate History &nearr;</a>
+                            <a href="https://www.india-briefing.com/news/india-gdp-growth-forecast-fy-2025-26-41786.html/" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">GDP Forecast FY26 &nearr;</a>
+                            <a href="https://www.eaaa.in/wp-content/uploads/2024/12/India_Infrastructure_Coming_of_Age.pdf" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">Infrastructure Report &nearr;</a>
+                            <a href="https://www.fxstreet.com/analysis/usd-inr-price-annual-forecast-indian-rupee-could-disappoint-both-optimists-and-pessimists-alike-in-2026-202512220812" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">INR Forecast 2026 &nearr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-india text-lg shrink-0">05</span>
+                    <div>
+                        <p class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">Demographics, Digital Payments &amp; Manufacturing &mdash; India Demographic Dividend, UPI Statistics, Make in India Output, Political &amp; Coalition Analysis.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <a href="https://vajiramandravi.com/upsc-exam/indias-demographic-dividend/" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">Demographic Dividend &nearr;</a>
+                            <a href="https://ddnews.gov.in/en/upis-share-in-indias-digital-payments-surged-to-83-rbi-report/" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">UPI 83% Share &nearr;</a>
+                            <a href="https://en.wikipedia.org/wiki/Make_in_India" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">Make in India &nearr;</a>
+                            <a href="https://www.chathamhouse.org/2024/06/indias-shock-election-result-loss-modi-win-democracy" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">Coalition Analysis &nearr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-india text-lg shrink-0">06</span>
+                    <div>
+                        <p class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">Vehicle Comparison &mdash; Ashoka India Equity Investment Trust, iShares MSCI India ETF, Stewart Investors Indian Subcontinent, Jupiter Fund Manager Profile.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <a href="https://www.theaic.co.uk/companydata/ashoka-india-equity" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">Ashoka AIE (AIC) &nearr;</a>
+                            <a href="https://www.ishares.com/us/products/239659/ishares-msci-india-etf" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">iShares INDA &nearr;</a>
+                            <a href="https://www.stewartinvestors.com/content/dam/stewartinvestors/pdf/uk/INDIFlyer-UKEEACH.pdf" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">Stewart Investors &nearr;</a>
+                            <a href="https://www.jupiteram.com/uk/en/professional/insights/indian-stocks-recent-pullback-beckons-long-term-investors/" target="_blank" class="mono-label text-[10px] text-th-india hover:underline">Jupiter AM Insights &nearr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="bg-th-sand px-8 pb-6">
+    <div class="max-w-7xl mx-auto border-t border-black/5 pt-8">
+        <h4 class="mono-label text-th-charcoal/30 mb-3">Methodology</h4>
+        <p class="text-[12px] leading-relaxed text-th-charcoal/40 font-light">
+            Original investment thesis developed by the author. Research supplemented using Perplexity Deep Research (finance model) for data sourcing and cross-referencing. Drafted with Claude and reviewed, edited, and approved by the author. All conclusions reflect personal judgement.
+        </p>
+    </div>
+</section>
+
+<footer class="bg-th-sand border-t border-black/10 text-th-charcoal py-10 px-8">
+    <div class="max-w-7xl mx-auto">
+        <p class="mono-label text-th-charcoal/40 text-center">&copy; 2026 Kris Rajah &middot; For personal use only &middot; Not financial advice</p>
+    </div>
+</footer>
+
+</body>
+</html>

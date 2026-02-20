@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>ASML Deep Dive: The Monopoly Machine Behind Every AI Chip</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "th-sand": "#f4f1ee",
+                        "th-beige": "#e8e4e0",
+                        "th-charcoal": "#1a1a1a",
+                        "th-clay": "#d9c5b2",
+                        "th-sage": "#b7c4b6",
+                        "th-accent": "#e67e5f",
+                        "th-indigo": "#6366f1",
+                        "th-indigo-dark": "#4f46e5",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-th-sand text-th-charcoal font-sans antialiased;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .mono-label {
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+<header class="sticky top-0 z-50 w-full bg-th-sand/80 backdrop-blur-md border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="font-display font-semibold text-lg tracking-tight">Kris Rajah</span>
+            <span class="text-th-charcoal/30">|</span>
+            <a href="index.html" class="mono-label text-th-charcoal/50 hover:text-th-charcoal transition-colors">Home</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="mono-label hover:text-th-indigo transition-colors" href="#company">Company</a>
+            <a class="mono-label hover:text-th-indigo transition-colors" href="#monopoly">Monopoly</a>
+            <a class="mono-label hover:text-th-indigo transition-colors" href="#financials">Financials</a>
+            <a class="mono-label hover:text-th-indigo transition-colors" href="#ai-demand">AI & China</a>
+            <a class="mono-label hover:text-th-indigo transition-colors" href="#cases">Scenarios</a>
+            <a class="mono-label hover:text-th-indigo transition-colors" href="#conclusion">Verdict</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[70vh] flex items-center justify-center py-24 px-8">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 rounded-full border border-black/10 mb-10">
+            <span class="mono-label text-th-charcoal/60">Deep Dive &bull; February 2026</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-display font-medium tracking-tight mb-8">
+            ASML:<br/>The Monopoly Machine Behind Every AI Chip
+        </h1>
+        <p class="text-xl md:text-2xl text-th-charcoal/70 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+            The sole manufacturer of extreme ultraviolet lithography systems &mdash; the mission-critical technology enabling sub-7nm semiconductor manufacturing. No competitor exists, none is credibly emerging, and the barriers to entry are measured in decades and tens of billions of euros.
+        </p>
+        <div class="flex flex-col items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="h-[1px] w-12 bg-black/20"></div>
+                <span class="mono-label text-th-charcoal/40 tracking-[0.3em]">Kris Rajah</span>
+                <div class="h-[1px] w-12 bg-black/20"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KEY METRICS STRIP -->
+<section class="py-12 px-8 border-y border-black/5 bg-th-beige/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div class="glass-card p-6 rounded-3xl text-center border-th-indigo/20">
+                <span class="text-3xl font-display text-th-indigo block mb-2">&euro;32.7B</span>
+                <h4 class="text-sm font-display mb-1">FY 2025 Revenue</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">+16% YoY</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-charcoal block mb-2">&euro;9.6B</span>
+                <h4 class="text-sm font-display mb-1">Net Income</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">+27% YoY</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-charcoal block mb-2">100%</span>
+                <h4 class="text-sm font-display mb-1">EUV Market Share</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Structural monopoly</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-sage block mb-2">&euro;38.8B</span>
+                <h4 class="text-sm font-display mb-1">Order Backlog</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">1.2x annual revenue</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-indigo block mb-2">~50x</span>
+                <h4 class="text-sm font-display mb-1">Trailing P/E</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">~30x forward</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-sage block mb-2">$570B</span>
+                <h4 class="text-sm font-display mb-1">Market Cap</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Founded 1984</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 01 / WHAT IS ASML -->
+<section class="py-32 px-8 border-b border-black/5" id="company">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">01 / What Is ASML</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">The Company Behind Every Advanced Chip on Earth</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                ASML Holdings N.V., headquartered in Veldhoven, Netherlands, manufactures the photolithography systems that print nanoscale circuit patterns onto silicon wafers. Founded in 1984 as a joint venture between ASM International and Philips, it has grown into a &euro;570 billion market cap global monopoly. Every advanced processor from Apple, Nvidia, AMD, and Qualcomm requires ASML&rsquo;s machines.
+            </p>
+        </div>
+
+        <!-- How Lithography Works -->
+        <div class="glass-card p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">How Lithography Works</h3>
+            <p class="text-th-charcoal/60 font-light mb-6">
+                Semiconductor lithography is conceptually simple: project a pattern of light through a mask onto a photosensitive silicon wafer, then chemically etch the exposed areas to create transistor circuits. In practice, it requires extraordinary engineering precision. Modern EUV systems use <strong class="font-medium text-th-charcoal">13.5nm wavelength light</strong> (vs 193nm in older DUV) to print features smaller than individual virus particles.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30 text-center">
+                    <span class="text-2xl font-display text-th-indigo block mb-1">100,000</span>
+                    <p class="text-xs text-th-charcoal/50 font-light">Parts per EUV machine</p>
+                </div>
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30 text-center">
+                    <span class="text-2xl font-display text-th-indigo block mb-1">3 Aircraft</span>
+                    <p class="text-xs text-th-charcoal/50 font-light">Required to transport one system</p>
+                </div>
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30 text-center">
+                    <span class="text-2xl font-display text-th-indigo block mb-1">&lt;1mm</span>
+                    <p class="text-xs text-th-charcoal/50 font-light">Mirror imperfection if scaled to Germany</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Revenue Composition -->
+        <div class="glass-card p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">Revenue Composition (FY2025)</h3>
+            <div class="space-y-4">
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display w-52 shrink-0">EUV Systems</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                            <div class="h-full bg-th-indigo rounded-full" style="width: 35.5%"></div>
+                        </div>
+                    </div>
+                    <span class="font-display text-th-indigo w-24 text-right">&euro;11.6B</span>
+                    <span class="mono-label text-th-sage text-[10px] w-28 text-right">+39% YoY &bull; 48 units</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display w-52 shrink-0">DUV Systems</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                            <div class="h-full bg-th-charcoal/40 rounded-full" style="width: 36.7%"></div>
+                        </div>
+                    </div>
+                    <span class="font-display text-th-charcoal w-24 text-right">&euro;12.0B</span>
+                    <span class="mono-label text-th-accent text-[10px] w-28 text-right">-6% YoY &bull; 279 units</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display w-52 shrink-0">Installed Base Mgmt</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                            <div class="h-full bg-th-sage rounded-full" style="width: 25%"></div>
+                        </div>
+                    </div>
+                    <span class="font-display text-th-sage w-24 text-right">&euro;8.2B</span>
+                    <span class="mono-label text-th-sage text-[10px] w-28 text-right">+26% YoY &bull; Recurring</span>
+                </div>
+            </div>
+            <p class="mt-6 text-sm text-th-charcoal/50 font-light text-center">
+                Hybrid business model: cutting-edge technology sales combined with annuity-like service revenue. The installed base segment &mdash; maintenance and upgrades on 95% of machines still in operation &mdash; generates ~60% gross margins.
+            </p>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="glass-card p-10 rounded-3xl">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">The Technology Stack</h3>
+            <div class="space-y-4">
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-charcoal/10 bg-white/30">
+                    <span class="mono-label text-th-charcoal/40 w-20 shrink-0">DUV</span>
+                    <span class="font-display flex-1">KrF / ArF Immersion &mdash; 248nm / 193nm</span>
+                    <span class="text-sm text-th-charcoal/50 font-light w-48 text-right">Mature nodes (28nm+) &bull; ~80% share</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-indigo/20 bg-th-indigo/5">
+                    <span class="mono-label text-th-indigo w-20 shrink-0">EUV</span>
+                    <span class="font-display text-th-indigo flex-1">Low-NA &mdash; 13.5nm, NXE:3800E</span>
+                    <span class="text-sm text-th-indigo/70 font-light w-48 text-right">7nm to 2nm logic &bull; 100% share</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-sage/20 bg-th-sage/5">
+                    <span class="mono-label text-th-sage w-20 shrink-0">High-NA</span>
+                    <span class="font-display text-th-sage flex-1">EXE:5200B &mdash; 13.5nm, NA 0.55</span>
+                    <span class="text-sm text-th-sage/70 font-light w-48 text-right">Sub-2nm &bull; &euro;360&ndash;400M each</span>
+                </div>
+            </div>
+            <p class="mt-6 text-sm text-th-charcoal/50 font-light text-center">
+                <strong class="font-medium text-th-charcoal">High-NA status:</strong> Intel first to accept EXE:5200B (late 2025). Samsung receiving tools H1 2026. TSMC plans insertion at 1.4nm node (2028). Mass production expected 2027&ndash;28.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 02 / THE MONOPOLY THESIS -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="monopoly">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">02 / The Monopoly Thesis</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Barriers Measured in Decades and Tens of Billions</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                ASML&rsquo;s competitive position extends beyond market share to structural barriers that render displacement functionally impossible over investment-relevant time horizons. This isn&rsquo;t a competitive advantage &mdash; it&rsquo;s an unbreachable moat.
+            </p>
+        </div>
+
+        <!-- Barrier Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-indigo">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-indigo mt-0.5">science</span>
+                    <h4 class="font-display text-lg">Capital Barrier</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    ASML invested <strong class="font-medium">&euro;10B+ and 20+ years</strong> to bring EUV to viability. Replication requires $25B+ over 30+ years &mdash; no competitor has demonstrated willingness to undertake this.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-indigo">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-indigo mt-0.5">lightbulb</span>
+                    <h4 class="font-display text-lg">Knowledge Barrier</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    <strong class="font-medium">15,000+ patents</strong> and a collaborative ecosystem with Zeiss (optics), TRUMPF (lasers), and dozens of university and government research partners worldwide.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-indigo">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-indigo mt-0.5">hub</span>
+                    <h4 class="font-display text-lg">Supply Chain Barrier</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    <strong class="font-medium">5,100+ suppliers</strong>. Carl Zeiss SMT is sole EUV optics provider (ASML owns 24.9%). TRUMPF is sole high-power CO2 laser provider. ASML would &ldquo;effectively cease to conduct business&rdquo; without Zeiss.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-charcoal/20">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-charcoal/40 mt-0.5">handshake</span>
+                    <h4 class="font-display text-lg">Customer Switching Costs</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    Chipmakers invest <strong class="font-medium">18&ndash;24 months</strong> integrating each system. ASML dedicates teams of 1,500 employees to single customers. 20&ndash;30 year relationships with every major chipmaker.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-charcoal/20">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-charcoal/40 mt-0.5">update</span>
+                    <h4 class="font-display text-lg">Installed Base Revenue</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    &euro;8.2B in recurring service revenue with 20+ year service life per system. At ~60% gross margins, this alone would be a highly valuable standalone business.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-sage">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-sage mt-0.5">rocket_launch</span>
+                    <h4 class="font-display text-lg">Widening Moat</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    High-NA EUV at <strong class="font-medium">&euro;360&ndash;400M each</strong> raises the bar further. Each technology generation makes the moat wider, not narrower.
+                </p>
+            </div>
+        </div>
+
+        <!-- Peer Comparison -->
+        <div class="glass-card p-10 rounded-3xl">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">vs Semiconductor Equipment Peers</h3>
+            <div class="space-y-4">
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-indigo/20 bg-th-indigo/5">
+                    <span class="font-display text-th-indigo w-44 shrink-0">ASML</span>
+                    <span class="text-sm text-th-indigo/70 font-light flex-1">Monopoly &mdash; sole EUV lithography supplier</span>
+                    <span class="mono-label text-th-indigo w-20 text-right">$570B</span>
+                    <span class="mono-label text-th-indigo/60 text-[10px] w-16 text-right">~50x P/E</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display w-44 shrink-0">Applied Materials</span>
+                    <span class="text-sm text-th-charcoal/50 font-light flex-1">Duopoly &mdash; deposition, etch, CMP</span>
+                    <span class="mono-label text-th-charcoal/40 w-20 text-right">$298B</span>
+                    <span class="mono-label text-th-charcoal/40 text-[10px] w-16 text-right">~38x</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display w-44 shrink-0">Lam Research</span>
+                    <span class="text-sm text-th-charcoal/50 font-light flex-1">Duopoly &mdash; etch and deposition</span>
+                    <span class="mono-label text-th-charcoal/40 w-20 text-right">$302B</span>
+                    <span class="mono-label text-th-charcoal/40 text-[10px] w-16 text-right">~50x</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display w-44 shrink-0">KLA Corporation</span>
+                    <span class="text-sm text-th-charcoal/50 font-light flex-1">Dominant &mdash; inspection and metrology</span>
+                    <span class="mono-label text-th-charcoal/40 w-20 text-right">$194B</span>
+                    <span class="mono-label text-th-charcoal/40 text-[10px] w-16 text-right">~43x</span>
+                </div>
+            </div>
+            <p class="mt-6 text-sm text-th-charcoal/50 font-light text-center">
+                AMAT, LRCX, and KLAC operate in duopolies or oligopolies with at least one credible competitor. <strong class="font-medium text-th-charcoal">ASML operates a true monopoly</strong> in its highest-value product line, with no competitor even attempting to build a rival EUV system.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 03 / FINANCIAL PERFORMANCE -->
+<section class="py-32 px-8 border-b border-black/5" id="financials">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">03 / Financial Performance</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Record Bookings. Fortress Balance Sheet. 75% Top-Line Growth in Four Years.</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                FY2025 delivered record results with &euro;13.2B in Q4 bookings alone. ASML is guiding 2026 revenue of &euro;34&ndash;39B and targeting &euro;44&ndash;60B by 2030 at 56&ndash;60% gross margins.
+            </p>
+        </div>
+
+        <!-- 5-Year Financial Table -->
+        <div class="glass-card p-10 rounded-3xl mb-8 overflow-x-auto">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">Five-Year Financial Overview</h3>
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-black/10">
+                        <th class="text-left font-display py-3 pr-4">Metric</th>
+                        <th class="text-right font-display py-3 px-3">FY2021</th>
+                        <th class="text-right font-display py-3 px-3">FY2022</th>
+                        <th class="text-right font-display py-3 px-3">FY2023</th>
+                        <th class="text-right font-display py-3 px-3">FY2024</th>
+                        <th class="text-right font-display py-3 pl-3 text-th-indigo">FY2025</th>
+                    </tr>
+                </thead>
+                <tbody class="text-th-charcoal/60 font-light">
+                    <tr class="border-b border-black/5">
+                        <td class="py-3 pr-4 font-medium text-th-charcoal">Revenue (&euro;B)</td>
+                        <td class="text-right py-3 px-3">18.6</td>
+                        <td class="text-right py-3 px-3">21.2</td>
+                        <td class="text-right py-3 px-3">27.6</td>
+                        <td class="text-right py-3 px-3">28.3</td>
+                        <td class="text-right py-3 pl-3 text-th-indigo font-medium">32.7</td>
+                    </tr>
+                    <tr class="border-b border-black/5">
+                        <td class="py-3 pr-4">Revenue Growth</td>
+                        <td class="text-right py-3 px-3">&mdash;</td>
+                        <td class="text-right py-3 px-3">13.8%</td>
+                        <td class="text-right py-3 px-3">30.2%</td>
+                        <td class="text-right py-3 px-3">2.6%</td>
+                        <td class="text-right py-3 pl-3 text-th-indigo">15.6%</td>
+                    </tr>
+                    <tr class="border-b border-black/5">
+                        <td class="py-3 pr-4 font-medium text-th-charcoal">Gross Margin</td>
+                        <td class="text-right py-3 px-3">52.7%</td>
+                        <td class="text-right py-3 px-3">50.5%</td>
+                        <td class="text-right py-3 px-3">51.3%</td>
+                        <td class="text-right py-3 px-3">50.5%</td>
+                        <td class="text-right py-3 pl-3 text-th-indigo font-medium">52.8%</td>
+                    </tr>
+                    <tr class="border-b border-black/5">
+                        <td class="py-3 pr-4 font-medium text-th-charcoal">Net Income (&euro;B)</td>
+                        <td class="text-right py-3 px-3">5.9</td>
+                        <td class="text-right py-3 px-3">5.6</td>
+                        <td class="text-right py-3 px-3">7.8</td>
+                        <td class="text-right py-3 px-3">8.3</td>
+                        <td class="text-right py-3 pl-3 text-th-indigo font-medium">9.6</td>
+                    </tr>
+                    <tr class="border-b border-black/5">
+                        <td class="py-3 pr-4">EPS (&euro;)</td>
+                        <td class="text-right py-3 px-3">14.34</td>
+                        <td class="text-right py-3 px-3">14.13</td>
+                        <td class="text-right py-3 px-3">14.05</td>
+                        <td class="text-right py-3 px-3">19.66</td>
+                        <td class="text-right py-3 pl-3 text-th-indigo">24.71</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pr-4 font-medium text-th-charcoal">Free Cash Flow (&euro;B)</td>
+                        <td class="text-right py-3 px-3">9.9</td>
+                        <td class="text-right py-3 px-3">7.2</td>
+                        <td class="text-right py-3 px-3">3.3</td>
+                        <td class="text-right py-3 px-3">10.3</td>
+                        <td class="text-right py-3 pl-3 text-th-indigo font-medium">11.1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8 mb-8">
+            <!-- Q4 Results -->
+            <div class="glass-card p-10 rounded-3xl border-l-4 border-l-th-indigo">
+                <h3 class="mono-label text-th-indigo mb-6">Record Q4 2025</h3>
+                <div class="space-y-5">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-light">Q4 Net Sales</span>
+                            <span class="mono-label text-th-indigo">&euro;9.7B</span>
+                        </div>
+                        <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                            <div class="h-full bg-th-indigo rounded-full" style="width: 73%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-light">Q4 Net Bookings</span>
+                            <span class="mono-label text-th-indigo">&euro;13.2B (record)</span>
+                        </div>
+                        <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                            <div class="h-full bg-th-indigo rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-light">FY Net Bookings</span>
+                            <span class="mono-label text-th-indigo">&euro;28.0B (+48% YoY)</span>
+                        </div>
+                        <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                            <div class="h-full bg-th-indigo rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-light">Book-to-Bill Ratio</span>
+                            <span class="mono-label text-th-indigo">1.36x</span>
+                        </div>
+                        <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                            <div class="h-full bg-th-indigo rounded-full" style="width: 68%"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-4 text-xs text-th-charcoal/50 font-light">Q4 bookings mix: 56% Memory / 44% Logic. &euro;7.4B from EUV systems alone.</p>
+            </div>
+
+            <!-- Profitability & Balance Sheet -->
+            <div class="glass-card p-10 rounded-3xl border-l-4 border-l-th-sage">
+                <h3 class="mono-label text-th-sage mb-6">Profitability & Balance Sheet</h3>
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-2xl font-display text-th-sage">50&ndash;54%</span>
+                        <p class="font-display text-sm mt-1">Return on Equity</p>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1">Exceptional capital efficiency for hardware.</p>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-display text-th-sage">27&ndash;34%</span>
+                        <p class="font-display text-sm mt-1">ROIC</p>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1">Substantially exceeds WACC (11&ndash;15%).</p>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-display text-th-sage">0.14x</span>
+                        <p class="font-display text-sm mt-1">Debt-to-Equity</p>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1">Net cash ~&euro;12.9B. Moody&rsquo;s A2, Fitch A-. Z-Score 12.6.</p>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-display text-th-sage">95&ndash;98%</span>
+                        <p class="font-display text-sm mt-1">FCF Conversion</p>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1">5-Year FCF CAGR: 30%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Capital Allocation -->
+        <div class="glass-card p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">Capital Allocation</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30 text-center">
+                    <span class="text-2xl font-display text-th-indigo block mb-1">&euro;7.50</span>
+                    <p class="font-display text-sm">2025 Dividend/Share</p>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-1">+17% YoY &bull; ~0.54% yield</p>
+                </div>
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30 text-center">
+                    <span class="text-2xl font-display text-th-indigo block mb-1">&euro;12B</span>
+                    <p class="font-display text-sm">New Buyback Programme</p>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-1">Jan 2026 &ndash; Dec 2028</p>
+                </div>
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30 text-center">
+                    <span class="text-2xl font-display text-th-indigo block mb-1">14.4%</span>
+                    <p class="font-display text-sm">R&D as % Revenue</p>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-1">&euro;4.7B invested in FY2025</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Installed Base -->
+        <div class="glass-card p-8 rounded-2xl">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sage mt-1">update</span>
+                <div>
+                    <h4 class="font-display text-lg mb-2">The Hidden Gem: Installed Base Management</h4>
+                    <p class="text-th-charcoal/60 font-light">
+                        IBM revenue reached <strong class="font-medium text-th-charcoal">&euro;8.2B in 2025</strong> &mdash; comparable to ASML&rsquo;s total company revenue in 2017. Operating at ~60% gross margins with decade-long customer contracts, now generating ~30% of total gross profit. At current run rates (~&euro;2.1&ndash;2.4B/quarter), IBM alone would generate ~&euro;9B annually, providing a substantial floor during any downturn. This is transforming ASML from a pure-play capex cyclical into a company with significant recurring revenue characteristics.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 04 / SHARE PRICE HISTORY -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="price-history">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">04 / Share Price History</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">10-Year Annualised Return: 32%. Routine 30&ndash;40% Drawdowns.</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                ASML routinely experiences extreme intra-year drawdowns even in years with strong positive returns. This volatility is a feature of a high-beta monopoly stock in a cyclical industry &mdash; not a bug.
+            </p>
+        </div>
+
+        <!-- Growth of $100 Chart -->
+        <div class="glass-card p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-2">Growth of $100 Invested (Jan 2016 &rarr; Feb 2026)</h3>
+            <p class="text-sm text-th-charcoal/50 font-light mb-6">Normalised total return comparison. ASML&rsquo;s monopoly economics deliver superior compounding vs semiconductor equipment peers and the S&amp;P 500.</p>
+            <div class="relative" style="height: 380px;">
+                <canvas id="growthChart"></canvas>
+            </div>
+            <div class="flex justify-center gap-8 mt-6">
+                <div class="flex items-center gap-2"><span class="w-4 h-1 rounded-full bg-[#6366f1] block"></span><span class="mono-label text-[10px] text-th-charcoal/50">ASML</span></div>
+                <div class="flex items-center gap-2"><span class="w-4 h-1 rounded-full bg-[#e67e5f] block"></span><span class="mono-label text-[10px] text-th-charcoal/50">AMAT</span></div>
+                <div class="flex items-center gap-2"><span class="w-4 h-1 rounded-full bg-[#b7c4b6] block"></span><span class="mono-label text-[10px] text-th-charcoal/50">SPY</span></div>
+            </div>
+        </div>
+
+        <!-- Performance Summary -->
+        <div class="grid md:grid-cols-5 gap-4 mb-8">
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">YTD 2026</span>
+                <span class="text-2xl font-display text-th-sage">+36.9%</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">1 Year</span>
+                <span class="text-2xl font-display text-th-sage">+106.6%</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">3 Year (ann.)</span>
+                <span class="text-2xl font-display text-th-sage">+33.3%</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">5 Year (ann.)</span>
+                <span class="text-2xl font-display text-th-sage">+20.9%</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">10 Year (ann.)</span>
+                <span class="text-2xl font-display text-th-indigo">+32.0%</span>
+            </div>
+        </div>
+
+        <!-- Calendar Year Returns -->
+        <div class="glass-card p-10 rounded-3xl mb-8 overflow-x-auto">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">Calendar Year Returns &amp; Max Drawdowns (2016&ndash;2025)</h3>
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-black/10">
+                        <th class="text-left font-display py-3 pr-4">Year</th>
+                        <th class="text-right font-display py-3 px-3">Return</th>
+                        <th class="text-right font-display py-3 pl-3">Max Drawdown</th>
+                    </tr>
+                </thead>
+                <tbody class="text-th-charcoal/60 font-light">
+                    <tr class="border-b border-black/5"><td class="py-2">2016</td><td class="text-right text-th-sage">+26.4%</td><td class="text-right text-th-accent">-18.9%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2017</td><td class="text-right text-th-sage">+54.9%</td><td class="text-right text-th-accent">-32.8%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2018</td><td class="text-right text-th-accent">-10.5%</td><td class="text-right text-th-accent">-27.3%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2019</td><td class="text-right text-th-sage">+90.2%</td><td class="text-right text-th-accent">-40.9%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2020</td><td class="text-right text-th-sage">+64.8%</td><td class="text-right text-th-accent">-46.4%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2021</td><td class="text-right text-th-sage">+63.2%</td><td class="text-right text-th-accent">-35.9%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2022</td><td class="text-right text-th-accent">-31.4%</td><td class="text-right text-th-accent">-38.7%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2023</td><td class="text-right text-th-sage">+38.5%</td><td class="text-right text-th-accent">-22.2%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2024</td><td class="text-right text-th-accent">-8.4%</td><td class="text-right text-th-accent">-34.2%</td></tr>
+                    <tr><td class="py-2 font-medium text-th-charcoal">2025</td><td class="text-right text-th-sage font-medium">+54.4%</td><td class="text-right text-th-accent">-38.1%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 2022 Downturn -->
+        <div class="glass-card p-8 rounded-2xl">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-accent mt-1">show_chart</span>
+                <div>
+                    <h4 class="font-display text-lg mb-2">The 2022 Lesson: -50% Peak-to-Trough</h4>
+                    <p class="text-th-charcoal/60 font-light">
+                        ASML fell from $833 (2021 peak) to $415 (2022 trough) &mdash; a <strong class="font-medium text-th-charcoal">-50.1% drawdown</strong>. Yet underlying financials held: FY2022 revenue still grew 13.8% YoY, and FCF was &euro;7.2B. The drawdown was driven by multiple compression (49x &rarr; 30x P/E) during the rate hiking cycle, not fundamental deterioration. Anyone who bought the trough saw +160% returns within 18 months.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 05 / AI DEMAND CATALYST -->
+<section class="py-32 px-8 border-b border-black/5" id="ai-demand">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">05 / AI Demand Catalyst</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Compute Demand Doubling Every 3&ndash;4 Months. Every Chip Needs More EUV.</h2>
+        </div>
+
+        <!-- EUV Layers -->
+        <div class="glass-card p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">EUV Layers per Chip Generation</h3>
+            <div class="space-y-4">
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display w-40 shrink-0">7nm</span>
+                    <div class="flex-1"><div class="h-2.5 bg-th-beige rounded-full overflow-hidden"><div class="h-full bg-th-charcoal/30 rounded-full" style="width: 25%"></div></div></div>
+                    <span class="mono-label text-th-charcoal/40 w-32 text-right">~10 EUV layers</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display w-40 shrink-0">5nm/4nm (H100)</span>
+                    <div class="flex-1"><div class="h-2.5 bg-th-beige rounded-full overflow-hidden"><div class="h-full bg-th-indigo/60 rounded-full" style="width: 50%"></div></div></div>
+                    <span class="mono-label text-th-indigo/60 w-32 text-right">~15&ndash;20 layers</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display w-40 shrink-0">3nm (B200-class)</span>
+                    <div class="flex-1"><div class="h-2.5 bg-th-beige rounded-full overflow-hidden"><div class="h-full bg-th-indigo rounded-full" style="width: 70%"></div></div></div>
+                    <span class="mono-label text-th-indigo w-32 text-right">~25+ layers</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-sage/20 bg-th-sage/5">
+                    <span class="font-display text-th-sage w-40 shrink-0">2nm and beyond</span>
+                    <div class="flex-1"><div class="h-2.5 bg-th-beige rounded-full overflow-hidden"><div class="h-full bg-th-sage rounded-full" style="width: 90%"></div></div></div>
+                    <span class="mono-label text-th-sage w-32 text-right">30+ EUV + High-NA</span>
+                </div>
+            </div>
+            <p class="mt-6 text-sm text-th-charcoal/50 font-light text-center">
+                Each node requires more EUV exposure passes, directly increasing tool demand per wafer. ASML&rsquo;s revenue can grow <strong class="font-medium text-th-charcoal">faster than the semiconductor market itself</strong>.
+            </p>
+        </div>
+
+        <!-- Hyperscaler Capex -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-indigo">
+                <h4 class="mono-label text-th-indigo mb-4">Hyperscaler &amp; Fab Capex</h4>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-th-indigo mt-0.5 text-lg">factory</span>
+                        <div>
+                            <p class="font-display text-sm">TSMC</p>
+                            <p class="text-xs text-th-charcoal/50 font-light mt-1">2026 capex $52&ndash;56B (+30% YoY). $165B committed to Arizona. &ldquo;Significantly higher&rdquo; capex next 3 years vs prior 3.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-th-indigo mt-0.5 text-lg">memory</span>
+                        <div>
+                            <p class="font-display text-sm">Samsung</p>
+                            <p class="text-xs text-th-charcoal/50 font-light mt-1">$300B+ investment over 5 years. Receiving first High-NA tools H1 2026.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-th-indigo mt-0.5 text-lg">developer_board</span>
+                        <div>
+                            <p class="font-display text-sm">Intel</p>
+                            <p class="text-xs text-th-charcoal/50 font-light mt-1">$7.8B CHIPS Act grants. First customer for High-NA production tools.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-th-indigo mt-0.5 text-lg">cloud</span>
+                        <div>
+                            <p class="font-display text-sm">Big Five Hyperscalers</p>
+                            <p class="text-xs text-th-charcoal/50 font-light mt-1">$602B projected 2026 capex (+36% YoY). 75% (~$450B) directed at AI infrastructure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-sage">
+                <h4 class="mono-label text-th-sage mb-4">Government Subsidies (CHIPS Acts)</h4>
+                <div class="space-y-4">
+                    <div class="flex justify-between p-3 rounded-lg border border-th-sage/10 bg-th-sage/5">
+                        <span class="text-sm">US CHIPS Act</span>
+                        <span class="mono-label text-th-sage">$39B grants + 35% ITC</span>
+                    </div>
+                    <div class="flex justify-between p-3 rounded-lg border border-black/5 bg-white/30">
+                        <span class="text-sm">EU Chips Act</span>
+                        <span class="mono-label text-th-charcoal/40">&euro;43B</span>
+                    </div>
+                    <div class="flex justify-between p-3 rounded-lg border border-black/5 bg-white/30">
+                        <span class="text-sm">Japan</span>
+                        <span class="mono-label text-th-charcoal/40">~$25B</span>
+                    </div>
+                    <div class="flex justify-between p-3 rounded-lg border border-black/5 bg-white/30">
+                        <span class="text-sm">South Korea</span>
+                        <span class="mono-label text-th-charcoal/40">$55B tax incentives</span>
+                    </div>
+                    <div class="flex justify-between p-3 rounded-lg border border-black/5 bg-white/30">
+                        <span class="text-sm">China</span>
+                        <span class="mono-label text-th-charcoal/40">$142B planned</span>
+                    </div>
+                </div>
+                <p class="mt-4 text-xs text-th-charcoal/50 font-light">Each new advanced fab (&lt;14nm) requires ASML as sole supplier.</p>
+            </div>
+        </div>
+
+        <!-- Overcapacity -->
+        <div class="glass-card p-8 rounded-2xl">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-accent mt-1">balance</span>
+                <div>
+                    <h4 class="font-display text-lg mb-2">Overcapacity Risk: Present but Buffered</h4>
+                    <p class="text-th-charcoal/60 font-light">
+                        Chipmakers are &ldquo;showing restraint amid the AI boom&rdquo; &mdash; seasoned by previous boom-bust cycles. TSMC&rsquo;s 2026 capex contributes &ldquo;little to 2026 output and only marginally to 2027&rdquo; due to multi-year lags. ASML&rsquo;s &euro;38.8B backlog provides 12+ months of revenue visibility even if orders slow. The installed base (~&euro;8.2B) is largely non-cyclical.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 06 / THE CHINA QUESTION -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="china">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">06 / The China Question</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Real Progress. Overstated Near-Term Risk.</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                The bear case centres on China. After extensive research into GDP-energy decoupling, hidden lithography advancement, and EUV prototypes, the conclusion is nuanced: progress is real and accelerating, but the gap between prototype and volume manufacturing remains years, not quarters.
+            </p>
+        </div>
+
+        <!-- China Revenue -->
+        <div class="glass-card p-10 rounded-3xl mb-8 overflow-x-auto">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">China Revenue History</h3>
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-black/10">
+                        <th class="text-left font-display py-3 pr-4">Year</th>
+                        <th class="text-right font-display py-3 px-3">China % of Revenue</th>
+                        <th class="text-left font-display py-3 pl-3">Context</th>
+                    </tr>
+                </thead>
+                <tbody class="text-th-charcoal/60 font-light">
+                    <tr class="border-b border-black/5"><td class="py-2">2020&ndash;22</td><td class="text-right px-3">~15&ndash;20%</td><td class="pl-3">Normal baseline</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2023</td><td class="text-right px-3">~29%</td><td class="pl-3">Stockpiling ahead of restrictions</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2024</td><td class="text-right px-3 text-th-accent font-medium">49%</td><td class="pl-3">Massive pre-restriction DUV stockpiling</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2025</td><td class="text-right px-3">29%</td><td class="pl-3">Backlog execution, partial normalisation</td></tr>
+                    <tr><td class="py-2 font-medium text-th-charcoal">2026E</td><td class="text-right px-3 text-th-sage font-medium">~20%</td><td class="pl-3 text-th-sage">Target normalisation</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Export Controls -->
+        <div class="glass-card p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">What ASML Can &amp; Cannot Sell to China</h3>
+            <div class="space-y-3">
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-accent/20 bg-th-accent/5">
+                    <span class="mono-label text-th-accent w-36 shrink-0">Banned</span>
+                    <span class="font-display flex-1">All EUV Systems</span>
+                    <span class="text-sm text-th-charcoal/50 font-light">Since 2019</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-accent/20 bg-th-accent/5">
+                    <span class="mono-label text-th-accent w-36 shrink-0">Banned</span>
+                    <span class="font-display flex-1">Advanced DUV (NXT:1970i, 1980i)</span>
+                    <span class="text-sm text-th-charcoal/50 font-light">Dutch expanded licensing, late 2024</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="mono-label text-th-sage w-36 shrink-0">Permitted</span>
+                    <span class="font-display flex-1">Older DUV systems</span>
+                    <span class="text-sm text-th-charcoal/50 font-light">Non-entity-listed fabs only</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="mono-label text-th-charcoal/40 w-36 shrink-0">Restricted</span>
+                    <span class="font-display flex-1">Metrology tools &amp; software</span>
+                    <span class="text-sm text-th-charcoal/50 font-light">Dec 2024 US rule expansion</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="mono-label text-th-charcoal/40 w-36 shrink-0">Scrutinised</span>
+                    <span class="font-display flex-1">Spare parts &amp; service contracts</span>
+                    <span class="text-sm text-th-charcoal/50 font-light">Still permitted for installed base</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- GDP-Energy Decoupling -->
+        <div class="glass-card p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">The GDP-Energy Decoupling Theory</h3>
+            <p class="text-th-charcoal/60 font-light mb-6">
+                Some argue China&rsquo;s electricity consumption outpacing GDP growth masks unreported economic activity and faster-than-acknowledged lithography advancement.
+            </p>
+            <div class="space-y-4 mb-8">
+                <div class="grid grid-cols-4 gap-4 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display text-sm">2021</span>
+                    <div class="flex items-center gap-2"><span class="mono-label text-[10px] text-th-indigo">Electricity</span><span class="text-sm font-display text-th-indigo">10.3%</span></div>
+                    <div class="flex items-center gap-2"><span class="mono-label text-[10px] text-th-charcoal/40">GDP</span><span class="text-sm font-display text-th-charcoal/50">8.1%</span></div>
+                    <span class="mono-label text-[10px] text-th-accent self-center text-right">Re-coupling</span>
+                </div>
+                <div class="grid grid-cols-4 gap-4 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display text-sm">2022</span>
+                    <div class="flex items-center gap-2"><span class="mono-label text-[10px] text-th-indigo">Electricity</span><span class="text-sm font-display text-th-indigo">8%+</span></div>
+                    <div class="flex items-center gap-2"><span class="mono-label text-[10px] text-th-charcoal/40">GDP</span><span class="text-sm font-display text-th-charcoal/50">~3%</span></div>
+                    <span class="mono-label text-[10px] text-th-accent self-center text-right">Strong coupling</span>
+                </div>
+                <div class="grid grid-cols-4 gap-4 p-4 rounded-xl border border-th-indigo/20 bg-th-indigo/5">
+                    <span class="font-display text-sm text-th-indigo">2024</span>
+                    <div class="flex items-center gap-2"><span class="mono-label text-[10px] text-th-indigo">Electricity</span><span class="text-sm font-display text-th-indigo">6.8%</span></div>
+                    <div class="flex items-center gap-2"><span class="mono-label text-[10px] text-th-charcoal/40">GDP</span><span class="text-sm font-display text-th-charcoal/50">5.0%</span></div>
+                    <span class="mono-label text-[10px] text-th-indigo self-center text-right font-medium">1.8pp divergence</span>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-xl border border-th-sage/20 bg-th-sage/5">
+                    <h4 class="mono-label text-th-sage mb-3">Legitimate Factors</h4>
+                    <ul class="space-y-2 text-xs text-th-charcoal/60 font-light">
+                        <li>&bull; Industrial electrification (1,400 kWh/&yen;10k vs 300 for services)</li>
+                        <li>&bull; 35%+ EV penetration shifting petroleum to grid</li>
+                        <li>&bull; AI data centres: energy-intensive, low GDP contribution</li>
+                        <li>&bull; Record solar/wind capacity additions</li>
+                    </ul>
+                </div>
+                <div class="p-6 rounded-xl border border-th-accent/20 bg-th-accent/5">
+                    <h4 class="mono-label text-th-accent mb-3">GDP Manipulation Evidence</h4>
+                    <ul class="space-y-2 text-xs text-th-charcoal/60 font-light">
+                        <li>&bull; 11.59% of city-year observations showed GDP inflation</li>
+                        <li>&bull; National GDP inflated ~0.24pp annually</li>
+                        <li>&bull; True growth: ~4.8% vs 5.0% reported</li>
+                        <li>&bull; <strong class="font-medium text-th-charcoal">Insufficient to mask semiconductor production</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Domestic Lithography -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="glass-card p-8 rounded-2xl">
+                <h4 class="mono-label text-th-charcoal/40 mb-4">China Domestic Capabilities</h4>
+                <div class="space-y-3">
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">SMEE:</strong> Delivered 28nm immersion DUV (May 2025). 10&ndash;15 years behind ASML.</p>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">SMIC 7nm:</strong> In production since 2023. 60&ndash;70% yield, 40&ndash;50% cost premium.</p>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">SMIC 5nm:</strong> DUV multi-patterning at 50% cost premium, &lt;30% yield.</p>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">Ceiling:</strong> 5&ndash;7nm is medium-term limit without EUV.</p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-indigo">
+                <h4 class="mono-label text-th-indigo mb-4">EUV Prototype (Dec 2025)</h4>
+                <div class="space-y-3">
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">Led by:</strong> Lin Nan, former ASML chief scientist</p>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">Method:</strong> Reverse-engineered using older ASML components</p>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">Status:</strong> Has not produced functional chips</p>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">Gap:</strong> 5&ndash;10 years between prototype and volume tool</p>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium text-th-charcoal">Investment:</strong> &euro;37B committed to domestic EUV</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Huawei -->
+        <div class="glass-card p-8 rounded-2xl mb-8">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-accent mt-1">warning</span>
+                <div>
+                    <h4 class="font-display text-lg mb-2">Huawei Ascend: The Production Reality</h4>
+                    <p class="text-th-charcoal/60 font-light">
+                        2025: ~300K Ascend 910C chips. 2026 target: 600K. Performance at <strong class="font-medium text-th-charcoal">60% of Nvidia H100</strong>. Huawei&rsquo;s 2026 roadmap shows 950-series chips with <em>lower performance</em> than 910C &mdash; potentially indicating 910C was illicitly made at TSMC. Without foreign HBM, China &ldquo;has no domestic AI accelerator industry.&rdquo;
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- China Timeline & Verdict -->
+        <div class="glass-card p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">China Lithography Capability Timeline</h3>
+            <div class="space-y-4">
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-sage/20 bg-th-sage/5">
+                    <span class="mono-label text-th-sage w-32 shrink-0">Achieved</span>
+                    <span class="font-display flex-1">28nm DUV Immersion (SMEE)</span>
+                    <span class="text-sm text-th-charcoal/50 font-light">10+ years behind ASML</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-sage/20 bg-th-sage/5">
+                    <span class="mono-label text-th-sage w-32 shrink-0">Achieved</span>
+                    <span class="font-display flex-1">7nm DUV Multi-Patterning (SMIC)</span>
+                    <span class="text-sm text-th-charcoal/50 font-light">60&ndash;70% yield &bull; 40&ndash;50% cost premium</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="mono-label text-th-charcoal/40 w-32 shrink-0">2025&ndash;27</span>
+                    <span class="font-display flex-1">5nm DUV Multi-Patterning</span>
+                    <span class="text-sm text-th-charcoal/50 font-light">Ceiling without EUV</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-accent/20 bg-th-accent/5">
+                    <span class="mono-label text-th-accent w-32 shrink-0">2030&ndash;32</span>
+                    <span class="font-display text-th-accent flex-1">Volume EUV Production</span>
+                    <span class="text-sm text-th-accent/70 font-light">Beginning to matter</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-accent/20 bg-th-accent/5">
+                    <span class="mono-label text-th-accent w-32 shrink-0">2035&ndash;40+</span>
+                    <span class="font-display text-th-accent flex-1">Competitive EUV (High-NA)</span>
+                    <span class="text-sm text-th-accent/70 font-light">Meaningful threat territory</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Verdict -->
+        <div class="glass-card p-10 rounded-3xl border-2 border-th-indigo/20">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-indigo mt-1 text-3xl">gavel</span>
+                <div>
+                    <h4 class="font-display text-xl mb-3">Verdict on the China Hypothesis</h4>
+                    <p class="text-th-charcoal/60 font-light mb-4">
+                        The theory contains elements of truth but overstates near-term risks. China&rsquo;s lithography progress is <strong class="font-medium text-th-charcoal">faster than consensus 5 years ago</strong> but <strong class="font-medium text-th-charcoal">slower than sensational headlines suggest</strong>.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl border border-th-sage/20 bg-th-sage/5 text-center">
+                            <span class="mono-label text-th-sage block mb-1">2026&ndash;2028</span>
+                            <span class="font-display text-lg text-th-sage">Low Risk</span>
+                            <p class="text-xs text-th-charcoal/50 font-light mt-1">No credible EUV capability.</p>
+                        </div>
+                        <div class="p-4 rounded-xl border border-th-indigo/20 bg-th-indigo/5 text-center">
+                            <span class="mono-label text-th-indigo block mb-1">2028&ndash;2032</span>
+                            <span class="font-display text-lg text-th-indigo">Moderate Risk</span>
+                            <p class="text-xs text-th-charcoal/50 font-light mt-1">Volume EUV possible.</p>
+                        </div>
+                        <div class="p-4 rounded-xl border border-th-accent/20 bg-th-accent/5 text-center">
+                            <span class="mono-label text-th-accent block mb-1">2032+</span>
+                            <span class="font-display text-lg text-th-accent">Elevated Risk</span>
+                            <p class="text-xs text-th-charcoal/50 font-light mt-1">&euro;37B+ investment may yield results.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 07 / RISK & VALUATION -->
+<section class="py-32 px-8 border-b border-black/5" id="risk">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">07 / Risk Assessment &amp; Valuation</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">At ~50x Trailing, Minor Disappointments Trigger Outsized Drawdowns</h2>
+        </div>
+
+        <!-- Risk Cards -->
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-accent">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5">public</span>
+                    <h4 class="font-display text-lg">Taiwan Strait Risk</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    TSMC is ~25&ndash;30% of ASML revenue. Taiwan produces ~90% of advanced chips. ASML and TSMC can <strong class="font-medium">remotely disable EUV machines</strong> if China invades. TSMC diversifying ($165B Arizona, Japan, Europe) but this takes years.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-accent">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5">groups</span>
+                    <h4 class="font-display text-lg">Customer Concentration</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    TSMC, Samsung, and Intel represent ~60% of revenue. Intrinsic to the industry &mdash; only a handful of companies can operate leading-edge fabs. Mitigated by switching impossibility and 20&ndash;30 year relationships.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-charcoal/20">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-charcoal/40 mt-0.5">sync</span>
+                    <h4 class="font-display text-lg">Cyclicality</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    Semi equipment is one of the most cyclical industries (40&ndash;50% declines in downturns). ASML&rsquo;s leading-edge focus and &euro;8.2B installed base provide a meaningful floor, but system revenue remains deeply cyclical.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-charcoal/20">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-charcoal/40 mt-0.5">precision_manufacturing</span>
+                    <h4 class="font-display text-lg">Alternative Patterning (NIL)</h4>
+                </div>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    Canon&rsquo;s nanoimprint lithography is cheaper and more energy-efficient but faces fundamental limitations: catastrophic yield risk, particle contamination, template wear. &ldquo;Partial replacement on selected layers&rdquo; — not a substitute for EUV on critical layers.
+                </p>
+            </div>
+        </div>
+
+        <!-- Valuation Table -->
+        <div class="glass-card p-10 rounded-3xl mb-8 overflow-x-auto">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">Valuation Multiples</h3>
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-black/10">
+                        <th class="text-left font-display py-3 pr-4">Metric</th>
+                        <th class="text-right font-display py-3 px-3 text-th-indigo">Current (Feb 2026)</th>
+                        <th class="text-right font-display py-3 px-3">5-Year Range</th>
+                        <th class="text-right font-display py-3 pl-3">10-Year Average</th>
+                    </tr>
+                </thead>
+                <tbody class="text-th-charcoal/60 font-light">
+                    <tr class="border-b border-black/5"><td class="py-2">Trailing P/E</td><td class="text-right px-3 text-th-indigo font-medium">~50x</td><td class="text-right px-3">22x&ndash;56x</td><td class="text-right pl-3">~36x</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">Forward P/E</td><td class="text-right px-3 text-th-indigo font-medium">~30x</td><td class="text-right px-3">17x&ndash;53x</td><td class="text-right pl-3">~32x</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">EV/EBITDA</td><td class="text-right px-3 text-th-indigo font-medium">~37x</td><td class="text-right px-3">21x&ndash;47x</td><td class="text-right pl-3">~30x</td></tr>
+                    <tr><td class="py-2">EV/FCF</td><td class="text-right px-3 text-th-indigo font-medium">~41x</td><td class="text-right px-3">&mdash;</td><td class="text-right pl-3">&mdash;</td></tr>
+                </tbody>
+            </table>
+            <p class="mt-4 text-xs text-th-charcoal/50 font-light">Trailing P/E elevated by lumpy H2-weighted revenue. Forward P/E of ~30x based on consensus 2026 EPS of ~&euro;29.21 is closer to historical norms.</p>
+        </div>
+
+        <!-- Implied Prices -->
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">At 40x Fwd P/E</span>
+                <span class="text-2xl font-display text-th-sage block mb-1">~&euro;1,160</span>
+                <p class="text-xs text-th-charcoal/50 font-light">~15% downside from current</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">At 35x Fwd P/E (hist. avg)</span>
+                <span class="text-2xl font-display text-th-indigo block mb-1">~&euro;1,020</span>
+                <p class="text-xs text-th-charcoal/50 font-light">~25% downside</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">At 25x Fwd P/E (2022 trough)</span>
+                <span class="text-2xl font-display text-th-accent block mb-1">~&euro;730</span>
+                <p class="text-xs text-th-charcoal/50 font-light">~47% downside</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 08 / BULL VS BEAR -->
+<section class="bg-th-charcoal text-th-sand py-32 px-8" id="cases">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <span class="mono-label text-th-sand/40 mb-4 block">08 / Bull Case vs Bear Case</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal">Three Scenarios, Probability-Weighted</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 mb-12">
+            <!-- Bull Case -->
+            <div class="bg-white/5 border border-white/10 p-12 rounded-3xl">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="material-symbols-outlined text-th-sage text-3xl">trending_up</span>
+                    <h3 class="text-2xl font-display">Bull Case (25%)</h3>
+                </div>
+                <p class="text-sm font-light text-th-sand/50 mb-4">&euro;1,800 by end-2027</p>
+                <div class="space-y-4">
+                    <p class="text-sm font-light text-th-sand/60">AI capex cycle sustains through 2028+. High-NA ramp succeeds; TSMC inserts at 1.4nm in 2028. Revenue reaches &euro;48B+ by 2028. Gross margins expand toward 55%+. Forward P/E sustains 35&ndash;40x on &euro;40+ EPS.</p>
+                </div>
+            </div>
+
+            <!-- Bear Case -->
+            <div class="bg-white/5 border border-white/10 p-12 rounded-3xl">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="material-symbols-outlined text-th-accent text-3xl">trending_down</span>
+                    <h3 class="text-2xl font-display">Bear Case (20%)</h3>
+                </div>
+                <p class="text-sm font-light text-th-sand/50 mb-4">&euro;700&ndash;900 by end-2027</p>
+                <div class="space-y-4">
+                    <p class="text-sm font-light text-th-sand/60">AI capex peaks in 2026. Intel foundry stumbles. Further export controls eliminate all DUV sales to China. 2027 revenue flat or declining to &euro;30&ndash;33B. Forward P/E contracts to 22&ndash;25x. Taiwan Strait tensions escalate.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario Cards -->
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/5 border border-th-sage/30 p-8 rounded-2xl text-center">
+                <span class="mono-label text-th-sage block mb-2">Bull Case</span>
+                <span class="mono-label text-[10px] text-th-sand/40 block mb-3">25% Probability</span>
+                <span class="text-4xl font-display text-th-sage block mb-1">&euro;1,800</span>
+                <p class="text-sm text-th-sand/50 font-light">by end-2027</p>
+            </div>
+            <div class="bg-white/5 border border-th-indigo/30 p-8 rounded-2xl text-center">
+                <span class="mono-label text-th-indigo block mb-2">Base Case</span>
+                <span class="mono-label text-[10px] text-th-sand/40 block mb-3">55% Probability</span>
+                <span class="text-4xl font-display text-th-indigo block mb-1">&euro;1,350&ndash;1,500</span>
+                <p class="text-sm text-th-sand/50 font-light">by end-2027</p>
+            </div>
+            <div class="bg-white/5 border border-th-accent/30 p-8 rounded-2xl text-center">
+                <span class="mono-label text-th-accent block mb-2">Bear Case</span>
+                <span class="mono-label text-[10px] text-th-sand/40 block mb-3">20% Probability</span>
+                <span class="text-4xl font-display text-th-accent block mb-1">&euro;700&ndash;900</span>
+                <p class="text-sm text-th-sand/50 font-light">by end-2027</p>
+            </div>
+        </div>
+
+        <!-- Standalone Assessment -->
+        <div class="bg-white/5 border border-white/10 p-10 rounded-3xl mt-12">
+            <h3 class="mono-label text-th-sand/40 mb-6">Standalone Assessment: When ASML Is Worth Owning</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-display text-sm text-th-sage mb-3">What It Does Well</h4>
+                    <ul class="space-y-2 text-sm text-th-sand/60 font-light">
+                        <li>&bull; Unbreakable monopoly widening with each generation</li>
+                        <li>&bull; &euro;8B+ recurring revenue flywheel at 60% margins</li>
+                        <li>&bull; Sits at intersection of every secular tech trend</li>
+                        <li>&bull; Conservative balance sheet (D/E 0.14x)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display text-sm text-th-accent mb-3">What It Doesn&rsquo;t</h4>
+                    <ul class="space-y-2 text-sm text-th-sand/60 font-light">
+                        <li>&bull; 3 customers = ~60% of revenue</li>
+                        <li>&bull; Caught between US, Dutch, Chinese, Taiwanese interests</li>
+                        <li>&bull; New system revenue deeply cyclical</li>
+                        <li>&bull; At 50x trailing, minor misses trigger 30&ndash;40% drops</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-sm text-th-sand/50 font-light mt-6 text-center italic">
+                The closest analogy is a toll road for the digital economy &mdash; everyone who wants to build advanced chips must pay ASML&rsquo;s toll.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 09 / CONCLUSION -->
+<section class="bg-th-beige/30 py-32 px-8" id="conclusion">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-indigo mb-4 block">09 / Verdict</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">One of the Highest-Quality Compounders in Global Equities</h2>
+        </div>
+
+        <!-- Monitoring Indicators -->
+        <div class="glass-card p-10 rounded-3xl mb-12">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">Key Monitoring Indicators</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-indigo/10 bg-th-indigo/5">
+                    <span class="material-symbols-outlined text-th-indigo mt-0.5 text-lg">precision_manufacturing</span>
+                    <p class="text-sm text-th-charcoal/60 font-light">China wafer fab equipment imports (non-lithography) &mdash; surge suggests domestic lithography scaling</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-indigo/10 bg-th-indigo/5">
+                    <span class="material-symbols-outlined text-th-indigo mt-0.5 text-lg">speed</span>
+                    <p class="text-sm text-th-charcoal/60 font-light">SMIC capacity utilisation at advanced nodes &mdash; sustained &gt;90% indicates yield improvements</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-indigo/10 bg-th-indigo/5">
+                    <span class="material-symbols-outlined text-th-indigo mt-0.5 text-lg">developer_board</span>
+                    <p class="text-sm text-th-charcoal/60 font-light">Huawei chip performance roadmap &mdash; if Ascend 950 reverses decline, suggests breakthrough</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-indigo/10 bg-th-indigo/5">
+                    <span class="material-symbols-outlined text-th-indigo mt-0.5 text-lg">bar_chart</span>
+                    <p class="text-sm text-th-charcoal/60 font-light">ASML bookings by geography &mdash; sustained decline confirms demand destruction</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-sage/10 bg-th-sage/5 md:col-span-2">
+                    <span class="material-symbols-outlined text-th-sage mt-0.5 text-lg">check_circle</span>
+                    <p class="text-sm text-th-charcoal/60 font-light"><strong class="font-medium">Current data (Q4 2025):</strong> Record &euro;13.2B bookings, TSMC capex +32% YoY, High-NA adoption beginning. All signals green.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Verdict -->
+        <div class="glass-card p-12 rounded-3xl border-2 border-th-indigo/30 text-center">
+            <span class="mono-label text-th-indigo block mb-4">Verdict</span>
+            <h3 class="text-3xl md:text-4xl font-display font-normal mb-6">Conviction Intact. Monitor Quarterly. Size Conservatively.</h3>
+            <p class="text-lg text-th-charcoal/60 font-light leading-relaxed max-w-3xl mx-auto mb-8">
+                ASML&rsquo;s monopoly is time-limited rather than permanent, but the timeline extends beyond most investment horizons. At ~&euro;1,365, it is fairly valued on a base case and somewhat expensive on a bear case &mdash; not a screaming buy, but the monopoly economics, structural demand tailwinds, and growing recurring revenue base make it one of the highest-quality compounders in global equities. The optimal strategy is to accumulate during the inevitable 30&ndash;40% corrections rather than chasing all-time highs.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto">
+                <div>
+                    <p class="mono-label text-th-charcoal/40 mb-1">EUV Market Share</p>
+                    <span class="text-3xl font-display text-th-indigo">100%</span>
+                    <p class="text-xs text-th-charcoal/40 font-light mt-1">structural monopoly</p>
+                </div>
+                <div>
+                    <p class="mono-label text-th-charcoal/40 mb-1">Base Case IRR</p>
+                    <span class="text-3xl font-display text-th-indigo">12&ndash;16%</span>
+                    <p class="text-xs text-th-charcoal/40 font-light mt-1">risk-adjusted, 3-year</p>
+                </div>
+                <div>
+                    <p class="mono-label text-th-charcoal/40 mb-1">Order Backlog</p>
+                    <span class="text-3xl font-display text-th-indigo">&euro;38.8B</span>
+                    <p class="text-xs text-th-charcoal/40 font-light mt-1">1.2x annual revenue</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOURCES -->
+<section class="bg-th-sand py-20 px-8">
+    <div class="max-w-7xl mx-auto">
+        <h3 class="mono-label text-th-charcoal/40 mb-8">Sources &amp; Citations (29 references)</h3>
+        <div class="border-t border-black/10 pt-12">
+            <div class="grid md:grid-cols-2 gap-x-16 gap-y-10">
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-indigo text-lg shrink-0">01</span>
+                    <div class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">
+                        ASML Official: Q4 2025 Results, Earnings Call, EUV Products, Export Controls, Supply Chain, Investor Presentation.
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2" style="text-transform: none;">
+                            <a href="https://www.asml.com/en/news/press-releases/2026/q4-2025-financial-results" target="_blank" class="text-th-indigo hover:underline">Q4 2025 Results</a>
+                            <a href="https://www.investing.com/news/transcripts/earnings-call-transcript-asml-q4-2025-sets-revenue-record-stock-edges-up-93CH-4469202" target="_blank" class="text-th-indigo hover:underline">Earnings Call</a>
+                            <a href="https://www.asml.com/products/euv-lithography-systems" target="_blank" class="text-th-indigo hover:underline">EUV Products</a>
+                            <a href="https://www.asml.com/en/news/press-releases/2024/asml-expects-impact-of-updated-export-restrictions-to-fall-within-outlook-for-2025" target="_blank" class="text-th-indigo hover:underline">Export Controls</a>
+                            <a href="https://www.asml.com/news/stories/2023/6-ingredients-robust-supply-chain" target="_blank" class="text-th-indigo hover:underline">Supply Chain</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-indigo text-lg shrink-0">02</span>
+                    <div class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">
+                        Technology &amp; Monopoly Analysis: TrendForce (High-NA, Intel, Samsung), Quartr, Middleton, Latticework, Quality Stocks.
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2" style="text-transform: none;">
+                            <a href="https://www.trendforce.com/news/2026/02/16/news-asmls-high-na-euv-for-2027-28-which-giants-are-betting-big-intel-samsung-sk-hynix-or-tsmc/" target="_blank" class="text-th-indigo hover:underline">High-NA 2027-28</a>
+                            <a href="https://www.trendforce.com/news/2025/12/16/news-intel-completes-first-2nd-gen-high-na-euv-acceptance-testing-asml-eyes-2027-28-mass-production/" target="_blank" class="text-th-indigo hover:underline">Intel High-NA</a>
+                            <a href="https://quartr.com/insights/edge/asml-architecting-earths-most-complex-machines" target="_blank" class="text-th-indigo hover:underline">Quartr Deep Dive</a>
+                            <a href="https://middletonenterprises.com/investment-insights-asml-2/" target="_blank" class="text-th-indigo hover:underline">Middleton</a>
+                            <a href="https://www.latticework.com/p/asml-strengthening-advantages-in" target="_blank" class="text-th-indigo hover:underline">Latticework</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-indigo text-lg shrink-0">03</span>
+                    <div class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">
+                        Financial Analysis: Stock Analysis, DCF Modeling, FullRatio, GuruFocus, SimplyWall St, Kristal Lens, Nikhs.
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2" style="text-transform: none;">
+                            <a href="https://stockanalysis.com/stocks/asml/statistics/" target="_blank" class="text-th-indigo hover:underline">Stock Analysis</a>
+                            <a href="https://www.dcfmodeling.com/blogs/health/asml-financial-health" target="_blank" class="text-th-indigo hover:underline">DCF Modeling</a>
+                            <a href="https://fullratio.com/stocks/nasdaq-asml/pe-ratio" target="_blank" class="text-th-indigo hover:underline">FullRatio P/E</a>
+                            <a href="https://www.gurufocus.com/term/roic/ASML" target="_blank" class="text-th-indigo hover:underline">GuruFocus ROIC</a>
+                            <a href="https://lens.kristal.ai/p/asml-q3-2025-the-service-company" target="_blank" class="text-th-indigo hover:underline">Kristal (Service)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-indigo text-lg shrink-0">04</span>
+                    <div class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">
+                        China Lithography &amp; EUV Prototype: Reuters, TrendForce, Yahoo Finance, SMEE, SemiAnalysis, Mark LaPedus.
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2" style="text-transform: none;">
+                            <a href="https://www.reuters.com/world/china/how-china-built-its-manhattan-project-rival-west-ai-chips-2025-12-17/" target="_blank" class="text-th-indigo hover:underline">Reuters</a>
+                            <a href="https://www.trendforce.com/news/2025/12/18/news-china-reportedly-builds-euv-prototype-using-older-asml-components-eyes-2028-chipmaking/" target="_blank" class="text-th-indigo hover:underline">TrendForce</a>
+                            <a href="https://www.eurasiareview.com/09012025-5-7-nm-possibly-the-long-term-technological-ceiling-for-chinas-semiconductor-industry-analysis/" target="_blank" class="text-th-indigo hover:underline">Eurasia Review</a>
+                            <a href="https://marklapedus.substack.com/p/can-china-make-5nm-chips" target="_blank" class="text-th-indigo hover:underline">LaPedus</a>
+                            <a href="https://www.powerelectronicsnews.com/china-invests-e37-billion-to-develop-domestic-euv-lithography-systems/" target="_blank" class="text-th-indigo hover:underline">&euro;37B Investment</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-indigo text-lg shrink-0">05</span>
+                    <div class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">
+                        GDP-Energy Decoupling &amp; China Macro: Frontiers in Climate, Power Technology, Yicai, ScienceDirect, Ember Energy, NBS China.
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2" style="text-transform: none;">
+                            <a href="https://www.frontiersin.org/journals/climate/articles/10.3389/fclim.2025.1728546/full" target="_blank" class="text-th-indigo hover:underline">Frontiers in Climate</a>
+                            <a href="https://www.power-technology.com/analyst-comment/china-electricity-consumption-outpace-gdp-growth/" target="_blank" class="text-th-indigo hover:underline">Power Technology</a>
+                            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0047272725000477" target="_blank" class="text-th-indigo hover:underline">ScienceDirect</a>
+                            <a href="https://ember-energy.org/latest-insights/china-energy-transition-review-2025/" target="_blank" class="text-th-indigo hover:underline">Ember Energy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-indigo text-lg shrink-0">06</span>
+                    <div class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">
+                        AI Demand &amp; Capex: TrendForce (TSMC), RSM UK, Introl, CSIS, Semiconductor Intelligence, Bits &amp; Chips, SemiAnalysis (NIL).
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2" style="text-transform: none;">
+                            <a href="https://www.trendforce.com/news/2026/01/15/news-tsmc-flags-significantly-higher-capex-over-next-3-years-arizona-4th-fab-packaging-site-in-works/" target="_blank" class="text-th-indigo hover:underline">TSMC Capex</a>
+                            <a href="https://introl.com/blog/hyperscaler-capex-600b-2026-ai-infrastructure-debt-january-2026" target="_blank" class="text-th-indigo hover:underline">Hyperscaler $602B</a>
+                            <a href="https://www.csis.org/analysis/world-chips-acts-future-us-eu-semiconductor-collaboration" target="_blank" class="text-th-indigo hover:underline">CSIS CHIPS Acts</a>
+                            <a href="https://newsletter.semianalysis.com/p/nanoimprint-lithography-stop-saying" target="_blank" class="text-th-indigo hover:underline">SemiAnalysis NIL</a>
+                            <a href="https://bits-chips.com/article/the-semiconductor-industry-is-showing-restraint-amid-ai-boom/" target="_blank" class="text-th-indigo hover:underline">Bits &amp; Chips</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="bg-th-sand px-8 pb-6">
+    <div class="max-w-7xl mx-auto border-t border-black/5 pt-8">
+        <h4 class="mono-label text-th-charcoal/30 mb-3">Methodology</h4>
+        <p class="text-[12px] leading-relaxed text-th-charcoal/40 font-light">
+            Original investment thesis developed by the author. Research supplemented using Perplexity Deep Research (finance model) for data sourcing and cross-referencing. Drafted with Claude and reviewed, edited, and approved by the author. All conclusions reflect personal judgement.
+        </p>
+    </div>
+</section>
+
+<footer class="bg-th-sand border-t border-black/10 text-th-charcoal py-10 px-8">
+    <div class="max-w-7xl mx-auto">
+        <p class="mono-label text-th-charcoal/40 text-center">&copy; 2026 Kris Rajah &middot; For personal use only &middot; Not financial advice</p>
+    </div>
+</footer>
+
+<script>
+// --- Growth of $100 Chart (ASML vs AMAT vs SPY) ---
+const ctx = document.getElementById('growthChart').getContext('2d');
+
+// Calendar year returns used to compute cumulative growth from $100 at Jan 2016
+// ASML: 2016 +26.4%, 2017 +54.9%, 2018 -10.5%, 2019 +90.2%, 2020 +64.8%, 2021 +63.2%, 2022 -31.4%, 2023 +38.5%, 2024 -8.4%, 2025 +54.4%, 2026 YTD +36.9%
+const asmlGrowth = [100, 126.4, 195.8, 175.2, 333.3, 549.3, 896.4, 614.9, 851.7, 780.2, 1204.6, 1649.1];
+// AMAT (approx): 2016 +60%, 2017 +72%, 2018 -30%, 2019 +87%, 2020 +62%, 2021 +84%, 2022 -37%, 2023 +33%, 2024 +17%, 2025 +8%, 2026 YTD +5%
+const amatGrowth = [100, 160.0, 275.2, 192.6, 360.2, 583.6, 1073.8, 676.5, 899.7, 1052.7, 1136.9, 1193.7];
+// SPY (approx): 2016 +12%, 2017 +22%, 2018 -4%, 2019 +31%, 2020 +18%, 2021 +29%, 2022 -18%, 2023 +26%, 2024 +25%, 2025 +23%, 2026 YTD +4%
+const spyGrowth  = [100, 112.0, 136.6, 131.2, 171.8, 202.7, 261.5, 214.4, 270.2, 337.7, 415.4, 432.0];
+
+const labels = ['Jan 16','Jan 17','Jan 18','Jan 19','Jan 20','Jan 21','Jan 22','Jan 23','Jan 24','Jan 25','Jan 26','Feb 26'];
+
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: labels,
+        datasets: [
+            {
+                label: 'ASML',
+                data: asmlGrowth,
+                borderColor: '#6366f1',
+                backgroundColor: 'rgba(99,102,241,0.08)',
+                fill: true,
+                tension: 0.3,
+                borderWidth: 2.5,
+                pointRadius: 0,
+                pointHoverRadius: 5
+            },
+            {
+                label: 'AMAT',
+                data: amatGrowth,
+                borderColor: '#e67e5f',
+                backgroundColor: 'transparent',
+                fill: false,
+                tension: 0.3,
+                borderWidth: 2,
+                borderDash: [6, 3],
+                pointRadius: 0,
+                pointHoverRadius: 5
+            },
+            {
+                label: 'SPY',
+                data: spyGrowth,
+                borderColor: '#b7c4b6',
+                backgroundColor: 'transparent',
+                fill: false,
+                tension: 0.3,
+                borderWidth: 1.5,
+                borderDash: [3, 3],
+                pointRadius: 0,
+                pointHoverRadius: 5
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                backgroundColor: '#1a1a1a',
+                titleFont: { family: 'IBM Plex Mono', size: 10 },
+                bodyFont: { family: 'Inter', size: 12 },
+                padding: 12,
+                cornerRadius: 8,
+                callbacks: {
+                    label: function(c) {
+                        return c.dataset.label + ': $' + c.parsed.y.toFixed(0);
+                    }
+                }
+            }
+        },
+        scales: {
+            x: {
+                grid: { display: false },
+                ticks: { font: { family: 'IBM Plex Mono', size: 9 }, color: 'rgba(26,26,26,0.3)', maxRotation: 45 }
+            },
+            y: {
+                grid: { color: 'rgba(26,26,26,0.05)' },
+                ticks: {
+                    font: { family: 'IBM Plex Mono', size: 9 },
+                    color: 'rgba(26,26,26,0.3)',
+                    callback: function(v) { return '$' + v; }
+                }
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>

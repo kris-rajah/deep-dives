@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Yellow Cake: Uranium Exposure for the AI Power Thesis</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "th-sand": "#f4f1ee",
+                        "th-beige": "#e8e4e0",
+                        "th-charcoal": "#1a1a1a",
+                        "th-clay": "#d9c5b2",
+                        "th-sage": "#b7c4b6",
+                        "th-accent": "#e67e5f",
+                        "th-uranium": "#eab308",
+                        "th-uranium-dark": "#ca8a04",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-th-sand text-th-charcoal font-sans antialiased;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .mono-label {
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+<header class="sticky top-0 z-50 w-full bg-th-sand/80 backdrop-blur-md border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="font-display font-semibold text-lg tracking-tight">Kris Rajah</span>
+            <span class="text-th-charcoal/30">|</span>
+            <a href="index.html" class="mono-label text-th-charcoal/50 hover:text-th-charcoal transition-colors">Home</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="mono-label hover:text-th-uranium transition-colors" href="#opportunity">The Opportunity</a>
+            <a class="mono-label hover:text-th-uranium transition-colors" href="#fundamentals">Fundamentals</a>
+            <a class="mono-label hover:text-th-uranium transition-colors" href="#macro">Macro Thesis</a>
+            <a class="mono-label hover:text-th-uranium transition-colors" href="#risks">Risk Assessment</a>
+            <a class="mono-label hover:text-th-uranium transition-colors" href="#recommendation">Verdict</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[70vh] flex items-center justify-center py-24 px-8">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 rounded-full border border-black/10 mb-10">
+            <span class="mono-label text-th-charcoal/60">Investment Thesis &bull; February 2026</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-display font-medium tracking-tight mb-8">
+            Yellow Cake:<br/>The Uranium Warehouse
+        </h1>
+        <p class="text-xl md:text-2xl text-th-charcoal/70 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+            A PE-style analysis of Yellow Cake PLC (YCA) as a second-order data centre/AI power trade. Pure-play physical uranium holder providing leveraged exposure to nuclear's structural tailwinds without mine operational risk.
+        </p>
+        <div class="flex flex-col items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="h-[1px] w-12 bg-black/20"></div>
+                <span class="mono-label text-th-charcoal/40 tracking-[0.3em]">Kris Rajah</span>
+                <div class="h-[1px] w-12 bg-black/20"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KEY METRICS STRIP -->
+<section class="py-12 px-8 border-y border-black/5 bg-th-beige/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="glass-card p-8 rounded-3xl text-center border-th-uranium/20">
+                <span class="text-4xl font-display text-th-uranium block mb-2">~&pound;1.6B</span>
+                <h4 class="text-sm font-display mb-1">Market Cap</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">LSE: YCA &bull; As of Feb 3, 2026</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl text-center">
+                <span class="text-4xl font-display text-th-charcoal block mb-2">21.7m</span>
+                <h4 class="text-sm font-display mb-1">Lbs U&#8323;O&#8328; Held</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">&rarr;23m lbs post-2025 option</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl text-center">
+                <span class="text-4xl font-display text-th-charcoal block mb-2">727p</span>
+                <h4 class="text-sm font-display mb-1">Pro-forma NAV/Share</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">at $101.25/lb U&#8323;O&#8328;</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl text-center">
+                <span class="text-4xl font-display text-th-sage block mb-2">+200%</span>
+                <h4 class="text-sm font-display mb-1">5-Year Return</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">+35&ndash;40% over 1 year</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 01 / THE OPPORTUNITY -->
+<section class="py-32 px-8 border-b border-black/5" id="opportunity">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">01 / The Opportunity</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">A Marked-to-Market Uranium Warehouse</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                Yellow Cake is not a data-centre equity. It is a Jersey-domiciled investment company that buys and holds physical U&#8323;O&#8328; under a long-term offtake agreement with Kazatomprom. The AI/data centre link is second-order: power demand &rarr; nuclear build-out &rarr; structurally higher uranium prices &rarr; higher NAV.
+            </p>
+        </div>
+
+        <!-- What YCA Is -->
+        <div class="glass-card p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">What You Are Buying</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <span class="material-symbols-outlined text-th-uranium text-3xl mb-3 block">warehouse</span>
+                    <h4 class="font-display text-lg mb-2">Physical Uranium</h4>
+                    <p class="text-th-charcoal/60 font-light text-sm">
+                        21.7m lbs of U&#8323;O&#8328; stored in Cameco/Orano facilities in Canada and France. Rising to &gt;23m lbs after 2025 purchase option.
+                    </p>
+                </div>
+                <div>
+                    <span class="material-symbols-outlined text-th-uranium text-3xl mb-3 block">handshake</span>
+                    <h4 class="font-display text-lg mb-2">Kazatomprom Supply</h4>
+                    <p class="text-th-charcoal/60 font-light text-sm">
+                        Long-term framework agreement with the world's largest producer. Recent $175m equity raise to exercise the 2025 option at ~$75/lb.
+                    </p>
+                </div>
+                <div>
+                    <span class="material-symbols-outlined text-th-uranium text-3xl mb-3 block">groups</span>
+                    <h4 class="font-display text-lg mb-2">Minimal Overhead</h4>
+                    <p class="text-th-charcoal/60 font-light text-sm">
+                        2 employees. No operating business in the usual sense &mdash; revenue and earnings are dominated by fair-value movements in uranium inventory.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- What You Avoid vs Accept -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-sage">
+                <h4 class="mono-label text-th-sage mb-4">What You Avoid</h4>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-th-sage mt-0.5 text-lg">check_circle</span>
+                        <p class="text-sm text-th-charcoal/60 font-light">Mine-level risks &mdash; capex blowouts, geology, labour, permitting, ESG incidents</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-th-sage mt-0.5 text-lg">check_circle</span>
+                        <p class="text-sm text-th-charcoal/60 font-light">Project concentration risk vs single-asset juniors</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-th-sage mt-0.5 text-lg">check_circle</span>
+                        <p class="text-sm text-th-charcoal/60 font-light">Exploration, permitting, development or operational risk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-accent">
+                <h4 class="mono-label text-th-accent mb-4">What You Accept</h4>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">warning</span>
+                        <p class="text-sm text-th-charcoal/60 font-light">Pure uranium price beta (spot and term)</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">warning</span>
+                        <p class="text-sm text-th-charcoal/60 font-light">Discount/premium-to-NAV swings based on sentiment</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">warning</span>
+                        <p class="text-sm text-th-charcoal/60 font-light">Kazakh counterparty/geopolitical exposure and FX risk (USD inventory, GBP equity)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 02 / FUNDAMENTALS -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="fundamentals">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">02 / Company Fundamentals</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">NAV Is the Valuation Anchor, Not Earnings</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                P/E is meaningless for YCA &mdash; profit swings are dominated by unrealised gains/losses reflecting non-cash revaluations. Price/NAV and discount/premium are the relevant metrics.
+            </p>
+        </div>
+
+        <!-- NAV Dynamics -->
+        <div class="glass-card p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">NAV Dynamics &amp; Performance</h3>
+            <div class="space-y-4">
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="mono-label text-th-charcoal/40 w-32 shrink-0">Q3 2025</span>
+                    <span class="font-display text-th-charcoal w-28 shrink-0 text-right">606p/sh</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                            <div class="h-full bg-th-charcoal/30 rounded-full" style="width: 83%"></div>
+                        </div>
+                    </div>
+                    <span class="text-sm text-th-charcoal/50 font-light">NAV +5% as spot moved $78.5 &rarr; $82/lb</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-uranium/20 bg-th-uranium/5">
+                    <span class="mono-label text-th-uranium w-32 shrink-0">Jan 2026</span>
+                    <span class="font-display text-th-uranium w-28 shrink-0 text-right">727p/sh</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-th-beige rounded-full overflow-hidden">
+                            <div class="h-full bg-th-uranium rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <span class="text-sm text-th-uranium font-medium">Pro-forma NAV at $101.25/lb (~$2.41bn)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Growth of £100 Chart -->
+        <div class="glass-card p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-2">Growth of &pound;100 Invested (Jul 2018 &rarr; Feb 2026)</h3>
+            <p class="text-sm text-th-charcoal/50 font-light mb-6">Normalised price return comparison from YCA IPO. YCA provides cleaner uranium beta; miners ETF (URA) and Sprott physical trust (U.UN) show higher absolute returns but with greater volatility.</p>
+            <div class="relative" style="height: 380px;">
+                <canvas id="growthChart"></canvas>
+            </div>
+            <div class="flex justify-center gap-8 mt-6">
+                <div class="flex items-center gap-2"><span class="w-4 h-1 rounded-full bg-[#eab308] block"></span><span class="mono-label text-[10px] text-th-charcoal/50">YCA</span></div>
+                <div class="flex items-center gap-2"><span class="w-4 h-1 rounded-full bg-[#e67e5f] block"></span><span class="mono-label text-[10px] text-th-charcoal/50">URA</span></div>
+                <div class="flex items-center gap-2"><span class="w-4 h-1 rounded-full bg-[#b7c4b6] block"></span><span class="mono-label text-[10px] text-th-charcoal/50">Sprott U.UN</span></div>
+            </div>
+        </div>
+
+        <!-- Performance Summary -->
+        <div class="grid md:grid-cols-5 gap-4 mb-8">
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">YTD 2026</span>
+                <span class="text-2xl font-display text-th-sage">+9.7%</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">1 Year</span>
+                <span class="text-2xl font-display text-th-sage">+45.9%</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">3 Year (ann.)</span>
+                <span class="text-2xl font-display text-th-sage">+18.0%</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">5 Year (ann.)</span>
+                <span class="text-2xl font-display text-th-sage">+23.0%</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <span class="mono-label text-[10px] text-th-charcoal/40 block mb-1">Since IPO (ann.)</span>
+                <span class="text-2xl font-display text-th-uranium">+16.4%</span>
+            </div>
+        </div>
+
+        <!-- Calendar Year Returns Table -->
+        <div class="glass-card p-10 rounded-3xl mb-8 overflow-x-auto">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">Calendar Year Returns &amp; Max Drawdowns (2018&ndash;2026 YTD)</h3>
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-black/10">
+                        <th class="text-left font-display py-3 pr-4">Year</th>
+                        <th class="text-right font-display py-3 px-3">Return</th>
+                        <th class="text-right font-display py-3 pl-3">Max Drawdown</th>
+                    </tr>
+                </thead>
+                <tbody class="text-th-charcoal/60 font-light">
+                    <tr class="border-b border-black/5"><td class="py-2">2018 (from IPO)</td><td class="text-right text-th-sage">+12.3%</td><td class="text-right text-th-accent">-15.2%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2019</td><td class="text-right text-th-accent">-10.7%</td><td class="text-right text-th-accent">-25.8%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2020</td><td class="text-right text-th-sage">+19.1%</td><td class="text-right text-th-accent">-29.1%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2021</td><td class="text-right text-th-sage">+35.5%</td><td class="text-right text-th-accent">-21.1%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2022</td><td class="text-right text-th-sage">+5.2%</td><td class="text-right text-th-accent">-34.2%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2023</td><td class="text-right text-th-sage">+61.8%</td><td class="text-right text-th-accent">-17.3%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2024</td><td class="text-right text-th-accent">-21.1%</td><td class="text-right text-th-accent">-35.5%</td></tr>
+                    <tr class="border-b border-black/5"><td class="py-2">2025</td><td class="text-right text-th-sage">+16.2%</td><td class="text-right text-th-accent">-28.5%</td></tr>
+                    <tr><td class="py-2 font-medium text-th-charcoal">2026 YTD</td><td class="text-right text-th-sage font-medium">+9.7%</td><td class="text-right text-th-accent">-14.4%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Drawdown Callout -->
+        <div class="glass-card p-8 rounded-2xl mb-8">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-accent mt-1">show_chart</span>
+                <div>
+                    <h4 class="font-display text-lg mb-2">The Volatility Pattern: Routine 25&ndash;35% Intra-Year Drawdowns</h4>
+                    <p class="text-th-charcoal/60 font-light">
+                        YCA routinely experiences 25&ndash;35% drawdowns even in years with strong positive returns. The 2024 drawdown of <strong class="font-medium text-th-charcoal">-35.5%</strong> was the deepest since IPO, driven by uranium spot weakness and NAV discount widening. Yet the stock recovered +16% in 2025 and is up another +10% YTD in 2026. This volatility is the price of holding a concentrated commodity proxy &mdash; not a signal to act.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Analyst Consensus -->
+            <div class="glass-card p-10 rounded-3xl">
+                <h3 class="mono-label text-th-charcoal/40 mb-6">Analyst Consensus</h3>
+                <div class="space-y-6">
+                    <div class="p-4 rounded-xl border border-th-sage/20 bg-th-sage/5">
+                        <span class="mono-label text-th-sage block mb-1">Consensus Rating</span>
+                        <span class="text-2xl font-display text-th-sage">Buy to Strong Buy</span>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1">Multiple independent sources</p>
+                    </div>
+                    <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                        <span class="mono-label text-th-charcoal/40 block mb-1">TradingView</span>
+                        <span class="text-xl font-display">~705p target</span>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1">6 analysts &bull; 20&ndash;35% implied upside</p>
+                    </div>
+                    <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                        <span class="mono-label text-th-charcoal/40 block mb-1">MarketBeat / Investing.com</span>
+                        <span class="text-xl font-display">Mid-600s GBX</span>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1">Stock has re-rated towards these levels</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Price & NAV -->
+            <div class="glass-card p-10 rounded-3xl">
+                <h3 class="mono-label text-th-charcoal/40 mb-6">Current Price &amp; NAV</h3>
+                <div class="space-y-6">
+                    <div class="p-4 rounded-xl border border-th-uranium/20 bg-th-uranium/5">
+                        <span class="mono-label text-th-uranium block mb-1">Share Price</span>
+                        <span class="text-2xl font-display text-th-uranium">652p</span>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1">LSE: YCA &bull; As of 20 Feb 2026</p>
+                    </div>
+                    <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                        <span class="mono-label text-th-charcoal/40 block mb-1">Indicated NAV</span>
+                        <span class="text-xl font-display">727p/share</span>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1">Pro-forma at $101.25/lb &bull; ~10% discount</p>
+                    </div>
+                    <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                        <span class="mono-label text-th-charcoal/40 block mb-1">Weekly Volatility</span>
+                        <span class="text-xl font-display">~5%</span>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1">Broadly in line with UK market averages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparables -->
+        <div class="glass-card p-10 rounded-3xl mt-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">Alternative Uranium Vehicles</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-5 rounded-xl border border-black/5 bg-white/30">
+                    <span class="mono-label text-th-charcoal/40 block mb-2">Physical Vehicles</span>
+                    <h4 class="font-display mb-1">Sprott Physical Uranium Trust</h4>
+                    <p class="text-sm text-th-charcoal/60 font-light">Similar to YCA. Liquidity and jurisdiction differences.</p>
+                </div>
+                <div class="p-5 rounded-xl border border-black/5 bg-white/30">
+                    <span class="mono-label text-th-charcoal/40 block mb-2">Miners</span>
+                    <h4 class="font-display mb-1">Cameco &amp; Higher-Quality Producers</h4>
+                    <p class="text-sm text-th-charcoal/60 font-light">Operating leverage at the cost of mine risk.</p>
+                </div>
+                <div class="p-5 rounded-xl border border-black/5 bg-white/30">
+                    <span class="mono-label text-th-charcoal/40 block mb-2">ETFs</span>
+                    <h4 class="font-display mb-1">Uranium-Focused ETFs</h4>
+                    <p class="text-sm text-th-charcoal/60 font-light">Diversified miner exposure across the sector.</p>
+                </div>
+            </div>
+            <p class="mt-6 text-sm text-th-charcoal/50 font-light text-center">
+                YCA sits at the <strong class="font-medium text-th-charcoal">&ldquo;cleanest physical exposure, modest structural/geopolitical risk&rdquo;</strong> point on the spectrum.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 03 / MACRO / SECTOR THESIS -->
+<section class="py-32 px-8 border-b border-black/5" id="macro">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-20 items-start">
+            <div>
+                <span class="mono-label text-th-uranium mb-4 block">03 / Macro &amp; Sector Thesis</span>
+                <h2 class="text-4xl md:text-5xl font-display font-normal mb-8">AI Data Centres &rarr; Nuclear Build-Out &rarr; Uranium Deficit</h2>
+                <p class="text-lg text-th-charcoal/60 font-light leading-relaxed mb-8">
+                    The thematic link is second-order but real and increasingly recognised. Hyperscalers are signing nuclear PPAs and SMR deals to secure baseload for AI clusters. This tightens an already-constrained uranium market and supports structurally higher prices.
+                </p>
+
+                <div class="glass-card p-8 rounded-2xl border-th-uranium/10">
+                    <h4 class="mono-label text-th-charcoal/40 mb-4">YCA Management View</h4>
+                    <p class="text-th-charcoal/60 font-light text-sm italic">
+                        &ldquo;Significant new demand from hyperscalers and the rapidly growing sector of data centres&rdquo; reinforces the uranium bull case and their decision to raise equity to buy more physical.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h3 class="mono-label text-th-charcoal/40 border-b border-black/5 pb-2">Supply &amp; Demand Dynamics</h3>
+
+                <div class="p-5 rounded-xl border border-th-uranium/20 bg-th-uranium/5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-display">Supply Deficit</span>
+                        <span class="font-display text-th-uranium">15m lbs</span>
+                    </div>
+                    <div class="h-3 bg-th-beige rounded-full overflow-hidden mb-2">
+                        <div class="h-full bg-th-uranium rounded-full" style="width: 92%"></div>
+                    </div>
+                    <span class="text-xs text-th-charcoal/40 font-light">165m lbs supply vs 180m lbs demand</span>
+                </div>
+
+                <div class="p-5 rounded-xl border border-black/5 bg-white/30">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-display">Enriched Uranium</span>
+                        <span class="font-display text-th-uranium">$190/SWU</span>
+                    </div>
+                    <div class="h-3 bg-th-beige rounded-full overflow-hidden mb-2">
+                        <div class="h-full bg-th-uranium/60 rounded-full" style="width: 100%"></div>
+                    </div>
+                    <span class="text-xs text-th-charcoal/40 font-light">All-time high &bull; vs ~$56 three years ago (+239%)</span>
+                </div>
+
+                <div class="p-5 rounded-xl border border-black/5 bg-white/30">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-display">Nuclear Capacity Outlook</span>
+                        <span class="font-display text-th-sage">~2x by 2040</span>
+                    </div>
+                    <div class="h-3 bg-th-beige rounded-full overflow-hidden mb-2">
+                        <div class="h-full bg-th-sage rounded-full" style="width: 100%"></div>
+                    </div>
+                    <span class="text-xs text-th-charcoal/40 font-light">World Nuclear Association projection &bull; +28% demand by 2030</span>
+                </div>
+
+                <div class="p-5 rounded-xl border border-black/5 bg-white/30">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-display">DC Power Demand Growth</span>
+                        <span class="font-display text-th-sage">+150&ndash;175%</span>
+                    </div>
+                    <div class="h-3 bg-th-beige rounded-full overflow-hidden mb-2">
+                        <div class="h-full bg-th-sage/60 rounded-full" style="width: 88%"></div>
+                    </div>
+                    <span class="text-xs text-th-charcoal/40 font-light">Goldman Sachs estimate by 2030</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hyperscaler Nuclear Deals -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            <div class="glass-card p-8 rounded-2xl border-t-4 border-t-th-uranium">
+                <span class="material-symbols-outlined text-th-uranium mb-4 block">cloud</span>
+                <h4 class="font-display text-lg mb-2">AWS</h4>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    Signing nuclear PPAs to secure baseload for AI/data centre clusters.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-t-4 border-t-th-uranium">
+                <span class="material-symbols-outlined text-th-uranium mb-4 block">window</span>
+                <h4 class="font-display text-lg mb-2">Microsoft</h4>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    SMR deals and nuclear partnerships for carbon-light baseload power.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-t-4 border-t-th-uranium">
+                <span class="material-symbols-outlined text-th-uranium mb-4 block">search</span>
+                <h4 class="font-display text-lg mb-2">Google</h4>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    Exploring nuclear as part of decarbonisation and power reliability strategy.
+                </p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-t-4 border-t-th-uranium">
+                <span class="material-symbols-outlined text-th-uranium mb-4 block">diversity_3</span>
+                <h4 class="font-display text-lg mb-2">Meta</h4>
+                <p class="text-th-charcoal/60 font-light text-sm">
+                    Nuclear PPAs as data centres become one of the largest &ldquo;countries&rdquo; in power consumption.
+                </p>
+            </div>
+        </div>
+
+        <!-- Second-Order Framing -->
+        <div class="glass-card p-8 rounded-2xl mt-8 border-l-4 border-l-th-uranium">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-uranium mt-1">lightbulb</span>
+                <div>
+                    <h4 class="font-display text-lg mb-2">The Second-Order Trade</h4>
+                    <p class="text-th-charcoal/60 font-light">
+                        You are <strong class="font-medium text-th-charcoal">not</strong> getting direct exposure to data centre rents, SMR IP, or EPC upside. You are getting exposure to the commodity whose demand is being structurally underwritten, in part, by that growth. If the AI/data centre thesis is right, it tightens the already-constrained uranium market and supports higher prices, which flow cleanly into NAV.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 04 / RISK ASSESSMENT -->
+<section class="bg-th-charcoal text-th-sand py-32 px-8" id="risks">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <span class="mono-label text-th-sand/40 mb-4 block">04 / Risk Assessment</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal">The Cleanest Uranium Exposure Comes With Concentrated Risk</h2>
+            <p class="text-lg text-th-sand/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                YCA&rsquo;s simplicity is both its strength and its vulnerability. The business model avoids mine risk but concentrates exposure on uranium spot price, a single supplier, and periodic dilution through equity issuance.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Macro / Commodity Risks -->
+            <div class="bg-white/5 border border-white/10 p-12 rounded-3xl">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="material-symbols-outlined text-th-accent text-3xl">public</span>
+                    <h3 class="text-2xl font-display">Macro &amp; Commodity</h3>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-display text-sm mb-2 text-th-accent">Uranium Price Risk</h4>
+                        <p class="text-sm font-light text-th-sand/60">
+                            If new supply (restarts, greenfield projects) comes online faster than expected or demand disappoints (SMR delays, nuclear pushback), spot could correct sharply. Historically, uranium shows <strong class="font-medium text-th-sand/80">long flat periods followed by violent spikes</strong> &mdash; timing risk is substantial.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-sm mb-2 text-th-accent">Energy Transition &amp; Policy</h4>
+                        <p class="text-sm font-light text-th-sand/60">
+                            A serious nuclear incident, policy reversal, or green backlash could stall reactor build-out. Regulatory delays for SMRs could push the &ldquo;AI power&rdquo; thesis timing <strong class="font-medium text-th-sand/80">beyond 2032</strong>.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-sm mb-2 text-th-accent">FX Exposure</h4>
+                        <p class="text-sm font-light text-th-sand/60">
+                            Uranium inventory priced in USD; shares trade in GBP. Currency moves can amplify or dampen NAV translation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company-Specific Risks -->
+            <div class="bg-white/5 border border-white/10 p-12 rounded-3xl">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="material-symbols-outlined text-th-uranium text-3xl">business</span>
+                    <h3 class="text-2xl font-display">Company-Specific</h3>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-display text-sm mb-2 text-th-uranium">Kazakh Concentration</h4>
+                        <p class="text-sm font-light text-th-sand/60">
+                            Heavy reliance on Kazatomprom and Kazakhstan. Any sanctions, export restrictions, or political disruption could affect availability or pricing. <strong class="font-medium text-th-sand/80">Mitigant:</strong> inventory already stored in Canada/France.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-sm mb-2 text-th-uranium">Dilution via Equity Issuance</h4>
+                        <p class="text-sm font-light text-th-sand/60">
+                            Business model requires periodic equity issuance to expand holdings. Recent raise: &gt;$175m. <strong class="font-medium text-th-sand/80">Above NAV = accretive; below NAV = dilutive.</strong> Execution discipline matters.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-sm mb-2 text-th-uranium">Discount/Premium Volatility</h4>
+                        <p class="text-sm font-light text-th-sand/60">
+                            In euphoric phases, YCA can trade at a meaningful premium to NAV. In risk-off environments, discounts can widen sharply, temporarily <strong class="font-medium text-th-sand/80">decoupling share performance from spot</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+            <div class="bg-white/5 border border-th-sage/30 p-8 rounded-2xl text-center">
+                <span class="mono-label text-th-sage block mb-2">Bull Case</span>
+                <span class="mono-label text-[10px] text-th-sand/40 block mb-3">40% Probability</span>
+                <span class="text-4xl font-display text-th-sage block mb-1">+20&ndash;35%</span>
+                <p class="text-sm text-th-sand/50 font-light">upside</p>
+                <p class="mono-label text-[10px] text-th-sage/60 mt-3">IRR: 15&ndash;20%</p>
+            </div>
+            <div class="bg-white/5 border border-th-uranium/30 p-8 rounded-2xl text-center">
+                <span class="mono-label text-th-uranium block mb-2">Base Case</span>
+                <span class="mono-label text-[10px] text-th-sand/40 block mb-3">40% Probability</span>
+                <span class="text-4xl font-display text-th-uranium block mb-1">&plusmn;10%</span>
+                <p class="text-sm text-th-sand/50 font-light">track NAV</p>
+                <p class="mono-label text-[10px] text-th-uranium/60 mt-3">IRR: 5&ndash;10%</p>
+            </div>
+            <div class="bg-white/5 border border-th-accent/30 p-8 rounded-2xl text-center">
+                <span class="mono-label text-th-accent block mb-2">Bear Case</span>
+                <span class="mono-label text-[10px] text-th-sand/40 block mb-3">20% Probability</span>
+                <span class="text-4xl font-display text-th-accent block mb-1">-30 to -40%</span>
+                <p class="text-sm text-th-sand/50 font-light">correction</p>
+                <p class="mono-label text-[10px] text-th-accent/60 mt-3">IRR: -15% to -20%</p>
+            </div>
+        </div>
+
+        <!-- Pros vs Cons -->
+        <div class="bg-white/5 border border-white/10 p-10 rounded-3xl mt-12">
+            <h3 class="mono-label text-th-sand/40 mb-6">Theme Expression: What YCA Gives You vs What It Doesn't</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-display text-sm mb-4 text-th-sage">Cleaner Uranium Beta Than:</h4>
+                    <div class="space-y-3">
+                        <p class="text-sm font-light text-th-sand/60">&bull; Integrated miners (BHP, Rio Tinto) where uranium is a small part of diversified earnings</p>
+                        <p class="text-sm font-light text-th-sand/60">&bull; Uranium miners with permitting and operational risk</p>
+                        <p class="text-sm font-light text-th-sand/60">&bull; Broad clean-energy or infra funds that dilute nuclear exposure</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-display text-sm mb-4 text-th-accent">No Direct Exposure To:</h4>
+                    <div class="space-y-3">
+                        <p class="text-sm font-light text-th-sand/60">&bull; Data centre development returns (rents, yield compression, land appreciation)</p>
+                        <p class="text-sm font-light text-th-sand/60">&bull; SMR technology value capture (IP, licensing, EPC margins)</p>
+                        <p class="text-sm font-light text-th-sand/60">&bull; Capex and EBITDA growth of nuclear OEMs or grid-scale infra platforms</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 05 / CONCLUSION & RECOMMENDATION -->
+<section class="bg-th-beige/30 py-32 px-8" id="recommendation">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-uranium mb-4 block">05 / Verdict</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Logical, Indirect, and Appropriately Sized</h2>
+        </div>
+
+        <!-- Bottom Line -->
+        <div class="glass-card p-10 rounded-3xl mb-12">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">The Bottom Line</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <span class="material-symbols-outlined text-th-sage text-3xl mb-3 block">check_circle</span>
+                    <h4 class="font-display text-lg mb-2">Transparent Exposure</h4>
+                    <p class="text-sm text-th-charcoal/60 font-light">
+                        Scalable, liquid exposure to uranium with minimal operating risk and a credible supply agreement with the world&rsquo;s largest producer.
+                    </p>
+                </div>
+                <div>
+                    <span class="material-symbols-outlined text-th-uranium text-3xl mb-3 block">link</span>
+                    <h4 class="font-display text-lg mb-2">Real Thematic Link</h4>
+                    <p class="text-sm text-th-charcoal/60 font-light">
+                        AI/data centres &rarr; nuclear growth &rarr; uranium deficit. Increasingly recognised by management and the sell side. Not a stretch.
+                    </p>
+                </div>
+                <div>
+                    <span class="material-symbols-outlined text-th-accent text-3xl mb-3 block">warning</span>
+                    <h4 class="font-display text-lg mb-2">Concentrated Risks</h4>
+                    <p class="text-sm text-th-charcoal/60 font-light">
+                        Uranium price volatility, Kazakh concentration, policy shocks, and NAV discount swings. This is a satellite, not a core holding.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exit Triggers -->
+        <div class="glass-card p-10 rounded-3xl mb-12">
+            <h3 class="mono-label text-th-accent mb-6">Exit Triggers &mdash; When the Thesis Breaks</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light">Uranium spot price declines <strong class="font-medium text-th-charcoal">&gt;30% from peak</strong> without supply-side catalyst</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light">Kazatomprom supply agreement <strong class="font-medium text-th-charcoal">terminated or materially altered</strong></p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light">Share trades at <strong class="font-medium text-th-charcoal">&gt;15% discount to NAV for &gt;3 months</strong></p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light">Major nuclear incident causing <strong class="font-medium text-th-charcoal">policy reversal</strong> in key markets</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light">Significant <strong class="font-medium text-th-charcoal">equity issuance below NAV</strong> (dilutive)</p>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl border border-th-accent/10 bg-th-accent/5">
+                    <span class="material-symbols-outlined text-th-accent mt-0.5 text-lg">cancel</span>
+                    <p class="text-sm text-th-charcoal/60 font-light">SMR development delays push AI/data centre nuclear timeline <strong class="font-medium text-th-charcoal">beyond 2032</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Verdict -->
+        <div class="glass-card p-12 rounded-3xl border-2 border-th-uranium/30 text-center">
+            <span class="mono-label text-th-uranium block mb-4">Verdict</span>
+            <h3 class="text-3xl md:text-4xl font-display font-normal mb-6">Suitable Satellite Position. Convex Upside to Nuclear/AI Power.</h3>
+            <p class="text-lg text-th-charcoal/60 font-light leading-relaxed max-w-3xl mx-auto mb-8">
+                For a well-diversified portfolio already long AI, utilities, and infrastructure, a modest allocation to YCA complements more direct AI/data centre exposures by adding <strong class="font-medium text-th-charcoal">convex upside to a structural nuclear/uranium bull case</strong>, at the cost of higher cyclical and geopolitical risk.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto">
+                <div>
+                    <p class="mono-label text-th-charcoal/40 mb-1">Position Type</p>
+                    <span class="text-3xl font-display text-th-uranium">Satellite</span>
+                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Low single-digit %</p>
+                </div>
+                <div>
+                    <p class="mono-label text-th-charcoal/40 mb-1">Vehicle</p>
+                    <span class="text-3xl font-display text-th-uranium">LSE: YCA</span>
+                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Physical uranium holder</p>
+                </div>
+                <div>
+                    <p class="mono-label text-th-charcoal/40 mb-1">Expected IRR</p>
+                    <span class="text-3xl font-display text-th-uranium">5&ndash;20%</span>
+                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Weighted probability</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- METHODOLOGY & CITATIONS -->
+<section class="bg-th-sand py-20 px-8">
+    <div class="max-w-7xl mx-auto">
+        <h3 class="mono-label text-th-charcoal/40 mb-8">Sources &amp; Citations (18 references)</h3>
+        <div class="border-t border-black/10 pt-12">
+            <div class="grid md:grid-cols-2 gap-x-16 gap-y-10">
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-uranium text-lg shrink-0">01</span>
+                    <div class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">
+                        Yellow Cake PLC: Corporate Filings, NAV Updates, and Equity Raise Announcements.
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2" style="text-transform: none;">
+                            <a href="https://www.investments.halifax.co.uk/research-centre/news-centre/article/?id=21113268&type=bsm" target="_blank" class="text-th-uranium hover:underline">Halifax (Q3 2025)</a>
+                            <a href="https://www.investments.halifax.co.uk/research-centre/news-centre/article/?id=21581108&type=bsm" target="_blank" class="text-th-uranium hover:underline">Halifax (Jan 2026 NAV)</a>
+                            <a href="https://www.investing.com/news/company-news/yellow-cake-raises-175-million-in-upsized-share-placing-93CH-4253785" target="_blank" class="text-th-uranium hover:underline">Investing.com (Placing)</a>
+                            <a href="https://qazinform.com/news/yellow-cake-raises-175-million-to-fund-uranium-purchases-from-kazatomprom-1b04e5" target="_blank" class="text-th-uranium hover:underline">Qazinform</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-uranium text-lg shrink-0">02</span>
+                    <div class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">
+                        Uranium Market Data: Enrichment Pricing, Supply Deficit, and AI Data Center Demand Dynamics.
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2" style="text-transform: none;">
+                            <a href="https://www.datacenterdynamics.com/en/news/uranium-prices-hit-all-time-high-fueled-by-ai-data-center-demand/" target="_blank" class="text-th-uranium hover:underline">Data Center Dynamics</a>
+                            <a href="https://www.cruxinvestor.com/posts/22-million-pounds-of-uranium-resource-positions-to-the-rising-nuclear-demand-for-ai-data-centers" target="_blank" class="text-th-uranium hover:underline">Crux Investor (Supply)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-uranium text-lg shrink-0">03</span>
+                    <div class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">
+                        Goldman Sachs: Data Center Power Demand Projections (+150&ndash;175% by 2030) and Nuclear Energy Outlook.
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2" style="text-transform: none;">
+                            <a href="https://www.goldmansachs.com/insights/articles/accelerating-power-demand-from-data-centers-poised-to-boost-new-energy-technologies" target="_blank" class="text-th-uranium hover:underline">Goldman Sachs Insights</a>
+                            <a href="https://www.livewiremarkets.com/wires/uranium-demand-is-soaring-here-s-what-it-means-for-investors" target="_blank" class="text-th-uranium hover:underline">Livewire Markets</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-uranium text-lg shrink-0">04</span>
+                    <div class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">
+                        Nuclear Capacity Projections (~2x by 2040) and Global Uranium Demand Forecasts (+28% by 2030).
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2" style="text-transform: none;">
+                            <a href="https://www.globalelectricity.org/global-uranium-market-surge-nuclear-revival-drives-28-demand-increase-by-2030/" target="_blank" class="text-th-uranium hover:underline">Global Electricity Org</a>
+                            <a href="https://www.sharesmagazine.co.uk/news/market/1758702226810479600/yellow-cake-to-buy-more-uranium-as-supply-demand-imbalance-intensifies" target="_blank" class="text-th-uranium hover:underline">Shares Magazine</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-uranium text-lg shrink-0">05</span>
+                    <div class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">
+                        YCA Analyst Consensus, Price Targets, Technical Data, and Volatility Analysis.
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2" style="text-transform: none;">
+                            <a href="https://www.tradingview.com/symbols/LSE-YCA/forecast/" target="_blank" class="text-th-uranium hover:underline">TradingView</a>
+                            <a href="https://www.marketbeat.com/stocks/LON/YCA/forecast/" target="_blank" class="text-th-uranium hover:underline">MarketBeat</a>
+                            <a href="https://www.investing.com/equities/yellow-cake-consensus-estimates" target="_blank" class="text-th-uranium hover:underline">Investing.com</a>
+                            <a href="https://simplywall.st/stocks/gb/energy/aim-yca/yellow-cake-shares" target="_blank" class="text-th-uranium hover:underline">Simply Wall St</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="font-display text-th-uranium text-lg shrink-0">06</span>
+                    <div class="mono-label text-[11px] leading-relaxed text-th-charcoal/60" style="text-transform: uppercase;">
+                        Company Profiles, Market Data, and Share Price Analysis.
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2" style="text-transform: none;">
+                            <a href="https://www.hl.co.uk/shares/shares-search-results/y/yellow-cake-plc-ord-gbp0.01" target="_blank" class="text-th-uranium hover:underline">Hargreaves Lansdown</a>
+                            <a href="https://markets.ft.com/data/equities/tearsheet/summary?s=YCA%3ALSE" target="_blank" class="text-th-uranium hover:underline">FT Markets</a>
+                            <a href="https://www.cruxinvestor.com/companies/yellow-cake-plc" target="_blank" class="text-th-uranium hover:underline">Crux Investor</a>
+                            <a href="https://www.ajbell.co.uk/market-research/LSE:YCA" target="_blank" class="text-th-uranium hover:underline">AJ Bell</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="bg-th-sand px-8 pb-6">
+    <div class="max-w-7xl mx-auto border-t border-black/5 pt-8">
+        <h4 class="mono-label text-th-charcoal/30 mb-3">Methodology</h4>
+        <p class="text-[12px] leading-relaxed text-th-charcoal/40 font-light">
+            Original investment thesis developed by the author. Research supplemented using Perplexity Deep Research (finance model) for data sourcing and cross-referencing. Drafted with Claude and reviewed, edited, and approved by the author. All conclusions reflect personal judgement.
+        </p>
+    </div>
+</section>
+
+<footer class="bg-th-sand border-t border-black/10 text-th-charcoal py-10 px-8">
+    <div class="max-w-7xl mx-auto">
+        <p class="mono-label text-th-charcoal/40 text-center">&copy; 2026 Kris Rajah &middot; For personal use only &middot; Not financial advice</p>
+    </div>
+</footer>
+
+<script>
+// --- Growth of £100 Chart (YCA vs URA vs Sprott U.UN) ---
+const ctx = document.getElementById('growthChart').getContext('2d');
+
+// Growth of 100, normalised to YCA IPO (Jul 2018), annual snapshots (Jan of each year) + Feb 2026
+// From yfinance data pulled 2026-02-20
+const ycaGrowth    = [100, 110.3, 102.5, 123.0, 174.5, 187.4, 310.5, 249.8, 291.4, 319.6];
+const uraGrowth    = [100, 90.5, 87.3, 124.9, 206.3, 172.2, 247.5, 263.6, 452.5, 530.3];
+const sprottGrowth = [100, 106.5, 99.3, 115.9, 341.7, 392.3, 669.4, 622.7, 657.8, 707.0];
+
+const labels = ['Jul 18','Jan 19','Jan 20','Jan 21','Jan 22','Jan 23','Jan 24','Jan 25','Jan 26','Feb 26'];
+
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: labels,
+        datasets: [
+            {
+                label: 'YCA',
+                data: ycaGrowth,
+                borderColor: '#eab308',
+                backgroundColor: 'rgba(234,179,8,0.08)',
+                fill: true,
+                tension: 0.3,
+                borderWidth: 2.5,
+                pointRadius: 0,
+                pointHoverRadius: 5
+            },
+            {
+                label: 'URA',
+                data: uraGrowth,
+                borderColor: '#e67e5f',
+                backgroundColor: 'transparent',
+                fill: false,
+                tension: 0.3,
+                borderWidth: 2,
+                borderDash: [6, 3],
+                pointRadius: 0,
+                pointHoverRadius: 5
+            },
+            {
+                label: 'Sprott U.UN',
+                data: sprottGrowth,
+                borderColor: '#b7c4b6',
+                backgroundColor: 'transparent',
+                fill: false,
+                tension: 0.3,
+                borderWidth: 1.5,
+                borderDash: [3, 3],
+                pointRadius: 0,
+                pointHoverRadius: 5
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                backgroundColor: '#1a1a1a',
+                titleFont: { family: 'IBM Plex Mono', size: 10 },
+                bodyFont: { family: 'Inter', size: 12 },
+                padding: 12,
+                cornerRadius: 8,
+                callbacks: {
+                    label: function(c) {
+                        return c.dataset.label + ': £' + c.parsed.y.toFixed(0);
+                    }
+                }
+            }
+        },
+        scales: {
+            x: {
+                grid: { display: false },
+                ticks: { font: { family: 'IBM Plex Mono', size: 10 }, color: 'rgba(26,26,26,0.3)' }
+            },
+            y: {
+                grid: { color: 'rgba(26,26,26,0.05)' },
+                ticks: {
+                    font: { family: 'IBM Plex Mono', size: 10 },
+                    color: 'rgba(26,26,26,0.3)',
+                    callback: function(v) { return '£' + v; }
+                }
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>
