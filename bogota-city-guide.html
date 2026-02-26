@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Bogot&aacute; City Guide — The Full Stop</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "th-sand": "#f4f1ee",
+                        "th-beige": "#e8e4e0",
+                        "th-charcoal": "#1a1a1a",
+                        "th-clay": "#d9c5b2",
+                        "th-emerald": "#059669",
+                        "th-amber": "#d97706",
+                        "th-coral": "#e67e5f",
+                        "th-sky": "#0ea5e9",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-th-sand text-th-charcoal font-sans antialiased;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .mono-label {
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="sticky top-0 z-50 w-full bg-th-sand/80 backdrop-blur-md border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="font-display font-semibold text-lg tracking-tight">Kris Rajah</span>
+            <span class="text-th-charcoal/30">|</span>
+            <a href="index.html" class="mono-label text-th-charcoal/50 hover:text-th-charcoal transition-colors">Home</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#glance">At a Glance</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#day1">11 Apr</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#day2">12 Apr</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#stay">Stay</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[70vh] flex items-center justify-center py-24 px-8">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 rounded-full border border-black/10 mb-10">
+            <span class="mono-label text-th-charcoal/60">City Guide &bull; April 2026</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-display font-medium tracking-tight mb-8">
+            Bogot&aacute;:<br/>The Full Stop
+        </h1>
+        <p class="text-xl md:text-2xl text-th-charcoal/70 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+            One night, one world-class dinner, and a taste of Colombia&rsquo;s capital at 2,640m. You&rsquo;re not here for a deep dive. You&rsquo;re here for El Chato (#1 in Latin America), mountain air, and a full stop at the end of the Colombia chapter before flying home to Madrid.
+        </p>
+        <div class="flex flex-col items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="h-[1px] w-12 bg-black/20"></div>
+                <span class="mono-label text-th-charcoal/40 tracking-[0.3em]">Kris Rajah</span>
+                <div class="h-[1px] w-12 bg-black/20"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KEY METRICS STRIP -->
+<section class="py-12 px-8 border-y border-black/5 bg-th-beige/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div class="glass-card p-6 rounded-3xl text-center border-th-coral/20">
+                <span class="text-3xl font-display text-th-coral block mb-2">1 Night</span>
+                <h4 class="text-sm font-display mb-1">11&ndash;12 Apr 2026</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Sat &rarr; Sun</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-amber block mb-2">15&deg;C</span>
+                <h4 class="text-sm font-display mb-1">Mountain Cool</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">2,640m altitude</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-charcoal block mb-2">Chapinero</span>
+                <h4 class="text-sm font-display mb-1">Base Neighbourhood</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Creative &amp; restaurant-packed</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-emerald block mb-2">5,000</span>
+                <h4 class="text-sm font-display mb-1">COP &asymp; &pound;1</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Colombian Pesos</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-coral block mb-2">#1</span>
+                <h4 class="text-sm font-display mb-1">Latin America</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">El Chato</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-charcoal block mb-2">21:10</span>
+                <h4 class="text-sm font-display mb-1">BOG &rarr; MAD</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Sun night fly out</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 01 / AT A GLANCE -->
+<section class="bg-th-charcoal text-th-sand py-32 px-8 border-b border-black/5" id="glance">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-sand/40 mb-4 block">01 / At a Glance</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Chapinero Is Your Base. El Chato Is the Point.</h2>
+        </div>
+        <p class="text-lg text-th-sand/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed text-center mb-16">
+            You&rsquo;re stepping off the plane from 32&deg;C Cartagena into 15&deg;C mountain air at 2,640m. The altitude is real: shortness of breath, dry air, lower alcohol tolerance. Drink water, go easy, and don&rsquo;t sprint up any hills. You&rsquo;re here for one night, one world-class dinner, and a taste of the capital before flying home.
+        </p>
+
+        <!-- Trip Timeline -->
+        <div class="bg-white/5 border border-white/10 p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-sand/40 mb-6">Your 1 Night at a Glance</h3>
+            <div class="space-y-4">
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-coral/30 bg-th-coral/10">
+                    <span class="mono-label text-th-coral w-28 shrink-0">Sat 11 Apr</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-coral rounded-full" style="width: 90%"></div></div>
+                    </div>
+                    <span class="font-display w-36 text-right">Arrive + El Chato</span>
+                    <span class="mono-label text-th-coral text-[10px] w-20 text-right">Big Dinner</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-amber/30 bg-th-amber/10">
+                    <span class="mono-label text-th-amber w-28 shrink-0">Sun 12 Apr</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-amber/40 rounded-full" style="width: 50%"></div></div>
+                    </div>
+                    <span class="font-display w-36 text-right">Brunch + Fly Out</span>
+                    <span class="mono-label text-th-amber text-[10px] w-20 text-right">Homeward</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Neighbourhood -->
+        <div class="bg-white/5 border border-th-coral/30 p-8 rounded-2xl border-l-4 border-l-th-coral mb-8">
+            <div class="flex items-start gap-3 mb-3">
+                <span class="material-symbols-outlined text-th-coral mt-0.5">location_on</span>
+                <h4 class="font-display text-lg">Chapinero</h4>
+            </div>
+            <p class="text-th-sand/60 font-light text-sm mb-4">
+                Bogot&aacute;&rsquo;s equivalent of Shoreditch or Malasa&ntilde;a. Creative, walkable, full of independent coffee shops and restaurants. El Chato, LEO, and half a dozen excellent bars live on the Calle 65&ndash;70 corridor. This is your base.
+            </p>
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                    <span class="material-symbols-outlined text-th-coral text-sm">restaurant</span>
+                    <span><a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d7934490-Reviews-El_Chato_Bogota-Bogota.html" target="_blank" class="font-medium text-th-sand hover:text-th-coral transition-colors">El Chato</a> (#1 Latin America). Calle 65 No.4-76. The reason you&rsquo;re here.</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                    <span class="material-symbols-outlined text-th-coral text-sm">local_cafe</span>
+                    <span><a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d7626979-Reviews-Azahar_Coffee_Company-Bogota.html" target="_blank" class="font-medium text-th-sand hover:text-th-coral transition-colors">Azahar</a>, <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d10084785-Reviews-Libertario_Coffee_Roasters-Bogota.html" target="_blank" class="font-medium text-th-sand hover:text-th-coral transition-colors">Libertario</a>, <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d7678202-Reviews-Cafe_Cultor-Bogota.html" target="_blank" class="font-medium text-th-sand hover:text-th-coral transition-colors">Caf&eacute; Cultor</a>. Best specialty coffee in Colombia.</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                    <span class="material-symbols-outlined text-th-coral text-sm">nightlife</span>
+                    <span>Craft cocktail bars and breweries on the Chapinero strip. Calle 85 / Zona G a short Uber for late night.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Orientation -->
+        <div class="bg-white/5 border border-white/10 p-6 md:p-10 rounded-3xl">
+            <h3 class="mono-label text-th-sand/40 mb-6">Quick Orientation</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
+                    <span class="material-symbols-outlined text-th-emerald text-3xl block mb-2">flight_land</span>
+                    <span class="text-2xl font-display text-th-emerald block mb-1">30&ndash;45 min</span>
+                    <p class="text-xs text-th-sand/50 font-light">Airport (BOG) to Chapinero. Traffic dependent.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
+                    <span class="material-symbols-outlined text-th-amber text-3xl block mb-2">altitude</span>
+                    <span class="text-2xl font-display text-th-amber block mb-1">2,640m</span>
+                    <p class="text-xs text-th-sand/50 font-light">Altitude. 15&deg;C. Bring a jacket. Drink water.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
+                    <span class="material-symbols-outlined text-th-coral text-3xl block mb-2">local_taxi</span>
+                    <span class="text-2xl font-display text-th-coral block mb-1">Uber</span>
+                    <p class="text-xs text-th-sand/50 font-light">&pound;2&ndash;5 for most rides. Chapinero walkable on foot.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 02 / DAY 1 — ARRIVAL + EL CHATO -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="day1">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">02 / Sat 11 Apr</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Arrival + El Chato</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                Fly in from Cartagena, feel the temperature drop, settle into Chapinero, then eat at the #1 restaurant in Latin America. That&rsquo;s the whole plan. Don&rsquo;t overcomplicate it.
+            </p>
+        </div>
+
+        <!-- Day 1 Timeline -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-8">Day 1 Timeline</h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-coral/20 hidden md:block"></div>
+                <div class="space-y-10">
+
+                    <!-- 12:38 Flight -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">flight</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">12:38</span>
+                                <span class="font-display text-lg">CTG &rarr; BOG</span>
+                                <span class="mono-label text-[10px] text-th-amber/50">Arrives 14:12</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Short flight. Pack a jacket in your carry-on. You&rsquo;re going from Caribbean heat to mountain cool in 90 minutes. El Dorado airport (BOG) is modern and well-organised.</p>
+                        </div>
+                    </div>
+
+                    <!-- 15:00 Check In -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">hotel</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-emerald">~15:00</span>
+                                <span class="font-display text-lg">Check In, Chapinero</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Uber or taxi from BOG, 30&ndash;45 minutes depending on traffic. Check in, unpack, adjust to the altitude. If anyone feels lightheaded, that&rsquo;s normal. 2,640m is higher than most European ski resorts. Coca tea (mate de coca) is a local remedy, otherwise just water and rest.</p>
+                        </div>
+                    </div>
+
+                    <!-- 16:00 Chapinero Wander -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">directions_walk</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">~16:00</span>
+                                <span class="font-display text-lg">Chapinero Wander + Coffee</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Walk the Calle 65&ndash;70 corridor, the restaurant-dense strip where El Chato and LEO live. Get your bearings before dinner. Altitude might sap your energy, so don&rsquo;t push it.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d7678202-Reviews-Cafe_Cultor-Bogota.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Caf&eacute; Cultor</a>
+                                        <span class="mono-label text-th-amber text-[10px]">Cl. 70A #9-44 &bull; ~&pound;2&ndash;4pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Farm-direct Colombian coffee from 7 regions. Pick your brew method (Chemex, V60, AeroPress). Cosy casa-style space with a garden. Some of the best and most affordable specialty coffee in Bogot&aacute;. TripAdvisor 4.4/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d7626979-Reviews-Azahar_Coffee_Company-Bogota.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Azahar Coffee</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Multiple locations &bull; ~&pound;3&ndash;5pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Farm-to-cup specialty chain sourcing from Nari&ntilde;o, Huila, and Quind&iacute;o. Multiple brew methods, all-day breakfast menu. Single-origin Colombian, beautifully brewed. TripAdvisor 4.4/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d10084785-Reviews-Libertario_Coffee_Roasters-Bogota.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Libertario Coffee Roasters</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Calle 70A #5-37 &bull; ~&pound;3&ndash;5pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Single-origin roaster sourcing from La Palma y El Tuc&aacute;n farm. Excellent pour-over, espresso, and flat whites. Relaxed vibe, small food menu. TripAdvisor 4.3/5.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 20:00 El Chato -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">restaurant</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">~20:00</span>
+                                <span class="font-display text-lg">Dinner at El Chato</span>
+                                <span class="mono-label text-[10px] text-th-coral/50">#1 Latin America</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">
+                                The main event. Chef &Aacute;lvaro Clavijo trained at Noma and Per Se, then came home and opened a restaurant named after Bogot&aacute; slang for &ldquo;mate.&rdquo; Relaxed, unpretentious, convivial. No white tablecloths, no hushed reverence. Just creative Colombian food served with warmth and generosity.
+                            </p>
+                            <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5 mb-4">
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                    <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d7934490-Reviews-El_Chato_Bogota-Bogota.html" target="_blank" class="font-display hover:text-th-coral transition-colors">El Chato</a>
+                                    <span class="mono-label text-th-coral text-[10px]">Calle 65 No.4-76 &bull; ~&pound;40&ndash;60pp / tasting ~&pound;130pp</span>
+                                </div>
+                                <p class="text-xs text-th-charcoal/50 font-light mb-2">&Agrave; la carte ~&pound;40&ndash;60pp or tasting menu with pairing ~&pound;130pp. Mix and match across the table. Reservation fee: 50,000 COP (~&pound;10) per person. Smart casual. TripAdvisor 4.0/5.</p>
+                                <p class="text-xs text-th-charcoal/50 font-light"><strong class="font-medium text-th-charcoal">Why it matters:</strong> This is the best meal of the trip. Colombian ingredients treated with world-class technique. Creative without being fussy, familiar without being boring. Order generously.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 23:00 Late Night -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-white/5 border border-black/10 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-charcoal/40 text-lg">nightlife</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-charcoal/40">~23:00</span>
+                                <span class="font-display text-lg">Post-Dinner Drinks</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">You&rsquo;ve been travelling all day, you&rsquo;re at altitude, and you fly out tomorrow night. A few drinks after El Chato and an early-ish night is the smart play.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Attraction_Review-g294074-d10440409-Reviews-Huerta_Cocteleria_Artesanal-Bogota.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Huerta Cocteler&iacute;a Artesanal</a>
+                                        <span class="mono-label text-th-coral text-[10px]">Chapinero &bull; ~&pound;6&ndash;10pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Hidden-garden cocktail bar using herbs, flowers, and fruit grown in their own garden. Over 700 plants for homemade ingredients. Feels like stepping into a secret courtyard. Walking distance from El Chato. TripAdvisor 4.5/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d2343496-Reviews-Bogota_Beer_Company-Bogota.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Bogot&aacute; Beer Company</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 5 #71A-75 &bull; ~&pound;4&ndash;8pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Colombia&rsquo;s most awarded craft brewery. Eight artisan beers on tap including the Chapinero Porter. Good burgers, nachos, and pizzas. Open until 2am on weekends. TripAdvisor 4.0/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d11709607-Reviews-Cerveceria_Gigante-Bogota.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Cervecer&iacute;a Gigante</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Chapinero &bull; ~&pound;4&ndash;8pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Three-storey craft beer pub with tasting room. American-style bar with deep house and techno. Natural ingredients, German and English brewing techniques. Lively weekend crowd. TripAdvisor 4.5/5.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- To-Do -->
+        <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-3">To Book</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Book <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d7934490-Reviews-El_Chato_Bogota-Bogota.html" target="_blank" class="hover:text-th-sky transition-colors underline">El Chato</a> for 5, Sat 11 Apr evening (+57 601 7439931)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 03 / DAY 2 — BRUNCH + FLY OUT -->
+<section class="py-32 px-8 border-b border-black/5" id="day2">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">03 / Sun 12 Apr</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Brunch, Bogot&aacute; Highlights &amp; Fly Out</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                No alarm. Sleep in. You&rsquo;ve earned it after 10 days across Spain and Colombia. The flight to Madrid doesn&rsquo;t leave until 21:10, so you have a full day. Just don&rsquo;t overcommit. Long brunch, one proper activity, easy afternoon, airport.
+            </p>
+        </div>
+
+        <!-- Day 2 Timeline -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-8">Day 2 Timeline</h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-amber/20 hidden md:block"></div>
+                <div class="space-y-10">
+
+                    <!-- Morning — Brunch -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">brunch_dining</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">Morning</span>
+                                <span class="font-display text-lg">Long Brunch</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">The last Colombian meal before you&rsquo;re back on European time. Get there by 10&ndash;11am or expect a wait at the popular spots.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d3800638-Reviews-Salvo_Patria-Bogota.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Salvo Patria</a>
+                                        <span class="mono-label text-th-amber text-[10px]">Cra 4 Bis #58-60 &bull; ~&pound;10&ndash;20pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">One of Bogot&aacute;&rsquo;s best brunch spots. Converted Chapinero townhouse, creative Colombian cuisine, locally sourced ingredients, great cocktails. Reservations essential on weekends. TripAdvisor 4.5/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d2541771-Reviews-Masa_70-Bogota.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Masa</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Calle 70 #4-83 &bull; ~&pound;3&ndash;6pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Acclaimed artisanal bakery-caf&eacute;. Famous for sourdough, almond croissants, and legendary carrot cake. Good for a lighter start. TripAdvisor 4.3/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d7678202-Reviews-Cafe_Cultor-Bogota.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Caf&eacute; Cultor</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cl. 70A #9-44 &bull; ~&pound;2&ndash;4pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Farm-direct Colombian coffee from 7 regions. They grow, roast, and brew their own beans. Pick your method. If you want one last perfect Colombian coffee, this is it. TripAdvisor 4.4/5.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Late Morning — Pick One Activity -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">landscape</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-emerald">Late Morning</span>
+                                <span class="font-display text-lg">Pick One Activity</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Time for one proper Bogot&aacute; experience. Pick based on energy levels and weather.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-emerald/20 bg-th-emerald/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <span class="font-display">Option A: Monserrate Cable Car</span>
+                                        <span class="mono-label text-th-emerald text-[10px]">~28,000 COP &bull; 1.5&ndash;2 hrs</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Telef&eacute;rico to 3,152m for panoramic views over the entire city and surrounding Andes. Five minutes up, a lifetime of photos. Sun hours: 6:30am&ndash;5:30pm. Take it slow at the top. You&rsquo;re going from 2,640m to 3,152m.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <span class="font-display">Option B: Parque 93 + Zona G Stroll</span>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Flat &amp; easy</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">If the weather is grey or energy is low, skip the mountain. Leafy park surrounded by restaurants and cafes. Zona G (Gourmet Zone) is Bogot&aacute;&rsquo;s fine-dining strip. Usaqu&eacute;n Flea Market (Sundays only, ~20 min Uber north) is also excellent.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Afternoon — Shopping & Prep -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">shopping_bag</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">Afternoon</span>
+                                <span class="font-display text-lg">Final Shopping &amp; Airport Prep</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Last chance to buy Colombian coffee beans, emeralds (Colombia produces 70% of the world&rsquo;s supply), leather goods, or souvenirs. Grab packaged single-origin beans from Juan Valdez or <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d7626979-Reviews-Azahar_Coffee_Company-Bogota.html" target="_blank" class="hover:text-th-amber transition-colors underline">Azahar</a>. Cheaper than airport prices.</p>
+                        </div>
+                    </div>
+
+                    <!-- 18:00 Airport -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">flight_takeoff</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">~18:00</span>
+                                <span class="font-display text-lg">Airport Transfer &amp; Fly Out</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">
+                                Eat before the airport. BOG food is mediocre. Grab an early dinner in Chapinero, then leave by 18:00&ndash;18:30 latest. Uber to El Dorado ~&pound;5&ndash;7.
+                            </p>
+                            <div class="space-y-3 mb-4">
+                                <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d1889853-Reviews-Andres_Carne_de_Res_DC-Bogota.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Andr&eacute;s Carne de Res DC</a>
+                                        <span class="mono-label text-th-coral text-[10px]">Zona T &bull; ~&pound;10&ndash;20pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Legendary Colombian steakhouse that doubles as a party venue. Massive portions, colourful decor, live music, and high energy. Perfect last meal for 5 lads. Short Uber from Chapinero. TripAdvisor 4.2/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d15759707-Reviews-Home_Burgers-Bogota.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Home Burgers</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 5 #70a-74 &bull; ~&pound;4&ndash;8pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Best burgers in Bogot&aacute;. Fresh ingredients, quality meat, great fries. Casual, fast, and cheap. Walking distance from the Calle 70 strip. TripAdvisor 4.3/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g294074-d3800638-Reviews-Salvo_Patria-Bogota.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Salvo Patria</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 4 Bis #58-60 &bull; ~&pound;10&ndash;20pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">If you didn&rsquo;t go for brunch, come here for an early dinner. Creative Colombian food, good cocktails, relaxed converted-townhouse setting. TripAdvisor 4.5/5.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5">
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                    <span class="font-display">BOG 21:10 &rarr; MAD</span>
+                                    <span class="mono-label text-th-coral text-[10px]">Overnight &bull; ~10 hrs</span>
+                                </div>
+                                <p class="text-xs text-th-charcoal/50 font-light">Arrives Madrid 14:35 Mon 13 Apr. Sleep as much as possible. Short buffer before final LHR flight at 17:45.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- To-Do -->
+        <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-3">To Book</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Decide Monserrate vs chill option</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Confirm CTG &rarr; BOG flight (12:38) and Bogot&aacute; airport transfer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 04 / WHERE TO STAY -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="stay">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">04 / Where to Stay</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">One Night in Chapinero</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                11&ndash;12 Apr 2026 &bull; 1 night &bull; 5 adults &bull; Chapinero preferred. Walking distance to El Chato is the priority.
+            </p>
+        </div>
+
+        <div class="text-center py-12">
+            <span class="material-symbols-outlined text-th-charcoal/20 text-5xl block mb-4">search</span>
+            <p class="text-th-charcoal/40 font-light">Accommodation still to be sourced. Chapinero Airbnb or hotel. Walking distance to Calle 65.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-th-sand border-t border-black/10 text-th-charcoal py-10 px-8">
+    <div class="max-w-7xl mx-auto">
+        <p class="mono-label text-th-charcoal/40 text-center">&copy; 2026 Kris Rajah &middot; Madrid + Colombia &middot; April 2026</p>
+    </div>
+</footer>
+
+</body>
+</html>

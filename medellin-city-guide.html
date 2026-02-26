@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Medellín City Guide — City of Eternal Spring</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "th-sand": "#f4f1ee",
+                        "th-beige": "#e8e4e0",
+                        "th-charcoal": "#1a1a1a",
+                        "th-clay": "#d9c5b2",
+                        "th-emerald": "#059669",
+                        "th-amber": "#d97706",
+                        "th-coral": "#e67e5f",
+                        "th-sky": "#0ea5e9",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-th-sand text-th-charcoal font-sans antialiased;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .mono-label {
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="sticky top-0 z-50 w-full bg-th-sand/80 backdrop-blur-md border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="font-display font-semibold text-lg tracking-tight">Kris Rajah</span>
+            <span class="text-th-charcoal/30">|</span>
+            <a href="index.html" class="mono-label text-th-charcoal/50 hover:text-th-charcoal transition-colors">Home</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#glance">At a Glance</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#day1">5 Apr</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#day2">6 Apr</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#day3">7 Apr</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#day4">8 Apr</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#eat">Eat</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#stay">Stay</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[70vh] flex items-center justify-center py-24 px-8">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 rounded-full border border-black/10 mb-10">
+            <span class="mono-label text-th-charcoal/60">City Guide &bull; April 2026</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-display font-medium tracking-tight mb-8">
+            Medell&iacute;n:<br/>City of Eternal Spring
+        </h1>
+        <p class="text-xl md:text-2xl text-th-charcoal/70 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+            A place that was once the most dangerous city on Earth is now a genuine contender for the most exciting. The weather is 24&deg;C every single day, the nightlife is world-class, and there&rsquo;s a rawness to the culture that Lima and Bogot&aacute; have polished away.
+        </p>
+        <div class="flex flex-col items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="h-[1px] w-12 bg-black/20"></div>
+                <span class="mono-label text-th-charcoal/40 tracking-[0.3em]">Kris Rajah</span>
+                <div class="h-[1px] w-12 bg-black/20"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KEY METRICS STRIP -->
+<section class="py-12 px-8 border-y border-black/5 bg-th-beige/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div class="glass-card p-6 rounded-3xl text-center border-th-emerald/20">
+                <span class="text-3xl font-display text-th-emerald block mb-2">3 Nights</span>
+                <h4 class="text-sm font-display mb-1">5&ndash;8 Apr 2026</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Sun &rarr; Wed</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-amber block mb-2">24&deg;C</span>
+                <h4 class="text-sm font-display mb-1">Every Single Day</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">City of Eternal Spring</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-charcoal block mb-2">El Poblado</span>
+                <h4 class="text-sm font-display mb-1">Base Neighbourhood</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Provenza strip</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-emerald block mb-2">5,000</span>
+                <h4 class="text-sm font-display mb-1">COP &asymp; &pound;1</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Colombian Pesos</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-coral block mb-2">2 Bars</span>
+                <h4 class="text-sm font-display mb-1">World&rsquo;s 50 Best</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Mamba Negra &bull; Bar Carmen</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-charcoal block mb-2">&pound;71&ndash;124</span>
+                <h4 class="text-sm font-display mb-1">Per Person</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">3-night accommodation</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 01 / AT A GLANCE -->
+<section class="bg-th-charcoal text-th-sand py-32 px-8 border-b border-black/5" id="glance">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-sand/40 mb-4 block">01 / At a Glance</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">El Poblado Is Your Base. Laureles Is the Local Side.</h2>
+        </div>
+        <p class="text-lg text-th-sand/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed text-center mb-16">
+            El Poblado is the leafy, hilly neighbourhood where most travellers stay, packed with rooftop bars, brunch spots, and Provenza&rsquo;s cafe-lined boulevard. Two full days here. Day 1 is history and street art, ending with rooftop cocktails. Day 2 is adrenaline and local vibes. Both days end at bars ranked in the World&rsquo;s 50 Best.
+        </p>
+
+        <!-- Trip Timeline -->
+        <div class="bg-white/5 border border-white/10 p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-sand/40 mb-6">Your 3 Nights at a Glance</h3>
+            <div class="space-y-4">
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-emerald/30 bg-th-emerald/10">
+                    <span class="mono-label text-th-emerald w-28 shrink-0">Sun 5 Apr</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-emerald/40 rounded-full" style="width: 25%"></div></div>
+                    </div>
+                    <span class="font-display w-36 text-right">Arrival</span>
+                    <span class="mono-label text-th-emerald text-[10px] w-20 text-right">Relaxed</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-coral/30 bg-th-coral/10">
+                    <span class="mono-label text-th-coral w-28 shrink-0">Mon 6 Apr</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-coral rounded-full" style="width: 95%"></div></div>
+                    </div>
+                    <span class="font-display w-36 text-right">Escobar + Comuna 13</span>
+                    <span class="mono-label text-th-coral text-[10px] w-20 text-right">Packed</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-coral/30 bg-th-coral/10">
+                    <span class="mono-label text-th-coral w-28 shrink-0">Tue 7 Apr</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-coral rounded-full" style="width: 90%"></div></div>
+                    </div>
+                    <span class="font-display w-36 text-right">ATVs + Laureles</span>
+                    <span class="mono-label text-th-coral text-[10px] w-20 text-right">Packed</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-white/10 bg-white/5">
+                    <span class="mono-label text-th-sand/40 w-28 shrink-0">Wed 8 Apr</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-white/20 rounded-full" style="width: 30%"></div></div>
+                    </div>
+                    <span class="font-display w-36 text-right">Fly to Cartagena</span>
+                    <span class="mono-label text-th-sand/40 text-[10px] w-20 text-right">Chill</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Neighbourhoods -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white/5 border border-th-emerald/30 p-8 rounded-2xl border-l-4 border-l-th-emerald">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-emerald mt-0.5">location_on</span>
+                    <h4 class="font-display text-lg">El Poblado (Your Base)</h4>
+                </div>
+                <p class="text-th-sand/60 font-light text-sm mb-4">
+                    The leafy, hilly neighbourhood where most travellers stay. Rooftop bars, brunch spots, and world-class cocktail lounges within walking distance.
+                </p>
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-emerald text-sm">local_cafe</span>
+                        <span><strong class="font-medium text-th-sand">Provenza</strong> (Cra 35, Calles 7-10) is the main strip. Cafes, restaurants, cocktail bars all within 200m.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-emerald text-sm">nightlife</span>
+                        <span>Mamba Negra (#81) and Bar Carmen (#100) are both here.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-emerald text-sm">shield</span>
+                        <span>Safe, well-patrolled, walkable at night.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white/5 border border-th-amber/30 p-8 rounded-2xl border-l-4 border-l-th-amber">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-amber mt-0.5">explore</span>
+                    <h4 class="font-display text-lg">Laureles (Day 3)</h4>
+                </div>
+                <p class="text-th-sand/60 font-light text-sm mb-4">
+                    Across the river. More local, increasingly hip. Carrera 70 (La 70) is the main strip: restaurants, parks, salsa bars, and a completely different energy. Less polished, more authentic.
+                </p>
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-amber text-sm">restaurant</span>
+                        <span>Cheaper food and drinks than Provenza. More local crowd.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-amber text-sm">music_note</span>
+                        <span>La 70 comes alive at night. Salsa, reggaeton, local bars.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-amber text-sm">directions_car</span>
+                        <span>&pound;2-4 Uber from El Poblado. ~10 minutes.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Orientation -->
+        <div class="bg-white/5 border border-white/10 p-6 md:p-10 rounded-3xl">
+            <h3 class="mono-label text-th-sand/40 mb-6">Quick Orientation</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
+                    <span class="material-symbols-outlined text-th-emerald text-3xl block mb-2">flight_land</span>
+                    <span class="text-2xl font-display text-th-emerald block mb-1">45 min</span>
+                    <p class="text-xs text-th-sand/50 font-light">Airport (MDE) to El Poblado. Mountain road with tunnels.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
+                    <span class="material-symbols-outlined text-th-amber text-3xl block mb-2">altitude</span>
+                    <span class="text-2xl font-display text-th-amber block mb-1">1,500m</span>
+                    <p class="text-xs text-th-sand/50 font-light">Elevation. T-shirt days, bring a light layer for evenings.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
+                    <span class="material-symbols-outlined text-th-coral text-3xl block mb-2">local_taxi</span>
+                    <span class="text-2xl font-display text-th-coral block mb-1">Uber</span>
+                    <p class="text-xs text-th-sand/50 font-light">Works perfectly. &pound;2-4 for most rides. Avoid street taxis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 02 / DAY 1 — ARRIVAL -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="day1">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">02 / Day 1 &mdash; Sun 5 Apr</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Arrival. Light Dinner. Early Night.</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                Relaxed. You land at 19:35 after a full day of flying from Madrid via Bogot&aacute;. The drive from the airport winds through mountains and tunnels, and the first glimpse of Medell&iacute;n&rsquo;s valley of lights is genuinely spectacular.
+            </p>
+        </div>
+
+        <!-- Day 1 Timeline (all detail inline) -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-8">Day 1 Timeline</h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-emerald/20 hidden md:block"></div>
+                <div class="space-y-10">
+
+                    <!-- 19:35 Land -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">flight_land</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-emerald">19:35</span>
+                                <span class="font-display text-lg">Land at MDE</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">
+                                Jos&eacute; Mar&iacute;a C&oacute;rdova airport. The drive to El Poblado is about 45 minutes, winding through mountains and tunnels. The first glimpse of the valley of lights is genuinely spectacular.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 20:30 Check In -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">hotel</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-emerald">~20:30</span>
+                                <span class="font-display text-lg">Check In, El Poblado</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Drop bags, freshen up, get your bearings. You&rsquo;re tired after Madrid &rarr; Bogot&aacute; &rarr; Medell&iacute;n. Keep tonight simple.</p>
+                        </div>
+                    </div>
+
+                    <!-- 21:00 Light Dinner (options nested inside) -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">restaurant</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">~21:00</span>
+                                <span class="font-display text-lg">Light Dinner</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Nothing fancy. Just fuel and a first taste of Medell&iacute;n. Pick one:</p>
+
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d1862119-Reviews-Mondongos_Poblado-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Mondongo&rsquo;s</a>
+                                        <span class="mono-label text-th-amber text-[10px]">El Poblado &bull; ~&pound;5&ndash;8pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Famous for <strong class="font-medium text-th-charcoal">bandeja paisa</strong>, the iconic Antioque&ntilde;o dish: red beans, rice, chicharr&oacute;n, fried egg, plantain, avocado, arepa, ground beef, chorizo. All on one plate. Absurd and essential. The right first meal in Medell&iacute;n.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d7618550-Reviews-Bonhomia-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Bonhomia</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra. 37 #8-53 &bull; ~&pound;4&ndash;6pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Italian-Colombian deli. Sharing platters of meats &amp; cheeses, pizzas, great sangria, live music. TripAdvisor 4.8/5 (#13 in Medell&iacute;n). Perfect for a tired group who just wants to graze without making decisions.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d8508221-Reviews-Burdo-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Burdo</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra. 35 #8A-101 &bull; ~&pound;5&ndash;8pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Burgers, tacos, fries + cocktails. Right on the Provenza pedestrian strip. <strong class="font-medium text-th-charcoal">Open until 2am Fri&ndash;Sat.</strong> Your safety net if you arrive later than expected. Restaurant Guru 4.4/5 (4,100+ reviews).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 23:00 Sleep -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-charcoal/5 border border-black/10 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-charcoal/30 text-lg">bedtime</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-charcoal/40">~23:00</span>
+                                <span class="font-display text-lg">Early Night</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/50 font-light">Tomorrow starts with history and ends on a rooftop ranked #81 in the world. Get some sleep.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- To-Do -->
+        <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-2">To Book</h4>
+                    <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                        <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                        <span>Pre-arrange Medell&iacute;n airport transfer (MDE &rarr; El Poblado, 5 passengers, ~19:35 arrival)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 03 / DAY 2 — ESCOBAR + COMUNA 13 -->
+<section class="py-32 px-8 border-b border-black/5" id="day2">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">03 / Day 2 &mdash; Mon 6 Apr</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">History, Street Art &amp; Rooftop Cocktails</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                Packed. The most culturally dense day of the trip. Morning is heavy: the Escobar story is real, recent, and complicated. Afternoon is the antidote: colour, music, and a community that rebuilt itself. Evening ends at a World&rsquo;s 50 Best rooftop.
+            </p>
+        </div>
+
+        <!-- Day 2 Timeline (all detail inline) -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-8">Day 2 Timeline</h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-coral/20 hidden md:block"></div>
+                <div class="space-y-10">
+
+                    <!-- 08:00 Breakfast -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">coffee</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">~08:00</span>
+                                <span class="font-display text-lg">Breakfast on Provenza</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Fuel up before the Escobar tour. All three are walkable from your accommodation and open early enough.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d4244977-Reviews-Pergamino_Cafe_Via_Primavera-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Pergamino Caf&eacute;</a>
+                                        <span class="mono-label text-th-amber text-[10px]">Cra 37 #8A-37 &bull; ~&pound;3&ndash;5pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Medell&iacute;n&rsquo;s flagship specialty coffee roaster. Granola bowls, avocado toast, baked eggs. Widely considered the best coffee in the city. TripAdvisor 4.5/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d4325903-Reviews-Ganso_Castor_Cafe_Bistro_PROVENZA-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Ganso &amp; Castor</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 36 #7-46 &bull; ~&pound;6&ndash;8pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Parisian-inspired caf&eacute;-bistro. Fluffy pancakes, eggs Benedict with chef&rsquo;s special spices. &ldquo;New York meets Paris&rdquo; vibe. TripAdvisor Travellers&rsquo; Choice. Opens 7am.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d26305137-Reviews-Al_Alma_Provenza-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Al Alma Provenza</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cl 8 #35-37 &bull; ~&pound;3&ndash;5pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Local specialty coffee chain with in-house roastery. Eggs Benedict, French toast, croissants, bagels. Indoor and outdoor seating. Budget-friendly option.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 09:00 Escobar Tour -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-charcoal/5 border border-th-charcoal/20 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-charcoal/50 text-lg">history_edu</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-charcoal/50">09:00</span>
+                                <span class="font-display text-lg">Pablo Escobar History Tour</span>
+                                <span class="mono-label text-[10px] text-th-charcoal/30">3&ndash;4 hrs</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                                Guided tour of key sites from the Escobar era. The good tours are run by locals who lived through it, not glorifiers. Focus on victims and the city&rsquo;s recovery, not narco-tourism glamour. Ask your hotel for a recommendation.
+                            </p>
+                            <div class="space-y-1.5 text-xs text-th-charcoal/50 font-light">
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-charcoal/30">museum</span> Casa Museo Pablo Escobar</div>
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-charcoal/30">park</span> Parque Inflexi&oacute;n (former Monaco building, now memorial park)</div>
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-charcoal/30">directions_car</span> Transport between sites included</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 13:00 Lunch -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">lunch_dining</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">~13:00</span>
+                                <span class="font-display text-lg">Lunch Between Tours</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Escobar tour finishes around 12:30. Quick refuel before heading to Comuna 13 at 14:00. Either grab something near downtown or head back to El Poblado.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d4867306-Reviews-Restaurante_Hatoviejo_Centro-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Hatoviejo</a>
+                                        <span class="mono-label text-th-amber text-[10px]">Centro or CC Oviedo &bull; ~&pound;7&ndash;10pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Iconic Antioquian chain, 40+ years old. The go-to for an authentic <strong class="font-medium text-th-charcoal">bandeja paisa</strong>, ajiaco, sancocho. If the tour ends near downtown, the Centro branch is right there. Also one at CC Oviedo in El Poblado.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d7622046-Reviews-Alambique-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Alambique</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cl 10 #43A-30, Parque El Poblado &bull; ~&pound;10&ndash;13pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Speakeasy-style entrance through a shop into a lush courtyard. Contemporary Colombian fusion, inventive dishes. Quirky, vibrant decor. TripAdvisor 4.5/5, 625 reviews.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d4733262-Reviews-Oci_Mde-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">OCI.mde</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 33 #7-21, Provenza &bull; ~&pound;8&ndash;12pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Sharing-plate concept. Pacific-caught fish, Colombian/Asian spices, organic herbs. Pleasant terrace. Walking distance to Comuna 13 pickup. TripAdvisor 4.5/5, 850+ reviews.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14:00 Comuna 13 -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">palette</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">14:00</span>
+                                <span class="font-display text-lg">Comuna 13 Graffiti Tour</span>
+                                <span class="mono-label text-[10px] text-th-coral/50">2.5&ndash;3 hrs</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                                THE highlight. Once the most dangerous neighbourhood in Medell&iacute;n, now transformed by outdoor escalators, world-class street art, and a community that tells its story through art, music, and hip-hop. A guided walk is essential: the murals only make sense with context.
+                            </p>
+                            <div class="space-y-1.5 text-xs text-th-charcoal/50 font-light">
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-coral">escalator</span> <strong class="font-medium text-th-charcoal">Escalators</strong>: 6 sections built into the hillside. Ride to the top for panoramic views.</div>
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-coral">brush</span> <strong class="font-medium text-th-charcoal">Street art</strong>: Every wall tells a story. Guides explain the symbolism.</div>
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-coral">music_note</span> <strong class="font-medium text-th-charcoal">Live hip-hop &amp; breakdancing</strong>: Street performers at various stops. Tips appreciated.</div>
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-coral">local_cafe</span> <strong class="font-medium text-th-charcoal">Coffee stops</strong>: Small caf&eacute;s on the route. Excellent local beans.</div>
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-coral">landscape</span> <strong class="font-medium text-th-charcoal">Viewpoints</strong>: Multiple mirador spots. Late afternoon light is best.</div>
+                            </div>
+                            <p class="mt-3 text-xs text-th-charcoal/40 font-light">Comfortable shoes (hilly, uneven). Bring cash for tips, street food, local art.</p>
+                        </div>
+                    </div>
+
+                    <!-- 17:00 Golden Hour -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">wb_twilight</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-emerald">~17:00</span>
+                                <span class="font-display text-lg">Golden Hour. Pick One.</span>
+                                <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Optional</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Comuna 13 finishes around 16:30. You have a couple of hours before dinner. Sunset drinks, a viewpoint, or just head back and rest.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-emerald/20 bg-th-emerald/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d8746753-Reviews-Envy_Rooftop-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-emerald transition-colors">Envy Rooftop (The Charlee Hotel)</a>
+                                        <span class="mono-label text-th-emerald text-[10px]">Cl 9A #37-16 &bull; ~&pound;9&ndash;11/cocktail</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Medell&iacute;n&rsquo;s most iconic rooftop. 17th floor, 180-degree city views, pool, live DJs. Perfect for golden hour. Smart casual. TripAdvisor 4.6/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://hotelelzarzo.com/en/el-zarzo-bar-en/" target="_blank" class="font-display hover:text-th-emerald transition-colors">Zarzo Bar (Hotel El Zarzo)</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 38 #10A-29 &bull; ~&pound;7&ndash;10/cocktail</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">6th-floor rooftop, boutique hotel. Signature cocktails with Colombian ingredients, live jazz/soul sessions. More intimate and less touristy than Envy. Panoramic views over Provenza.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.medellin.travel/pueblito-paisa-cerro-nutibara/" target="_blank" class="font-display hover:text-th-emerald transition-colors">Cerro Nutibara / Pueblito Paisa</a>
+                                        <span class="mono-label text-th-emerald text-[10px]">Free entry &bull; 15-min taxi (~&pound;3)</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Small hill topped with a replica traditional Antioquian village. The real draw is the panoramic observation deck overlooking the entire valley. Excellent at sunset. Open daily until 10pm. Lonely Planet recommended.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 19:00 Dinner -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">restaurant</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">19:00</span>
+                                <span class="font-display text-lg">Dinner</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">All three are on or near the Provenza strip. Pick one:</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d15297591-Reviews-Sambombi_Bistro_Local-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Sambombi Bistr&oacute; Local</a>
+                                        <span class="mono-label text-th-amber text-[10px]">50 Best LATAM #98 &bull; ~&pound;20&ndash;35pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Menu changes weekly based on what local farmers bring in. Cassava gnocchi, tuna tostadas, roast chicken with shiitake. Wooden tables, no dress code, generous portions. The best-value serious meal in Medell&iacute;n.</p>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Cra. 35 #7-10, Provenza &bull; Book via WhatsApp: +57 305 487 5058</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d8653428-Reviews-La_Causa_Poblado-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">La Causa Poblado</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 33 #8A-41 &bull; ~&pound;12&ndash;18pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Nikkei (Peruvian-Japanese fusion). Standout ceviches, sushi rolls, tiraditos, lomo saltado. Modern atmosphere, great for sharing. TripAdvisor 4.5/5, ranked #41 in Medell&iacute;n.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d4733262-Reviews-Oci_Mde-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">OCI.mde</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 33 #7-21 &bull; ~&pound;12&ndash;20pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Sharing-plate concept. Pacific-caught fish, Colombian/Asian spices, organic herbs. Communal eating style, ideal for a group of 5. Pleasant terrace. TripAdvisor 4.5/5, 850+ reviews.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 21:00 Late Night Drinks -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">local_bar</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">21:00</span>
+                                <span class="font-display text-lg">Late Night Drinks</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">All walkable from Provenza. Mamba Negra is the headline act but the other two are excellent if you want a different vibe or can&rsquo;t get a good spot.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d24988159-Reviews-Mamba_Negra-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Mamba Negra</a>
+                                        <span class="mono-label text-th-coral text-[10px]">#81 World&rsquo;s 50 Best Bars &bull; ~&pound;10/cocktail</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Rooftop in El Poblado. Cocktail menu built around Colombian ingredients: cacao, tropical fruits, local spirits. No reservations needed but arrive by 8&ndash;9pm for a good spot.</p>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Cl. 2 #20-50, El Poblado &bull; Mon&ndash;Sat</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d12501270-Reviews-El_Botanico-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">El Bot&aacute;nico</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 33 #7-41 &bull; ~&pound;8&ndash;11/cocktail</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Cocktail bar built around a &ldquo;travelling botanist&rdquo; concept. Chef-developed cocktails using exotic herbs and spices. Lush, plant-filled interior. TripAdvisor 4.4/5. More creative and upscale than typical Provenza nightlife.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://hotelelzarzo.com/en/el-zarzo-bar-en/" target="_blank" class="font-display hover:text-th-coral transition-colors">Zarzo Bar</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 38 #10A-29 &bull; ~&pound;7&ndash;10/cocktail</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">6th-floor rooftop at boutique Hotel El Zarzo. Signature Colombian cocktails, live jazz/soul/funk sessions. Intimate, less touristy. Good for conversation. Open until 2am.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- To-Do -->
+        <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-3">To Book</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Book Escobar history tour (ethical operator, ask hotel for rec)</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Book Comuna 13 guide (local community guide)</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>[Optional] Book Sambombi Bistr&oacute; via WhatsApp (+57 305 487 5058) for Mon 6 Apr</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 04 / DAY 3 — ATVs + LAURELES -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="day3">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">04 / Day 3 &mdash; Tue 7 Apr</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Adrenaline, Local Vibes &amp; World&rsquo;s 50 Best</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                Packed. Morning on quad bikes in the hills, then Uber across the river to Laureles for lunch, exploring, and drinks on La 70. Optional paragliding at sunset. Nightcap at Bar Carmen, #100 in the world.
+            </p>
+        </div>
+
+        <!-- Day 3 Timeline -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-8">Day 3 Timeline</h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-coral/20 hidden md:block"></div>
+                <div class="space-y-10">
+
+                    <!-- 08:00 Breakfast -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">coffee</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">~09:00</span>
+                                <span class="font-display text-lg">Breakfast</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Fuel up before the ATVs at 10. All on or near the Provenza strip.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d4244977-Reviews-Pergamino_Cafe_Via_Primavera-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Pergamino Caf&eacute;</a>
+                                        <span class="mono-label text-th-amber text-[10px]">Cra 37 #8A-37 &bull; ~&pound;3&ndash;5pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Medell&iacute;n&rsquo;s flagship specialty coffee. Waffles, baked eggs, pastries. Opens 7am. TripAdvisor 4.5/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d26305137-Reviews-Al_Alma_Provenza-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Al Alma Provenza</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cl 8 #35-37 &bull; ~&pound;4&ndash;7pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">In-house roastery. Eggs Benedict, French toast, croissants, granola bowls. Colourful tiled atrium. Gets busy after 11am. Opens 8am.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d9867182-Reviews-Hija_Mia_Coffee_Roasters-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Hija Mia Coffee Roasters</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cl 11A #43B-9, Manila &bull; ~&pound;4&ndash;6pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Australian-owned third-wave roasters. Avocado smash on sourdough, acai bowls, pancakes. Small-batch Colombian beans roasted on-site. TripAdvisor 4.7/5 (#5 Coffee &amp; Tea in Medell&iacute;n).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 09:00 ATVs -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">two_wheeler</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">10:00</span>
+                                <a href="https://www.tripadvisor.com/AttractionProductReview-g297478-d19887733-ATV_Medellin_the_REAL_4x4_Quad_Tour-Medellin_Antioquia_Department.html" target="_blank" class="font-display text-lg hover:text-th-coral transition-colors">ATV / Quad Bike Trails</a>
+                                <span class="mono-label text-[10px] text-th-coral/50">2&ndash;3 hrs</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                                Medell&iacute;n&rsquo;s surrounding hills are laced with off-road trails. Mud routes, river crossings, and jungle-edge paths with valley views. Most tours depart from the south of the city and include transport to the trail start point.
+                            </p>
+                            <div class="space-y-1.5 text-xs text-th-charcoal/50 font-light">
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-coral">terrain</span> Mud, hills, river crossings, coffee farm stops</div>
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-coral">shield</span> Safety briefing included, no experience needed</div>
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-coral">checkroom</span> Wear clothes you don&rsquo;t mind getting dirty. Trainers, not sandals.</div>
+                            </div>
+                            <div class="mt-4 space-y-3">
+                                <p class="text-xs text-th-charcoal/40 font-light font-medium">If ATVs aren&rsquo;t your thing:</p>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Attraction_Review-g297478-d14009783-Reviews-Medellin_Coffee_Farm_Tour-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Half-Day Coffee Farm Tour</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">~&pound;43pp &bull; 4 hrs</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Tranvia + Metro Cable to a family coffee farm in La Sierra. Hands-on: planting, roasting, tasting. The cable car ride alone is a highlight with panoramic views. Book at medellin-tours.com.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/AttractionProductReview-g297478-d17684864-Paintball_from_Medellin-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Paintball</a>
+                                        <span class="mono-label text-th-coral text-[10px]">~&pound;36pp &bull; 3&ndash;4 hrs inc. transport</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Outdoor scenarios on the outskirts of the city. Pickup from El Poblado, 30-min drive to the camp. Full gear, marker, and 100 paintballs included. Good for a stag. Book via GetYourGuide or Viator.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 13:00 Laureles -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">explore</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">13:00</span>
+                                <span class="font-display text-lg">Laureles</span>
+                                <span class="mono-label text-[10px] text-th-amber/50">Afternoon</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                                Uber across the river to Medell&iacute;n&rsquo;s more local, increasingly hip neighbourhood. Carrera 70 (La 70) is the main strip: a completely different energy to El Poblado. Less polished, more authentic. This is the side of Medell&iacute;n most tourists don&rsquo;t see.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d10770074-Reviews-Barbaro_Cocina_Primitiva_Sede_Laureles-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">B&aacute;rbaro Cocina Primitiva</a>
+                                        <span class="mono-label text-th-amber text-[10px]">Cra 76 #73B-39 &bull; ~&pound;7&ndash;13pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Fire-grilled steaks, ribs, and cuts. &ldquo;Primitive cooking&rdquo; concept. Generous portions. TripAdvisor 4.9/5, ranked <strong class="font-medium text-th-charcoal">#5 in all of Medell&iacute;n</strong>. Short walk from La 70. Opens at noon.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d17324751-Reviews-Mondongo_s-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Mondongo&rsquo;s La 70</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 70 #Circular 3-43 &bull; ~&pound;6&ndash;10pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">The Laureles branch. Same iconic bandeja paisa but fewer tourists than the Poblado location. Directly on La 70. More local feel. Good for the full Antioquian spread.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d7159122-Reviews-Olivia_Laureles-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Olivia Pizzeria</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Av 74B #39-46 &bull; ~&pound;5&ndash;9pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Neapolitan wood-fired pizza and fresh pasta. Good cocktails and sangria. Lighter option if you don&rsquo;t want heavy Colombian food. Near La 70. TripAdvisor 3.9/5, 223 reviews.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 16:30 Paragliding -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">paragliding</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-emerald">~16:30</span>
+                                <span class="font-display text-lg">Paragliding at San F&eacute;lix</span>
+                                <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Optional</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                                Tandem paragliding over Medell&iacute;n&rsquo;s valley. Launch from San F&eacute;lix, a hillside village ~30&ndash;40 minutes south of El Poblado, and fly over the entire city. On a clear day you can see the full length of the valley below. Book a sunset slot if available: the light is extraordinary.
+                            </p>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                <div class="p-3 rounded-lg border border-th-emerald/10 bg-th-emerald/5 text-center">
+                                    <span class="font-display text-th-emerald block">15&ndash;20 min</span>
+                                    <span class="text-[10px] text-th-charcoal/40 font-light">Flight time</span>
+                                </div>
+                                <div class="p-3 rounded-lg border border-th-emerald/10 bg-th-emerald/5 text-center">
+                                    <span class="font-display text-th-emerald block">2&ndash;2.5 hrs</span>
+                                    <span class="text-[10px] text-th-charcoal/40 font-light">Total with transport</span>
+                                </div>
+                                <div class="p-3 rounded-lg border border-th-emerald/10 bg-th-emerald/5 text-center">
+                                    <span class="font-display text-th-emerald block">&pound;20&ndash;30pp</span>
+                                    <span class="text-[10px] text-th-charcoal/40 font-light">100&ndash;150K COP</span>
+                                </div>
+                                <div class="p-3 rounded-lg border border-th-emerald/10 bg-th-emerald/5 text-center">
+                                    <span class="font-display text-th-emerald block">No exp.</span>
+                                    <span class="text-[10px] text-th-charcoal/40 font-light">Pilot does everything</span>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-xs text-th-charcoal/40 font-light">GoPro footage usually available for purchase from your pilot.</p>
+                        </div>
+                    </div>
+
+                    <!-- 19:00 La 70 Drinks -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">nightlife</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">19:00</span>
+                                <span class="font-display text-lg">La 70 Drinks</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Stay in Laureles for the evening. La 70 comes alive at night. Hop between these before heading back to El Poblado for Bar Carmen.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d3823128-Reviews-La_Tienda_de_la_70-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">La Tienda de la 70</a>
+                                        <span class="mono-label text-th-coral text-[10px]">Cra 70 #Circular 3-28 &bull; ~&pound;2&ndash;5/drink</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">THE bar on La 70. Full-on Colombian party. &ldquo;Fonda&rdquo; decor with balloons, flashing lights, and a giant pig. Rounds of Aguardiente, dancing on tables, live acts. Loud, bright, quintessentially Colombian. Gets lively from 8&ndash;9pm.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d4328467-Reviews-La_Charcu-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">La Charcu 70</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 70 #Circular 2-48 &bull; ~&pound;2&ndash;6/drink</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Craft beer and cocktail bar. More laid back than La Tienda. Good selection of craft beers, well-made cocktails, sharing plates of nachos, empanadas, charcuterie. Good to start the evening before things ramp up.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://sonhavana.co/" target="_blank" class="font-display hover:text-th-coral transition-colors">Son Havana</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 73 #44-56 &bull; ~&pound;2&ndash;4/drink</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Iconic salsa bar with live bands. Cuban-themed, packed dance floor, open since 2010. <strong class="font-medium text-th-coral">Typically Wed&ndash;Sat only.</strong> Check ahead for Tuesday opening (+57 320 451 2267). If closed, stick to La Tienda + La Charcu.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 22:00 Bar Carmen or Elcielo -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">local_bar</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">~22:00</span>
+                                <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d1820198-Reviews-Carmen_Medellin-Medellin_Antioquia_Department.html" target="_blank" class="font-display text-lg hover:text-th-coral transition-colors">Bar Carmen</a>
+                                <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-coral/10 text-th-coral border border-th-coral/20">#100 World&rsquo;s 50 Best Bars</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                                Uber back to El Poblado for a nightcap. Intimate courtyard setting, culinary cocktails that change seasonally. Low-lit, candles, small groups. ~$11/cocktail. No reservations but it fills up. Arrive by 9&ndash;10pm.
+                            </p>
+                            <p class="text-xs text-th-charcoal/40 font-light mb-4">Cra. 36 #10a-27, El Poblado</p>
+
+                            <!-- Elcielo alternative -->
+                            <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                <div class="flex flex-wrap items-center gap-2 mb-2">
+                                    <span class="mono-label text-th-amber text-[10px]">Alternative blow-out</span>
+                                    <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d1030724-Reviews-Elcielo_Restaurant_Medellin-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Elcielo</a>
+                                    <span class="mono-label text-[10px] text-th-amber/60">Michelin-starred</span>
+                                </div>
+                                <p class="text-xs text-th-charcoal/50 font-light mb-2">
+                                    Colombia&rsquo;s first Michelin-starred chef, Juan Manuel Barrientos. 18&ndash;19 course theatrical tasting menu over 2&ndash;3 hours, including the signature <strong class="font-medium text-th-charcoal">&ldquo;choco-therapy&rdquo;</strong> where your hands are plunged into warm chocolate before the meal begins. Draws from every Colombian region: Caribbean coast, Amazon, Andes.
+                                </p>
+                                <div class="flex flex-wrap gap-3 text-xs text-th-charcoal/40 font-light">
+                                    <span>~&pound;140pp</span>
+                                    <span>&bull;</span>
+                                    <span>~&pound;225pp with wine pairing</span>
+                                    <span>&bull;</span>
+                                    <span>&pound;89pp deposit at booking</span>
+                                </div>
+                                <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle 7D #43C-36, El Poblado &bull; elcielo.com.co/medellin</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- To-Do -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-3">To Book</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Book ATV tour with safety briefing (5 pax)</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Research La 70 bars + restaurants for Tue evening</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>[Optional] Book paragliding slots + check weather conditions</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>[Optional] Book Elcielo for 5, Tue 7 Apr (&pound;89pp deposit) &bull; elcielo.com.co/medellin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 05 / DAY 4 — FLY OUT -->
+<section class="py-32 px-8 border-b border-black/5" id="day4">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">05 / Day 4 &mdash; Wed 8 Apr</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Slow Morning. Final Coffees. Fly to Cartagena.</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                No rush. Flight to Cartagena departs MDE at 14:29. Soak up the last of El Poblado.
+            </p>
+        </div>
+
+        <div class="glass-card p-6 md:p-10 rounded-3xl">
+            <h3 class="mono-label text-th-charcoal/40 mb-8">Day 4 Timeline</h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-emerald/20 hidden md:block"></div>
+                <div class="space-y-10">
+
+                    <!-- Breakfast -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">coffee</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">~10:00</span>
+                                <span class="font-display text-lg">Last Medell&iacute;n Breakfast</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">You were on La 70 last night. Sleep in. Then one last Provenza breakfast before checkout. Ask for <strong class="font-medium text-th-charcoal">tinto</strong> for a basic black coffee.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d4244977-Reviews-Pergamino_Cafe_Via_Primavera-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Pergamino Caf&eacute;</a>
+                                        <span class="mono-label text-th-amber text-[10px]">Cra 37 #8A-37 &bull; ~&pound;3&ndash;5pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">The flagship. If you only have one coffee in Medell&iacute;n, make it here. Waffles, baked eggs, pastries. TripAdvisor 4.5/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d4325903-Reviews-Ganso_Castor_Cafe_Bistro_PROVENZA-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Ganso &amp; Castor</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 36 #7-46 &bull; ~&pound;6&ndash;8pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Parisian bistro. Pancakes, eggs Benedict. If you went to Pergamino earlier in the trip, mix it up. Travellers&rsquo; Choice.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d9867182-Reviews-Hija_Mia_Coffee_Roasters-Medellin_Antioquia_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Hija Mia Coffee Roasters</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cl 11A #43B-9, Manila &bull; ~&pound;4&ndash;6pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Australian-owned. Avocado smash, acai bowls, flat whites. TripAdvisor 4.7/5. Good hangover food.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pack + checkout -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-charcoal/5 border border-black/10 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-charcoal/40 text-lg">luggage</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-charcoal/40">~11:00</span>
+                                <span class="font-display text-lg">Pack &amp; Checkout</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Checkout by 11am. Airport is 45 minutes from El Poblado.</p>
+                        </div>
+                    </div>
+
+                    <!-- 11:00 Last Hour on Provenza -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">shopping_bag</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-emerald">~11:00</span>
+                                <span class="font-display text-lg">Last Hour on Provenza</span>
+                                <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Optional</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Bags down, hour to kill before the airport. The Provenza strip is right there.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <span class="font-display">Provenza Souvenir Run</span>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Cra 35, Calles 7&ndash;10</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Colombian coffee beans (grab a bag from Pergamino or any roaster), aguardiente bottles, local art, leather goods. Cheaper than airport prices.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <span class="font-display">Rooftop Pool</span>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">If your accommodation has one</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Most El Poblado Airbnbs and hotels have rooftop pools. Last swim in 24&deg;C sunshine before Cartagena&rsquo;s 32&deg;C heat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leave for airport -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">departure_board</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">12:15</span>
+                                <span class="font-display text-lg">Leave for Airport</span>
+                                <span class="mono-label text-[10px] text-th-coral/50">Latest 12:30</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">45 min drive back through the mountain tunnels to MDE. Don&rsquo;t cut it close.</p>
+                        </div>
+                    </div>
+
+                    <!-- Flight -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">flight_takeoff</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">14:29</span>
+                                <span class="font-display text-lg">MDE &rarr; CTG</span>
+                                <span class="mono-label text-[10px] text-th-amber/50">Arrives 15:37</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">~1 hour flight to Cartagena. Next stop: Caribbean heat, old town walls, and Rosario Islands.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 06 / WHERE TO EAT -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="eat">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">06 / Where to Eat</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">From Street Empanadas to Michelin Stars</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                Curated from 50 Best Latin America, OAD, Lonely Planet, Tulio Recomienda, and Time Out. Colombia grows some of the world&rsquo;s best coffee and the street food alone is worth the flight.
+            </p>
+        </div>
+
+        <!-- Sit-Down Restaurants -->
+        <div class="space-y-6 mb-8">
+
+            <!-- Elcielo -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-amber">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-amber">star</span>
+                    <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d1030724-Reviews-Elcielo_Restaurant_Medellin-Medellin_Antioquia_Department.html" target="_blank" class="font-display text-lg hover:text-th-amber transition-colors"><h4 class="inline">Elcielo</h4></a>
+                    <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-amber/10 text-th-amber border border-th-amber/20">Michelin-starred</span>
+                    <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-amber/10 text-th-amber border border-th-amber/20">50 Best LATAM</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">4.3/5</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                    Colombia&rsquo;s first Michelin-starred chef, Juan Manuel Barrientos. 18&ndash;19 course theatrical tasting menu over 2&ndash;3 hours, including the signature <strong class="font-medium text-th-charcoal">&ldquo;choco-therapy&rdquo;</strong> where your hands are plunged into warm chocolate before the meal begins. Draws from every Colombian region: Caribbean coast, Amazon, Andes. Five lads who are into food will talk about it for years.
+                </p>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-th-charcoal/40 font-light">
+                    <span>~&pound;140pp</span>
+                    <span>~&pound;225pp with 6-glass wine pairing</span>
+                    <span>&pound;89pp deposit at booking</span>
+                </div>
+                <p class="text-xs text-th-charcoal/40 font-light mt-2">Calle 7D #43C-36, El Poblado &bull; elcielo.com.co/medellin</p>
+            </div>
+
+            <!-- Carmen -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-coral">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-coral">restaurant</span>
+                    <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d1820198-Reviews-Carmen_Medellin-Medellin_Antioquia_Department.html" target="_blank" class="font-display text-lg hover:text-th-coral transition-colors"><h4 class="inline">Carmen</h4></a>
+                    <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-coral/10 text-th-coral border border-th-coral/20">OAD</span>
+                    <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-coral/10 text-th-coral border border-th-coral/20">Lonely Planet</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">4.5/5</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                    The most established fine-dining name in Medell&iacute;n, open since 2008. Contemporary Colombian with Asian and Californian influences: Pacific coast ceviche, beef tenderloin with Andean potato gratin. Gorgeous garden-integrated dining room with exposed brick, wood, and tropical plants. The &ldquo;proper night out&rdquo; option: smart-casual, impressive setting.
+                </p>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-th-charcoal/40 font-light">
+                    <span>7-course tasting with wine ~&pound;100pp</span>
+                    <span>&Agrave; la carte ~&pound;40&ndash;60pp</span>
+                </div>
+                <p class="text-xs text-th-charcoal/40 font-light mt-2">Cra. 36 #10A-27, El Poblado &bull; reservas@carmenmedellin.com</p>
+            </div>
+
+            <!-- Sambombi -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-emerald">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-emerald">lunch_dining</span>
+                    <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d15297591-Reviews-Sambombi_Bistro_Local-Medellin_Antioquia_Department.html" target="_blank" class="font-display text-lg hover:text-th-emerald transition-colors"><h4 class="inline">Sambombi Bistr&oacute; Local</h4></a>
+                    <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">50 Best LATAM #98</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">4.7/5</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                    Neighbourhood bistro on Provenza where the menu changes every week based on what local farmers bring in. Cassava gnocchi, tuna tostadas, roast chicken with shiitake. Wooden tables, no dress code, generous portions. Easily the best value of the lot. Perfect for a casual group dinner after a day of tours.
+                </p>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-th-charcoal/40 font-light">
+                    <span>~&pound;20&ndash;35pp with drinks</span>
+                    <span>Best value serious meal in Medell&iacute;n</span>
+                </div>
+                <p class="text-xs text-th-charcoal/40 font-light mt-2">Cra. 35 #7-10, Provenza &bull; WhatsApp: +57 305 487 5058</p>
+            </div>
+
+            <!-- Mondongo's -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-charcoal/50">lunch_dining</span>
+                    <a href="https://www.tripadvisor.com/Restaurant_Review-g297478-d1862119-Reviews-Mondongos_Poblado-Medellin_Antioquia_Department.html" target="_blank" class="font-display text-lg hover:text-th-charcoal/70 transition-colors"><h4 class="inline">Mondongo&rsquo;s</h4></a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Local institution</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                    Famous for <strong class="font-medium text-th-charcoal">bandeja paisa</strong>, the iconic Antioque&ntilde;o dish: red beans, rice, chicharr&oacute;n, fried egg, plantain, avocado, arepa, ground beef, chorizo. All on one plate. Absurd and essential. The right first meal in Medell&iacute;n.
+                </p>
+                <p class="text-xs text-th-charcoal/40 font-light">El Poblado &bull; Budget-friendly</p>
+            </div>
+        </div>
+
+        <!-- Street Food + Coffee -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">Street Food &amp; Coffee</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30 text-center">
+                    <span class="material-symbols-outlined text-th-amber text-3xl block mb-2">bakery_dining</span>
+                    <span class="font-display block mb-1">Empanadas</span>
+                    <p class="text-xs text-th-charcoal/50 font-light">Fried, stuffed with meat or potato, dipped in aji sauce. ~2,000 COP from any corner vendor. The best ones have no sign.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30 text-center">
+                    <span class="material-symbols-outlined text-th-amber text-3xl block mb-2">egg_alt</span>
+                    <span class="font-display block mb-1">Arepas</span>
+                    <p class="text-xs text-th-charcoal/50 font-light"><strong class="font-medium text-th-charcoal">De choclo</strong> (sweet corn + cheese) or <strong class="font-medium text-th-charcoal">de huevo</strong> (egg-stuffed). Under 5,000 COP. Everywhere.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-th-emerald/20 bg-th-emerald/5 text-center">
+                    <span class="material-symbols-outlined text-th-emerald text-3xl block mb-2">local_cafe</span>
+                    <span class="font-display block mb-1">Pergamino Caf&eacute;</span>
+                    <p class="text-xs text-th-charcoal/50 font-light">Flagship specialty coffee. Some of the best you&rsquo;ll drink anywhere. Colombia&rsquo;s specialty scene in one cup. Provenza.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 07 / WHERE TO STAY -->
+<section class="py-32 px-8 border-b border-black/5" id="stay">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">07 / Where to Stay</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">5 Options in El Poblado. 3 Nights. 5 Adults.</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                5&ndash;8 Apr 2026. All in El Poblado / Provenza area. Prices are total for 3 nights, 5 adults.
+            </p>
+        </div>
+
+        <div class="space-y-4 mb-8">
+            <!-- Top Pick — Pablo's 3BR -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-emerald">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Top Pick</span>
+                    <a href="https://www.airbnb.co.uk/rooms/1216794214443848729?adults=5&check_in=2026-04-05&check_out=2026-04-08&guests=5" target="_blank" class="font-display text-lg hover:text-th-emerald transition-colors">Pablo&rsquo;s 3BR near Provenza</a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Airbnb</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 mb-3">
+                    <span class="font-display text-th-emerald text-xl">&pound;505</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">&pound;101pp</span>
+                    <span class="mono-label text-[10px] text-th-amber">4.97/5</span>
+                    <span class="text-xs text-th-charcoal/40 font-light">El Poblado / Provenza</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bed</span>3 bedrooms</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bathroom</span>4.5 bath</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">pool</span>Pool</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">landscape</span>Great views</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">shield</span>24/7 security</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-2">4 blocks from Provenza. Superhost (4 yrs, 930 reviews). Location rated 5.0. Free cancel until 4 Apr.</p>
+                <p class="text-xs text-th-coral/70 font-medium">Rare find &mdash; usually booked.</p>
+            </div>
+
+            <!-- Wake Living -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <a href="https://www.booking.com/hotel/co/wake.en-gb.html" target="_blank" class="font-display text-lg hover:text-th-emerald transition-colors">Wake Living</a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Booking.com</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 mb-3">
+                    <span class="font-display text-th-charcoal text-xl">&pound;478</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">&pound;96pp</span>
+                    <span class="mono-label text-[10px] text-th-amber">8.4/10</span>
+                    <span class="text-xs text-th-charcoal/40 font-light">El Poblado / Provenza</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bed</span>2-bed + sofa bed</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">pool</span>Rooftop pool</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">fitness_center</span>Gym</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">hot_tub</span>Steam room &amp; jacuzzi</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">star</span>4-star</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-2">Aparthotel on Carrera 35. Restaurants on ground floor incl. M&aacute;ximo &amp; ONI Nikkei. Location rated 9.4.</p>
+                <p class="text-xs text-th-charcoal/40 font-light">Non-refundable; free cancel option &pound;814.</p>
+            </div>
+
+            <!-- Sites Hotel -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <a href="https://www.booking.com/hotel/co/sites.en-gb.html" target="_blank" class="font-display text-lg hover:text-th-emerald transition-colors">Sites Hotel</a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Booking.com</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 mb-3">
+                    <span class="font-display text-th-charcoal text-xl">&pound;403</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">&pound;81pp</span>
+                    <span class="mono-label text-[10px] text-th-amber">8.9/10</span>
+                    <span class="text-xs text-th-charcoal/40 font-light">El Poblado</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bed</span>2-bed + sofa bed</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">pool</span>Rooftop pool</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">hot_tub</span>Hot tub</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">outdoor_grill</span>BBQ terrace</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">restaurant</span>ETNICO on-site</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-2">Modern hotel. Breakfast included option &pound;435. Staff rated 9.2, cleanliness 9.3. Quiet residential area, 800m from Oviedo mall.</p>
+                <p class="text-xs text-th-charcoal/40 font-light">Free cancel before 2 Apr.</p>
+            </div>
+
+            <!-- Nock Penthouse -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <a href="https://www.airbnb.co.uk/rooms/1198630671458604680?adults=5&check_in=2026-04-05&check_out=2026-04-08&guests=5" target="_blank" class="font-display text-lg hover:text-th-emerald transition-colors">Nock Penthouse 1001</a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Airbnb</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 mb-3">
+                    <span class="font-display text-th-charcoal text-xl">&pound;621</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">&pound;124pp</span>
+                    <span class="mono-label text-[10px] text-th-amber">4.95/5</span>
+                    <span class="text-xs text-th-charcoal/40 font-light">El Poblado</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bed</span>3 bedrooms, 3 bath</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bathtub</span>Bathtub &amp; jacuzzi</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">sports_esports</span>Pool table</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">ac_unit</span>AC</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">shield</span>24/7 security</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-2">Penthouse. Self check-in. Superhost (2 yrs, 746 reviews). Location rated 5.0, walkable to Provenza.</p>
+                <div class="flex flex-wrap gap-3 text-xs font-light">
+                    <span class="text-th-coral/70 font-medium">Rare find &mdash; usually booked.</span>
+                    <span class="text-th-amber/80">&#9888; Construction next door may cause daytime noise.</span>
+                </div>
+                <p class="text-xs text-th-charcoal/40 font-light mt-1">Free cancel before 4 Apr (+&pound;84).</p>
+            </div>
+
+            <!-- Premium City View -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Best Value</span>
+                    <a href="https://www.airbnb.co.uk/rooms/1614013203793803843?adults=5&check_in=2026-04-05&check_out=2026-04-08&guests=5" target="_blank" class="font-display text-lg hover:text-th-emerald transition-colors">Premium City View (Carolina)</a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Airbnb</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 mb-3">
+                    <span class="font-display text-th-emerald text-xl">&pound;354</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">&pound;71pp</span>
+                    <span class="mono-label text-[10px] text-th-amber">5.0/5</span>
+                    <span class="text-xs text-th-charcoal/40 font-light">El Poblado</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bed</span>3 bedrooms, 4 beds</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bathroom</span>2.5 bath</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">pool</span>Pool</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">ac_unit</span>AC</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">shield</span>24/7 security</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-2">10 min from Provenza. Superhost. Only 2 reviews but same building as Paula Andrea&rsquo;s 5.0-rated unit (19 reviews) &mdash; listings look identical. Newer listing, cheaper option.</p>
+                <p class="text-xs text-th-charcoal/40 font-light">Free cancel until 4 Apr.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-th-sand border-t border-black/10 text-th-charcoal py-10 px-8">
+    <div class="max-w-7xl mx-auto">
+        <p class="mono-label text-th-charcoal/40 text-center">&copy; 2026 Kris Rajah &middot; Madrid + Colombia &middot; April 2026</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Cartagena City Guide — Caribbean Crescendo</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "th-sand": "#f4f1ee",
+                        "th-beige": "#e8e4e0",
+                        "th-charcoal": "#1a1a1a",
+                        "th-clay": "#d9c5b2",
+                        "th-emerald": "#059669",
+                        "th-amber": "#d97706",
+                        "th-coral": "#e67e5f",
+                        "th-sky": "#0ea5e9",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-th-sand text-th-charcoal font-sans antialiased;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .mono-label {
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="sticky top-0 z-50 w-full bg-th-sand/80 backdrop-blur-md border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="font-display font-semibold text-lg tracking-tight">Kris Rajah</span>
+            <span class="text-th-charcoal/30">|</span>
+            <a href="index.html" class="mono-label text-th-charcoal/50 hover:text-th-charcoal transition-colors">Home</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#glance">At a Glance</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#day1">8 Apr</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#day2">9 Apr</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#day3">10 Apr</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#day4">11 Apr</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#eat">Eat</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#stay">Stay</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[70vh] flex items-center justify-center py-24 px-8">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 rounded-full border border-black/10 mb-10">
+            <span class="mono-label text-th-charcoal/60">City Guide &bull; April 2026</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-display font-medium tracking-tight mb-8">
+            Cartagena:<br/>Caribbean Crescendo
+        </h1>
+        <p class="text-xl md:text-2xl text-th-charcoal/70 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+            A 500-year-old walled city on the Caribbean coast, built by the Spanish to store looted gold, now home to Colombia&rsquo;s best cocktail bars, crumbling pastel-coloured colonial mansions draped in bougainvillea, and a nightlife scene that spills out of courtyards and onto rooftops until the small hours.
+        </p>
+        <div class="flex flex-col items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="h-[1px] w-12 bg-black/20"></div>
+                <span class="mono-label text-th-charcoal/40 tracking-[0.3em]">Kris Rajah</span>
+                <div class="h-[1px] w-12 bg-black/20"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KEY METRICS STRIP -->
+<section class="py-12 px-8 border-y border-black/5 bg-th-beige/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div class="glass-card p-6 rounded-3xl text-center border-th-coral/20">
+                <span class="text-3xl font-display text-th-coral block mb-2">3 Nights</span>
+                <h4 class="text-sm font-display mb-1">8&ndash;11 Apr 2026</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Wed &rarr; Sat</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-amber block mb-2">32&deg;C</span>
+                <h4 class="text-sm font-display mb-1">Caribbean Heat</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">High humidity, sea-level</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-charcoal block mb-2">Old Town</span>
+                <h4 class="text-sm font-display mb-1">Base Neighbourhood</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">UNESCO Walled City</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-emerald block mb-2">5,000</span>
+                <h4 class="text-sm font-display mb-1">COP &asymp; &pound;1</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Colombian Pesos</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-coral block mb-2">#11</span>
+                <h4 class="text-sm font-display mb-1">World&rsquo;s 50 Best</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">Alqu&iacute;mico</p>
+            </div>
+            <div class="glass-card p-6 rounded-3xl text-center">
+                <span class="text-3xl font-display text-th-charcoal block mb-2">&pound;56&ndash;107</span>
+                <h4 class="text-sm font-display mb-1">Per Person</h4>
+                <p class="text-th-charcoal/50 font-light text-xs">3-night accommodation</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 01 / AT A GLANCE -->
+<section class="bg-th-charcoal text-th-sand py-32 px-8 border-b border-black/5" id="glance">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-sand/40 mb-4 block">01 / At a Glance</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Old Town Is Your Base. Getseман&iacute; Is the Night.</h2>
+        </div>
+        <p class="text-lg text-th-sand/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed text-center mb-16">
+            You&rsquo;re arriving from Medell&iacute;n after two days of ATVs, paragliding, and 18-course tasting menus. Cartagena&rsquo;s job is different &mdash; it&rsquo;s heat, salt air, slow mornings, cold cocktails, and one properly big night. The temperature will hit 32&deg;C with Caribbean humidity, which means the pace naturally drops. Embrace it.
+        </p>
+
+        <!-- Trip Timeline -->
+        <div class="bg-white/5 border border-white/10 p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-sand/40 mb-6">Your 3 Nights at a Glance</h3>
+            <div class="space-y-4">
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-emerald/30 bg-th-emerald/10">
+                    <span class="mono-label text-th-emerald w-28 shrink-0">Wed 8 Apr</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-emerald/40 rounded-full" style="width: 40%"></div></div>
+                    </div>
+                    <span class="font-display w-36 text-right">Travel + Old Town</span>
+                    <span class="mono-label text-th-emerald text-[10px] w-20 text-right">Wind Down</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-amber/30 bg-th-amber/10">
+                    <span class="mono-label text-th-amber w-28 shrink-0">Thu 9 Apr</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-amber/60 rounded-full" style="width: 60%"></div></div>
+                    </div>
+                    <span class="font-display w-36 text-right">Beach + Alqu&iacute;mico</span>
+                    <span class="mono-label text-th-amber text-[10px] w-20 text-right">Beach</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-coral/30 bg-th-coral/10">
+                    <span class="mono-label text-th-coral w-28 shrink-0">Fri 10 Apr</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-coral rounded-full" style="width: 95%"></div></div>
+                    </div>
+                    <span class="font-display w-36 text-right">Islands + Big Night</span>
+                    <span class="mono-label text-th-coral text-[10px] w-20 text-right">Blow-Out</span>
+                </div>
+                <div class="flex items-center gap-6 p-4 rounded-xl border border-white/10 bg-white/5">
+                    <span class="mono-label text-th-sand/40 w-28 shrink-0">Sat 11 Apr</span>
+                    <div class="flex-1">
+                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-white/20 rounded-full" style="width: 20%"></div></div>
+                    </div>
+                    <span class="font-display w-36 text-right">Fly to Bogot&aacute;</span>
+                    <span class="mono-label text-th-sand/40 text-[10px] w-20 text-right">Chill</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Neighbourhoods -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white/5 border border-th-coral/30 p-8 rounded-2xl border-l-4 border-l-th-coral">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-coral mt-0.5">location_on</span>
+                    <h4 class="font-display text-lg">Ciudad Amurallada (Old Town)</h4>
+                </div>
+                <p class="text-th-sand/60 font-light text-sm mb-4">
+                    The walled city. UNESCO World Heritage Site. Cobblestoned, car-free in parts, colonial mansions with internal courtyards, fairy lights, and bougainvillea. This is where you eat, drink, and start every evening.
+                </p>
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-coral text-sm">local_bar</span>
+                        <span><strong class="font-medium text-th-sand">Alqu&iacute;mico</strong> (#11 World&rsquo;s 50 Best Bars) is here. Three floors, rooftop terrace.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-coral text-sm">restaurant</span>
+                        <span>El Baluarte de la Gente (sunset), El Bar&oacute;n (cocktails &amp; cigars), Carmen (fine dining).</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-coral text-sm">directions_walk</span>
+                        <span>Fully walkable. Everything within 15 minutes on foot.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white/5 border border-th-amber/30 p-8 rounded-2xl border-l-4 border-l-th-amber">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-amber mt-0.5">explore</span>
+                    <h4 class="font-display text-lg">Getseман&iacute;</h4>
+                </div>
+                <p class="text-th-sand/60 font-light text-sm mb-4">
+                    Just outside the walls. Street art, hostels, late-night energy. Cartagena&rsquo;s answer to Comuna 13 but looser and more DIY. The nightlife hub &mdash; this is where you end up after midnight.
+                </p>
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-amber text-sm">palette</span>
+                        <span>Murals on every wall. Plaza de la Trinidad is the heart.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-amber text-sm">nightlife</span>
+                        <span>Casa Cruxada, Mr. Babilla, Calle del Arsenal &mdash; open late.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-amber text-sm">restaurant</span>
+                        <span><strong class="font-medium text-th-sand">Celele</strong> (#5 Latin America, #48 world) is here. The best meal in Cartagena.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Orientation -->
+        <div class="bg-white/5 border border-white/10 p-6 md:p-10 rounded-3xl">
+            <h3 class="mono-label text-th-sand/40 mb-6">Quick Orientation</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
+                    <span class="material-symbols-outlined text-th-emerald text-3xl block mb-2">flight_land</span>
+                    <span class="text-2xl font-display text-th-emerald block mb-1">10 min</span>
+                    <p class="text-xs text-th-sand/50 font-light">Airport (CTG) to Old Town. Easiest transfer of the trip.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
+                    <span class="material-symbols-outlined text-th-amber text-3xl block mb-2">thermostat</span>
+                    <span class="text-2xl font-display text-th-amber block mb-1">32&deg;C</span>
+                    <p class="text-xs text-th-sand/50 font-light">Caribbean heat + humidity. Linen, sunscreen, water. Always.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
+                    <span class="material-symbols-outlined text-th-coral text-3xl block mb-2">directions_walk</span>
+                    <span class="text-2xl font-display text-th-coral block mb-1">On Foot</span>
+                    <p class="text-xs text-th-sand/50 font-light">Old Town &amp; Getseман&iacute; fully walkable. Taxi for islands &amp; airport.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 02 / DAY 1 — TRAVEL + OLD TOWN -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="day1">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">02 / Day 1 &mdash; Wed 8 Apr</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Travel + Old Town Sunset</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                Half-day in Medell&iacute;n, short flight, then your first taste of the Caribbean coast. The flight from MDE to CTG is just over an hour &mdash; one of the easiest travel days of the trip. You land mid-afternoon with enough time to check in, shower off the Medell&iacute;n dust, and hit the Old Town for sunset.
+            </p>
+        </div>
+
+        <!-- Day 1 Timeline -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-8">Day 1 Timeline</h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-emerald/20 hidden md:block"></div>
+                <div class="space-y-10">
+
+                    <!-- 14:29 Flight -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">flight</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">14:29</span>
+                                <span class="font-display text-lg">MDE &rarr; CTG</span>
+                                <span class="mono-label text-[10px] text-th-amber/50">Arrives 15:37</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">~1 hour flight. Rafael N&uacute;&ntilde;ez airport (CTG) is tiny and only 10 minutes from the Old Town &mdash; the easiest airport transfer of the trip.</p>
+                        </div>
+                    </div>
+
+                    <!-- 16:00 Check In -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">hotel</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-emerald">~16:00</span>
+                                <span class="font-display text-lg">Check In</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Unpack, acclimatise. The humidity will hit you immediately &mdash; this is sea-level Caribbean, not Medell&iacute;n&rsquo;s spring-like mountains. Drink water, change into shorts and linen, and accept that you will be slightly sweaty for three days.</p>
+                        </div>
+                    </div>
+
+                    <!-- ~16:30 Late Lunch -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">restaurant</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">~16:30</span>
+                                <span class="font-display text-lg">Late Lunch</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">You haven&rsquo;t eaten since breakfast in Medell&iacute;n. Drop bags and eat immediately. Pick one:</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d10313981-Reviews-La_Cocina_de_Pepina-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">La Cocina de Pepina</a>
+                                        <span class="mono-label text-th-amber text-[10px]">Getseман&iacute; &bull; ~&pound;6&ndash;10pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Traditional Caribbean home cooking. Fried fish, coconut rice, patacones, cazuela de mariscos. Big portions, cold beers, no-frills. The kind of meal your Colombian grandmother would make if you had one. TripAdvisor 4.5/5.</p>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle de la Sierpe, Getseман&iacute;</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d3493062-Reviews-Di_Silvio_Trattoria-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Di Silvio Trattoria</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Old Town &bull; ~&pound;6&ndash;12pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Reliable Italian in the Walled City. Pizzas, pastas, cold beers. Open all afternoon so no risk of arriving between services. Safe bet if everyone just wants to eat now. TripAdvisor 4.5/5.</p>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle de la Mantilla #3-56, Centro Hist&oacute;rico</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d1161396-Reviews-La_Cevicheria-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">La Cevicher&iacute;a</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Old Town &bull; ~&pound;12&ndash;20pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Famous ceviche spot. Featured on Bourdain&rsquo;s show. Fresh seafood, open-air seating, buzzy. Arrive early or queue. If you eat here now, pick somewhere different for dinner. TripAdvisor 4.2/5.</p>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle Stuart 7-14, Plaza San Diego</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 17:00 Old Town Stroll -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">directions_walk</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">~17:00</span>
+                                <span class="font-display text-lg">Old Town Stroll</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                                Walk the walled city. The Old Town is compact &mdash; you can loop the main streets in an hour. Start at Plaza Santo Domingo, wander through Plaza de los Coches (the old slave market, now ringed by sweet stalls), past the Cathedral, and along the city walls towards the Baluarte de Santo Domingo. The light in the late afternoon is extraordinary &mdash; golden hour on 500-year-old stone.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 17:30 Sunset Drinks on the Walls -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">wb_twilight</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">~17:30</span>
+                                <span class="font-display text-lg">Sunset Drinks on the Walls</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">The old Caf&eacute; del Mar closed in 2024 but the sunset is exactly the same: Caribbean gold dropping into the sea from 500-year-old fortification walls. Arrive by 5:30pm for a good spot.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Attraction_Review-g297476-d10499818-Reviews-Baluarte_de_Santo_Domingo-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">El Baluarte de la Gente</a>
+                                        <span class="mono-label text-th-amber text-[10px]">Baluarte Santo Domingo &bull; ~&pound;4&ndash;10pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Community-run bar on the exact spot where Caf&eacute; del Mar used to sit. Same iconic sunset, cheaper drinks. Run by young Cartagena culinary graduates. Caribbean bites from &pound;1.40, cocktails &pound;4&ndash;8. Open 4pm&ndash;11pm.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d2088842-Reviews-El_Baluarte_San_Francisco_Javier-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">El Baluarte San Francisco Javier</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">TripAdvisor 4.2/5 &bull; ~&pound;8&ndash;15pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Cartagena&rsquo;s other on-the-walls sunset bar, near Hotel Charleston Santa Teresa. Craft cocktails, live music, less crowded. Open 4pm&ndash;2am.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 19:30 El Barón Cocktails -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">local_bar</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">~19:30</span>
+                                <span class="font-display text-lg">El Bar&oacute;n Cocktails</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                                <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d5954163-Reviews-El_Baron-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-medium text-th-charcoal hover:text-th-coral transition-colors">El Bar&oacute;n</a> on Plaza San Pedro Claver. Mezcal old fashioneds, rum-based house specials, and cigar service if you&rsquo;re feeling it. The terrace is the move. TripAdvisor 4.5/5. ~&pound;6&ndash;9 per cocktail.
+                            </p>
+                            <p class="text-xs text-th-charcoal/40 font-light">Cra. 4 No. 31-7, Plaza San Pedro Claver, Centro</p>
+                        </div>
+                    </div>
+
+                    <!-- ~20:30 Casual Dinner -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">restaurant</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">~20:30</span>
+                                <span class="font-display text-lg">Casual Dinner</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Nothing fancy on night one. Save the big meals for Celele on Friday. Pick one:</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d1161396-Reviews-La_Cevicheria-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">La Cevicher&iacute;a</a>
+                                        <span class="mono-label text-th-coral text-[10px]">Old Town &bull; ~&pound;12&ndash;20pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Famous ceviche spot in the Walled City. Featured on Anthony Bourdain&rsquo;s show. Fresh seafood, open-air seating, buzzy atmosphere. Arrive early or expect a queue. TripAdvisor 4.2/5 (4,600+ reviews).</p>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle Stuart 7-14, Plaza San Diego</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d15129516-Reviews-Sierpe_Caribe_Fusion-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Sierpe Caribe Fusion</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Getseман&iacute; &bull; ~&pound;10&ndash;16pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Caribbean seafood fusion in Getseман&iacute;. Fish from local fishermen, live music, great vibes. Black pasta with prawns, fish in brown butter. Travellers&rsquo; Choice winner. TripAdvisor 4.8/5.</p>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle de la Sierpe #29-09, Getseман&iacute;</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d1535315-Reviews-La_Mulata-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">La Mulata</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Nr Castillo San Felipe &bull; ~&pound;6&ndash;12pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Traditional Caribbean food at honest prices. Massive portions of fish, coconut rice, plantain, and the legendary Cazuela de Mariscos (seafood stew). Packed with locals. TripAdvisor 4.4/5 (4,000+ reviews).</p>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle del Quero #9-58, near Castillo San Felipe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- To-Do -->
+        <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-3">To Book</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Scope out El Baluarte de la Gente or San Francisco Javier for sunset drinks</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Confirm Cartagena accommodation check-in time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 03 / DAY 2 — BEACH + COCKTAILS -->
+<section class="py-32 px-8 border-b border-black/5" id="day2">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">03 / Day 2 &mdash; Thu 9 Apr</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Beach, Street Art &amp; Alqu&iacute;mico</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                The recovery day. No tours, no schedules, no cultural obligations. Caribbean holiday mode: late wake-up, brunch, pool or beach, street art, maybe a massage, then one of the world&rsquo;s best cocktail bars for the evening. The only thing you need to decide is where to lie down.
+            </p>
+        </div>
+
+        <!-- Day 2 Timeline -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-8">Day 2 Timeline</h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-amber/20 hidden md:block"></div>
+                <div class="space-y-10">
+
+                    <!-- Morning — Slow Brunch -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">brunch_dining</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">Morning</span>
+                                <span class="font-display text-lg">Slow Brunch</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Zero alarms. Roll out whenever. Cartagena&rsquo;s brunch scene is solid &mdash; sit in a colonial courtyard with coffee and eggs and pretend you live here.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d10024498-Reviews-Epoca_Espresso_Bar-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Epoca Espresso Bar</a>
+                                        <span class="mono-label text-th-amber text-[10px]">Getseман&iacute; &bull; ~&pound;4&ndash;8pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Best specialty coffee in Cartagena. Small, unpretentious, excellent pour-over and espresso. Good pastries. The barista actually cares about extraction. TripAdvisor 4.5/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d12926498-Reviews-Mila_Pasteleria-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Mila Pasteleria</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Centro Hist&oacute;rico &bull; ~&pound;5&ndash;10pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">French-Colombian bakery. Croissants, eggs benedict, fresh juices. Pretty courtyard. TripAdvisor 4.5/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d15195498-Reviews-Cafe_Luciernaga-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Caf&eacute; Luci&eacute;rnaga</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Getseман&iacute; &bull; ~&pound;4&ndash;8pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Relaxed courtyard caf&eacute;. Good avocado toast, smoothie bowls, strong coffee. Opens early by Cartagena standards. TripAdvisor 4.5/5.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Afternoon — Pool / Beach / Getsemaní -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">pool</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-emerald">Afternoon</span>
+                                <span class="font-display text-lg">Pool / Beach Club + Getseман&iacute;</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Two options &mdash; beach/pool or streets. Or both. City beaches (Bocagrande) are fine but not spectacular &mdash; busy, hawkers, murky water. For a better experience:</p>
+                            <div class="space-y-3 mb-4">
+                                <div class="p-4 rounded-xl border border-th-emerald/20 bg-th-emerald/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Attraction_Review-g297476-d17736217-Reviews-Fenix_Beach-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-emerald transition-colors">Fenix Beach Club</a>
+                                        <span class="mono-label text-th-emerald text-[10px]">Tierra Bomba &bull; 10 min boat &bull; ~&pound;12&ndash;20 entry</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Beach club on a nearby island. White sand, loungers, bar service. Entry redeemable on food/drink. Boat runs every hour from Muelle de la Bodeguita. TripAdvisor 4.0/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Hotel_Review-g297476-d302192-Reviews-Sofitel_Legend_Santa_Clara_Cartagena-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-emerald transition-colors">Hotel Santa Clara Pool</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Old Town</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Colonial monastery turned luxury hotel. Day passes sometimes available. Beautiful pool in a cloistered courtyard. Ask your concierge to call ahead.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Attraction_Review-g297476-d554751-Reviews-Playa_Blanca-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-emerald transition-colors">Playa Blanca</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Bar&uacute; &bull; 45 min&ndash;1hr boat</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">The famous white-sand beach. Stunning water, very touristy. Better as a half-day trip. Can feel crowded.</p>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-th-charcoal/60 font-light mb-3"><strong class="font-medium text-th-charcoal">Getseман&iacute; street art wander:</strong> Cartagena&rsquo;s answer to Comuna 13 but looser and more DIY. Streets around Plaza de la Trinidad are covered in murals &mdash; political, abstract, beautiful. No guide needed; just walk and look. Key streets: Calle de la Sierpe, Callej&oacute;n Angosto, Calle del Porvenir.</p>
+                            <p class="text-xs text-th-charcoal/40 font-light"><strong class="font-medium text-th-charcoal/60">Optional massages:</strong> Several spots in the Old Town and Getseман&iacute;. Ask your accommodation for a rec. ~$25&ndash;40 for an hour.</p>
+                        </div>
+                    </div>
+
+                    <!-- ~19:00 Dinner -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">restaurant</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">~19:00</span>
+                                <span class="font-display text-lg">Dinner before Alqu&iacute;mico</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Eat first, drink after. All three are walkable to Alqu&iacute;mico. Pick one:</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d1063606-Reviews-La_Vitrola-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">La Vitrola</a>
+                                        <span class="mono-label text-th-coral text-[10px]">Old Town &bull; ~&pound;15&ndash;25pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Classic Cuban-style restaurant in a colonial mansion. Live music, white tablecloths, excellent steaks and seafood. Has been the go-to Cartagena dinner spot for decades. Feels like Havana in the 1950s. TripAdvisor 4.5/5.</p>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle del Santisimo #8-08, Centro Hist&oacute;rico</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d12598070-Reviews-Cande_Restaurante-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Cand&eacute;</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Old Town &bull; ~&pound;10&ndash;18pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Modern Colombian small plates in a buzzy courtyard. Good for sharing across the table. Creative cocktails, lively atmosphere, easy-going. TripAdvisor 4.5/5.</p>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle del Colegio, Centro Hist&oacute;rico</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d15129516-Reviews-Sierpe_Caribe_Fusion-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Sierpe Caribe Fusion</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Getseман&iacute; &bull; ~&pound;10&ndash;16pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Caribbean seafood fusion, live music, local fishermen&rsquo;s catch daily. Travellers&rsquo; Choice winner. If you didn&rsquo;t eat here on Day 1, tonight&rsquo;s the night. TripAdvisor 4.8/5.</p>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle de la Sierpe #29-09, Getseман&iacute;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ~21:00 Alquímico -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">local_bar</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">~21:00</span>
+                                <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d12145498-Reviews-Alquimico-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display text-lg hover:text-th-coral transition-colors">Alqu&iacute;mico</a>
+                                <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-coral/10 text-th-coral border border-th-coral/20">#11 World&rsquo;s 50 Best Bars</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                                Tonight&rsquo;s centrepiece. The highest-ranked bar in Colombia and one of the best in Latin America. Three-storey colonial building in the Old Town: ground floor is an elegant cocktail lounge, first floor is a lively bar, rooftop terrace has open-air seating under the stars with views over the Old Town&rsquo;s church domes.
+                            </p>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                                Cocktails built around Colombian ingredients: aji peppers, tropical fruits, local honey, Colombian spirits. Menu changes seasonally. Tell the bartender what flavours you like and let them guide you. ~&pound;7 per cocktail. TripAdvisor 4.5/5.
+                            </p>
+                            <p class="text-xs text-th-charcoal/40 font-light">Calle del Colegio 34-24, Ciudad Vieja &bull; Arrive 9pm for rooftop tables</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- To-Do -->
+        <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-3">To Book</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Research beach clubs or hotel day passes</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Check Alqu&iacute;mico reservation policy for Thu evening</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 04 / DAY 3 — ROSARIO ISLANDS + BIG NIGHT -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="day3">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">04 / Day 3 &mdash; Fri 10 Apr</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Rosario Islands + The Big Night</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                The best day of the Cartagena leg and arguably the best day of the trip. Island hopping in the morning, turquoise water and beach clubs in the afternoon, then the biggest night out of the Colombia stretch. This is the one you&rsquo;ll remember.
+            </p>
+        </div>
+
+        <!-- Day 3 Timeline -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-8">Day 3 Timeline</h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-coral/20 hidden md:block"></div>
+                <div class="space-y-10">
+
+                    <!-- ~07:30 Quick Breakfast -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">coffee</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">~07:30</span>
+                                <span class="font-display text-lg">Quick Breakfast</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Early start for the boat. Grab something fast before heading to the dock:</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d10024498-Reviews-Epoca_Espresso_Bar-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Epoca Espresso Bar</a>
+                                        <span class="mono-label text-th-amber text-[10px]">Getseман&iacute; &bull; ~&pound;4&ndash;8pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Quick coffee and pastry. Opens early. Best espresso in Cartagena. In and out in 20 minutes. TripAdvisor 4.5/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d12926498-Reviews-Mila_Pasteleria-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Mila Pasteleria</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Centro Hist&oacute;rico &bull; ~&pound;5&ndash;10pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Croissants, coffee, fresh juice. Quick and reliable. TripAdvisor 4.5/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <span class="font-display">Street arepa de huevo</span>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">&lt;&pound;1 each</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Fried arepas stuffed with egg from any corner vendor. The fastest breakfast in Cartagena. Grab two and walk to the dock.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 08:30 Rosario Islands -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">sailing</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-emerald">~08:30</span>
+                                <span class="font-display text-lg">Rosario Islands Boat Day</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                                The Islas del Rosario are a national park of 27 islands about 45 minutes offshore by speedboat. Caribbean-postcard turquoise water, small beach clubs, and mangroves. Most tours depart from Muelle de la Bodeguita or Muelle Tur&iacute;stico at 8&ndash;9am.
+                            </p>
+                            <div class="space-y-1.5 text-xs text-th-charcoal/50 font-light mb-3">
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-emerald">speed</span> <strong class="font-medium text-th-charcoal">Speedboat</strong>: Faster and more fun than the big slow catamarans. Book private or small-group if budget allows (~&pound;40&ndash;65pp full day).</div>
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-emerald">scuba_diving</span> <strong class="font-medium text-th-charcoal">Islands</strong>: Isla Grande (beach clubs), Isla del Pirata (snorkelling), Cholon (party island, floating bars, music, controlled chaos).</div>
+                                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-emerald">backpack</span> <strong class="font-medium text-th-charcoal">Bring</strong>: Sunscreen (reef-safe), cash for island food/drinks, waterproof phone case, towel.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Afternoon — Island Hopping -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">beach_access</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">Afternoon</span>
+                                <span class="font-display text-lg">Island Hopping &amp; Switch-Off</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">
+                                The full switch-off. Swim, snorkel, drink rum out of coconuts, doze on a lounger. Most boat tours include lunch &mdash; fried fish, coconut rice, patacones. Simple, fresh, perfect.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <span class="font-display">Cholon</span>
+                                        <span class="mono-label text-th-amber text-[10px]">Party island</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Anchored boats playing music, vendors paddling up in canoes selling fruit and ceviche, people swimming between boats with beers. Gloriously chaotic. Spend an hour, take photos, move on.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <span class="font-display">Playa Libre / Isla del Encanto</span>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Quiet islands</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Cleaner beaches, better for actual relaxation and snorkelling. The antidote to Cholon&rsquo;s chaos.</p>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-xs text-th-charcoal/40 font-light">Most boats return to Cartagena by 3&ndash;4pm. Head back, shower off the salt, nap, and prepare for the biggest night of the trip.</p>
+                        </div>
+                    </div>
+
+                    <!-- 20:00 Dinner -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">restaurant</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">~20:00</span>
+                                <span class="font-display text-lg">Blow-Out Dinner</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Last full night before Bogot&aacute;. The plan: serious dinner, then Alqu&iacute;mico (all three floors), then rooftop bars, then wherever the night takes you.</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5">
+                                    <div class="flex flex-wrap items-center gap-3 mb-2">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d12219498-Reviews-Celele-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Celele</a>
+                                        <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-coral/10 text-th-coral border border-th-coral/20">#48 World &bull; #5 LATAM</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light mb-2">
+                                        The best restaurant in Cartagena. Full stop. Chef Jaime Rodriguez spent years resurrecting forgotten Caribbean ingredients from indigenous communities. 8-course tasting menu: Caribbean flower salads, confit pork with plantain, lobster tartare with coconut sorbet. Set in a low-key blue house in Getseман&iacute;. Door locks once service starts. Don&rsquo;t be late. TripAdvisor 4.5/5.
+                                    </p>
+                                    <div class="flex flex-wrap gap-3 text-xs text-th-charcoal/40 font-light">
+                                        <span>~&pound;70&ndash;100pp with pairing</span>
+                                        <span>&bull;</span>
+                                        <span>+57 301 742 0389</span>
+                                        <span>&bull;</span>
+                                        <span class="text-th-coral/70 font-medium">Book well ahead</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle del Espiritu Santo, Cr 10c #29-200, Getseман&iacute;</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center gap-3 mb-2">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d2715694-Reviews-Carmen-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Carmen</a>
+                                        <span class="mono-label text-[10px] text-th-charcoal/40">Alternative</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light mb-2">
+                                        Established fine dining in a gorgeous colonial mansion. Five dining rooms including a courtyard built into a centuries-old fortress wall under massive trees. Contemporary Colombian with Caribbean influences. More &ldquo;classic big night out&rdquo; than Celele: polished, impressive, easier to book. TripAdvisor 4.5/5.
+                                    </p>
+                                    <div class="flex flex-wrap gap-3 text-xs text-th-charcoal/40 font-light">
+                                        <span>7-course ~&pound;45&ndash;65pp</span>
+                                        <span>&bull;</span>
+                                        <span>11-course ~&pound;92pp</span>
+                                        <span>&bull;</span>
+                                        <span>reservas@carmencartagena.com</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle 38 #8-19, Calle del Santisimo</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center gap-3 mb-2">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d1063606-Reviews-La_Vitrola-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">La Vitrola</a>
+                                        <span class="mono-label text-[10px] text-th-charcoal/40">Alternative</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light mb-2">
+                                        If Celele is booked or you want something less tasting-menu. Classic Cuban-style colonial mansion, live music, white tablecloths, excellent steaks and seafood. Feels like Havana in the 1950s. TripAdvisor 4.5/5.
+                                    </p>
+                                    <div class="flex flex-wrap gap-3 text-xs text-th-charcoal/40 font-light">
+                                        <span>~&pound;15&ndash;25pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle del Santisimo #8-08, Centro Hist&oacute;rico</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 22:00 Alquímico Round 2 -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">local_bar</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">~22:00</span>
+                                <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d12145498-Reviews-Alquimico-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display text-lg hover:text-th-coral transition-colors">Alqu&iacute;mico: All Three Floors</a>
+                                <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-coral/10 text-th-coral border border-th-coral/20">#11 World&rsquo;s 50 Best</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">
+                                You know the ground floor from last night. Tonight you do all three levels. Start downstairs, work your way up to the rooftop. Spend an hour or two here before moving on.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Late Night -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">nightlife</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">Late</span>
+                                <span class="font-display text-lg">Late Night Options</span>
+                            </div>
+                            <div class="space-y-3 mt-3">
+                                <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d23919498-Reviews-Casa_Cruxada-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Casa Cruxada</a>
+                                        <span class="mono-label text-th-coral text-[10px]">Getseман&iacute;</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">The late-night move. Part bar, part club: converted house with multiple rooms, a courtyard, and DJs on weekends. Energy builds through the night. Open late. TripAdvisor 4.5/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d8092498-Reviews-Mr_Babilla-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Mr. Babilla</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Getseман&iacute; &bull; Salsa bar</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Live music some nights. Sweaty, loud, brilliant. If you want to dance, this is the spot. On Calle del Arsenal, the street that doesn&rsquo;t sleep. TripAdvisor 4.0/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d17453498-Reviews-Alquimia_Terraza-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Alquimia Terraza</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Old Town rooftop</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Rooftop bar in the Old Town. Good for a change of scenery if Alqu&iacute;mico feels done. DJs, open air, views over the domes. TripAdvisor 4.0/5.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- To-Do -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-3">To Book</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Book Rosario Islands boat tour (private speedboat, depart ~8&ndash;9am)</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Book Celele for Fri 10 Apr, 5 pax. Call +57 301 742 0389. Book early, it sells out.</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>Confirm evening club plan + dress code for Casa Cruxada / rooftops</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 05 / DAY 4 — FLY OUT -->
+<section class="py-32 px-8 border-b border-black/5" id="day4">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">05 / Day 4 &mdash; Sat 11 Apr</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Slow Morning. Fly to Bogot&aacute;.</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                Flight to Bogot&aacute; departs CTG 12:38 &rarr; BOG 14:12. The morning is tighter than it looks, especially after last night.
+            </p>
+        </div>
+
+        <div class="glass-card p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="mono-label text-th-charcoal/40 mb-8">Day 4 Timeline</h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-emerald/20 hidden md:block"></div>
+                <div class="space-y-10">
+
+                    <!-- ~09:30 Breakfast -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">coffee</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">~09:30</span>
+                                <span class="font-display text-lg">Late Breakfast</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">You were out until 4am. No rush. Eat, hydrate, pack. Pick one:</p>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d10024498-Reviews-Epoca_Espresso_Bar-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Epoca Espresso Bar</a>
+                                        <span class="mono-label text-th-amber text-[10px]">Getseман&iacute; &bull; ~&pound;4&ndash;8pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Strong coffee, pastries, quick and reliable. You know the drill by now. TripAdvisor 4.5/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d15195498-Reviews-Cafe_Luciernaga-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Caf&eacute; Luci&eacute;rnaga</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Getseман&iacute; &bull; ~&pound;4&ndash;8pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Courtyard caf&eacute;. Avocado toast, smoothie bowls, strong coffee. Good hangover food. TripAdvisor 4.5/5.</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d12926498-Reviews-Mila_Pasteleria-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Mila Pasteleria</a>
+                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Centro Hist&oacute;rico &bull; ~&pound;5&ndash;10pp</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Croissants, eggs benedict, fresh juice. If you want a proper sit-down before the flight. TripAdvisor 4.5/5.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ~10:15 Checkout -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">luggage</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-emerald">~10:15</span>
+                                <span class="font-display text-lg">Checkout</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Pack and go. The airport is 10 minutes away so you have more time than you think, but don&rsquo;t push it after last night.</p>
+                        </div>
+                    </div>
+
+                    <!-- Taxi to airport -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">departure_board</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">~10:30</span>
+                                <span class="font-display text-lg">Taxi to CTG Airport</span>
+                                <span class="mono-label text-[10px] text-th-coral/50">Latest 11:00</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Rafael N&uacute;&ntilde;ez airport is 10 minutes from the Old Town. One of the easiest airport runs you&rsquo;ll ever do.</p>
+                        </div>
+                    </div>
+
+                    <!-- Flight -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">flight_takeoff</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">12:38</span>
+                                <span class="font-display text-lg">CTG &rarr; BOG</span>
+                                <span class="mono-label text-[10px] text-th-amber/50">Arrives 14:12</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Next stop: Bogot&aacute; for El Chato (#1 in Latin America) and the final night.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- To-Do -->
+        <div class="glass-card p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-2">To Book</h4>
+                    <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                        <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                        <span>Confirm CTG &rarr; BOG flight (12:38) and Bogot&aacute; airport transfer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 06 / WHERE TO EAT -->
+<section class="bg-th-beige/30 py-32 px-8 border-b border-black/5" id="eat">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">06 / Where to Eat</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">From Arepa de Huevo to #48 in the World</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                Ceviche is everywhere and usually excellent. Arepa de huevo is the signature street food. Limonada de coco is the daytime drink. After dark, switch to rum: Ron Medell&iacute;n or Dictador are the local picks.
+            </p>
+        </div>
+
+        <!-- Sit-Down Restaurants -->
+        <div class="space-y-6 mb-8">
+
+            <!-- Celele -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-coral">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-coral">star</span>
+                    <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d12219498-Reviews-Celele-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display text-lg hover:text-th-coral transition-colors">Celele</a>
+                    <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-coral/10 text-th-coral border border-th-coral/20">#48 World</span>
+                    <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-coral/10 text-th-coral border border-th-coral/20">#5 LATAM</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">TripAdvisor 4.5/5</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                    The best restaurant in Cartagena. Chef Jaime Rodriguez spent years travelling Colombia talking to indigenous communities and resurrecting forgotten Caribbean ingredients. 8-course tasting menu: Caribbean flower salads, confit pork with plantain, lobster tartare with coconut sorbet. Set in a low-key blue house in Getseман&iacute;. Door locks once service starts.
+                </p>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-th-charcoal/40 font-light">
+                    <span>~&pound;70&ndash;100pp with pairing</span>
+                    <span>+57 301 742 0389</span>
+                </div>
+                <p class="text-xs text-th-charcoal/40 font-light mt-2">Calle del Espiritu Santo, Cr 10c #29-200, Getseман&iacute;</p>
+            </div>
+
+            <!-- Carmen -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-amber">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-amber">restaurant</span>
+                    <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d2715694-Reviews-Carmen-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display text-lg hover:text-th-amber transition-colors">Carmen</a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Established fine dining</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">TripAdvisor 4.5/5</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                    Gorgeous colonial mansion in the walled city. Five dining rooms including a courtyard built into a centuries-old fortress wall under massive trees. Contemporary Colombian with Caribbean and international influences: Pacific ceviche, beef tenderloin, creative cocktails with local fruits. The &ldquo;classic big night out&rdquo; option.
+                </p>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-th-charcoal/40 font-light">
+                    <span>7-course ~&pound;45&ndash;65pp</span>
+                    <span>11-course ~&pound;92pp</span>
+                    <span>reservas@carmencartagena.com</span>
+                </div>
+                <p class="text-xs text-th-charcoal/40 font-light mt-2">Calle 38 #8-19, Calle del Santisimo, Centro Hist&oacute;rico</p>
+            </div>
+
+            <!-- Alquímico -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-emerald">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-emerald">local_bar</span>
+                    <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d12145498-Reviews-Alquimico-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display text-lg hover:text-th-emerald transition-colors">Alqu&iacute;mico</a>
+                    <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">#11 World&rsquo;s 50 Best Bars</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">TripAdvisor 4.5/5</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                    Three-storey colonial building. Ground floor is elegant cocktails, first floor is lively, rooftop terrace has views over the Old Town&rsquo;s church domes under the stars. Colombian ingredients: aji peppers, tropical fruits, local honey. Food menu is solid too. ~&pound;7/cocktail.
+                </p>
+                <p class="text-xs text-th-charcoal/40 font-light">Calle del Colegio 34-24, Ciudad Vieja</p>
+            </div>
+
+            <!-- El Barón -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-charcoal/50">local_bar</span>
+                    <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d5954163-Reviews-El_Baron-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display text-lg hover:text-th-charcoal transition-colors">El Bar&oacute;n</a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Cocktails &amp; cigars</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">TripAdvisor 4.5/5</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">
+                    Rustic cocktail bar on a beautiful corner of Plaza San Pedro Claver. Mezcal old fashioneds, rum-based house specials, and cigar service. The terrace is the move. ~&pound;7/cocktail.
+                </p>
+                <p class="text-xs text-th-charcoal/40 font-light">Calle San Pedro Claver #31-7, Ciudad Vieja</p>
+            </div>
+        </div>
+
+        <!-- Street Food + Drinks -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl">
+            <h3 class="mono-label text-th-charcoal/40 mb-6">Street Food &amp; Drinks</h3>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5 text-center">
+                    <span class="material-symbols-outlined text-th-amber text-3xl block mb-2">egg_alt</span>
+                    <span class="font-display block mb-1">Arepa de Huevo</span>
+                    <p class="text-xs text-th-charcoal/50 font-light">Deep-fried corn dough stuffed with an egg. Under 5,000 COP. The best breakfast in the city.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30 text-center">
+                    <span class="material-symbols-outlined text-th-charcoal/50 text-3xl block mb-2">set_meal</span>
+                    <span class="font-display block mb-1">Ceviche</span>
+                    <p class="text-xs text-th-charcoal/50 font-light">Lime-cured fish with coconut, aji, and tropical fruit. Everywhere and usually excellent.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30 text-center">
+                    <span class="material-symbols-outlined text-th-emerald text-3xl block mb-2">water_drop</span>
+                    <span class="font-display block mb-1">Limonada de Coco</span>
+                    <p class="text-xs text-th-charcoal/50 font-light">Coconut lemonade. The daytime drink. Refreshing, cheap, everywhere.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5 text-center">
+                    <span class="material-symbols-outlined text-th-coral text-3xl block mb-2">local_bar</span>
+                    <span class="font-display block mb-1">Rum &amp; Aguardiente</span>
+                    <p class="text-xs text-th-charcoal/50 font-light">Ron Medell&iacute;n or Dictador after dark. Aguardiente shots taste of anise and poor decisions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 07 / WHERE TO STAY -->
+<section class="py-32 px-8 border-b border-black/5" id="stay">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="mono-label text-th-charcoal/40 mb-4 block">07 / Where to Stay</span>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">5 Options. 3 Nights. 5 Adults.</h2>
+            <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
+                8&ndash;11 Apr 2026. Old Town / Getseман&iacute; preferred. Prices are total for 3 nights, 5 adults.
+            </p>
+        </div>
+
+        <div class="space-y-4 mb-8">
+            <!-- Top Pick — Stylish Pop -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-emerald">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Top Pick</span>
+                    <a href="https://www.airbnb.co.uk/rooms/47269941?adults=5&check_in=2026-04-08&check_out=2026-04-11" target="_blank" class="font-display text-lg hover:text-th-emerald transition-colors">Stylish Pop 3BD Art Apt</a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Airbnb</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 mb-3">
+                    <span class="font-display text-th-emerald text-xl">&pound;407</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">&pound;81pp</span>
+                    <span class="mono-label text-[10px] text-th-amber">4.81/5</span>
+                    <span class="text-xs text-th-charcoal/40 font-light">Old Town (Walled City)</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bed</span>3 bedrooms</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bathroom</span>3 bath</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">location_on</span>Inside the walls</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-2">Walking distance to Alqu&iacute;mico, El Bar&oacute;n &amp; the city walls sunset bars. Superhost. 199 reviews. Best balance of location, space, reviews and value.</p>
+            </div>
+
+            <!-- Tom's Stylish 3BD -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <a href="https://www.airbnb.co.uk/rooms/47108418?adults=5&check_in=2026-04-08&check_out=2026-04-11" target="_blank" class="font-display text-lg hover:text-th-emerald transition-colors">Tom&rsquo;s Stylish 3BD</a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Airbnb</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 mb-3">
+                    <span class="font-display text-th-charcoal text-xl">&pound;435</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">&pound;87pp</span>
+                    <span class="mono-label text-[10px] text-th-amber">4.85/5</span>
+                    <span class="text-xs text-th-charcoal/40 font-light">Getseман&iacute;</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bed</span>3 bed (2 queen + 2 single)</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bathroom</span>3 bath</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">nightlife</span>Nightlife neighbourhood</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-2">Walkable to all evening plans. 224 reviews. Proven host. Slightly higher rated than top pick, in the nightlife neighbourhood.</p>
+            </div>
+
+            <!-- Espectacular Vista -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <a href="https://www.booking.com/hotel/co/espectacular-vista-al-castillo-de-san-felipe.en-gb.html" target="_blank" class="font-display text-lg hover:text-th-emerald transition-colors">Espectacular Vista al Castillo</a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Booking.com</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 mb-3">
+                    <span class="font-display text-th-charcoal text-xl">&pound;393</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">&pound;79pp</span>
+                    <span class="mono-label text-[10px] text-th-amber">9.6/10</span>
+                    <span class="text-xs text-th-charcoal/40 font-light">San Felipe</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bed</span>2 bed + sofa bed</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bathroom</span>2 bath</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">castle</span>Castle views</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-2">Highest rating on the list. 137 reviews. Great location near the castle. Only 2BR so someone&rsquo;s on the sofa.</p>
+            </div>
+
+            <!-- Beautiful Designer Loft -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <a href="https://www.airbnb.co.uk/rooms/40441767?adults=5&check_in=2026-04-08&check_out=2026-04-11" target="_blank" class="font-display text-lg hover:text-th-emerald transition-colors">Beautiful Designer Loft</a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Airbnb</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 mb-3">
+                    <span class="font-display text-th-charcoal text-xl">&pound;535</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">&pound;107pp</span>
+                    <span class="mono-label text-[10px] text-th-amber">4.87/5</span>
+                    <span class="text-xs text-th-charcoal/40 font-light">Old City</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bed</span>2 bed + sofa bed</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bathroom</span>2.5 bath</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">design_services</span>Designer</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-2">Most expensive option. 260 reviews, strong rating. Great Old City location but only 2BR. Best for design/aesthetic.</p>
+            </div>
+
+            <!-- Murano Centro -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Best Value</span>
+                    <a href="https://www.booking.com/hotel/co/murano-centro-1-by-imz.en-gb.html" target="_blank" class="font-display text-lg hover:text-th-emerald transition-colors">Murano Centro 1 &mdash; 25th Floor</a>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">Booking.com</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 mb-3">
+                    <span class="font-display text-th-emerald text-xl">&pound;279&ndash;338</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">&pound;56&ndash;68pp</span>
+                    <span class="mono-label text-[10px] text-th-amber">9.5/10</span>
+                    <span class="text-xs text-th-charcoal/40 font-light">Cabrero</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bed</span>2 bed + sofa bed</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">bathroom</span>3 bath</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">pool</span>Infinity pool</span>
+                    <span class="inline-flex items-center gap-1 text-[11px] text-th-charcoal/60 font-light px-2.5 py-1 rounded-full bg-black/[0.03] border border-black/5"><span class="material-symbols-outlined text-sm">spa</span>Spa &amp; hot tub</span>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-2">Cheapest option. Best amenities of the lot. 54 reviews. Trade-off: needs taxis to Old Town for evening plans.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-th-sand border-t border-black/10 text-th-charcoal py-10 px-8">
+    <div class="max-w-7xl mx-auto">
+        <p class="mono-label text-th-charcoal/40 text-center">&copy; 2026 Kris Rajah &middot; Madrid + Colombia &middot; April 2026</p>
+    </div>
+</footer>
+
+</body>
+</html>
