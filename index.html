@@ -67,7 +67,7 @@
         <div class="flex items-center gap-3">
             <span class="font-display font-semibold text-lg tracking-tight">Kris Rajah</span>
             <span class="text-th-charcoal/30">|</span>
-            <span class="mono-label text-th-charcoal/50">City Guides</span>
+            <span class="mono-label text-th-charcoal/50">Index</span>
         </div>
     </div>
 </header>
@@ -89,15 +89,15 @@
 
 
 <!-- TIMELINE -->
-<section class="max-w-5xl mx-auto px-8 pb-24 pt-4">
+<section class="max-w-5xl mx-auto px-4 md:px-8 pb-24 pt-4">
     <div class="flex items-center gap-4 mb-8">
         <span class="mono-label text-th-charcoal/40">Full Itinerary</span>
         <div class="flex-1 h-px bg-black/5"></div>
         <span class="mono-label text-th-charcoal/40">12 Days</span>
     </div>
 
-    <!-- Route legend -->
-    <div class="flex items-center justify-center gap-2 flex-wrap mb-12">
+    <!-- Route legend — desktop: single row with arrows -->
+    <div class="hidden md:flex items-center justify-center gap-2 mb-12">
         <span class="px-3 py-1.5 rounded-full text-xs font-medium" style="background: rgba(59,130,246,0.1); color: #3b82f6;">Madrid &middot; 3 nights</span>
         <span class="material-symbols-outlined text-th-charcoal/20 text-sm">arrow_forward</span>
         <span class="px-3 py-1.5 rounded-full text-xs font-medium" style="background: rgba(5,150,105,0.1); color: #059669;">Medell&iacute;n &middot; 3 nights</span>
@@ -106,16 +106,23 @@
         <span class="material-symbols-outlined text-th-charcoal/20 text-sm">arrow_forward</span>
         <span class="px-3 py-1.5 rounded-full text-xs font-medium" style="background: rgba(217,119,6,0.1); color: #d97706;">Bogot&aacute; &middot; 1 night</span>
     </div>
+    <!-- Route legend — mobile: 2x2 grid, no arrows -->
+    <div class="grid grid-cols-2 gap-2 md:hidden mb-12 max-w-xs mx-auto">
+        <span class="px-3 py-1.5 rounded-full text-xs font-medium text-center" style="background: rgba(59,130,246,0.1); color: #3b82f6;">Madrid &middot; 3 nights</span>
+        <span class="px-3 py-1.5 rounded-full text-xs font-medium text-center" style="background: rgba(5,150,105,0.1); color: #059669;">Medell&iacute;n &middot; 3 nights</span>
+        <span class="px-3 py-1.5 rounded-full text-xs font-medium text-center" style="background: rgba(230,126,95,0.1); color: #e67e5f;">Cartagena &middot; 3 nights</span>
+        <span class="px-3 py-1.5 rounded-full text-xs font-medium text-center" style="background: rgba(217,119,6,0.1); color: #d97706;">Bogot&aacute; &middot; 1 night</span>
+    </div>
 
     <div class="relative">
         <!-- Vertical line -->
-        <div class="absolute left-[23px] md:left-[27px] top-0 bottom-0 w-px bg-black/10"></div>
+        <div class="absolute left-[15px] md:left-[27px] top-0 bottom-0 w-px bg-black/10"></div>
 
         <div class="space-y-6">
 
             <!-- DAY 1 — Thu 2 Apr -->
-            <div class="relative flex gap-5 md:gap-8">
-                <div class="relative z-10 w-12 md:w-14 shrink-0 flex flex-col items-center">
+            <div class="relative flex gap-3 md:gap-8">
+                <div class="relative z-10 w-8 md:w-14 shrink-0 flex flex-col items-center">
                     <span class="w-3 h-3 rounded-full border-2 border-blue-500 bg-th-sand"></span>
                 </div>
                 <div class="pb-2 -mt-1 flex-1">
@@ -128,8 +135,8 @@
                             <span class="px-2 py-0.5 rounded-full text-[10px] font-medium" style="background: rgba(59,130,246,0.1); color: #3b82f6;">MADRID</span>
                             <span class="mono-label text-th-charcoal/30 text-[10px]">Travel Day</span>
                         </div>
-                        <div class="flex items-center gap-2 text-sm mb-2">
-                            <span class="material-symbols-outlined text-th-charcoal text-base">flight_takeoff</span>
+                        <div class="flex items-center gap-2 text-xs md:text-sm mb-2">
+                            <span class="material-symbols-outlined text-th-charcoal text-sm md:text-base">flight_takeoff</span>
                             <span class="font-medium">LHR 18:45 &rarr; MAD 22:10</span>
                             <span class="mono-label text-[10px]" style="color: #e4002b;">IB0722 &middot; 2h 25m</span>
                         </div>
@@ -143,8 +150,8 @@
             </div>
 
             <!-- DAY 2 — Fri 3 Apr -->
-            <div class="relative flex gap-5 md:gap-8">
-                <div class="relative z-10 w-12 md:w-14 shrink-0 flex flex-col items-center">
+            <div class="relative flex gap-3 md:gap-8">
+                <div class="relative z-10 w-8 md:w-14 shrink-0 flex flex-col items-center">
                     <span class="w-3 h-3 rounded-full bg-blue-500"></span>
                 </div>
                 <div class="pb-2 -mt-1 flex-1">
@@ -163,8 +170,8 @@
             </div>
 
             <!-- DAY 3 — Sat 4 Apr -->
-            <div class="relative flex gap-5 md:gap-8">
-                <div class="relative z-10 w-12 md:w-14 shrink-0 flex flex-col items-center">
+            <div class="relative flex gap-3 md:gap-8">
+                <div class="relative z-10 w-8 md:w-14 shrink-0 flex flex-col items-center">
                     <span class="w-3 h-3 rounded-full bg-blue-500"></span>
                 </div>
                 <div class="pb-2 -mt-1 flex-1">
@@ -186,8 +193,8 @@
             </div>
 
             <!-- DAY 4 — Sun 5 Apr -->
-            <div class="relative flex gap-5 md:gap-8">
-                <div class="relative z-10 w-12 md:w-14 shrink-0 flex flex-col items-center">
+            <div class="relative flex gap-3 md:gap-8">
+                <div class="relative z-10 w-8 md:w-14 shrink-0 flex flex-col items-center">
                     <span class="w-3 h-3 rounded-full border-2 border-emerald-600 bg-th-sand"></span>
                 </div>
                 <div class="pb-2 -mt-1 flex-1">
@@ -206,14 +213,14 @@
                             <span class="material-symbols-outlined text-sm text-th-charcoal/40">luggage</span>
                             <span>Check-out ~11:00 &middot; Radisson RED Madrid</span>
                         </div>
-                        <div class="space-y-1 text-sm mb-2">
+                        <div class="space-y-1 text-xs md:text-sm mb-2">
                             <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-th-charcoal text-base">flight_takeoff</span>
+                                <span class="material-symbols-outlined text-th-charcoal text-sm md:text-base">flight_takeoff</span>
                                 <span class="font-medium">MAD 12:10 &rarr; BOG 15:50</span>
                                 <span class="mono-label text-[10px]" style="color: #e4002b;">IB0151 &middot; 10h 40m</span>
                             </div>
                             <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-th-charcoal/30 text-base">flight_takeoff</span>
+                                <span class="material-symbols-outlined text-th-charcoal/30 text-sm md:text-base">flight_takeoff</span>
                                 <span class="font-medium text-th-charcoal/50">BOG 18:39 &rarr; MDE 19:35</span>
                                 <span class="mono-label text-th-charcoal/30 text-[10px]">TBD &middot; 1h</span>
                             </div>
@@ -227,8 +234,8 @@
             </div>
 
             <!-- DAY 5 — Mon 6 Apr -->
-            <div class="relative flex gap-5 md:gap-8">
-                <div class="relative z-10 w-12 md:w-14 shrink-0 flex flex-col items-center">
+            <div class="relative flex gap-3 md:gap-8">
+                <div class="relative z-10 w-8 md:w-14 shrink-0 flex flex-col items-center">
                     <span class="w-3 h-3 rounded-full bg-emerald-600"></span>
                 </div>
                 <div class="pb-2 -mt-1 flex-1">
@@ -251,8 +258,8 @@
             </div>
 
             <!-- DAY 6 — Tue 7 Apr -->
-            <div class="relative flex gap-5 md:gap-8">
-                <div class="relative z-10 w-12 md:w-14 shrink-0 flex flex-col items-center">
+            <div class="relative flex gap-3 md:gap-8">
+                <div class="relative z-10 w-8 md:w-14 shrink-0 flex flex-col items-center">
                     <span class="w-3 h-3 rounded-full bg-emerald-600"></span>
                 </div>
                 <div class="pb-2 -mt-1 flex-1">
@@ -275,8 +282,8 @@
             </div>
 
             <!-- DAY 7 — Wed 8 Apr -->
-            <div class="relative flex gap-5 md:gap-8">
-                <div class="relative z-10 w-12 md:w-14 shrink-0 flex flex-col items-center">
+            <div class="relative flex gap-3 md:gap-8">
+                <div class="relative z-10 w-8 md:w-14 shrink-0 flex flex-col items-center">
                     <span class="w-3 h-3 rounded-full border-2 bg-th-sand" style="border-color: #e67e5f;"></span>
                 </div>
                 <div class="pb-2 -mt-1 flex-1">
@@ -295,8 +302,8 @@
                             <span class="material-symbols-outlined text-sm text-th-charcoal/30">luggage</span>
                             <span>Check-out ~12:00 &middot; TBD</span>
                         </div>
-                        <div class="flex items-center gap-2 text-sm mb-2">
-                            <span class="material-symbols-outlined text-th-charcoal/30 text-base">flight_takeoff</span>
+                        <div class="flex items-center gap-2 text-xs md:text-sm mb-2">
+                            <span class="material-symbols-outlined text-th-charcoal/30 text-sm md:text-base">flight_takeoff</span>
                             <span class="font-medium text-th-charcoal/50">MDE 14:29 &rarr; CTG 15:37</span>
                             <span class="mono-label text-th-charcoal/30 text-[10px]">TBD &middot; 1h</span>
                         </div>
@@ -312,8 +319,8 @@
             </div>
 
             <!-- DAY 8 — Thu 9 Apr -->
-            <div class="relative flex gap-5 md:gap-8">
-                <div class="relative z-10 w-12 md:w-14 shrink-0 flex flex-col items-center">
+            <div class="relative flex gap-3 md:gap-8">
+                <div class="relative z-10 w-8 md:w-14 shrink-0 flex flex-col items-center">
                     <span class="w-3 h-3 rounded-full" style="background: #e67e5f;"></span>
                 </div>
                 <div class="pb-2 -mt-1 flex-1">
@@ -336,8 +343,8 @@
             </div>
 
             <!-- DAY 9 — Fri 10 Apr -->
-            <div class="relative flex gap-5 md:gap-8">
-                <div class="relative z-10 w-12 md:w-14 shrink-0 flex flex-col items-center">
+            <div class="relative flex gap-3 md:gap-8">
+                <div class="relative z-10 w-8 md:w-14 shrink-0 flex flex-col items-center">
                     <span class="w-3 h-3 rounded-full" style="background: #e67e5f;"></span>
                 </div>
                 <div class="pb-2 -mt-1 flex-1">
@@ -359,8 +366,8 @@
             </div>
 
             <!-- DAY 10 — Sat 11 Apr -->
-            <div class="relative flex gap-5 md:gap-8">
-                <div class="relative z-10 w-12 md:w-14 shrink-0 flex flex-col items-center">
+            <div class="relative flex gap-3 md:gap-8">
+                <div class="relative z-10 w-8 md:w-14 shrink-0 flex flex-col items-center">
                     <span class="w-3 h-3 rounded-full border-2 bg-th-sand" style="border-color: #d97706;"></span>
                 </div>
                 <div class="pb-2 -mt-1 flex-1">
@@ -379,8 +386,8 @@
                             <span class="material-symbols-outlined text-sm text-th-charcoal/30">luggage</span>
                             <span>Check-out ~12:00 &middot; TBD</span>
                         </div>
-                        <div class="flex items-center gap-2 text-sm mb-2">
-                            <span class="material-symbols-outlined text-th-charcoal/30 text-base">flight_takeoff</span>
+                        <div class="flex items-center gap-2 text-xs md:text-sm mb-2">
+                            <span class="material-symbols-outlined text-th-charcoal/30 text-sm md:text-base">flight_takeoff</span>
                             <span class="font-medium text-th-charcoal/50">CTG 12:38 &rarr; BOG 14:12</span>
                             <span class="mono-label text-th-charcoal/30 text-[10px]">TBD &middot; 1.5h</span>
                         </div>
@@ -396,8 +403,8 @@
             </div>
 
             <!-- DAY 11 — Sun 12 Apr -->
-            <div class="relative flex gap-5 md:gap-8">
-                <div class="relative z-10 w-12 md:w-14 shrink-0 flex flex-col items-center">
+            <div class="relative flex gap-3 md:gap-8">
+                <div class="relative z-10 w-8 md:w-14 shrink-0 flex flex-col items-center">
                     <span class="w-3 h-3 rounded-full border-2 bg-th-sand" style="border-color: #3b82f6;"></span>
                 </div>
                 <div class="pb-2 -mt-1 flex-1">
@@ -421,8 +428,8 @@
                             <span><span class="font-medium text-th-charcoal/80">PM</span> &mdash; Optional Monserrate cable car or Parque 93 stroll</span>
                             <span><span class="font-medium text-th-charcoal/80">EVE</span> &mdash; Airport, fly out</span>
                         </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <span class="material-symbols-outlined text-th-charcoal text-base">flight_takeoff</span>
+                        <div class="flex items-center gap-2 text-xs md:text-sm mb-2">
+                            <span class="material-symbols-outlined text-th-charcoal text-sm md:text-base">flight_takeoff</span>
                             <span class="font-medium">BOG 21:40 &rarr; MAD 14:10+1</span>
                             <span class="mono-label text-[10px]" style="color: #e4002b;">IB0154 &middot; 9h 30m</span>
                         </div>
@@ -431,8 +438,8 @@
             </div>
 
             <!-- DAY 12 — Mon 13 Apr -->
-            <div class="relative flex gap-5 md:gap-8">
-                <div class="relative z-10 w-12 md:w-14 shrink-0 flex flex-col items-center">
+            <div class="relative flex gap-3 md:gap-8">
+                <div class="relative z-10 w-8 md:w-14 shrink-0 flex flex-col items-center">
                     <span class="w-3 h-3 rounded-full bg-blue-500"></span>
                 </div>
                 <div class="pb-2 -mt-1 flex-1">
@@ -448,8 +455,8 @@
                             <span class="mono-label text-th-charcoal/30 text-[10px]">Home</span>
                         </div>
                         <p class="text-xs text-th-charcoal/50 font-light mb-2">Arrive Madrid 14:35. Short rest, final coffees.</p>
-                        <div class="flex items-center gap-2 text-sm">
-                            <span class="material-symbols-outlined text-th-charcoal text-base">flight_takeoff</span>
+                        <div class="flex items-center gap-2 text-xs md:text-sm mb-2">
+                            <span class="material-symbols-outlined text-th-charcoal text-sm md:text-base">flight_takeoff</span>
                             <span class="font-medium">MAD 17:45 &rarr; LHR 19:10</span>
                             <span class="mono-label text-[10px]" style="color: #e4002b;">IB0725 &middot; 2h 25m</span>
                         </div>
@@ -468,11 +475,38 @@
     <div class="flex items-center gap-4 mb-12">
         <span class="mono-label text-th-charcoal/40">Guides</span>
         <div class="flex-1 h-px bg-black/5"></div>
-        <span class="mono-label text-th-charcoal/40">04</span>
+        <span class="mono-label text-th-charcoal/40">05</span>
     </div>
 
     <!-- List -->
     <div class="flex flex-col gap-6 max-w-7xl">
+
+        <!-- Madrid -->
+        <a href="madrid-city-guide.html" class="thesis-card glass-card rounded-2xl p-6 md:p-8 block cursor-pointer">
+            <div class="flex items-center gap-6">
+                <span class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background: rgba(59,130,246,0.12);">
+                    <span class="material-symbols-outlined text-2xl" style="color: #3b82f6;">castle</span>
+                </span>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-3 mb-1">
+                        <h2 class="font-display font-semibold text-xl tracking-tight">Madrid</h2>
+                        <span class="mono-label text-th-charcoal/30">3 Nights</span>
+                    </div>
+                    <p class="text-th-charcoal/60 font-light leading-relaxed text-sm">
+                        The warm-up. Tapas crawls, Retiro Park, rooftop cocktails, and three nights in Spain's capital before flying to Colombia.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="px-2 py-0.5 rounded-full bg-th-beige/80 mono-label text-th-charcoal/50" style="font-size: 0.55rem;">Malasa&ntilde;a</span>
+                        <span class="px-2 py-0.5 rounded-full bg-th-beige/80 mono-label text-th-charcoal/50" style="font-size: 0.55rem;">Sol</span>
+                        <span class="px-2 py-0.5 rounded-full bg-th-beige/80 mono-label text-th-charcoal/50" style="font-size: 0.55rem;">2&ndash;5 Apr</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex flex-col items-end shrink-0 gap-1">
+                    <span class="mono-label text-th-charcoal/30">18&deg;C</span>
+                    <span class="mono-label" style="color: #3b82f6;">Read &rarr;</span>
+                </div>
+            </div>
+        </a>
 
         <!-- Medellin -->
         <a href="medellin-city-guide.html" class="thesis-card glass-card rounded-2xl p-6 md:p-8 block cursor-pointer">
@@ -588,7 +622,8 @@
 <!-- FOOTER -->
 <footer class="border-t border-black/5 py-12 px-8">
     <div class="max-w-7xl mx-auto">
-        <p class="mono-label text-th-charcoal/40 text-center">&copy; 2026 Kris Rajah &middot; Madrid + Colombia &middot; April 2026</p>
+        <p class="mono-label text-th-charcoal/40 text-center">&copy; 2026 Kris Rajah</p>
+        <p class="mono-label text-th-charcoal/30 text-center mt-1">Madrid + Colombia &middot; 04 / 26</p>
     </div>
 </footer>
 
