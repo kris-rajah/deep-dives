@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Medellín Day 2 Deep Dive – Pablo Escobar History Tour</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "th-sand": "#f4f1ee",
+                        "th-beige": "#e8e4e0",
+                        "th-charcoal": "#1a1a1a",
+                        "th-clay": "#d9c5b2",
+                        "th-emerald": "#059669",
+                        "th-amber": "#d97706",
+                        "th-coral": "#e67e5f",
+                        "th-sky": "#0ea5e9",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-th-sand text-th-charcoal font-sans antialiased;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .mono-label {
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="sticky top-0 z-50 w-full bg-th-sand/80 backdrop-blur-md border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="font-display font-semibold text-lg tracking-tight">Kris Rajah</span>
+            <span class="text-th-charcoal/30">|</span>
+            <a href="medellin-city-guide.html" class="mono-label text-th-charcoal/50 hover:text-th-charcoal transition-colors">Medell&iacute;n Guide</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#escobar-operators">Operators</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#escobar-stops">Key Stops</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#escobar-history">Timeline</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#laureles">Laureles</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#afternoon-split">Afternoon</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#actions">Actions</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[60vh] flex items-center justify-center py-24 px-8">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 rounded-full border border-black/10 mb-10">
+            <span class="mono-label text-th-charcoal/60">Day 2 &bull; Mon 6 Apr 2026 &bull; Deep Dive</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-display font-normal leading-[1.1] mb-8">
+            The Escobar Story<br/>&amp; Medell&iacute;n&rsquo;s Rebirth
+        </h1>
+        <p class="text-xl md:text-2xl text-th-charcoal/60 font-light leading-relaxed max-w-3xl mx-auto">
+            A heavy but essential morning. The Escobar story is real, recent, and complicated.
+            A private car tour through the key sites &ndash; from Parque Inflexi&oacute;n to the rooftop where it ended.
+        </p>
+        <p class="mono-label text-th-charcoal/30 mt-6">Approx rates: 1 USD &asymp; 4,200 COP &asymp; &pound;0.79 GBP</p>
+    </div>
+</section>
+
+<!-- 02 / ESCOBAR TOUR OPERATORS -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="escobar-operators">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">01 / Escobar Tour &ndash; Operators</span>
+        <h2 class="text-4xl font-display font-normal mb-6">Ethical, Victim-Focused Tour Operators</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">Prioritised operators that centre victims&rsquo; stories and Medell&iacute;n&rsquo;s transformation&ndash;not narco glorification. Avoid any operator using terms like &ldquo;Godfather&rdquo; or celebrating the narco lifestyle.</p>
+
+        <div class="space-y-6">
+
+            <!-- Medellin City Services (Recommended) -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-2 border-th-emerald/30">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                    <div>
+                        <h3 class="font-display text-xl mb-1">Medell&iacute;n City Services &ndash; &ldquo;Dark Days: Pablo Escobar &amp; The New Medell&iacute;n&rdquo;</h3>
+                        <span class="mono-label text-[10px] text-th-emerald">Private car tour &bull; 4 hours &bull; Bilingual guide &bull; Hotel pickup</span>
+                    </div>
+                    <span class="mono-label text-xs px-3 py-1 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Recommended for Our Group</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Price</span>
+                            <span>~$55 USD / ~&pound;43 GBP per person (2 pax rate)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Duration</span>
+                            <span>4 hours</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Pickup</span>
+                            <span>Hotel, 8 AM or 2 PM (flexible)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Transport</span>
+                            <span>Private car with AC</span>
+                        </div>
+                    </div>
+                    <div class="text-sm text-th-charcoal/60 font-light">
+                        <p class="mb-2"><strong class="font-medium text-th-charcoal">Visits:</strong> Parque Inflexi&oacute;n, Barrio Pablo Escobar, Casa de la Memoria, rooftop where Escobar died.</p>
+                        <p class="mb-2"><strong class="font-medium text-th-charcoal">Key detail:</strong> Profits do NOT go to former Escobar associates.</p>
+                        <div class="p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10 mt-3">
+                            <p class="text-xs"><strong class="font-medium text-th-emerald">Optional add-on:</strong> $100 USD / &pound;79 GBP total for <strong>Carlos</strong>, an ex-SWAT cop who was part of the team chasing Escobar. Fascinating first-hand account.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://medellincityservices.com" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-th-emerald/30 text-th-emerald hover:bg-th-emerald/10 transition-colors mt-4 inline-block">medellincityservices.com &rarr;</a>
+                <span class="text-xs text-th-charcoal/40 font-light ml-3">info@medellincityservices.com</span>
+            </div>
+
+            <!-- Real City Tours -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-sky">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                    <div>
+                        <h3 class="font-display text-xl mb-1">Real City Tours &ndash; &ldquo;More Than Escobar&rdquo;</h3>
+                        <span class="mono-label text-[10px] text-th-sky">Walking tour &bull; Pay-what-you-feel &bull; Victim-focused</span>
+                    </div>
+                    <span class="mono-label text-xs px-3 py-1 rounded-full bg-th-sky/10 text-th-sky border border-th-sky/20">Best Budget</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="text-sm text-th-charcoal/60 font-light">
+                        <p class="mb-2">Founded by Pablo Alvarez, frustrated by tourists only taking narco tours. Explores the global drug economy, roots of coca as a sacred indigenous leaf, and real impact of the drug war on Colombia.</p>
+                        <p>Goes beyond Escobar to tell victims&rsquo; stories and the city&rsquo;s rebirth.</p>
+                    </div>
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Price</span>
+                            <span>Tip-based (suggest $15&ndash;25 USD / &pound;12&ndash;20)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Format</span>
+                            <span>Walking tour</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://realcitytours.com" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-th-sky/30 text-th-sky hover:bg-th-sky/10 transition-colors mt-4 inline-block">realcitytours.com &rarr;</a>
+            </div>
+
+            <!-- Medellin Up Close -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-amber">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                    <div>
+                        <h3 class="font-display text-xl mb-1">Medell&iacute;n Up Close &ndash; Shared Escobar Tour with La Catedral</h3>
+                        <span class="mono-label text-[10px] text-th-amber">Shared group &bull; English only &bull; Includes La Catedral prison</span>
+                    </div>
+                    <span class="mono-label text-xs px-3 py-1 rounded-full bg-th-amber/10 text-th-amber border border-th-amber/20">Best for La Catedral</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Price</span>
+                            <span>COP 210,000 / ~$49 USD / ~&pound;39 GBP pp</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Language</span>
+                            <span>English only</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Includes</span>
+                            <span>Digital guidebook download</span>
+                        </div>
+                    </div>
+                    <div class="text-sm text-th-charcoal/60 font-light">
+                        <p>Visits La Catedral prison ruins, Envigado (Escobar&rsquo;s childhood area), and the cemetery. Good option if La Catedral is a priority&ndash;not all tours include it.</p>
+                    </div>
+                </div>
+                <a href="https://medellinupclose.com" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-th-amber/30 text-th-amber hover:bg-th-amber/10 transition-colors mt-4 inline-block">medellinupclose.com &rarr;</a>
+            </div>
+
+            <!-- Medellin City Tours -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-coral">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                    <div>
+                        <h3 class="font-display text-xl mb-1">Medell&iacute;n City Tours &ndash; &ldquo;Before and After Pablo Escobar&rdquo;</h3>
+                        <span class="mono-label text-[10px] text-th-coral">Private car &bull; Bilingual driver &bull; Community-focused</span>
+                    </div>
+                </div>
+                <div class="text-sm text-th-charcoal/60 font-light">
+                    <p class="mb-2">Customised car journey with AC. Visits Barrio Pablo Escobar with community leaders and residents who were given homes by Escobar. Profits go to the barrio&rsquo;s foundation teaching kids English and technology.</p>
+                    <p>Daily departures 9 AM and 2 PM.</p>
+                </div>
+                <a href="https://medellincitytours.com" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-th-coral/30 text-th-coral hover:bg-th-coral/10 transition-colors mt-4 inline-block">medellincitytours.com &rarr;</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 03 / ESCOBAR KEY STOPS -->
+<section class="py-24 px-8 border-b border-black/5" id="escobar-stops">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">02 / Escobar Tour &ndash; Key Stops</span>
+        <h2 class="text-4xl font-display font-normal mb-6">What You&rsquo;ll See</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">Each stop tells a chapter of the story. The best tours connect them into a narrative about how violence reshaped a city&ndash;and how that city fought back.</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+
+            <!-- Parque Inflexion -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-emerald text-2xl">park</span>
+                    <div>
+                        <h3 class="font-display text-xl">Parque Inflexi&oacute;n</h3>
+                        <span class="mono-label text-[10px] text-th-emerald">Formerly the Monaco Building &bull; El Poblado</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">Escobar&rsquo;s luxury apartment tower&ndash;a symbol of narco excess. In 1988, the Cali Cartel detonated a car bomb outside targeting his family. The building was demolished by the city and replaced with a 5,160 sq metre memorial park.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-emerald">What&rsquo;s there now:</strong> 80% green space. A 70-metre black stone wall with 46,612 holes&ndash;one for each victim of narcoterrorism (1983&ndash;1994). A &ldquo;Forest of Resilience&rdquo; with trees from across Colombia. Free entry. Allow 20&ndash;30 minutes.</p>
+                </div>
+            </div>
+
+            <!-- Rooftop -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-charcoal/50 text-2xl">roofing</span>
+                    <div>
+                        <h3 class="font-display text-xl">Rooftop Where Escobar Died</h3>
+                        <span class="mono-label text-[10px] text-th-charcoal/50">Los Olivos &bull; Carrera 79B #45D-94</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">On 2 December 1993, the Search Bloc tracked Escobar to this house. He was shot fleeing across the roof, aged 44. Now a Spanish language school.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-amber">Near:</strong> Estadio / Santa Lucia metro. Quiet residential neighbourhood. Be respectful&ndash;this is someone&rsquo;s workplace and a regular street.</p>
+                </div>
+            </div>
+
+            <!-- Barrio Pablo Escobar -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-coral text-2xl">house</span>
+                    <div>
+                        <h3 class="font-display text-xl">Barrio Pablo Escobar</h3>
+                        <span class="mono-label text-[10px] text-th-coral">443 homes &bull; Not on official city maps</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">443 homes Escobar built for low-income families in the 1980s. Many residents still view him as a benefactor. The complexity is real&ndash;your guide will walk you through it.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-coral">Community benefit:</strong> Tour proceeds fund a local foundation teaching English and technology to children. Ask before photographing residents.</p>
+                </div>
+            </div>
+
+            <!-- Cemetery -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-charcoal/50 text-2xl">deceased</span>
+                    <div>
+                        <h3 class="font-display text-xl">Cementerio Jardines Montesacro</h3>
+                        <span class="mono-label text-[10px] text-th-charcoal/50">Calle 14 #52-52, Itagui &bull; Free entry</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">Family plot near the southwest corner of the chapel. Contains Pablo, his mother, and bodyguard &ldquo;El Lim&oacute;n&rdquo; (killed in the same rooftop shootout). Hillside location with valley views.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-amber">Behaviour:</strong> Active cemetery&ndash;be quiet, respectful. No celebratory selfies. You may encounter funerals. 7&ndash;10 min walk from Sabaneta metro station (Line A south).</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- La Catedral & Museo -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-sky text-2xl">domain</span>
+                    <div>
+                        <h3 class="font-display text-xl">La Catedral (Escobar&rsquo;s Self-Built Prison)</h3>
+                        <span class="mono-label text-[10px] text-th-sky">Hilltop above Envigado &bull; 1.5&ndash;2 hrs at site</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">In 1991, Escobar negotiated surrender and was confined to a &ldquo;prison&rdquo; he designed: jacuzzi, football pitch, bar/nightclub, doll house, waterfall. He continued running the cartel from inside. Escaped July 1992.</p>
+                <p class="text-sm text-th-charcoal/60 font-light">Now mostly ruins. Guides walk you through cells, nightclub, guard tower, tunnels, football pitch, escape route, and helipad with panoramic city views. Since June 2025, some areas restricted.</p>
+                <p class="text-xs text-th-charcoal/40 font-light mt-3">Note: Not all tours include La Catedral. Medell&iacute;n Up Close does. Transport included, departs from Parque Lleras, El Poblado.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border-2 border-th-emerald/20">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-emerald text-2xl">museum</span>
+                    <div>
+                        <h3 class="font-display text-xl">Museo Casa de la Memoria</h3>
+                        <span class="mono-label text-[10px] text-th-emerald">Free &bull; Parque Bicentenario &bull; The ethical counterweight</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">FREE multimedia museum honouring violence victims. Interactive maps, testimonies, art installations. The ethical counterpart to the Escobar family museum. <strong class="font-medium text-th-charcoal">Highly recommended.</strong></p>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Hours</span>
+                        <span>Tue&ndash;Fri 9AM&ndash;6PM, Sat&ndash;Sun 10AM&ndash;4PM</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Location</span>
+                        <span>Parque Bicentenario, La Candelaria</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-medium text-th-charcoal">Entry</span>
+                        <span class="text-th-emerald font-medium">Free</span>
+                    </div>
+                </div>
+                <p class="text-xs text-th-charcoal/40 font-light mt-3">Could fit on Day 4 if not included in the Day 3 tour itinerary.</p>
+            </div>
+
+        </div>
+
+        <!-- Casa Museo Warning -->
+        <div class="glass-card p-6 rounded-2xl mt-6 border-l-4 border-l-th-coral">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-coral mt-1">warning</span>
+                <div>
+                    <h4 class="font-display text-lg mb-2">Casa Museo Pablo Escobar &ndash; Ethical Note</h4>
+                    <p class="text-sm text-th-charcoal/60 font-light">Run by Roberto Escobar Gaviria (Pablo&rsquo;s brother) and his nephew. Contains Escobar&rsquo;s motorcycles, classic cars, a plane, helicopter, and a gun allegedly from Al Capone. Fee: ~$30 USD (COP 120,000) or ~$47 USD for a guided tour. <strong class="font-medium text-th-coral">Money goes directly to the Escobar family.</strong> The narrative is told from their sympathetic perspective. Many ethical tourism advocates recommend skipping this and visiting the Museo Casa de la Memoria instead.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 04 / ESCOBAR HISTORICAL TIMELINE -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="escobar-history">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">03 / Escobar Tour &ndash; Historical Context</span>
+        <h2 class="text-4xl font-display font-normal mb-6">The Medell&iacute;n Cartel Era</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">Context that makes the tour more meaningful. Your guide will cover most of this, but understanding the scale helps.</p>
+
+        <!-- Timeline -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="font-display text-xl mb-8">Key Timeline</h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-charcoal/10 hidden md:block"></div>
+                <div class="space-y-6">
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-charcoal/5 border border-th-charcoal/10 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-charcoal/50">70s</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">Medell&iacute;n Cartel Formed</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">Escobar, Carlos Lehder, Gonzalo Rodr&iacute;guez Gacha, and the Ochoa brothers create the cartel.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-charcoal/5 border border-th-charcoal/10 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-charcoal/50">82</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">Escobar Elected to Colombian Congress</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">Later expelled when criminal activities exposed. At peak, cartel controls ~80&ndash;90% of US cocaine supply, revenue ~$100 million/day, Escobar&rsquo;s net worth ~$30 billion.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/20 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-coral">89</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">Avianca Flight 203 Bombed</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">27 Nov 1989. Boeing 727 destroyed 5 minutes after takeoff from Bogot&aacute;. All 107 on board + 3 on ground killed. Target was presidential candidate C&eacute;sar Gaviria, who changed plans and survived. <strong class="font-medium text-th-charcoal">10 days later:</strong> DAS headquarters bombed in Bogot&aacute;&ndash;63 killed, 600+ wounded.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/20 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-coral">91</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">Peak Violence &amp; Surrender</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">Murder rate: <strong class="font-medium text-th-charcoal">381 per 100,000</strong> (~19 homicides/day). Nearly 40x UN endemic violence threshold. Over 500 police officers murdered in 1990&ndash;91. 46,612 people killed during the narcoterrorism era. 4,766 children among the dead. June: Escobar surrenders, enters La Catedral.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/20 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-amber">92</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">Escapes La Catedral</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">July 1992. Government tries to transfer him. He flees through the tunnels he had built. 16-month manhunt begins.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/20 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-emerald">93</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">Shot Dead on a Rooftop</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">2 December 1993. Los Olivos neighbourhood. Aged 44. Cartel fragments and ceases to exist.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Transformation Stats -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl border-2 border-th-emerald/20">
+            <h3 class="font-display text-xl mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-th-emerald">trending_up</span>
+                Medell&iacute;n&rsquo;s Transformation Since
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-4 rounded-xl bg-th-emerald/5 border border-th-emerald/10">
+                    <span class="text-3xl font-display text-th-emerald">95%</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-2">Decrease in murder rate. From 381/100k (1991) to ~20/100k (2015).</p>
+                </div>
+                <div class="text-center p-4 rounded-xl bg-th-emerald/5 border border-th-emerald/10">
+                    <span class="text-3xl font-display text-th-emerald">66%</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-2">Decrease in extreme poverty. Only 2.8% by 2017.</p>
+                </div>
+                <div class="text-center p-4 rounded-xl bg-th-sky/5 border border-th-sky/10">
+                    <span class="text-3xl font-display text-th-sky">2013</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-2">&ldquo;Innovative City of the Year&rdquo; (WSJ), beating New York and Tel Aviv.</p>
+                </div>
+                <div class="text-center p-4 rounded-xl bg-th-sky/5 border border-th-sky/10">
+                    <span class="text-3xl font-display text-th-sky">2024</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-2">Lowest homicide rate in 82 years. Lee Kuan Yew World City Prize (2016).</p>
+                </div>
+            </div>
+            <p class="text-xs text-th-charcoal/40 font-light mt-4">Metrocable connects hillside comunas to city centre (30,000 passengers/day). Biblioteca Espa&ntilde;a, Parque Arv&iacute;, integrated public transport&ndash;all addressing root causes of violence.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 05 / ESCOBAR ETHICS & PRACTICAL TIPS -->
+<section class="py-24 px-8 border-b border-black/5" id="escobar-ethics">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">04 / Escobar Tour &ndash; Ethics &amp; Practical Tips</span>
+        <h2 class="text-4xl font-display font-normal mb-12">Doing It Right</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+
+            <!-- Ethical Considerations -->
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="font-display text-xl mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-th-coral">balance</span>
+                    Ethical Considerations
+                </h3>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">The problem:</strong> Narco-tourism transforms criminal legacies into consumable spectacles, glamorising drug lords while omitting victims. Many Colombians deeply resent Escobar defining their national identity.</p>
+                    <p><strong class="font-medium text-th-charcoal">The Netflix effect:</strong> Narcos (2015) dramatically increased demand, often attracting visitors more interested in glamour than tragedy.</p>
+                    <p><strong class="font-medium text-th-charcoal">The complexity:</strong> In Barrio Pablo Escobar, residents still view him as a benefactor. Local perspectives are not monolithic.</p>
+                </div>
+                <div class="mt-4 space-y-2">
+                    <div class="p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10">
+                        <p class="text-xs font-light"><span class="text-th-emerald">&#10003;</span> Choose operators that centre victims&rsquo; stories, not Escobar&rsquo;s &ldquo;empire&rdquo;</p>
+                    </div>
+                    <div class="p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10">
+                        <p class="text-xs font-light"><span class="text-th-emerald">&#10003;</span> Visit the Museo Casa de la Memoria (free)&ndash;the ethical counterweight</p>
+                    </div>
+                    <div class="p-3 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                        <p class="text-xs font-light"><span class="text-th-coral">&#10007;</span> Avoid the Escobar family museum if possible (money goes to the family)</p>
+                    </div>
+                    <div class="p-3 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                        <p class="text-xs font-light"><span class="text-th-coral">&#10007;</span> Do NOT buy Escobar merchandise&ndash;many locals find it deeply offensive</p>
+                    </div>
+                    <div class="p-3 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                        <p class="text-xs font-light"><span class="text-th-coral">&#10007;</span> No celebratory selfies at grave sites or crime scenes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practical Tips -->
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="font-display text-xl mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-th-amber">tips_and_updates</span>
+                    Practical Tips
+                </h3>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Wear:</strong> Comfortable walking shoes (uneven terrain at La Catedral ruins), light breathable clothes (22&ndash;28&deg;C in April), hat, sunglasses, sunscreen.</p>
+                    <p><strong class="font-medium text-th-charcoal">Bring:</strong> Small backpack/crossbody (not flashy), water bottle, cash in small COP bills for tips and snacks, phone for photos but keep discreet.</p>
+                    <p><strong class="font-medium text-th-charcoal">Photography:</strong> Generally allowed at all major stops. Ask permission before photographing residents in Barrio Pablo Escobar. Be mindful of funerals at the cemetery.</p>
+                    <p><strong class="font-medium text-th-charcoal">Safety:</strong> Book with reputable operator. Don&rsquo;t flash expensive items. &ldquo;No dar papaya&rdquo; (don&rsquo;t give pickpockets an easy target). Stick with group and guide.</p>
+                    <p><strong class="font-medium text-th-charcoal">Timing:</strong> Morning start (8&ndash;9 AM) is best&ndash;cooler, better light, less crowded. Half-day (3&ndash;5 hrs) for standard tour.</p>
+                </div>
+                <div class="mt-4 p-3 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-amber">Tipping:</strong> 15,000&ndash;30,000 COP / $4&ndash;7 USD / &pound;3&ndash;6 pp for group tours. For private guides, 10&ndash;15% or 30,000&ndash;50,000 COP.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Booking Recommendation -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl border-2 border-th-emerald/20">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="material-symbols-outlined text-th-emerald">bookmark</span>
+                <h3 class="font-display text-xl">Booking Recommendation for Our Group (5 pax)</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="text-sm text-th-charcoal/60 font-light space-y-2">
+                    <p><strong class="font-medium text-th-emerald">Book:</strong> Medell&iacute;n City Services &ldquo;Dark Days&rdquo; private tour</p>
+                    <p><strong class="font-medium text-th-charcoal">Duration:</strong> 4 hours, AM start (9 AM pickup)</p>
+                    <p><strong class="font-medium text-th-charcoal">Price:</strong> ~$55 USD / &pound;43 GBP per person</p>
+                    <p><strong class="font-medium text-th-charcoal">Includes:</strong> Private car with AC, bilingual guide, hotel pickup</p>
+                </div>
+                <div class="text-sm text-th-charcoal/60 font-light space-y-2">
+                    <p><strong class="font-medium text-th-charcoal">Covers:</strong> Parque Inflexi&oacute;n, rooftop, cemetery, Barrio Pablo Escobar</p>
+                    <p><strong class="font-medium text-th-charcoal">Finishes:</strong> ~12:30 PM for lunch before Comuna 13 at 14:00</p>
+                    <p><strong class="font-medium text-th-charcoal">Optional:</strong> Add ex-cop Carlos for +$100 USD total (not per person)</p>
+                    <p><strong class="font-medium text-th-charcoal">Email:</strong> info@medellincityservices.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 05 / EXPLORE LAURELES -->
+<section class="py-24 px-8 border-b border-black/5" id="laureles">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-wrap items-center gap-4 mb-4">
+            <span class="mono-label text-th-charcoal/40">05 / Afternoon</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-th-emerald/10 border border-th-emerald/20">
+                <span class="material-symbols-outlined text-th-emerald text-sm">schedule</span>
+                <span class="mono-label text-[10px] text-th-emerald">~13:00</span>
+            </span>
+        </div>
+        <h2 class="text-4xl font-display font-normal mb-6">Explore Laureles</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-4 max-w-3xl">Uber across the river to Medell&iacute;n&rsquo;s more local, increasingly hip neighbourhood. Carrera 70 (&ldquo;La 70&rdquo; or &ldquo;La Setenta&rdquo;) is the main strip &ndash; a completely different energy to El Poblado. Less polished, more authentic. This is the side of Medell&iacute;n most tourists don&rsquo;t see.</p>
+
+        <!-- Laureles context box -->
+        <div class="glass-card p-5 rounded-2xl mb-12 border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-th-sky mt-0.5">explore</span>
+                <div class="text-sm text-th-charcoal/60 font-light space-y-2">
+                    <p><strong class="font-medium text-th-charcoal">Time Out #1 Coolest Neighbourhood (2023).</strong> Laureles topped the global list for its balance of energy and tranquility &ndash; tree-lined residential streets, family-owned restaurants, independent caf&eacute;s, and a nightlife strip that locals have kept largely to themselves.</p>
+                    <p>Where El Poblado caters to tourists, La 70 caters to paisas. Booze is cheaper, the music is louder, and the crowd is almost entirely Colombian. Thursday to Saturday the strip comes alive &ndash; tables spill onto pavements, aguardiente flows, and the salsa bars fill up by 10 PM.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lunch options -->
+        <h3 class="font-display text-2xl mb-2">Lunch on La 70</h3>
+        <p class="text-sm text-th-charcoal/50 font-light mb-8">Pick one. All within a short walk of each other on or near Carrera 70.</p>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+
+            <!-- Bárbaro -->
+            <div class="glass-card p-6 rounded-2xl border-2 border-th-emerald/20">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="mono-label text-[10px] text-th-emerald">Top Pick</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">~&pound;7&ndash;13 pp</span>
+                </div>
+                <h4 class="font-display text-lg mb-1">B&aacute;rbaro Cocina Primitiva</h4>
+                <p class="text-xs text-th-charcoal/40 font-light mb-3">Cra 76 #73B-39, Laureles</p>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">Fire-grilled steaks, ribs, and slow-smoked cuts. &ldquo;Primitive cooking&rdquo; concept &ndash; open flames, wood smoke, generous portions. The Laureles original; there&rsquo;s also a Poblado branch but this one has more character.</p>
+                <div class="space-y-1.5 text-xs text-th-charcoal/50 font-light">
+                    <div class="flex justify-between border-b border-black/5 pb-1.5">
+                        <span class="font-medium text-th-charcoal">TripAdvisor</span>
+                        <span>4.9/5 &bull; 1,665 reviews &bull; #5 in Medell&iacute;n</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-1.5">
+                        <span class="font-medium text-th-charcoal">Vibe</span>
+                        <span>Open-air, background music, calm</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-medium text-th-charcoal">Opens</span>
+                        <span>12:00 noon</span>
+                    </div>
+                </div>
+                <div class="mt-3 p-2.5 rounded-lg bg-th-emerald/5 border border-th-emerald/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-emerald">Order:</strong> The costillas (ribs) and entra&ntilde;a (skirt steak) are the standouts. Staff make personalised recommendations. Expect 30&ndash;40 min wait on weekends.</p>
+                </div>
+            </div>
+
+            <!-- Mondongo's -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="mono-label text-[10px] text-th-amber">Most Authentic</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">~&pound;6&ndash;10 pp</span>
+                </div>
+                <h4 class="font-display text-lg mb-1">Mondongo&rsquo;s La 70</h4>
+                <p class="text-xs text-th-charcoal/40 font-light mb-3">Cra 70 #Circular 3-43, Laureles</p>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">The Laureles branch of Medell&iacute;n&rsquo;s most iconic comida t&iacute;pica spot. Same huge bandeja paisa but fewer tourists than the Poblado location. Directly on La 70. More local feel. Good for the full Antioquian spread.</p>
+                <div class="space-y-1.5 text-xs text-th-charcoal/50 font-light">
+                    <div class="flex justify-between border-b border-black/5 pb-1.5">
+                        <span class="font-medium text-th-charcoal">Rating</span>
+                        <span>4.7/5 &bull; 11,369 reviews (all branches)</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-1.5">
+                        <span class="font-medium text-th-charcoal">Prices</span>
+                        <span>21,000&ndash;36,000 COP per dish</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-medium text-th-charcoal">Vibe</span>
+                        <span>Busy, family-run, enormous portions</span>
+                    </div>
+                </div>
+                <div class="mt-3 p-2.5 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-amber">Order:</strong> Bandeja paisa (the full spread: beans, rice, chicharr&oacute;n, ground meat, egg, avocado, arepa, plantain) or the mondongo soup (tripe stew). 13 traditional dishes on the menu.</p>
+                </div>
+            </div>
+
+            <!-- Olivia -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="mono-label text-[10px] text-th-sky">Lighter Option</span>
+                    <span class="mono-label text-[10px] text-th-charcoal/40">~&pound;5&ndash;9 pp</span>
+                </div>
+                <h4 class="font-display text-lg mb-1">Olivia Pizzeria</h4>
+                <p class="text-xs text-th-charcoal/40 font-light mb-3">Av 74B #39-46, near La 70</p>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">Thin-crust wood-fired pizza and fresh pasta. Good cocktails and sangria. Lighter option if you don&rsquo;t want heavy Colombian food after a heavy morning tour. Airy, bright interior.</p>
+                <div class="space-y-1.5 text-xs text-th-charcoal/50 font-light">
+                    <div class="flex justify-between border-b border-black/5 pb-1.5">
+                        <span class="font-medium text-th-charcoal">TripAdvisor</span>
+                        <span>4.5/5 &bull; Popular local chain (8 locations)</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-1.5">
+                        <span class="font-medium text-th-charcoal">Menu</span>
+                        <span>29 pizza varieties, pasta, cocktails</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-medium text-th-charcoal">Best for</span>
+                        <span>If the group wants something lighter</span>
+                    </div>
+                </div>
+                <div class="mt-3 p-2.5 rounded-lg bg-th-sky/5 border border-th-sky/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-sky">Try:</strong> The mushroom pizza (mozzarella, parmesan, mushroom mix, truffle oil) or cinque formaggi. Shared antipasto board is a good starter.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 06 / PICK YOUR AFTERNOON -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="afternoon-split">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-wrap items-center gap-4 mb-4">
+            <span class="mono-label text-th-charcoal/40">06 / Afternoon</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-th-amber/10 border border-th-amber/20">
+                <span class="material-symbols-outlined text-th-amber text-sm">fork_right</span>
+                <span class="mono-label text-[10px] text-th-amber">~16:00</span>
+            </span>
+        </div>
+        <h2 class="text-4xl font-display font-normal mb-6">Pick Your Afternoon</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">After lunch, pick one. Both paths end up back in El Poblado by evening.</p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- PATH A: La 70 Drinks -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="material-symbols-outlined text-th-coral text-3xl">nightlife</span>
+                    <div>
+                        <h3 class="font-display text-2xl">La 70 Drinks</h3>
+                        <span class="mono-label text-[10px] text-th-charcoal/50">Stay in Laureles &bull; Hop between bars &bull; Uber back for Bar Carmen</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light">La 70 comes alive as the sun drops. The strip fills with paisas, the aguardiente starts flowing, and by 9 PM you&rsquo;re dancing on tables. Hop between these three, then Uber back to El Poblado.</p>
+
+                <!-- La Tienda de la 70 -->
+                <div class="glass-card p-5 rounded-2xl border-l-4 border-l-th-coral">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-display text-lg">La Tienda de la 70</h4>
+                        <span class="mono-label text-[10px] text-th-charcoal/40">~&pound;2&ndash;5 / drink</span>
+                    </div>
+                    <p class="text-sm text-th-charcoal/60 font-light mb-3">THE bar on La 70. Full-on Colombian party. &ldquo;Fonda&rdquo; decor with balloons, flashing lights, colourful beads dangling from the ceiling, and a giant pig. Rounds of aguardiente, dancing on tables. Gets lively from 8&ndash;9 PM.</p>
+                    <div class="space-y-1.5 text-xs text-th-charcoal/50 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-1.5">
+                            <span class="font-medium text-th-charcoal">Vibe</span>
+                            <span>Loud, bright, quintessentially paisa</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-1.5">
+                            <span class="font-medium text-th-charcoal">Food</span>
+                            <span>Bandeja paisa, picadas, grilled snacks</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-1.5">
+                            <span class="font-medium text-th-charcoal">Cover</span>
+                            <span>Free (cover only for special events)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-medium text-th-charcoal">Best nights</span>
+                            <span>Thu&ndash;Sat. Live acts on weekends</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 p-2.5 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                        <p class="text-xs font-light"><strong class="font-medium text-th-coral">Expect:</strong> This is not a &ldquo;cocktail bar&rdquo; experience. It&rsquo;s rounds of aguardiente, table-dancing, and live acts. The most Colombian night out you can have.</p>
+                    </div>
+                </div>
+
+                <!-- La Charcu 70 -->
+                <div class="glass-card p-5 rounded-2xl">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-display text-lg">La Charcu 70</h4>
+                        <span class="mono-label text-[10px] text-th-charcoal/40">~&pound;2&ndash;6 / drink</span>
+                    </div>
+                    <p class="text-sm text-th-charcoal/60 font-light mb-2">Craft beer and cocktails on La 70. More laid back &ndash; good to start the evening before things ramp up. Lively but not chaotic; mellow enough for actual conversation.</p>
+                    <div class="space-y-1.5 text-xs text-th-charcoal/50 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-1.5">
+                            <span class="font-medium text-th-charcoal">Address</span>
+                            <span>Cra 70 #Circular 2-48, Laureles</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-1.5">
+                            <span class="font-medium text-th-charcoal">Menu</span>
+                            <span>Craft beers, cocktails, nachos, empanadas, tapas</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-medium text-th-charcoal">Crowd</span>
+                            <span>Mix of locals and foreigners</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Son Havana -->
+                <div class="glass-card p-5 rounded-2xl">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-display text-lg">Son Havana</h4>
+                        <span class="mono-label text-[10px] text-th-charcoal/40">~&pound;2&ndash;4 / drink</span>
+                    </div>
+                    <p class="text-sm text-th-charcoal/60 font-light mb-2">Iconic salsa bar with live bands. Cuban-themed, packed dance floor. Founded in 2010, inspired by Cuban musical tradition. The house band &ndash; Son Havana All Stars &ndash; play Timba (a high-energy subgenre of salsa).</p>
+                    <div class="space-y-1.5 text-xs text-th-charcoal/50 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-1.5">
+                            <span class="font-medium text-th-charcoal">Location</span>
+                            <span>Cra 73 x Calle 44 (San Juan), near La 70</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-1.5">
+                            <span class="font-medium text-th-charcoal">Live music</span>
+                            <span>At least 1&ndash;2x/week; Fri = salsa lessons + mojitos</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-medium text-th-charcoal">Mon opening</span>
+                            <span>Check ahead: +57 320 451 2267</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 p-2.5 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                        <p class="text-xs font-light"><strong class="font-medium text-th-amber">Tip:</strong> You don&rsquo;t need to know salsa. The energy is infectious and the crowd is forgiving. Wednesday = Casino/Rueda group salsa classes. Friday = lessons + cold mojitos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PATH B: Paragliding -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="material-symbols-outlined text-th-sky text-3xl">paragliding</span>
+                    <div>
+                        <h3 class="font-display text-2xl">Paragliding at San F&eacute;lix</h3>
+                        <span class="mono-label text-[10px] text-th-charcoal/50">Uber south &bull; 30&ndash;40 min from El Poblado &bull; Land near El Poblado</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light">Tandem paragliding over the Aburr&aacute; Valley from San F&eacute;lix, a mountain village south of the city. No experience needed &ndash; the pilot does everything. You land back near El Poblado. Book a late-afternoon slot if available; the light is extraordinary.</p>
+
+                <!-- Stats grid -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <span class="text-2xl font-display text-th-sky">15&ndash;20</span>
+                        <p class="mono-label text-[9px] text-th-charcoal/40 mt-1">Min flight time</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <span class="text-2xl font-display text-th-sky">2&ndash;2.5</span>
+                        <p class="mono-label text-[9px] text-th-charcoal/40 mt-1">Hrs total with transport</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <span class="text-2xl font-display text-th-emerald">&pound;20&ndash;30</span>
+                        <p class="mono-label text-[9px] text-th-charcoal/40 mt-1">Per person (100&ndash;155K COP)</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <span class="text-2xl font-display text-th-emerald">0</span>
+                        <p class="mono-label text-[9px] text-th-charcoal/40 mt-1">Experience needed</p>
+                    </div>
+                </div>
+
+                <!-- Operators -->
+                <div class="glass-card p-5 rounded-2xl border-2 border-th-sky/20">
+                    <h4 class="font-display text-lg mb-4">Operators</h4>
+                    <div class="space-y-4">
+
+                        <div class="border-b border-black/5 pb-3">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-display text-sm">Paragliding Medell&iacute;n (RubenFly)</span>
+                                <span class="mono-label text-[9px] text-th-emerald">Since 1992</span>
+                            </div>
+                            <p class="text-xs text-th-charcoal/50 font-light">12 international certifications, FAI-certified. Door-to-door transport + GoPro footage included in the ~$60 USD package. Located at Km 6 on the San F&eacute;lix route.</p>
+                            <a href="https://paraglidingmedellin.com" target="_blank" class="mono-label text-[10px] text-th-sky hover:underline mt-1 inline-block">paraglidingmedellin.com</a>
+                        </div>
+
+                        <div class="border-b border-black/5 pb-3">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-display text-sm">Dragon Fly Parapente</span>
+                                <span class="mono-label text-[9px] text-th-charcoal/40">9 pilots</span>
+                            </div>
+                            <p class="text-xs text-th-charcoal/50 font-light">Team of 9 certified pilots. Operates from the San F&eacute;lix Paragliding Aeroclub. Transport included. Prices from 220,000 COP (~&pound;42).</p>
+                            <a href="https://parapentedragonfly.com/en/" target="_blank" class="mono-label text-[10px] text-th-sky hover:underline mt-1 inline-block">parapentedragonfly.com</a>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-display text-sm">GTOPIK</span>
+                                <span class="mono-label text-[9px] text-th-charcoal/40">Budget option</span>
+                            </div>
+                            <p class="text-xs text-th-charcoal/50 font-light">FAI + APPI certified pilots. 15-min flight from 155,000 COP (~&pound;30) including photos + HD video. Book via WhatsApp.</p>
+                            <a href="https://gtopik.com" target="_blank" class="mono-label text-[10px] text-th-sky hover:underline mt-1 inline-block">gtopik.com</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Practical notes -->
+                <div class="glass-card p-5 rounded-2xl">
+                    <h4 class="font-display text-lg mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-th-amber text-lg">tips_and_updates</span>
+                        Practical Notes
+                    </h4>
+                    <div class="space-y-2 text-xs text-th-charcoal/50 font-light">
+                        <p><strong class="font-medium text-th-charcoal">Schedule:</strong> Daily 9 AM &ndash; 5 PM, weather permitting. Book via WhatsApp &ndash; super easy to message and lock in a slot.</p>
+                        <p><strong class="font-medium text-th-charcoal">GoPro:</strong> Most operators mount a GoPro to the pilot&rsquo;s harness. Footage usually available for purchase afterwards (often included in higher-tier packages).</p>
+                        <p><strong class="font-medium text-th-charcoal">Late afternoon:</strong> Not a formal &ldquo;sunset slot&rdquo; but booking 3&ndash;4 PM gives you golden-hour light over the valley. Weather is typically calmer in the afternoon.</p>
+                        <p><strong class="font-medium text-th-charcoal">Landing:</strong> You land in a field near El Poblado &ndash; short Uber back to the hotel.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- 10 / ACTION ITEMS -->
+<section class="py-24 px-8" id="actions">
+    <div class="max-w-4xl mx-auto">
+        <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-4">Action Items</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Withdraw cash for the day</strong> &ndash; ~150,000&ndash;200,000 COP per person in small bills (tips, food, art, donations across both tours).</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Pack for the day</strong> &ndash; Rain jacket, comfortable shoes, sunscreen, hat, water bottle, small daypack. No flashy items.</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Consider Museo Casa de la Memoria</strong> &ndash; Free, victim-focused museum. Could fit on Day 4 if not included in the Day 3 tour.</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>[Optional] Book Sambombi Bistr&oacute; via WhatsApp (+57 305 487 5058) for Tue 7 Apr dinner.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 11 / SOURCES -->
+<section class="py-16 px-8 bg-th-beige/30">
+    <div class="max-w-4xl mx-auto">
+        <h3 class="mono-label text-th-charcoal/40 mb-6">Sources &amp; Useful Links</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-xs text-th-charcoal/50 font-light">
+            <div class="space-y-2">
+                <p class="font-medium text-th-charcoal/60 text-xs mb-3">Escobar Tour</p>
+                <p><a href="https://medellincityservices.com" target="_blank" class="hover:text-th-emerald transition-colors underline">Medell&iacute;n City Services &ndash; Dark Days Tour</a></p>
+                <p><a href="https://realcitytours.com" target="_blank" class="hover:text-th-emerald transition-colors underline">Real City Tours &ndash; More Than Escobar</a></p>
+                <p><a href="https://medellinupclose.com" target="_blank" class="hover:text-th-emerald transition-colors underline">Medell&iacute;n Up Close &ndash; La Catedral Tour</a></p>
+                <p><a href="https://medellincitytours.com" target="_blank" class="hover:text-th-emerald transition-colors underline">Medell&iacute;n City Tours &ndash; Before and After</a></p>
+                </div>
+            <div class="space-y-2">
+                <p class="font-medium text-th-charcoal/60 text-xs mb-3">Research &amp; Context</p>
+                <p>ColombiaOne &ndash; Medell&iacute;n Records Lowest Homicide Rate in 82 Years</p>
+                <p>Medell&iacute;n Guru &ndash; Metro Guide with 2025 Fares</p>
+            </div>
+            <div class="space-y-2">
+                <p class="font-medium text-th-charcoal/60 text-xs mb-3">Laureles &amp; Afternoon</p>
+                <p><a href="https://barbarococinaprimitiva.com/en/" target="_blank" class="hover:text-th-emerald transition-colors underline">B&aacute;rbaro Cocina Primitiva</a></p>
+                <p><a href="https://medellinguru.com/mondongos/" target="_blank" class="hover:text-th-emerald transition-colors underline">Mondongo&rsquo;s &ndash; Medell&iacute;n Guru</a></p>
+                <p><a href="https://medellinguru.com/pizzeria-olivia/" target="_blank" class="hover:text-th-emerald transition-colors underline">Pizzer&iacute;a Olivia &ndash; Medell&iacute;n Guru</a></p>
+                <p><a href="https://medellinliving.com/la-70-medellins-party-strip/" target="_blank" class="hover:text-th-emerald transition-colors underline">La 70: Medell&iacute;n&rsquo;s Party Strip &ndash; Medell&iacute;n Living</a></p>
+                <p><a href="https://www.dancefree.com.co/diario/son-havana-salsa-bar-medellin" target="_blank" class="hover:text-th-emerald transition-colors underline">Son Havana &ndash; DanceFree</a></p>
+                <p><a href="https://paraglidingmedellin.com" target="_blank" class="hover:text-th-emerald transition-colors underline">Paragliding Medell&iacute;n (RubenFly)</a></p>
+                <p><a href="https://parapentedragonfly.com/en/" target="_blank" class="hover:text-th-emerald transition-colors underline">Dragon Fly Parapente</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

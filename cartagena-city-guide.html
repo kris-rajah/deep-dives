@@ -5,6 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Cartagena City Guide - Caribbean Crescendo</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script>
@@ -143,50 +145,45 @@
             You&rsquo;re arriving from Medell&iacute;n after two days of ATVs, paragliding, and 18-course tasting menus. Cartagena&rsquo;s job is different; it&rsquo;s heat, salt air, slow mornings, cold cocktails, and one properly big night. The temperature will hit 32&deg;C with Caribbean humidity, which means the pace naturally drops. Embrace it.
         </p>
 
-        <!-- Trip Timeline -->
-        <div class="bg-white/5 border border-white/10 p-6 md:p-10 rounded-3xl mb-8">
-            <h3 class="mono-label text-th-sand/40 mb-6">Your 3 Nights at a Glance</h3>
-            <div class="space-y-4">
-                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-emerald/30 bg-th-emerald/10">
-                    <span class="mono-label text-th-emerald w-28 shrink-0">Wed 8 Apr</span>
-                    <div class="flex-1">
-                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-emerald/40 rounded-full" style="width: 40%"></div></div>
-                    </div>
-                    <span class="font-display w-36 text-right">Travel + Old Town</span>
-                    <span class="mono-label text-th-emerald text-[10px] w-20 text-right">Wind Down</span>
-                </div>
-                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-amber/30 bg-th-amber/10">
-                    <span class="mono-label text-th-amber w-28 shrink-0">Thu 9 Apr</span>
-                    <div class="flex-1">
-                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-amber/60 rounded-full" style="width: 60%"></div></div>
-                    </div>
-                    <span class="font-display w-36 text-right">Beach + Alqu&iacute;mico</span>
-                    <span class="mono-label text-th-amber text-[10px] w-20 text-right">Beach</span>
-                </div>
-                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-coral/30 bg-th-coral/10">
-                    <span class="mono-label text-th-coral w-28 shrink-0">Fri 10 Apr</span>
-                    <div class="flex-1">
-                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-coral rounded-full" style="width: 95%"></div></div>
-                    </div>
-                    <span class="font-display w-36 text-right">Islands + Big Night</span>
-                    <span class="mono-label text-th-coral text-[10px] w-20 text-right">Blow-Out</span>
-                </div>
-                <div class="flex items-center gap-6 p-4 rounded-xl border border-white/10 bg-white/5">
-                    <span class="mono-label text-th-sand/40 w-28 shrink-0">Sat 11 Apr</span>
-                    <div class="flex-1">
-                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-white/20 rounded-full" style="width: 20%"></div></div>
-                    </div>
-                    <span class="font-display w-36 text-right">Fly to Bogot&aacute;</span>
-                    <span class="mono-label text-th-sand/40 text-[10px] w-20 text-right">Chill</span>
-                </div>
-            </div>
+        <!-- Map -->
+        <div class="rounded-3xl overflow-hidden mb-8 border border-white/10" style="height: 400px;">
+            <div id="cartagena-map" style="height: 100%; width: 100%;"></div>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                mapboxgl.accessToken = 'pk.eyJ1Ijoia3Jpcy1yYWphaCIsImEiOiJjbW0zanNlbjUwMWlzMndyOGtrOHE2YWc5In0.EMqFPFI0c1mjg-E9oenywg';
+                var map = new mapboxgl.Map({
+                    container: 'cartagena-map',
+                    style: 'mapbox://styles/mapbox/light-v11',
+                    center: [-75.68, 10.30],
+                    zoom: 9.5,
+                    pitch: 0,
+                    bearing: 0,
+                    antialias: true,
+                    scrollZoom: true,
+                    attributionControl: false
+                });
+                map.addControl(new mapboxgl.AttributionControl({compact: true}), 'bottom-right');
+
+                var markers = [
+                    {coords: [-75.5524, 10.4236], color: '#059669', url: 'https://maps.app.goo.gl/qejtGawpoLfCy3aD8'},
+                    {coords: [-75.7467, 10.1781], color: '#d97706', url: 'https://maps.app.goo.gl/96qN9uTaRhn9SUPq8'}
+                ];
+                markers.forEach(function(m) {
+                    var el = new mapboxgl.Marker({color: m.color})
+                        .setLngLat(m.coords)
+                        .addTo(map);
+                    el.getElement().style.cursor = 'pointer';
+                    el.getElement().addEventListener('click', function() { window.open(m.url, '_blank'); });
+                });
+            });
+        </script>
 
         <!-- Neighbourhoods -->
         <div class="grid md:grid-cols-2 gap-8 mb-8">
-            <div class="bg-white/5 border border-th-coral/30 p-8 rounded-2xl border-l-4 border-l-th-coral">
+            <div class="bg-white/5 border border-th-emerald/30 p-8 rounded-2xl border-l-4 border-l-th-emerald">
                 <div class="flex items-start gap-3 mb-3">
-                    <span class="material-symbols-outlined text-th-coral mt-0.5">location_on</span>
+                    <span class="material-symbols-outlined text-th-emerald mt-0.5">location_on</span>
                     <h4 class="font-display text-lg">Ciudad Amurallada (Old Town)</h4>
                 </div>
                 <p class="text-th-sand/60 font-light text-sm mb-4">
@@ -194,39 +191,39 @@
                 </p>
                 <div class="space-y-2">
                     <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
-                        <span class="material-symbols-outlined text-th-coral text-sm">local_bar</span>
+                        <span class="material-symbols-outlined text-th-emerald text-sm">local_bar</span>
                         <span><strong class="font-medium text-th-sand">Alqu&iacute;mico</strong> (#11 World&rsquo;s 50 Best Bars) is here. Three floors, rooftop terrace.</span>
                     </div>
                     <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
-                        <span class="material-symbols-outlined text-th-coral text-sm">restaurant</span>
+                        <span class="material-symbols-outlined text-th-emerald text-sm">restaurant</span>
                         <span>El Baluarte de la Gente (sunset), El Bar&oacute;n (cocktails &amp; cigars), Carmen (fine dining).</span>
                     </div>
                     <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
-                        <span class="material-symbols-outlined text-th-coral text-sm">directions_walk</span>
+                        <span class="material-symbols-outlined text-th-emerald text-sm">directions_walk</span>
                         <span>Fully walkable. Everything within 15 minutes on foot.</span>
                     </div>
                 </div>
             </div>
             <div class="bg-white/5 border border-th-amber/30 p-8 rounded-2xl border-l-4 border-l-th-amber">
                 <div class="flex items-start gap-3 mb-3">
-                    <span class="material-symbols-outlined text-th-amber mt-0.5">explore</span>
-                    <h4 class="font-display text-lg">Getseман&iacute;</h4>
+                    <span class="material-symbols-outlined text-th-amber mt-0.5">sailing</span>
+                    <h4 class="font-display text-lg">Rosario Islands (Day 3)</h4>
                 </div>
                 <p class="text-th-sand/60 font-light text-sm mb-4">
-                    Just outside the walls. Street art, hostels, late-night energy. Cartagena&rsquo;s answer to Comuna 13 but looser and more DIY. The nightlife hub; this is where you end up after midnight.
+                    A national park archipelago 45 minutes by speedboat from Cartagena. Crystal-clear Caribbean water, white sand, beach clubs, and zero phone signal. The full switch-off day before the big night.
                 </p>
                 <div class="space-y-2">
                     <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
-                        <span class="material-symbols-outlined text-th-amber text-sm">palette</span>
-                        <span>Murals on every wall. Plaza de la Trinidad is the heart.</span>
+                        <span class="material-symbols-outlined text-th-amber text-sm">directions_boat</span>
+                        <span>Early morning speedboat pickup from Old Town harbour. ~45 min transfer.</span>
                     </div>
                     <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
-                        <span class="material-symbols-outlined text-th-amber text-sm">nightlife</span>
-                        <span>Casa Cruxada, Mr. Babilla, Calle del Arsenal - open late.</span>
+                        <span class="material-symbols-outlined text-th-amber text-sm">pool</span>
+                        <span>Island hopping, beach clubs, swimming, snorkelling. Drinks included on most tours.</span>
                     </div>
                     <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
-                        <span class="material-symbols-outlined text-th-amber text-sm">restaurant</span>
-                        <span><strong class="font-medium text-th-sand">Celele</strong> (#5 Latin America, #48 world) is here. The best meal in Cartagena.</span>
+                        <span class="material-symbols-outlined text-th-amber text-sm">schedule</span>
+                        <span>Full day trip. Back in Cartagena by ~17:00 for the big night.</span>
                     </div>
                 </div>
             </div>
@@ -237,18 +234,18 @@
             <h3 class="mono-label text-th-sand/40 mb-6">Quick Orientation</h3>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
-                    <span class="material-symbols-outlined text-th-emerald text-3xl block mb-2">flight_land</span>
-                    <span class="text-2xl font-display text-th-emerald block mb-1">10 min</span>
+                    <span class="material-symbols-outlined text-th-sand/50 text-3xl block mb-2">flight_land</span>
+                    <span class="text-2xl font-display text-th-sand block mb-1">10 min</span>
                     <p class="text-xs text-th-sand/50 font-light">Airport (CTG) to Old Town. Easiest transfer of the trip.</p>
                 </div>
                 <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
-                    <span class="material-symbols-outlined text-th-amber text-3xl block mb-2">thermostat</span>
-                    <span class="text-2xl font-display text-th-amber block mb-1">32&deg;C</span>
+                    <span class="material-symbols-outlined text-th-sand/50 text-3xl block mb-2">thermostat</span>
+                    <span class="text-2xl font-display text-th-sand block mb-1">32&deg;C</span>
                     <p class="text-xs text-th-sand/50 font-light">Caribbean heat + humidity. Linen, sunscreen, water. Always.</p>
                 </div>
                 <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
-                    <span class="material-symbols-outlined text-th-coral text-3xl block mb-2">directions_walk</span>
-                    <span class="text-2xl font-display text-th-coral block mb-1">On Foot</span>
+                    <span class="material-symbols-outlined text-th-sand/50 text-3xl block mb-2">directions_walk</span>
+                    <span class="text-2xl font-display text-th-sand block mb-1">On Foot</span>
                     <p class="text-xs text-th-sand/50 font-light">Old Town &amp; Getseман&iacute; fully walkable. Taxi for islands &amp; airport.</p>
                 </div>
             </div>
@@ -477,9 +474,9 @@
     <div class="max-w-7xl mx-auto">
         <div class="mb-16 text-center">
             <span class="mono-label text-th-charcoal/40 mb-4 block">03 / Day 2 - Thu 9 Apr</span>
-            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Beach, Street Art &amp; Alqu&iacute;mico</h2>
+            <h2 class="text-4xl md:text-5xl font-display font-normal max-w-4xl mx-auto leading-tight">Street Food, Fortress &amp; Alqu&iacute;mico</h2>
             <p class="text-lg text-th-charcoal/60 mt-6 max-w-3xl mx-auto font-light leading-relaxed">
-                The recovery day. No tours, no schedules, no cultural obligations. Caribbean holiday mode: late wake-up, brunch, pool or beach, street art, maybe a massage, then one of the world&rsquo;s best cocktail bars for the evening. The only thing you need to decide is where to lie down.
+                The touristy day, done right. A guided street food tour through the Old Town and Getseман&iacute; for lunch, the biggest Spanish fortress in the Americas in golden-hour light, then one of the world&rsquo;s best cocktail bars for the evening. You&rsquo;ll be too full from the food tour for a proper dinner &ndash; which is exactly the excuse you need to eat light at Alqu&iacute;mico and focus on the cocktails.
             </p>
         </div>
 
@@ -490,118 +487,126 @@
                 <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-amber/20 hidden md:block"></div>
                 <div class="space-y-10">
 
-                    <!-- Morning - Slow Brunch -->
+                    <!-- Morning - Light Coffee -->
                     <div class="flex items-start gap-4 md:gap-6">
                         <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
-                            <span class="material-symbols-outlined text-th-amber text-lg">brunch_dining</span>
+                            <span class="material-symbols-outlined text-th-amber text-lg">coffee</span>
                         </div>
                         <div class="flex-1 pt-1">
                             <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
                                 <span class="mono-label text-th-amber">Morning</span>
-                                <span class="font-display text-lg">Slow Brunch</span>
+                                <span class="font-display text-lg">Light Coffee &amp; Pastry</span>
                             </div>
-                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Zero alarms. Roll out whenever. Cartagena&rsquo;s brunch scene is solid; sit in a colonial courtyard with coffee and eggs and pretend you live here.</p>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Keep it light. The food tour at midday will be enormous &ndash; every single review says &ldquo;don&rsquo;t eat breakfast.&rdquo; A coffee and a pastry is all you need.</p>
                             <div class="space-y-3">
                                 <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
                                     <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
                                         <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d10024498-Reviews-Epoca_Espresso_Bar-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Epoca Espresso Bar</a>
                                         <span class="mono-label text-th-amber text-[10px]">Getseман&iacute; &bull; ~&pound;4&ndash;8pp</span>
                                     </div>
-                                    <p class="text-xs text-th-charcoal/50 font-light">Best specialty coffee in Cartagena. Small, unpretentious, excellent pour-over and espresso. Good pastries. The barista actually cares about extraction. TripAdvisor 4.5/5.</p>
-                                </div>
-                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
-                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d12926498-Reviews-Mila_Pasteleria-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Mila Pasteleria</a>
-                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Centro Hist&oacute;rico &bull; ~&pound;5&ndash;10pp</span>
-                                    </div>
-                                    <p class="text-xs text-th-charcoal/50 font-light">French-Colombian bakery. Croissants, eggs benedict, fresh juices. Pretty courtyard. TripAdvisor 4.5/5.</p>
-                                </div>
-                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
-                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d15195498-Reviews-Cafe_Luciernaga-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Caf&eacute; Luci&eacute;rnaga</a>
-                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Getseман&iacute; &bull; ~&pound;4&ndash;8pp</span>
-                                    </div>
-                                    <p class="text-xs text-th-charcoal/50 font-light">Relaxed courtyard caf&eacute;. Good avocado toast, smoothie bowls, strong coffee. Opens early by Cartagena standards. TripAdvisor 4.5/5.</p>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Best specialty coffee in Cartagena. Small, unpretentious, excellent pour-over and espresso. Good pastries. In and out in 20 minutes. TripAdvisor 4.5/5.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Afternoon - Pool / Beach / Getsemaní -->
+                    <!-- ~12:00 Street Food Tour -->
                     <div class="flex items-start gap-4 md:gap-6">
                         <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
-                            <span class="material-symbols-outlined text-th-emerald text-lg">pool</span>
+                            <span class="material-symbols-outlined text-th-emerald text-lg">restaurant_menu</span>
                         </div>
                         <div class="flex-1 pt-1">
                             <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
-                                <span class="mono-label text-th-emerald">Afternoon</span>
-                                <span class="font-display text-lg">Pool / Beach Club + Getseман&iacute;</span>
+                                <span class="mono-label text-th-emerald">~12:00</span>
+                                <span class="font-display text-lg">Street Food Tour</span>
+                                <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">4.9&star; &bull; 1,168 reviews</span>
                             </div>
-                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Two options - beach/pool or streets. Or both. City beaches (Bocagrande) are fine but not spectacular; busy, hawkers, murky water. For a better experience:</p>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">A guided walking tour through the Old Town and Getseман&iacute; with 10 tastings of Colombian street food: ceviche, arepa de huevo, exotic fruits, cocadas, pandebono, craft beer, and Colombian coffee. This IS lunch &ndash; every reviewer says you&rsquo;ll be too full for dinner afterwards. 2.5&ndash;3 hours, max 12 people, English-speaking guides.</p>
                             <div class="space-y-3 mb-4">
                                 <div class="p-4 rounded-xl border border-th-emerald/20 bg-th-emerald/5">
                                     <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                                        <a href="https://www.tripadvisor.com/Attraction_Review-g297476-d17736217-Reviews-Fenix_Beach-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-emerald transition-colors">Fenix Beach Club</a>
-                                        <span class="mono-label text-th-emerald text-[10px]">Tierra Bomba &bull; 10 min boat &bull; ~&pound;12&ndash;20 entry</span>
+                                        <span class="font-display">Nexperience Street Food Tour</span>
+                                        <span class="mono-label text-th-emerald text-[10px]">~&pound;36pp &bull; 2.5&ndash;3 hrs</span>
                                     </div>
-                                    <p class="text-xs text-th-charcoal/50 font-light">Beach club on a nearby island. White sand, loungers, bar service. Entry redeemable on food/drink. Boat runs every hour from Muelle de la Bodeguita. TripAdvisor 4.0/5.</p>
-                                </div>
-                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
-                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                                        <a href="https://www.tripadvisor.com/Hotel_Review-g297476-d302192-Reviews-Sofitel_Legend_Santa_Clara_Cartagena-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-emerald transition-colors">Hotel Santa Clara Pool</a>
-                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Old Town</span>
+                                    <p class="text-xs text-th-charcoal/50 font-light mb-2">Meet at Plaza Cervantes (Camell&oacute;n de los M&aacute;rtires) &ndash; look for the orange umbrella. Route goes through La Matuna, Portal de los Dulces, San Diego, Plaza Fern&aacute;ndez Madrid, then into Getseман&iacute;. Ends at Calle de la Sierpe.</p>
+                                    <p class="text-xs text-th-charcoal/50 font-light mb-2">Repeatedly named guides: Alvaro, Robert, Liz, Mercedes, Fernando. All get glowing recent reviews (Feb 2026). Vegetarian/dietary needs accommodated if you notify in advance.</p>
+                                    <div class="flex flex-wrap gap-2 mt-3">
+                                        <a href="https://www.viator.com/tours/Cartagena/Street-Food-Tour-Shared/d4498-289461P5" target="_blank" class="mono-label text-[10px] px-2.5 py-1 rounded-full border border-th-emerald/30 text-th-emerald hover:bg-th-emerald/10 transition-colors">Book on Viator</a>
+                                        <a href="https://www.getyourguide.com/cartagena-l362/shared-street-food-tour-t440644/" target="_blank" class="mono-label text-[10px] px-2.5 py-1 rounded-full border border-black/10 text-th-charcoal/50 hover:bg-black/5 transition-colors">Book on GetYourGuide</a>
                                     </div>
-                                    <p class="text-xs text-th-charcoal/50 font-light">Colonial monastery turned luxury hotel. Day passes sometimes available. Beautiful pool in a cloistered courtyard. Ask your concierge to call ahead.</p>
-                                </div>
-                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
-                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                                        <a href="https://www.tripadvisor.com/Attraction_Review-g297476-d554751-Reviews-Playa_Blanca-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-emerald transition-colors">Playa Blanca</a>
-                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Bar&uacute; &bull; 45 min&ndash;1hr boat</span>
-                                    </div>
-                                    <p class="text-xs text-th-charcoal/50 font-light">The famous white-sand beach. Stunning water, very touristy. Better as a half-day trip. Can feel crowded.</p>
                                 </div>
                             </div>
-
-                            <p class="text-sm text-th-charcoal/60 font-light mb-3"><strong class="font-medium text-th-charcoal">Getseман&iacute; street art wander:</strong> Cartagena&rsquo;s answer to Comuna 13 but looser and more DIY. Streets around Plaza de la Trinidad are covered in murals; political, abstract, beautiful. No guide needed; just walk and look. Key streets: Calle de la Sierpe, Callej&oacute;n Angosto, Calle del Porvenir.</p>
-                            <p class="text-xs text-th-charcoal/40 font-light"><strong class="font-medium text-th-charcoal/60">Optional massages:</strong> Several spots in the Old Town and Getseман&iacute;. Ask your accommodation for a rec. ~$25&ndash;40 for an hour.</p>
+                            <p class="text-xs text-th-charcoal/40 font-light">Free cancellation up to 24 hours in advance on both platforms. Check availability for midday departure times on 9 April.</p>
+                            <a href="cartagena-day2-deep-dive.html#food-tour" class="mono-label text-xs px-3 py-1.5 rounded-full bg-th-emerald/10 border border-th-emerald/20 text-th-emerald hover:bg-th-emerald/20 transition-colors mt-3 inline-block">Deep Dive: Tastings, Route &amp; Tips &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- ~19:00 Dinner -->
+                    <!-- ~15:00 Siesta -->
                     <div class="flex items-start gap-4 md:gap-6">
-                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
-                            <span class="material-symbols-outlined text-th-coral text-lg">restaurant</span>
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-clay/20 border border-th-clay/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-clay text-lg">hotel</span>
                         </div>
                         <div class="flex-1 pt-1">
                             <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
-                                <span class="mono-label text-th-coral">~19:00</span>
-                                <span class="font-display text-lg">Dinner before Alqu&iacute;mico</span>
+                                <span class="mono-label text-th-clay">~15:00</span>
+                                <span class="font-display text-lg">Siesta</span>
                             </div>
-                            <p class="text-sm text-th-charcoal/60 font-light mb-4">Eat first, drink after. All three are walkable to Alqu&iacute;mico. Pick one:</p>
+                            <p class="text-sm text-th-charcoal/60 font-light">Back to the accommodation. Rest, shower, let the food settle. The hottest part of the day &ndash; stay inside. San Felipe is much better in the late afternoon.</p>
+                        </div>
+                    </div>
+
+                    <!-- ~16:30 Castillo de San Felipe -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">fort</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-amber">~16:30</span>
+                                <span class="font-display text-lg">Castillo de San Felipe de Barajas</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">The largest Spanish fortress ever built in the Americas. Constructed in the 1600s to defend against pirates and rival empires. Underground tunnels, massive ramparts, cannons, and panoramic views over the city and harbour. UNESCO World Heritage Site. Budget 1.5&ndash;2 hours to explore properly.</p>
+                            <div class="space-y-3 mb-4">
+                                <div class="p-4 rounded-xl border border-th-amber/20 bg-th-amber/5">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                        <a href="https://www.tripadvisor.com/Attraction_Review-g297476-d315386-Reviews-Castillo_de_San_Felipe_de_Barajas-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-amber transition-colors">Castillo de San Felipe de Barajas</a>
+                                        <span class="mono-label text-th-amber text-[10px]">~&pound;10pp &bull; 1.5&ndash;2 hrs</span>
+                                    </div>
+                                    <p class="text-xs text-th-charcoal/50 font-light mb-2">Entry: COP 50,000 (~&pound;10pp). Audio guide +COP 15,000 (~&pound;3) &ndash; worth it for the tunnel history. Open daily 8am&ndash;6pm, last entry 5:30pm. TripAdvisor 4.5/5, ~18k reviews.</p>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Wear sturdy shoes (uneven stone everywhere), bring water, and wear sun protection. Arriving at 4:30pm dodges the worst heat and gives you golden-hour light on the ramparts.</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-th-charcoal/40 font-light">~10 minute taxi from the Old Town, or a 20-minute walk from the Clock Tower via Calle del Arsenal. Walk back through Getseман&iacute; afterwards to catch the street art murals on Calle de la Sierpe and Callej&oacute;n Angosto.</p>
+                            <a href="cartagena-day2-deep-dive.html#fortress" class="mono-label text-xs px-3 py-1.5 rounded-full bg-th-amber/10 border border-th-amber/20 text-th-amber hover:bg-th-amber/20 transition-colors mt-3 inline-block">Deep Dive: Fortress, 1741 Battle &amp; Getseман&iacute; Walk &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- ~20:30 Late / Lite Dinner -->
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">tapas</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                <span class="mono-label text-th-coral">~20:30</span>
+                                <span class="font-display text-lg">Late &amp; Lite Dinner</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light mb-4">You&rsquo;ll still be full from the food tour, so keep it light. Best option: eat at Alqu&iacute;mico itself &ndash; their food menu is designed by the team from Celele (one of Latin America&rsquo;s 50 Best Restaurants) and is built for grazing alongside cocktails. Or grab a small bite nearby first:</p>
                             <div class="space-y-3">
                                 <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5">
                                     <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d1063606-Reviews-La_Vitrola-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">La Vitrola</a>
-                                        <span class="mono-label text-th-coral text-[10px]">Old Town &bull; ~&pound;15&ndash;25pp</span>
+                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d12145498-Reviews-Alquimico-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Alqu&iacute;mico Small Plates</a>
+                                        <span class="mono-label text-th-coral text-[10px]">Old Town &bull; at the bar</span>
                                     </div>
-                                    <p class="text-xs text-th-charcoal/50 font-light">Classic Cuban-style restaurant in a colonial mansion. Live music, white tablecloths, excellent steaks and seafood. Has been the go-to Cartagena dinner spot for decades. Feels like Havana in the 1950s. TripAdvisor 4.5/5.</p>
-                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle del Santisimo #8-08, Centro Hist&oacute;rico</p>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Skip a separate dinner and eat at Alqu&iacute;mico. The Celele-designed menu features creative small plates &ndash; order a couple to share alongside your cocktails. Simplest option and means you&rsquo;re settled in early for a rooftop table.</p>
                                 </div>
                                 <div class="p-4 rounded-xl border border-black/5 bg-white/30">
                                     <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
                                         <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d12598070-Reviews-Cande_Restaurante-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Cand&eacute;</a>
                                         <span class="mono-label text-th-charcoal/40 text-[10px]">Old Town &bull; ~&pound;10&ndash;18pp</span>
                                     </div>
-                                    <p class="text-xs text-th-charcoal/50 font-light">Modern Colombian small plates in a buzzy courtyard. Good for sharing across the table. Creative cocktails, lively atmosphere, easy-going. TripAdvisor 4.5/5.</p>
+                                    <p class="text-xs text-th-charcoal/50 font-light">Modern Colombian small plates in a buzzy courtyard. Good for sharing a few lighter dishes. Creative cocktails too. Walkable to Alqu&iacute;mico. TripAdvisor 4.5/5.</p>
                                     <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle del Colegio, Centro Hist&oacute;rico</p>
-                                </div>
-                                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
-                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                                        <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d15129516-Reviews-Sierpe_Caribe_Fusion-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" class="font-display hover:text-th-coral transition-colors">Sierpe Caribe Fusion</a>
-                                        <span class="mono-label text-th-charcoal/40 text-[10px]">Getseман&iacute; &bull; ~&pound;10&ndash;16pp</span>
-                                    </div>
-                                    <p class="text-xs text-th-charcoal/50 font-light">Caribbean seafood fusion, live music, local fishermen&rsquo;s catch daily. Travellers&rsquo; Choice winner. If you didn&rsquo;t eat here on Day 1, tonight&rsquo;s the night. TripAdvisor 4.8/5.</p>
-                                    <p class="text-xs text-th-charcoal/40 font-light mt-1">Calle de la Sierpe #29-09, Getseман&iacute;</p>
                                 </div>
                             </div>
                         </div>
@@ -641,7 +646,7 @@
                     <div class="space-y-2">
                         <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
                             <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
-                            <span>Research beach clubs or hotel day passes</span>
+                            <span>Book Nexperience Street Food Tour for midday 9 Apr (Viator or GetYourGuide)</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
                             <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
@@ -727,6 +732,7 @@
                                 <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-emerald">scuba_diving</span> <strong class="font-medium text-th-charcoal">Islands</strong>: Isla Grande (beach clubs), Isla del Pirata (snorkelling), Cholon (party island, floating bars, music, controlled chaos).</div>
                                 <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-th-emerald">backpack</span> <strong class="font-medium text-th-charcoal">Bring</strong>: Sunscreen (reef-safe), cash for island food/drinks, waterproof phone case, towel.</div>
                             </div>
+                            <a href="rosario-islands-guide.html#boats" class="mono-label text-xs px-3 py-1.5 rounded-full bg-th-emerald/10 border border-th-emerald/20 text-th-emerald hover:bg-th-emerald/20 transition-colors mt-3 inline-block">Deep Dive: Boat Operators &amp; Booking &rarr;</a>
                         </div>
                     </div>
 
@@ -760,6 +766,7 @@
                                 </div>
                             </div>
                             <p class="mt-3 text-xs text-th-charcoal/40 font-light">Most boats return to Cartagena by 3&ndash;4pm. Head back, shower off the salt, nap, and prepare for the biggest night of the trip.</p>
+                            <a href="rosario-islands-guide.html#islands" class="mono-label text-xs px-3 py-1.5 rounded-full bg-th-amber/10 border border-th-amber/20 text-th-amber hover:bg-th-amber/20 transition-colors mt-3 inline-block">Deep Dive: Islands, Beach Clubs &amp; Snorkelling &rarr;</a>
                         </div>
                     </div>
 

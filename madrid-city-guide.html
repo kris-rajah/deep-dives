@@ -5,6 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Madrid City Guide - April 2026</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script>
@@ -143,70 +145,42 @@
             Three nights with the full crew (~15&ndash;20 people) before the core group of 5 heads to Colombia. Day 1 is a late arrival and crash. Day 2 is free; explore, eat, terrace beers, then a group dinner for ~10. Day 3 is go-karting (~15 ppl) and a proper La Latina bar crawl. Then we fly out.
         </p>
 
-        <!-- Trip Timeline -->
-        <div class="bg-white/5 border border-white/10 p-6 md:p-10 rounded-3xl mb-8">
-            <h3 class="mono-label text-th-sand/40 mb-6">Your 3 Nights at a Glance</h3>
-            <div class="space-y-4">
-                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-blue/30 bg-th-blue/10">
-                    <span class="mono-label text-th-blue w-28 shrink-0">Thu 2 Apr</span>
-                    <div class="flex-1">
-                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-blue/40 rounded-full" style="width: 20%"></div></div>
-                    </div>
-                    <span class="font-display w-36 text-right">Arrive Late</span>
-                    <span class="mono-label text-th-blue text-[10px] w-20 text-right">Chill</span>
-                </div>
-                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-blue/30 bg-th-blue/10">
-                    <span class="mono-label text-th-blue w-28 shrink-0">Fri 3 Apr</span>
-                    <div class="flex-1">
-                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-blue/60 rounded-full" style="width: 50%"></div></div>
-                    </div>
-                    <span class="font-display w-36 text-right">Free + Group Meal</span>
-                    <span class="mono-label text-th-blue text-[10px] w-20 text-right">Easy</span>
-                </div>
-                <div class="flex items-center gap-6 p-4 rounded-xl border border-th-coral/30 bg-th-coral/10">
-                    <span class="mono-label text-th-coral w-28 shrink-0">Sat 4 Apr</span>
-                    <div class="flex-1">
-                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-th-coral rounded-full" style="width: 90%"></div></div>
-                    </div>
-                    <span class="font-display w-36 text-right">Karting + Bar Crawl</span>
-                    <span class="mono-label text-th-coral text-[10px] w-20 text-right">Packed</span>
-                </div>
-                <div class="flex items-center gap-6 p-4 rounded-xl border border-white/10 bg-white/5">
-                    <span class="mono-label text-th-sand/40 w-28 shrink-0">Sun 5 Apr</span>
-                    <div class="flex-1">
-                        <div class="h-2.5 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-white/20 rounded-full" style="width: 30%"></div></div>
-                    </div>
-                    <span class="font-display w-36 text-right">Fly to Colombia</span>
-                    <span class="mono-label text-th-sand/40 text-[10px] w-20 text-right">Travel</span>
-                </div>
-            </div>
+        <!-- Map -->
+        <div class="rounded-3xl overflow-hidden mb-8 border border-white/10" style="height: 400px;">
+            <div id="madrid-map" style="height: 100%; width: 100%;"></div>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                mapboxgl.accessToken = 'pk.eyJ1Ijoia3Jpcy1yYWphaCIsImEiOiJjbW0zanNlbjUwMWlzMndyOGtrOHE2YWc5In0.EMqFPFI0c1mjg-E9oenywg';
+                var map = new mapboxgl.Map({
+                    container: 'madrid-map',
+                    style: 'mapbox://styles/mapbox/light-v11',
+                    center: [-3.6950, 40.4100],
+                    zoom: 13,
+                    pitch: 0,
+                    bearing: 0,
+                    antialias: true,
+                    scrollZoom: true,
+                    attributionControl: false
+                });
+                map.addControl(new mapboxgl.AttributionControl({compact: true}), 'bottom-right');
+
+                var markers = [
+                    {coords: [-3.6930, 40.4080], color: '#059669', url: 'https://maps.app.goo.gl/pH5yA6z9tYeeBV3n8'},
+                    {coords: [-3.7100, 40.4120], color: '#d97706', url: 'https://maps.app.goo.gl/idyYbsQWWjqjBtKL6'}
+                ];
+                markers.forEach(function(m) {
+                    var el = new mapboxgl.Marker({color: m.color})
+                        .setLngLat(m.coords)
+                        .addTo(map);
+                    el.getElement().style.cursor = 'pointer';
+                    el.getElement().addEventListener('click', function() { window.open(m.url, '_blank'); });
+                });
+            });
+        </script>
 
         <!-- Neighbourhoods -->
         <div class="grid md:grid-cols-2 gap-8 mb-8">
-            <div class="bg-white/5 border border-th-blue/30 p-8 rounded-2xl border-l-4 border-l-th-blue">
-                <div class="flex items-start gap-3 mb-3">
-                    <span class="material-symbols-outlined text-th-blue mt-0.5">hotel</span>
-                    <h4 class="font-display text-lg">Atocha / Art Triangle (Your Base)</h4>
-                </div>
-                <p class="text-th-sand/60 font-light text-sm mb-4">
-                    Radisson RED Madrid, 300m from Atocha station. Central, well-connected, walkable to Retiro Park and the main sights.
-                </p>
-                <div class="space-y-2">
-                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
-                        <span class="material-symbols-outlined text-th-blue text-sm">restaurant</span>
-                        <span>Plenty of casual spots nearby for late-night food.</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
-                        <span class="material-symbols-outlined text-th-blue text-sm">train</span>
-                        <span>Atocha station - Metro + Cercan&iacute;as to anywhere in Madrid.</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
-                        <span class="material-symbols-outlined text-th-blue text-sm">check_circle</span>
-                        <span>Booked &amp; confirmed. &pound;643 total (3 nights, 2 guests).</span>
-                    </div>
-                </div>
-            </div>
             <div class="bg-white/5 border border-th-amber/30 p-8 rounded-2xl border-l-4 border-l-th-amber">
                 <div class="flex items-start gap-3 mb-3">
                     <span class="material-symbols-outlined text-th-amber mt-0.5">nightlife</span>
@@ -230,6 +204,29 @@
                     </div>
                 </div>
             </div>
+            <div class="bg-white/5 border border-th-emerald/30 p-8 rounded-2xl border-l-4 border-l-th-emerald">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="material-symbols-outlined text-th-emerald mt-0.5">hotel</span>
+                    <h4 class="font-display text-lg">Atocha / Art Triangle (Your Base)</h4>
+                </div>
+                <p class="text-th-sand/60 font-light text-sm mb-4">
+                    Radisson RED Madrid, 300m from Atocha station. Central, well-connected, walkable to Retiro Park and the main sights.
+                </p>
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-emerald text-sm">restaurant</span>
+                        <span>Plenty of casual spots nearby for late-night food.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-emerald text-sm">train</span>
+                        <span>Atocha station - Metro + Cercan&iacute;as to anywhere in Madrid.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-th-sand/50 font-light">
+                        <span class="material-symbols-outlined text-th-emerald text-sm">check_circle</span>
+                        <span>Booked &amp; confirmed. &pound;643 total (3 nights, 2 guests).</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Quick Orientation -->
@@ -237,18 +234,18 @@
             <h3 class="mono-label text-th-sand/40 mb-6">Quick Orientation</h3>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
-                    <span class="material-symbols-outlined text-th-blue text-3xl block mb-2">flight_land</span>
-                    <span class="text-2xl font-display text-th-blue block mb-1">30 min</span>
+                    <span class="material-symbols-outlined text-th-sand/50 text-3xl block mb-2">flight_land</span>
+                    <span class="text-2xl font-display text-th-sand block mb-1">30 min</span>
                     <p class="text-xs text-th-sand/50 font-light">Barajas (MAD T4S) to Atocha. Express bus or &euro;30 taxi.</p>
                 </div>
                 <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
-                    <span class="material-symbols-outlined text-th-amber text-3xl block mb-2">thermostat</span>
-                    <span class="text-2xl font-display text-th-amber block mb-1">18&deg;C</span>
+                    <span class="material-symbols-outlined text-th-sand/50 text-3xl block mb-2">thermostat</span>
+                    <span class="text-2xl font-display text-th-sand block mb-1">18&deg;C</span>
                     <p class="text-xs text-th-sand/50 font-light">April spring. Warm days, cool evenings; bring a jacket.</p>
                 </div>
                 <div class="p-4 rounded-xl border border-white/10 bg-white/5 text-center">
-                    <span class="material-symbols-outlined text-th-coral text-3xl block mb-2">subway</span>
-                    <span class="text-2xl font-display text-th-coral block mb-1">Metro</span>
+                    <span class="material-symbols-outlined text-th-sand/50 text-3xl block mb-2">subway</span>
+                    <span class="text-2xl font-display text-th-sand block mb-1">Metro</span>
                     <p class="text-xs text-th-sand/50 font-light">Cheap, fast, runs late. Uber/Cabify also work well.</p>
                 </div>
             </div>
@@ -358,8 +355,8 @@
                 <div>
                     <h4 class="font-display text-lg mb-2">To-Do</h4>
                     <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
-                        <span class="material-symbols-outlined text-th-emerald text-lg">check_box</span>
-                        <span>Confirm late check-in at Radisson RED</span>
+                        <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                        <span>Chase others to confirm their accommodation is booked</span>
                     </div>
                 </div>
             </div>
@@ -507,13 +504,13 @@
                 <div>
                     <h4 class="font-display text-lg mb-3">To-Do</h4>
                     <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
-                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
-                            <span>Hari to confirm restaurant booking for ~10 (La Musa Latina or Taberna La Concha)</span>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/40 font-light line-through">
+                            <span class="material-symbols-outlined text-th-charcoal/30 text-lg">check_box</span>
+                            <span>Poll group for Fri vs Sat night meal preference &mdash; Friday won</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
                             <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
-                            <span>Poll group for Fri vs Sat night meal preference</span>
+                            <span>Hari to confirm restaurant booking for ~10 (La Musa Latina or Taberna La Concha)</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
                             <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>

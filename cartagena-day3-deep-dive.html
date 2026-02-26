@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Rosario Islands Deep Dive - Day 3 Planning</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "th-sand": "#f4f1ee",
+                        "th-beige": "#e8e4e0",
+                        "th-charcoal": "#1a1a1a",
+                        "th-clay": "#d9c5b2",
+                        "th-emerald": "#059669",
+                        "th-amber": "#d97706",
+                        "th-coral": "#e67e5f",
+                        "th-sky": "#0ea5e9",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-th-sand text-th-charcoal font-sans antialiased;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .mono-label {
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="sticky top-0 z-50 w-full bg-th-sand/80 backdrop-blur-md border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="font-display font-semibold text-lg tracking-tight">Kris Rajah</span>
+            <span class="text-th-charcoal/30">|</span>
+            <a href="cartagena-city-guide.html" class="mono-label text-th-charcoal/50 hover:text-th-charcoal transition-colors">Cartagena Guide</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#overview">The Plan</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#boats">Operators</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#islands">Islands</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#beach-clubs">Beach Clubs</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#snorkeling">Snorkeling</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#cholon">Cholon</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#practical">Practical</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[60vh] flex items-center justify-center py-24 px-8">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 rounded-full border border-black/10 mb-10">
+            <span class="mono-label text-th-charcoal/60">Day 3 &bull; Fri 10 Apr 2026 &bull; Deep Dive</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-display font-normal leading-[1.1] mb-8">
+            Islas del Rosario
+        </h1>
+        <p class="text-xl md:text-2xl text-th-charcoal/60 font-light leading-relaxed max-w-3xl mx-auto">
+            A 27-island national park archipelago, 45 minutes offshore from Cartagena by speedboat.
+            Turquoise Caribbean water, coral reefs, beach clubs, and one gloriously chaotic party island.
+            Everything you need to plan the best day of the trip.
+        </p>
+        <p class="mono-label text-th-charcoal/30 mt-6">Approx rates: &pound;1 &asymp; 5,200 COP &asymp; $1.27 USD</p>
+    </div>
+</section>
+
+<!-- 01 / THE PLAN -->
+<section class="py-24 px-8 border-b border-black/5" id="overview">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">01 / The Plan</span>
+        <h2 class="text-4xl font-display font-normal mb-6">Private Charter + Bora Bora Lunch</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">The hybrid play: private speedboat for flexibility and snorkeling, dock at Bora Bora mid-day for the DJ/lunch/beach club vibe, then head back in time for the big night. Best of both worlds.</p>
+
+        <div class="glass-card p-6 md:p-10 rounded-3xl mb-8 border-2 border-th-emerald/20">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="mono-label text-xs px-3 py-1 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Locked In</span>
+            </div>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-emerald/20 hidden md:block"></div>
+                <div class="space-y-8">
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">sailing</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-1">
+                                <span class="mono-label text-th-emerald">08:30</span>
+                                <span class="font-display text-lg">Depart Cartagena</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Leave from Arrecife&rsquo;s private marina &ndash; skip the public dock chaos. Photo stop at <strong class="font-medium text-th-charcoal">Fuerte de Bocachica</strong> on the way out. Pablo Escobar&rsquo;s abandoned mansion visible from the water. Can be bouncy &ndash; take motion sickness tablets if needed.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-sky/10 border border-th-sky/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-sky text-lg">scuba_diving</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-1">
+                                <span class="mono-label text-th-sky">09:15</span>
+                                <span class="font-display text-lg">Snorkeling Stop</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">La Piscinita or the sunken airplane wreck. Groom gets his reef time; everyone else floats with beers on the boat. Gear included &ndash; confirm it&rsquo;s onboard before departure.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">celebration</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-1">
+                                <span class="mono-label text-th-coral">10:30</span>
+                                <span class="font-display text-lg">Cholon Party Stop</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">1&ndash;1.5 hours max. Swim between boats, vibe, Coco Locos, photos. Don&rsquo;t overdo it &ndash; the big night is ahead.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-coral text-lg">beach_access</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-1">
+                                <span class="mono-label text-th-coral">12:00</span>
+                                <span class="font-display text-lg">Bora Bora Beach Club</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Dock at Bora Bora. Pre-booked sunbed. DJ, lunch, drinks, proper beach club atmosphere. Friday = 50% off premium zones.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">directions_boat</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-1">
+                                <span class="mono-label text-th-amber">14:00</span>
+                                <span class="font-display text-lg">Back on the Boat</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Chill swim stop or head straight back. Boats must leave early &ndash; currents and waves build in the afternoon.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-emerald text-lg">location_city</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-1">
+                                <span class="mono-label text-th-emerald">15:00 &ndash; 15:30</span>
+                                <span class="font-display text-lg">Back in Cartagena</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Return to dock. Shower, nap, recharge before the big night out.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/30 flex items-center justify-center z-10">
+                            <span class="material-symbols-outlined text-th-amber text-lg">restaurant</span>
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-1">
+                                <span class="mono-label text-th-amber">20:00</span>
+                                <span class="font-display text-lg">Celele Dinner</span>
+                            </div>
+                            <p class="text-sm text-th-charcoal/60 font-light">Big night begins.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="font-display text-lg mb-4">Why This Works</h3>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <p>&#10003; Groom gets snorkeling &ndash; genuinely good here (&ldquo;among the best I&rsquo;ve done&rdquo;)</p>
+                    <p>&#10003; Non-snorkelers stay on the boat with music and drinks</p>
+                    <p>&#10003; Cholon party stop without committing to it all day</p>
+                    <p>&#10003; Bora Bora gives the beach club/DJ experience for lunch</p>
+                    <p>&#10003; Total control over timing &ndash; you leave when you want</p>
+                    <p>&#10003; Your own boat, your own music, your own group</p>
+                    <p>&#10003; BYO alcohol from supermarket = big savings on drinks</p>
+                </div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="font-display text-lg mb-4">Bora Bora Docking</h3>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <p>Private boats can dock at Bora Bora. Pre-book a sunbed: from 150,000 COP (~&pound;30) standard zone for up to 4 people.</p>
+                    <p>Food and drinks are paid separately (not included in sunbed).</p>
+                    <p><strong class="font-medium text-th-emerald">Friday weekday pricing = 50% off terrace beds and premium zones.</strong></p>
+                    <p class="text-xs text-th-charcoal/40 mt-2">Email: reservas@boraboracartagena.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 02 / BOAT OPERATORS -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="boats">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">02 / Booking</span>
+        <h2 class="text-4xl font-display font-normal mb-6">Pick Your Option</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">Two TripAdvisor-verified options: a private charter for full flexibility, or a VIP shared tour at half the price. Both get you to the same islands.</p>
+
+        <!-- Recommended Charter Operators -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl">
+            <h3 class="font-display text-lg mb-2">Two Options (TripAdvisor-Verified)</h3>
+            <p class="text-sm text-th-charcoal/50 font-light mb-6">Option A is the premium play  &ndash; your own private boat, total flexibility, custom itinerary. Option B is the budget-friendly backup  &ndash; a VIP shared tour with the highest-volume operator in Cartagena.</p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+                <!-- Arrecife Boats -->
+                <div class="p-5 rounded-2xl border-2 border-th-emerald/30 bg-white/30">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-display text-lg">Arrecife Boats</h4>
+                        <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Top Pick</span>
+                    </div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-sm font-medium text-th-emerald">4.8&star;</span>
+                        <span class="text-xs text-th-charcoal/50 font-light">92 reviews on TripAdvisor</span>
+                    </div>
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Total (up to 10)</span>
+                            <span class="font-medium text-th-emerald">&pound;632</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Per head (5 pax)</span>
+                            <span class="font-medium text-th-emerald">~&pound;127 pp</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Duration</span>
+                            <span>8&ndash;9 hours (08:30&ndash;16:00)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Boat</span>
+                            <span>38ft speedboat, red leather seating</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Includes</span>
+                            <span>Captain, crew, fuel, cooler + ice, Bluetooth, snorkel gear</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Departs from</span>
+                            <span>Private marina (skip the public dock chaos)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Contact</span>
+                            <span>Alex (owner) via WhatsApp</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10">
+                        <p class="text-xs font-light"><strong class="font-medium text-th-emerald">From reviews:</strong> &ldquo;Among the best snorkeling I&rsquo;ve done&rdquo; (Dec 2024). &ldquo;They gave us their best recommendations but also adjusted the trip&rdquo; (May 2024). &ldquo;The family played in the ocean while we drank and ate in our private area with a hammock. It was a dream.&rdquo; (Jun 2024). Alex replies to every review. Boat has onboard head (toilet).</p>
+                    </div>
+                    <div class="mt-3 p-3 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                        <p class="text-xs font-light"><strong class="font-medium text-th-amber">Watch out:</strong> One reviewer noted snorkel gear was forgotten  &ndash; rental from boats at the snorkel stop cost 80,000 COP (~&pound;13). Crew didn&rsquo;t offer to cover it. Minor but worth confirming gear is onboard before departure.</p>
+                    </div>
+                    <a href="https://www.tripadvisor.com/AttractionProductReview-g297476-d14074437-Private_Boat_Tour_Full_day_trip_to_Rosario_Islands_Cholon_Baru-Cartagena_Cart.html" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-th-emerald/30 text-th-emerald hover:bg-th-emerald/10 transition-colors mt-4 inline-block">TripAdvisor Reviews &rarr;</a>
+                </div>
+
+                <!-- COCOCARTAGENA VIP -->
+                <div class="p-5 rounded-2xl border border-black/10 bg-white/30">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-display text-lg">COCOCARTAGENA VIP Tour</h4>
+                        <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-sky/10 text-th-sky border border-th-sky/20">Budget Option</span>
+                    </div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-sm font-medium text-th-sky">4.8&star;</span>
+                        <span class="text-xs text-th-charcoal/50 font-light">4,560 reviews &bull; Biggest operator in Cartagena &bull; 6,623 total</span>
+                    </div>
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Total (5 pax)</span>
+                            <span class="font-medium text-th-sky">~&pound;255&ndash;360</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Per head (5 pax)</span>
+                            <span class="font-medium text-th-sky">&pound;51&ndash;72 pp</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Duration</span>
+                            <span>7 hours</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Type</span>
+                            <span>VIP shared tour (smaller group, premium boat)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Includes</span>
+                            <span>Lunch, snorkeling, beach beds, parasols, guide</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Itinerary</span>
+                            <span>5 stops: Bocachica Fort, Isla Baru, Isla Grande, Isla Marina, Rosario Islands</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Booking</span>
+                            <span>Viator  &ndash; free cancellation 24hr ahead</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 rounded-lg bg-th-sky/5 border border-th-sky/10">
+                        <p class="text-xs font-light"><strong class="font-medium text-th-sky">From reviews (Feb 2026):</strong> &ldquo;Charlotte was amazing  &ndash; super personable and knowledgeable. We paid for VIP so the crowd was a small size&rdquo;. &ldquo;The VIP tour was really worth it&rdquo;. &ldquo;Lunch portions were generous. Boat staff were fantastic.&rdquo; Reviews are from this month  &ndash; actively running and well-reviewed.</p>
+                    </div>
+                    <div class="mt-3 p-3 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                        <p class="text-xs font-light"><strong class="font-medium text-th-amber">Trade-offs vs private:</strong> It&rsquo;s a shared tour, not your own boat. No custom itinerary  &ndash; you follow their 5-stop route. No BYO drinks. No control over timing or music. But at less than half the price per head, with lunch and snorkeling included, it&rsquo;s a solid option if budget matters or Arrecife is fully booked.</p>
+                    </div>
+                    <div class="mt-3 p-3 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                        <p class="text-xs font-light"><strong class="font-medium text-th-coral">One flag:</strong> A Feb 2026 review reported being told &ldquo;no tour today due to sea conditions&rdquo; despite being on the list, and suspects overbooking. Isolated incident across 4,560 reviews, but worth having a backup plan.</p>
+                    </div>
+                    <a href="https://www.tripadvisor.com/AttractionProductReview-g297476-d23797641-Cartagena_Island_Hopping_5_Stop_Rosario_Islands_Tour_with_Lunch-Cartagena.html" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-th-sky/30 text-th-sky hover:bg-th-sky/10 transition-colors mt-4 inline-block">TripAdvisor Reviews &rarr;</a>
+                </div>
+
+            </div>
+
+            <p class="text-xs text-th-charcoal/40 font-light">Both operators include captain, assistant, fuel, cooler &amp; ice. NOT included: food, drinks, port fees (~34,000&ndash;65,000 COP pp), towels. BYO alcohol is the biggest savings  &ndash; buy beer, rum, mixers at an Exito or Olimpica supermarket the night before. April 10 falls right after Easter (April 5, 2026) so <strong class="text-th-coral">confirm whether high-season pricing applies</strong> before booking.</p>
+
+            <div class="mt-4 p-3 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                <p class="text-xs font-light"><strong class="font-medium text-th-coral">Operators to avoid:</strong> <strong>Juan Ballena</strong> (4.4&star;, 142 reviews) is a booking agency, not a boat operator. Recent reviews (Jan 2026, Aug 2025) flag sketchy drivers, poor communication, and a safety incident. <strong>Cartagena Boat Charters</strong> (formerly 5.0&star;, 200 reviews) appears to have shut down  &ndash; website suspended, booking unavailable on TripAdvisor, no reviews since Jan 2024.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 03 / ISLAND OPTIONS -->
+<section class="py-24 px-8 border-b border-black/5" id="islands">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">03 / The Islands</span>
+        <h2 class="text-4xl font-display font-normal mb-6">Which Islands to Visit</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">The archipelago has 27 islands but most day trips focus on four main areas. Here is what each one is actually like.</p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <!-- Isla Grande -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-emerald text-2xl">landscape</span>
+                    <div>
+                        <h3 class="font-display text-xl">Isla Grande</h3>
+                        <span class="mono-label text-[10px] text-th-emerald">Beach clubs &bull; snorkeling &bull; relaxation</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">The largest and most developed island. Home to most of the beach clubs (Bora Bora, Encantada Beach, IslaBela). About 1 hour from Cartagena. This is where you go for a proper beach day with facilities, loungers, and food service.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-emerald">Vibe:</strong> Relaxed-to-party depending on the beach club. The default choice for most day trips. Good snorkeling nearby.</p>
+                </div>
+            </div>
+
+            <!-- Cholon -->
+            <div class="glass-card p-6 rounded-2xl border-2 border-th-coral/20">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-coral text-2xl">celebration</span>
+                    <div>
+                        <h3 class="font-display text-xl">Cholon</h3>
+                        <span class="mono-label text-[10px] text-th-coral">Party island &bull; boat parties &bull; controlled chaos</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">A tiny beach off an island near Baru. Colombia's most famous boat party spot. Multiple boats anchor in a bay, music blasting, people swimming between boats with drinks, vendors selling everything from ceviche to hookah. Hip hop, reggaeton, Coco Locos in waist-deep water.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-coral">Vibe:</strong> Spring Break-adjacent but not full MTV. Spend 1&ndash;2 hours, soak it in, take photos, then move on. Excellent as a stop on a private charter, less ideal as the whole day. <em>See dedicated Cholon section below.</em></p>
+                </div>
+            </div>
+
+            <!-- Isla Baru / Playa Blanca -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-amber text-2xl">sunny</span>
+                    <div>
+                        <h3 class="font-display text-xl">Isla Baru (Playa Blanca)</h3>
+                        <span class="mono-label text-[10px] text-th-amber">White sand &bull; over-touristed &bull; iconic photo</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">The most famous beach: long white sand, palm trees, turquoise water. Looks incredible in photos. Reality: overrun with mass tourism, aggressive vendors selling everything constantly, and significant crowding.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-amber">Vibe:</strong> Beautiful beach, frustrating experience. Worth a 30-minute photo stop on a private boat, but not recommended as your main destination. Vendors can be overwhelming &ndash;constant "no, gracias" required.</p>
+                </div>
+            </div>
+
+            <!-- Isla del Pirata / Quieter Islands -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-sky text-2xl">water</span>
+                    <div>
+                        <h3 class="font-display text-xl">Quiet Islands</h3>
+                        <span class="mono-label text-[10px] text-th-sky">Isla del Encanto &bull; Isla del Pirata &bull; Playa Libre</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">Smaller, less developed islands with cleaner beaches and better snorkeling. Isla del Encanto has an upscale beach club with a pool and excellent sandy beach. Isla del Pirata is good for snorkeling. These are the antidote to Cholon's chaos.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-sky/5 border border-th-sky/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-sky">Vibe:</strong> Genuinely relaxing. Better water clarity for snorkeling. Fewer vendors. Best for actual unwinding between Cholon's chaos and the big night ahead.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 04 / BEACH CLUBS -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="beach-clubs">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">04 / Beach Clubs</span>
+        <h2 class="text-4xl font-display font-normal mb-6">Beach Club Comparison</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">If you choose a beach club day pass instead of (or combined with) a private charter, here are the main options ranked.</p>
+
+        <div class="space-y-6">
+
+            <!-- Bora Bora -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-coral">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                    <div>
+                        <h3 class="font-display text-xl mb-1">Bora Bora Beach Club</h3>
+                        <span class="mono-label text-[10px] text-th-coral">Rosario Islands &bull; 50 min from Cartagena &bull; Party Vibe</span>
+                    </div>
+                    <span class="mono-label text-xs px-3 py-1 rounded-full bg-th-coral/10 text-th-coral border border-th-coral/20">Most Popular</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">Day Pass (Club Area)</span><span>~390,000 COP (~&pound;75)</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">Early booking price</span><span>~290,000 COP (~&pound;55)</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">VIP area</span><span>18+ only, limited access</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">Beach bed upgrade</span><span>+100,000 COP (~&pound;20)</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">Port tax + insurance</span><span>~40,300 COP (~&pound;8) extra pp</span></div>
+                    </div>
+                    <div class="text-sm text-th-charcoal/60 font-light">
+                        <p class="mb-2"><strong class="font-medium text-th-charcoal">Includes:</strong> Speedboat transfer, welcome cocktail, cabana/beach bed, lunch buffet (3 options).</p>
+                        <p class="mb-2"><strong class="font-medium text-th-charcoal">Vibe:</strong> DJ, constant party atmosphere, Instagram-worthy setup, Caribbean vibes. 95% positive ratings across 172K+ visitors from 74 countries.</p>
+                        <p class="text-xs text-th-charcoal/40">Mon&ndash;Fri: 50% off premium VIP add-ons. Fri 10 Apr qualifies.</p>
+                    </div>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-3">
+                    <a href="https://boraboracartagena.com/en/" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-th-coral/30 text-th-coral hover:bg-th-coral/10 transition-colors">Official Site &rarr;</a>
+                    <span class="text-xs text-th-charcoal/40 font-light">WhatsApp: +57 324 560 3921 &bull; reservas@boraboracartagena.com</span>
+                </div>
+            </div>
+
+            <!-- Coralina Island -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-emerald">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                    <div>
+                        <h3 class="font-display text-xl mb-1">Isla Coralina</h3>
+                        <span class="mono-label text-[10px] text-th-emerald">Rosario Islands &bull; 45 min from Cartagena &bull; Upscale / Relaxed</span>
+                    </div>
+                    <span class="mono-label text-xs px-3 py-1 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Best All-Inclusive</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">Deluxe Day Pass</span><span>360,000 COP (~&pound;70)</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">Marine tax (extra)</span><span>29,000 COP (~&pound;6)</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">VIP option</span><span>Higher tier with private deck + massage</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">Free time on island</span><span>~5 hours</span></div>
+                    </div>
+                    <div class="text-sm text-th-charcoal/60 font-light">
+                        <p class="mb-2"><strong class="font-medium text-th-charcoal">Deluxe includes:</strong> Welcome wine, a la carte lunch, open bar (national drinks), coffee/tea station, towels, snorkel gear, kayak, paddleboard, oceanarium shuttle transfer, round-trip boat.</p>
+                        <p><strong class="font-medium text-th-charcoal">VIP adds:</strong> Private deck in mangrove area, 30-min massage or bottle of wine per couple, beach loungers and sunbeds.</p>
+                    </div>
+                </div>
+                <span class="mono-label text-xs text-th-charcoal/40 mt-4 inline-block">Book via Viator or GetYourGuide</span>
+            </div>
+
+            <!-- Isla del Encanto -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-sky">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                    <div>
+                        <h3 class="font-display text-xl mb-1">Isla del Encanto</h3>
+                        <span class="mono-label text-[10px] text-th-sky">Rosario Islands &bull; Upscale Family &bull; Pool Access</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light">Excellent sandy beach (one of the best in the archipelago), pool access, loungers, good food. More polished and upscale than most. Family-friendly atmosphere. A solid choice if Bora Bora's party vibe is not what you want.</p>
+            </div>
+
+            <!-- Blue Apple -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-amber">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                    <div>
+                        <h3 class="font-display text-xl mb-1">Blue Apple Beach</h3>
+                        <span class="mono-label text-[10px] text-th-amber">Tierra Bomba Island &bull; 20 min from Cartagena &bull; Bohemian / Chill</span>
+                    </div>
+                    <span class="mono-label text-xs px-3 py-1 rounded-full bg-th-amber/10 text-th-amber border border-th-amber/20">Note: Not Rosario</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">All-in-One Day Pass</span><span>~&pound;51 pp</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">Includes</span><span>Round-trip boat, 2-course lunch (reduced menu), 1 cocktail</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">Sun loungers</span><span>&pound;4&ndash;24 extra (not included)</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">Busy day min. spend</span><span>120,000 COP pp</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-th-charcoal">Boat departures</span><span>10:00 AM or 12:00 PM; return 4:00 or 5:30 PM</span></div>
+                    </div>
+                    <div class="text-sm text-th-charcoal/60 font-light">
+                        <p class="mb-2"><strong class="font-medium text-th-charcoal">Vibe:</strong> Bohemian, sustainable, organic cuisine, marine conservation focus. Mediterranean-meets-Caribbean. Shifting toward a more relaxing, &ldquo;bring a book&rdquo; atmosphere rather than party island. Pool is great, but the &ldquo;beach&rdquo; is basically rocky with no sand. Mixed reviews.</p>
+                        <p class="text-xs text-th-charcoal/40">Located on Tierra Bomba, NOT the Rosario Islands. Only 20 min from Cartagena. More of a chill day than an island adventure. Book via Tock: <a href="https://www.exploretock.com/blueapplebeach/" target="_blank" class="underline">exploretock.com/blueapplebeach</a></p>
+                    </div>
+                </div>
+                <a href="https://www.blueapplebeach.com/days" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-th-amber/30 text-th-amber hover:bg-th-amber/10 transition-colors mt-4 inline-block">Official Site &rarr;</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 05 / SNORKELING -->
+<section class="py-24 px-8 border-b border-black/5" id="snorkeling">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">05 / Snorkeling &amp; Marine Life</span>
+        <h2 class="text-4xl font-display font-normal mb-12">Is the Snorkeling Worth It?</h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="font-display text-xl mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-th-emerald">scuba_diving</span>
+                    Snorkeling
+                </h3>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Quality:</strong> Decent but not world-class. Over 1,300 species of marine animals and plants. Colorful tropical fish, sea turtles, occasionally small sharks. The coral reef has some degradation but is still interesting.</p>
+                    <p><strong class="font-medium text-th-charcoal">Best spots:</strong> Near Isla Grande (La Piscinita natural pool), the sunken airplane wreck, and quieter islands away from boat traffic.</p>
+                    <p><strong class="font-medium text-th-charcoal">April conditions:</strong> Dry season = calm seas and good visibility. April is one of the best months for water clarity.</p>
+                    <p><strong class="font-medium text-th-charcoal">Gear:</strong> Most tours include basic snorkel gear. Quality varies. Bring your own mask if you have one.</p>
+                    <p class="text-xs text-th-charcoal/40 mt-2">Snorkeling is better value than scuba here. Scuba reviews are mixed &ndash;the coral reef condition disappoints experienced divers. Stick to snorkeling as part of the day rather than booking a dedicated dive.</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="font-display text-xl mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-th-amber">pool</span>
+                    Oceanario (Isla San Martin de Pajarales)
+                </h3>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">What it is:</strong> A small open-air aquarium with saltwater pools housing dolphins, sharks, fish, and other sea life.</p>
+                    <p><strong class="font-medium text-th-charcoal">Reviews:</strong> Deeply mixed. Some enjoy it as a quick stop. Many travelers raise animal welfare concerns &ndash;dolphins in small basins, overall conditions questionable.</p>
+                    <div class="p-3 rounded-lg bg-th-amber/5 border border-th-amber/10 mt-3">
+                        <p class="text-xs"><strong class="font-medium text-th-amber">Recommendation:</strong> Skip it. Use the time for actual snorkeling or relaxing at a beach club instead. The ethical concerns are real, and the experience does not justify the detour.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 06 / CHOLON DEEP DIVE -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="cholon">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">06 / Cholon</span>
+        <h2 class="text-4xl font-display font-normal mb-6">The Party Island: What to Actually Expect</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">Cholon is a tiny beach area where boats from Cartagena congregate for day-long celebrations. It is Colombia's most famous boat party spot.</p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="font-display text-lg mb-4">What It Is Like</h3>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p>Multiple boats cluster around palm-thatched structures jutting from shallow water. Reggaeton and hip hop blast from boats simultaneously. People dance on boats, swim between them with drinks, and buy food from vendors who paddle up in canoes.</p>
+                    <p>The reality: it has "a bit of a Spring Break vibe" but Instagram videos exaggerate the wildness. Most visitors are not at MTV Spring Break levels. It is a lively, fun atmosphere where you swim, tan, drink Coco Locos, and meet other travelers. Think of it as a floating day party, not a nightclub.</p>
+                    <p><strong class="font-medium text-th-charcoal">Friday 10 Apr vibe:</strong> Fridays are quieter than weekends but still lively. Live DJs are typically only on Saturdays and Sundays, so Friday will have boat-mounted sound systems playing reggaeton/hip-hop but without the dedicated DJ acts. Less crowded = more enjoyable for a first visit. Expect 50&ndash;70% of weekend crowd levels.</p>
+                    <p><strong class="font-medium text-th-charcoal">Best strategy:</strong> Arrive mid-morning, spend 1&ndash;2 hours soaking up the atmosphere, then move to a quieter island for actual relaxation. Cholon as a brief stop on a private charter is ideal. An entire day dedicated to Cholon can be draining.</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="font-display text-lg mb-4">Cholon Survival Guide</h3>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <div class="p-3 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                        <p class="text-xs"><strong class="font-medium text-th-coral">Money:</strong> Bring 100,000&ndash;200,000 COP in cash (&pound;20&ndash;40). No ATMs. Prices are inflated. Confirm all prices MULTIPLE TIMES before purchasing. Watch for hidden service charges.</p>
+                    </div>
+                    <div class="p-3 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                        <p class="text-xs"><strong class="font-medium text-th-coral">Vendors:</strong> Be prepared to say "no, gracias" constantly. Avoid "free samples" (oysters, massages) &ndash;they always come with a bill. Only buy from your tour's recommended vendors.</p>
+                    </div>
+                    <div class="p-3 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                        <p class="text-xs"><strong class="font-medium text-th-coral">Safety:</strong> Pace your drinking (you start early). Eat lunch. Drink water. Reapply sunscreen. Stay within the main boat circle (jet ski traffic outside). Watch your belongings &ndash;petty theft happens from unattended bags.</p>
+                    </div>
+                    <div class="p-3 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                        <p class="text-xs"><strong class="font-medium text-th-amber">Jet skis:</strong> If you rent one, agree on EXACT time and inspect for existing damage before. Price disputes are common.</p>
+                    </div>
+                    <div class="p-3 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                        <p class="text-xs"><strong class="font-medium text-th-amber">Lime warning:</strong> Fresh lime juice + sun = phytophotodermatitis (chemical burns on skin). Be careful with limes in drinks while in the sun. Rinse hands after handling.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Dedicated Party Tours -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl mt-8">
+            <h3 class="font-display text-lg mb-4">Dedicated Cholon Party Tours</h3>
+            <p class="text-sm text-th-charcoal/60 font-light mb-4">If you want Cholon as the main event rather than a stop on a broader tour:</p>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display">Cholon Island Party Boat</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-1">Full-day party boat with DJ on board. Includes lunch (fried fish or chicken, coconut rice, plantains, salad), 2 beers. 45-min speedboat ride. ~&pound;63&ndash;79 pp. Boat has stereo sound with crossover music and ice cellar. Available on Viator and GetYourGuide.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display">Cartagena's Legendary Boat Party</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-1">Adults-only version with more party focus. Open bar drinks + lunch included. ~&pound;130 pp. Music, swimming, jet skis, tanning. Group-celebration friendly. Live DJ on weekends only (Sat/Sun) &ndash;Friday has onboard sound system instead. Check TripAdvisor reviews.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display">Cholon Forever</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-1">Hybrid tour: snorkeling first, then Cholon in the afternoon. Best of both worlds. Available on Viator. Good option if you want marine life + party in one package.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 07 / PRACTICAL TIPS -->
+<section class="py-24 px-8 border-b border-black/5" id="practical">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">07 / Practical Tips</span>
+        <h2 class="text-4xl font-display font-normal mb-12">Everything You Need to Know Before You Go</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Money -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-emerald">payments</span>
+                    <h3 class="font-display text-lg">Money &amp; Fees</h3>
+                </div>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">National park fee + port tax:</strong> ~34,000 COP (~&pound;7) per person as of Aug 2025 (combined fee including mandatory medical insurance). Some sources cite a separate port tax of ~31,500 COP on top &ndash; varies by operator. Budget 40,000&ndash;65,000 COP (&pound;8&ndash;13) per person total for dock fees. Paid at La Bodeguita dock before boarding. Some tours include this; most do not.</p>
+                    <p><strong class="font-medium text-th-charcoal">Cash on islands:</strong> Bring 150,000&ndash;300,000 COP (&pound;28&ndash;60) in small bills (20,000 and 50,000 notes). No ATMs anywhere on the islands. Credit cards rarely accepted outside beach clubs.</p>
+                    <p><strong class="font-medium text-th-charcoal">Tipping:</strong> Tip boat crew and guides 10&ndash;15%. Cash only. 10,000&ndash;20,000 COP per person is standard.</p>
+                </div>
+            </div>
+
+            <!-- What to Bring -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-amber">backpack</span>
+                    <h3 class="font-display text-lg">What to Bring</h3>
+                </div>
+                <div class="space-y-1.5 text-xs text-th-charcoal/60 font-light">
+                    <div class="flex items-center gap-2"><span class="text-th-emerald">&#10003;</span> Reef-safe sunscreen SPF 50+ (buy in Cartagena, island markup is 2&ndash;3x)</div>
+                    <div class="flex items-center gap-2"><span class="text-th-emerald">&#10003;</span> Waterproof phone case (&pound;4&ndash;12 from Cartagena convenience stores)</div>
+                    <div class="flex items-center gap-2"><span class="text-th-emerald">&#10003;</span> Dry bag or water-resistant backpack</div>
+                    <div class="flex items-center gap-2"><span class="text-th-emerald">&#10003;</span> Water shoes (coral islands, many rocky beaches)</div>
+                    <div class="flex items-center gap-2"><span class="text-th-emerald">&#10003;</span> Hat and sunglasses</div>
+                    <div class="flex items-center gap-2"><span class="text-th-emerald">&#10003;</span> Towel (some beach clubs provide, many do not)</div>
+                    <div class="flex items-center gap-2"><span class="text-th-emerald">&#10003;</span> Cash in small bills (see Money section)</div>
+                    <div class="flex items-center gap-2"><span class="text-th-emerald">&#10003;</span> Motion sickness tablets (Dramamine) if prone</div>
+                    <div class="flex items-center gap-2"><span class="text-th-emerald">&#10003;</span> Own snorkel mask if you have one (tour gear is basic)</div>
+                    <div class="flex items-center gap-2"><span class="text-th-amber">&#9889;</span> BYO alcohol if on a private charter (much cheaper)</div>
+                    <div class="flex items-center gap-2"><span class="text-th-amber">&#9889;</span> Mini first aid kit (plasters for coral scrapes)</div>
+                </div>
+            </div>
+
+            <!-- Sunscreen -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-coral">wb_sunny</span>
+                    <h3 class="font-display text-lg">Reef-Safe Sunscreen</h3>
+                </div>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <p>The Rosario Islands are a protected national marine park. Reef-safe sunscreen is strongly recommended (and increasingly enforced by tour operators).</p>
+                    <p><strong class="font-medium text-th-charcoal">What to look for:</strong> Free of oxybenzone and octinoxate. These chemicals bleach and kill coral reefs.</p>
+                    <p><strong class="font-medium text-th-charcoal">Reapply:</strong> Every 90&ndash;120 minutes, and after every swim.</p>
+                    <p><strong class="font-medium text-th-charcoal">Buy in Cartagena:</strong> Full bottles at city pharmacies cost &pound;6&ndash;10. On the islands, the same bottle is &pound;12&ndash;20.</p>
+                </div>
+            </div>
+
+            <!-- Phone Signal -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-sky">signal_cellular_alt</span>
+                    <h3 class="font-display text-lg">Phone Signal</h3>
+                </div>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Coverage:</strong> Minimal to none on the islands. Expect to be essentially offline for the day. Some beach clubs have patchy WiFi but do not rely on it.</p>
+                    <p><strong class="font-medium text-th-charcoal">WhatsApp:</strong> The primary communication tool in Colombia. Download it before you leave home. Pre-arrange any evening plans (restaurant bookings, meeting points) before heading to the dock in the morning.</p>
+                    <p><strong class="font-medium text-th-charcoal">Protection:</strong> Invest in a waterproof phone case. Available for &pound;4&ndash;12 from convenience stores in Cartagena.</p>
+                </div>
+            </div>
+
+            <!-- How to Book -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-emerald">book_online</span>
+                    <h3 class="font-display text-lg">How to Book</h3>
+                </div>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-coral">Do NOT book at the dock</strong> from street vendors. Cheap tours pack people in like sardines and upsell constantly.</p>
+                    <p><strong class="font-medium text-th-charcoal">Pre-book online:</strong> Tours sell out, especially beach club day passes and private charters. Book at least 1&ndash;2 weeks ahead for April (peak season).</p>
+                    <p><strong class="font-medium text-th-charcoal">For the charter:</strong></p>
+                    <div class="space-y-1 ml-2">
+                        <p>&bull; <strong>Arrecife Boats</strong>  &ndash; WhatsApp Alex directly, or book via Viator (&pound;632, free cancellation 24hr ahead).</p>
+                        <p>&bull; <strong>Cartagena Boat Charters</strong>  &ndash; WhatsApp Keith directly. Multiple boat sizes available.</p>
+                    </div>
+                    <p class="mt-2"><strong class="font-medium text-th-charcoal">For Bora Bora sunbed:</strong></p>
+                    <div class="space-y-1 ml-2">
+                        <p>&bull; Email reservas@boraboracartagena.com  &ndash; tell them you&rsquo;re arriving by private boat and want to reserve a sunbed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-sky">thermostat</span>
+                    <h3 class="font-display text-lg">April Weather</h3>
+                </div>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Season:</strong> Tail end of dry season. One of the best months to visit. Calm seas, good visibility for snorkeling, minimal rain.</p>
+                    <p><strong class="font-medium text-th-charcoal">Temperature:</strong> 30&ndash;33&deg;C (86&ndash;91&deg;F) air, ~28&deg;C (82&deg;F) water.</p>
+                    <p><strong class="font-medium text-th-charcoal">Note:</strong> April 10 is 5 days after Easter (Easter Sunday is April 5, 2026). Semana Santa crowds may still linger. Book early.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- TO-DO CHECKLIST -->
+<section class="py-24 px-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-4">Action Items</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">WhatsApp Arrecife (Alex)</strong>  &ndash; Check availability for Fri 10 Apr, confirm pricing, and ask about Easter surcharges. Book via Viator for free cancellation.</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Backup: book COCOCARTAGENA VIP</strong>  &ndash; If Arrecife is sold out, book the VIP tier on Viator (&pound;51&ndash;72pp). Free cancellation 24hr ahead.</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Pre-book Bora Bora sunbed</strong>  &ndash; Email reservas@boraboracartagena.com. Tell them you&rsquo;re arriving by private boat. Standard zone from 150,000 COP for up to 4 people. Friday = 50% off premium zones.</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Buy reef-safe sunscreen</strong>  &ndash; In Cartagena before the trip. SPF 50+, no oxybenzone/octinoxate.</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Withdraw cash</strong>  &ndash; 200,000&ndash;300,000 COP each in small bills before the boat day. For port fees, tips, island extras.</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Buy waterproof phone cases</strong>  &ndash; &pound;4&ndash;12 each from convenience stores in Cartagena.</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Pre-arrange evening plans</strong>  &ndash; Confirm Celele 20:00 and late-night venues before you lose phone signal at the islands.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOURCES -->
+<section class="py-16 px-8 bg-th-beige/30">
+    <div class="max-w-4xl mx-auto">
+        <h3 class="mono-label text-th-charcoal/40 mb-6">Sources &amp; Useful Links</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-xs text-th-charcoal/50 font-light">
+            <div class="space-y-2">
+                <p><a href="https://www.cartagenaexplorer.com/rosario-islands-day-trips-cartagena/" target="_blank" class="hover:text-th-emerald transition-colors underline">Cartagena Explorer: Day Trips Compared</a></p>
+                <p><a href="https://www.cartagenaexplorer.com/rosario-islands-cartagena-colombia-guide/" target="_blank" class="hover:text-th-emerald transition-colors underline">Cartagena Explorer: Complete Guide</a></p>
+                <p><a href="https://www.cartagenaexplorer.com/isla-cholon-cartagena-guide/" target="_blank" class="hover:text-th-emerald transition-colors underline">Cartagena Explorer: Cholon Guide</a></p>
+                <p><a href="https://www.tomplanmytrip.com/rosario-islands-day-trip-tour-cartagena/" target="_blank" class="hover:text-th-emerald transition-colors underline">Tom Plan My Trip: Day Trip Guide</a></p>
+                <p><a href="https://www.tripadvisor.com/AttractionProductReview-g297476-d14074437-Private_Boat_Tour_Full_day_trip_to_Rosario_Islands_Cholon_Baru-Cartagena_Cart.html" target="_blank" class="hover:text-th-emerald transition-colors underline">TripAdvisor: Arrecife Boats Reviews</a></p>
+                <p><a href="https://www.tripadvisor.com/AttractionProductReview-g297476-d23797641-Cartagena_Island_Hopping_5_Stop_Rosario_Islands_Tour_with_Lunch-Cartagena.html" target="_blank" class="hover:text-th-emerald transition-colors underline">TripAdvisor: COCOCARTAGENA VIP Tour Reviews</a></p>
+            </div>
+            <div class="space-y-2">
+                <p><a href="https://www.bonavidacatamaranes.com/en" target="_blank" class="hover:text-th-emerald transition-colors underline">Bona Vida Catamaranes Official</a></p>
+                <p><a href="https://boraboracartagena.com/en/" target="_blank" class="hover:text-th-emerald transition-colors underline">Bora Bora Beach Club Official</a></p>
+                <p><a href="https://www.blueapplebeach.com/days" target="_blank" class="hover:text-th-emerald transition-colors underline">Blue Apple Beach Day Passes</a></p>
+                <p><a href="https://www.viator.com/Cartagena-attractions/Rosario-Islands/d4498-a6191" target="_blank" class="hover:text-th-emerald transition-colors underline">Viator: Rosario Islands Tours</a></p>
+                <p><a href="https://www.getyourguide.com/rosario-islands-l114972/" target="_blank" class="hover:text-th-emerald transition-colors underline">GetYourGuide: Rosario Islands</a></p>
+                <p><a href="https://colombialuxurygroup.com/luxury-beach-clubs-and-day-passes/" target="_blank" class="hover:text-th-emerald transition-colors underline">Colombia Luxury Group: Beach Clubs</a></p>
+                <p><a href="https://curioustravelbug.com/rosario-islands-day-trip/" target="_blank" class="hover:text-th-emerald transition-colors underline">Curious Travel Bug: Day Trip Review</a></p>
+                <p><a href="https://www.getmyboat.com/" target="_blank" class="hover:text-th-emerald transition-colors underline">GetMyBoat: Private Charters</a></p>
+                <p><a href="https://www.cartagenaconnections.com/private-boats.html" target="_blank" class="hover:text-th-emerald transition-colors underline">Cartagena Connections: Boat Rentals</a></p>
+                <p><a href="https://matadornetwork.com/read/colombia-rosario-islands-guide/" target="_blank" class="hover:text-th-emerald transition-colors underline">Matador Network: Rosario Islands Guide</a></p>
+                <p><a href="https://www.weseektravel.com/rosario-islands-cartagena-colombia/" target="_blank" class="hover:text-th-emerald transition-colors underline">We Seek Travel: How to Visit</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

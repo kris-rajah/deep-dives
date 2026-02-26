@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Cartagena Day 2 Deep Dive &ndash; Street Food &amp; Fortress</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "th-sand": "#f4f1ee",
+                        "th-beige": "#e8e4e0",
+                        "th-charcoal": "#1a1a1a",
+                        "th-clay": "#d9c5b2",
+                        "th-emerald": "#059669",
+                        "th-amber": "#d97706",
+                        "th-coral": "#e67e5f",
+                        "th-sky": "#0ea5e9",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-th-sand text-th-charcoal font-sans antialiased;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .mono-label {
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="sticky top-0 z-50 w-full bg-th-sand/80 backdrop-blur-md border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="font-display font-semibold text-lg tracking-tight">Kris Rajah</span>
+            <span class="text-th-charcoal/30">|</span>
+            <a href="cartagena-city-guide.html" class="mono-label text-th-charcoal/50 hover:text-th-charcoal transition-colors">Cartagena Guide</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#food-tour">Food Tour</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#tastings">Tastings</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#fortress">Fortress</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#battle">1741 Battle</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#getsemani">Getseман&iacute;</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#actions">Actions</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[60vh] flex items-center justify-center py-24 px-8">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 rounded-full border border-black/10 mb-10">
+            <span class="mono-label text-th-charcoal/60">Day 2 &bull; Thu 9 Apr 2026 &bull; Deep Dive</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-display font-normal leading-[1.1] mb-8">
+            Street Food &amp; Fortress
+        </h1>
+        <p class="text-xl md:text-2xl text-th-charcoal/60 font-light leading-relaxed max-w-3xl mx-auto">
+            Ten tastings of Colombian street food through the Old Town and Getseман&iacute;, then the largest Spanish fortress ever built in the Americas in golden-hour light. Walk back through Cartagena&rsquo;s best street art murals.
+        </p>
+        <p class="mono-label text-th-charcoal/30 mt-6">Approx rates: &pound;1 &asymp; 5,200 COP &asymp; $1.27 USD</p>
+    </div>
+</section>
+
+
+<!-- 01 / STREET FOOD TOUR - THE OPERATOR -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="food-tour">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-wrap items-center gap-4 mb-4">
+            <span class="mono-label text-th-charcoal/40">01 / Street Food Tour</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-th-emerald/10 border border-th-emerald/20">
+                <span class="material-symbols-outlined text-th-emerald text-sm">schedule</span>
+                <span class="mono-label text-[10px] text-th-emerald">~12:00</span>
+            </span>
+        </div>
+        <h2 class="text-4xl font-display font-normal mb-6">Nexperience Street Food Tour</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">A guided walking tour through the Old Town and Getseман&iacute; with 10 tastings of Colombian street food. This IS lunch &ndash; every single reviewer says you&rsquo;ll be too full for dinner afterwards.</p>
+
+        <!-- Operator Card -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl border-2 border-th-emerald/30 mb-6">
+            <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                <div>
+                    <h3 class="font-display text-xl mb-1">Nexperience &ndash; Street Food Tour</h3>
+                    <span class="mono-label text-[10px] text-th-emerald">Walking tour &bull; 2.5&ndash;3 hrs &bull; Max 12 people &bull; English-speaking guides</span>
+                </div>
+                <span class="mono-label text-xs px-3 py-1 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">4.9&#9734; &bull; 1,168 reviews</span>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Price</span>
+                        <span>~&pound;36 pp</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Duration</span>
+                        <span>2.5&ndash;3 hours</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Schedule</span>
+                        <span>Mon&ndash;Sat, 10:30 AM &amp; 4:00 PM</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Group Size</span>
+                        <span>Max 12 people</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Meeting Point</span>
+                        <span>Plaza Cervantes (Camell&oacute;n de los M&aacute;rtires)</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-medium text-th-charcoal">How to Find</span>
+                        <span>Look for the orange Nexperience umbrella</span>
+                    </div>
+                </div>
+                <div class="text-sm text-th-charcoal/60 font-light">
+                    <p class="mb-2"><strong class="font-medium text-th-charcoal">Route:</strong> La Matuna &rarr; Portal de los Dulces &rarr; San Diego &rarr; Plaza Fern&aacute;ndez Madrid &rarr; Getseман&iacute;. Ends at Calle de la Sierpe.</p>
+                    <p class="mb-2"><strong class="font-medium text-th-charcoal">Includes:</strong> All 10 food &amp; drink tastings, professional English-speaking guide.</p>
+                    <p class="mb-2"><strong class="font-medium text-th-charcoal">Dietary:</strong> Vegetarian/dietary needs accommodated &ndash; notify in advance.</p>
+                    <div class="p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10 mt-3">
+                        <p class="text-xs"><strong class="font-medium text-th-emerald">Top guides:</strong> Alvaro, Robert, Liz, Mercedes, Fernando &ndash; all get glowing recent reviews (Feb 2026). Mercedes described as &ldquo;a wealth of information&rdquo; who makes the tour educational and fun.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-6">
+                <a href="https://www.viator.com/tours/Cartagena/Street-Food-Tour-Shared/d4498-289461P5" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-th-emerald/30 text-th-emerald hover:bg-th-emerald/10 transition-colors">Book on Viator &rarr;</a>
+                <a href="https://www.getyourguide.com/cartagena-l362/shared-street-food-tour-t440644/" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-black/10 text-th-charcoal/50 hover:bg-black/5 transition-colors">Book on GetYourGuide &rarr;</a>
+            </div>
+            <p class="text-xs text-th-charcoal/40 font-light mt-3">Free cancellation up to 24 hours in advance on both platforms. Check availability for midday departure on 9 April.</p>
+        </div>
+
+        <!-- Practical Tips -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="font-display text-xl mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-th-amber">tips_and_updates</span>
+                    Before the Tour
+                </h3>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Don&rsquo;t eat breakfast.</strong> Every reviewer is emphatic: a coffee and a pastry at most. The portions are huge and there are 10 of them. You will be stuffed.</p>
+                    <p><strong class="font-medium text-th-charcoal">Wear:</strong> Comfortable walking shoes, hat, sunscreen. You&rsquo;ll be on your feet for 2.5&ndash;3 hours in Caribbean heat.</p>
+                    <p><strong class="font-medium text-th-charcoal">Bring:</strong> Water bottle, small cash for tips and any extras. Keep valuables minimal.</p>
+                </div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="font-display text-xl mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-th-emerald">restaurant</span>
+                    What to Expect
+                </h3>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">This IS lunch.</strong> The food is diverse &ndash; savoury to sweet &ndash; and portions are generous. Reviewers consistently say they couldn&rsquo;t eat dinner afterwards.</p>
+                    <p><strong class="font-medium text-th-charcoal">Educational:</strong> Not just eating &ndash; guides explain the history of each dish, its African/Indigenous/Spanish roots, and its place in Colombian culture.</p>
+                    <p><strong class="font-medium text-th-charcoal">Pace yourself.</strong> 10 tastings over 2.5 hours. Don&rsquo;t fill up on the first three.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 02 / THE ROUTE & TASTINGS -->
+<section class="py-24 px-8 border-b border-black/5" id="tastings">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">02 / Street Food Tour &ndash; The Tastings</span>
+        <h2 class="text-4xl font-display font-normal mb-6">What You&rsquo;ll Eat</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">Ten stops, ten tastings. The tour weaves through the Old Town and Getseман&iacute;, hitting vendors and hole-in-the-wall spots that locals have been eating at for decades.</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+
+            <!-- Ceviche -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-emerald text-2xl">set_meal</span>
+                    <div>
+                        <h3 class="font-display text-xl">Ceviche &amp; Patac&oacute;n con Suero</h3>
+                        <span class="mono-label text-[10px] text-th-emerald">Cocteler&iacute;a y Cevicer&iacute;a Erika &bull; 50+ years</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">Colombian-style shrimp ceviche &ndash; bolder than Peruvian, with mayo, ketchup, and lime juice. Served alongside patac&oacute;n con suero: smashed fried plantain topped with fresh white cheese. Washed down with Kola Rom&aacute;n, Cartagena&rsquo;s iconic cherry soda.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-emerald">The spot:</strong> Named after the owner&rsquo;s daughter. Operating for over 50 years. The kind of place that doesn&rsquo;t need a sign &ndash; everyone knows it.</p>
+                </div>
+            </div>
+
+            <!-- Arepa de Huevo -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-amber text-2xl">egg_alt</span>
+                    <div>
+                        <h3 class="font-display text-xl">Arepa de Huevo</h3>
+                        <span class="mono-label text-[10px] text-th-amber">Caribbean Coast Speciality</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">The queen of Cartagena street food. A corn arepa is fried once, split open, a whole egg is cracked inside, then it&rsquo;s sealed and fried again until golden and crispy. The egg steams inside the dough. Served with aji (hot sauce). You&rsquo;ll also try carima&ntilde;ola (yuca dough stuffed with meat) and papa rellena (stuffed potato).</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-amber">Technique:</strong> Watch the vendor work &ndash; the double-fry method is mesmerising. The timing of the egg seal has to be perfect or it leaks.</p>
+                </div>
+            </div>
+
+            <!-- Portal de los Dulces -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-coral text-2xl">cake</span>
+                    <div>
+                        <h3 class="font-display text-xl">Portal de los Dulces</h3>
+                        <span class="mono-label text-[10px] text-th-coral">Plaza de los Coches &bull; Centuries-old sweet market</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">An arcaded corridor on Plaza de los Coches lined with confectionery stands selling homemade Caribbean sweets. You&rsquo;ll try alegr&iacute;as &ndash; chewy, sticky squares of caramelised coconut &ndash; plus cocadas (coconut candy), dulce de leche, and passion fruit and guava sweets.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-coral">History:</strong> The alegr&iacute;a recipe was brought from Africa over 400 years ago. The plaza itself was once a slave market during the Spanish empire &ndash; where Africans were sold to plantation owners. The sweet vendors reclaimed the space. The name &ldquo;alegr&iacute;a&rdquo; means &ldquo;joy.&rdquo;</p>
+                </div>
+            </div>
+
+            <!-- Exotic Fruits -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-sky text-2xl">nutrition</span>
+                    <div>
+                        <h3 class="font-display text-xl">Exotic Fruits &amp; Juices</h3>
+                        <span class="mono-label text-[10px] text-th-sky">Caribbean fruit extracts</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">Colombia has more fruit varieties than almost anywhere on earth. You&rsquo;ll try fresh tropical juices &ndash; lulo, maracuy&aacute; (passion fruit), guanabana (soursop), corozo &ndash; most of which don&rsquo;t exist outside of South America. Paired with pandebono: warm, chewy cheese bread made from yuca flour and queso fresco.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-sky/5 border border-th-sky/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-sky">Pandebono:</strong> Originally from Valle del Cauca. The best ones are warm from the oven &ndash; crispy outside, soft and cheesy inside. The street vendors make them fresh all day.</p>
+                </div>
+            </div>
+
+            <!-- Traditional Soup -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-amber text-2xl">soup_kitchen</span>
+                    <div>
+                        <h3 class="font-display text-xl">Traditional Cartagena Soup</h3>
+                        <span class="mono-label text-[10px] text-th-amber">Local comedor</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">A hearty Caribbean soup at a local comedor (family-run eatery). Cartagena&rsquo;s soup traditions blend Indigenous, African, and Spanish influences &ndash; expect rich broths with yuca, plantain, and fresh seafood.</p>
+            </div>
+
+            <!-- Craft Beer & Coffee -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-emerald text-2xl">local_cafe</span>
+                    <div>
+                        <h3 class="font-display text-xl">Craft Beer &amp; Colombian Coffee</h3>
+                        <span class="mono-label text-[10px] text-th-emerald">Final stops &bull; Getseман&iacute;</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">The tour winds down in Getseман&iacute; with a local craft beer and a proper Colombian coffee. Colombia produces some of the world&rsquo;s best arabica beans, and the guide explains the difference between what gets exported and what Colombians actually drink.</p>
+            </div>
+
+        </div>
+
+        <!-- Route Map Summary -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl border-2 border-th-emerald/20">
+            <h3 class="font-display text-xl mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-th-emerald">route</span>
+                The Route
+            </h3>
+            <div class="flex flex-wrap items-center gap-3 text-sm text-th-charcoal/60 font-light">
+                <span class="px-3 py-1.5 rounded-full bg-th-emerald/10 border border-th-emerald/20 font-medium text-th-charcoal text-xs">Plaza Cervantes</span>
+                <span class="material-symbols-outlined text-th-charcoal/20 text-sm">arrow_forward</span>
+                <span class="px-3 py-1.5 rounded-full bg-white/60 border border-black/5 text-xs">La Matuna</span>
+                <span class="material-symbols-outlined text-th-charcoal/20 text-sm">arrow_forward</span>
+                <span class="px-3 py-1.5 rounded-full bg-white/60 border border-black/5 text-xs">Portal de los Dulces</span>
+                <span class="material-symbols-outlined text-th-charcoal/20 text-sm">arrow_forward</span>
+                <span class="px-3 py-1.5 rounded-full bg-white/60 border border-black/5 text-xs">San Diego</span>
+                <span class="material-symbols-outlined text-th-charcoal/20 text-sm">arrow_forward</span>
+                <span class="px-3 py-1.5 rounded-full bg-white/60 border border-black/5 text-xs">Plaza Fern&aacute;ndez Madrid</span>
+                <span class="material-symbols-outlined text-th-charcoal/20 text-sm">arrow_forward</span>
+                <span class="px-3 py-1.5 rounded-full bg-th-coral/10 border border-th-coral/20 font-medium text-th-charcoal text-xs">Getseман&iacute;</span>
+                <span class="material-symbols-outlined text-th-charcoal/20 text-sm">arrow_forward</span>
+                <span class="px-3 py-1.5 rounded-full bg-th-coral/10 border border-th-coral/20 font-medium text-th-charcoal text-xs">Calle de la Sierpe</span>
+            </div>
+            <p class="text-xs text-th-charcoal/40 font-light mt-4">Total walking distance: ~2.5 km. Flat terrain. Multiple shade stops. The guide sets a comfortable pace with rest at each tasting.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 03 / CASTILLO DE SAN FELIPE -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="fortress">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-wrap items-center gap-4 mb-4">
+            <span class="mono-label text-th-charcoal/40">03 / Castillo de San Felipe de Barajas</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-th-amber/10 border border-th-amber/20">
+                <span class="material-symbols-outlined text-th-amber text-sm">schedule</span>
+                <span class="mono-label text-[10px] text-th-amber">~16:30</span>
+            </span>
+        </div>
+        <h2 class="text-4xl font-display font-normal mb-6">The Largest Spanish Fortress in the Americas</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">Built 1639&ndash;1767 on the Hill of San L&aacute;zaro to defend against pirates and rival empires. Underground tunnels, massive ramparts, 68 cannons, and panoramic views over the city and harbour. UNESCO World Heritage Site since 1984. Never successfully taken by siege.</p>
+
+        <!-- Key stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="glass-card p-4 rounded-xl text-center">
+                <span class="text-2xl font-display text-th-amber">1639</span>
+                <p class="mono-label text-[9px] text-th-charcoal/40 mt-1">Construction began</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center">
+                <span class="text-2xl font-display text-th-amber">41m</span>
+                <p class="mono-label text-[9px] text-th-charcoal/40 mt-1">Above sea level</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center">
+                <span class="text-2xl font-display text-th-amber">68</span>
+                <p class="mono-label text-[9px] text-th-charcoal/40 mt-1">Cannons facing outward</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center">
+                <span class="text-2xl font-display text-th-emerald">1984</span>
+                <p class="mono-label text-[9px] text-th-charcoal/40 mt-1">UNESCO listed</p>
+            </div>
+        </div>
+
+        <!-- What to See -->
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+
+            <!-- Tunnels -->
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-l-th-amber">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-amber text-2xl">tunnel</span>
+                    <div>
+                        <h3 class="font-display text-xl">The Tunnel System</h3>
+                        <span class="mono-label text-[10px] text-th-amber">Underground gallery &bull; Sea-level perimeter</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">The main underground gallery runs along the entire perimeter of the complex at sea level. Tunnels were designed with acoustic engineering &ndash; sounds carry so defenders could hear approaching enemies. Some chambers were booby-trapped: packed with explosives to detonate and collapse the ground under advancing attackers.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-amber">Tip:</strong> The audio guide (+COP 15,000 / ~&pound;3) is worth it specifically for the tunnel sections &ndash; it explains the acoustic design and military logic. Bring a phone torch for the darker passages.</p>
+                </div>
+            </div>
+
+            <!-- Ramparts -->
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-l-th-sky">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-sky text-2xl">castle</span>
+                    <div>
+                        <h3 class="font-display text-xl">Ramparts &amp; Batteries</h3>
+                        <span class="mono-label text-[10px] text-th-sky">8 battery positions &bull; Zigzagging ramps</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">Eight battery positions (Santa B&aacute;rbara, San Carlos, Los Ap&oacute;stoles, Hornabeque, La Cruz, La Redenci&oacute;n, San L&aacute;zaro, and the central castle) with overlapping fields of fire. The batteries protect one another &ndash; making it practically impossible to take one without taking the entire system. Zigzagging ramps were designed to disorient attackers.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-sky/5 border border-th-sky/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-sky">Views:</strong> The upper ramparts give panoramic views over Cartagena, the harbour, and the approach routes from sea and land. At 4:30&ndash;5:30 PM you get golden-hour light on the stone &ndash; the best time for photos.</p>
+                </div>
+            </div>
+
+            <!-- Architecture -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-charcoal/50 text-2xl">architecture</span>
+                    <div>
+                        <h3 class="font-display text-xl">Defensive Architecture</h3>
+                        <span class="mono-label text-[10px] text-th-charcoal/50">Antonio de Ar&eacute;valo &bull; Triangular design</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">Built in a triangular shape on the hilltop. Walls are wide at the base and narrow toward the parapet, forming an interlocking system of bunkers. The fortress was designed by military engineer Antonio de Ar&eacute;valo and named in honour of Philip IV of Spain. Built by African slave labour under Spanish supervision.</p>
+            </div>
+
+            <!-- Visitor Info -->
+            <div class="glass-card p-6 rounded-2xl border-2 border-th-emerald/20">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-emerald text-2xl">info</span>
+                    <div>
+                        <h3 class="font-display text-xl">Visitor Info</h3>
+                        <span class="mono-label text-[10px] text-th-emerald">Open daily</span>
+                    </div>
+                </div>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Entry</span>
+                        <span>COP 50,000 (~&pound;10 pp)</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Audio Guide</span>
+                        <span>+COP 15,000 (~&pound;3) &ndash; recommended</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Hours</span>
+                        <span>Daily 8 AM &ndash; 6 PM, last entry 5:30 PM</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Time Needed</span>
+                        <span>1.5&ndash;2 hours</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">TripAdvisor</span>
+                        <span>4.5/5 &bull; ~18,000 reviews</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-medium text-th-charcoal">Getting There</span>
+                        <span>~10 min taxi from Old Town</span>
+                    </div>
+                </div>
+                <div class="mt-3 p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-emerald">Our plan:</strong> Arrive ~4:30 PM to dodge the worst heat. Golden-hour light on the ramparts. Start at the base and work upward &ndash; each level reveals different strategic elements.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Practical callout -->
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-th-coral">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-coral mt-1">hiking</span>
+                <div>
+                    <h4 class="font-display text-lg mb-2">What to Wear &amp; Bring</h4>
+                    <p class="text-sm text-th-charcoal/60 font-light">Wear sturdy shoes &ndash; uneven stone everywhere. Bring water, sunscreen, and a hat. Even at 4:30 PM the stone radiates heat. A phone torch is useful for the tunnels. Budget 1.5&ndash;2 hours to explore properly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 04 / THE 1741 BATTLE -->
+<section class="py-24 px-8 border-b border-black/5" id="battle">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">04 / Castillo &ndash; Historical Context</span>
+        <h2 class="text-4xl font-display font-normal mb-6">The Battle of Cartagena de Indias, 1741</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">The defining moment in the fortress&rsquo;s history. Britain&rsquo;s worst military defeat before the 20th century &ndash; and the reason San Felipe still stands. Your audio guide will cover this, but knowing the scale beforehand makes the ramparts hit differently.</p>
+
+        <!-- Forces comparison -->
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-l-th-coral">
+                <h3 class="font-display text-xl mb-4 flex items-center gap-2">
+                    <span class="text-2xl">&#127468;&#127463;</span>
+                    British Invasion Force
+                </h3>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Ships</span>
+                        <span class="text-th-coral font-medium">186</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Cannons</span>
+                        <span>2,620</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Soldiers</span>
+                        <span>10,000</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Sailors</span>
+                        <span>12,600</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Colonial Recruits</span>
+                        <span>4,000 (Virginia)</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-medium text-th-charcoal">Commander</span>
+                        <span>Admiral Edward Vernon</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-l-th-emerald">
+                <h3 class="font-display text-xl mb-4 flex items-center gap-2">
+                    <span class="text-2xl">&#127466;&#127480;</span>
+                    Spanish Defenders
+                </h3>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Ships</span>
+                        <span class="text-th-emerald font-medium">6</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Total Defenders</span>
+                        <span>3,000&ndash;6,000</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Includes</span>
+                        <span>Regular troops, militia, native archers</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-medium text-th-charcoal">Commander</span>
+                        <span>Admiral Blas de Lezo</span>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-emerald">Blas de Lezo:</strong> One-eyed, one-armed, one-legged. Lost his left leg at 15 (Battle of M&aacute;laga), his left eye at 25, and his right arm at 31. Still commanded the defence of Cartagena at 52. Known as &ldquo;Mediohombre&rdquo; &ndash; Half-Man.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl mb-8">
+            <h3 class="font-display text-xl mb-8">67 Days That Decided an Empire</h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-charcoal/10 hidden md:block"></div>
+                <div class="space-y-6">
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/20 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-coral">Mar</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">13 March &ndash; British Fleet Arrives</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">Admiral Vernon arrives with 186 ships &ndash; the largest amphibious assault force Britain had ever assembled. More ships than the Spanish Armada. So confident of victory that he had commemorative medals struck in advance showing Blas de Lezo kneeling in surrender.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-amber/10 border border-th-amber/20 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-amber">Apr</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">De Lezo&rsquo;s Strategy: Delay Until the Rains</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">Outnumbered 6-to-1, de Lezo knew he couldn&rsquo;t win a direct battle. His plan: fighting withdrawal, delay, and attrition. Keep the British crowded on ships and exposed on land until the rainy season hit in late April. Tropical disease would do the rest.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/20 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-coral">20 Apr</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">The Assault on San Felipe</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">British troops storm the fortress at night with scaling ladders. But the ladders are too short &ndash; they can&rsquo;t reach the top of the walls. Spanish defenders pour boiling tar and musket fire from above. The assault collapses into chaos. Hundreds killed in the moat.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/20 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-emerald">May</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">20 May &ndash; British Withdraw</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">After 67 days, the rains arrive. Tropical disease tears through the fleet. Vernon orders retreat. <strong class="font-medium text-th-charcoal">British losses: ~15,000 dead, 1,500 cannons, 50 ships lost or damaged.</strong> Of the 4,000 Virginia colonists, only 300 returned home. Spanish losses: ~800 men.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Aftermath -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl border-2 border-th-amber/20">
+            <h3 class="font-display text-xl mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-th-amber">history_edu</span>
+                The Aftermath
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6 text-sm text-th-charcoal/60 font-light">
+                <div>
+                    <p class="mb-3"><strong class="font-medium text-th-charcoal">Vernon&rsquo;s medals:</strong> Before the battle, Vernon was so certain of victory that he had commemorative medals minted showing Blas de Lezo on his knees. They were already circulating in London. The humiliation of defeat was compounded by the medals&rsquo; existence &ndash; the British government attempted to suppress knowledge of the battle entirely.</p>
+                    <p><strong class="font-medium text-th-charcoal">De Lezo&rsquo;s fate:</strong> Despite the victory, Blas de Lezo died weeks later from plague caused by the unburied dead. He was 52. There is now a statue of him outside the fortress walls.</p>
+                </div>
+                <div>
+                    <p class="mb-3"><strong class="font-medium text-th-charcoal">Strategic impact:</strong> The defeat ended Britain&rsquo;s ambitions to control the Caribbean trade routes through Cartagena. Spain maintained its hold on the port for another 80 years.</p>
+                    <p><strong class="font-medium text-th-charcoal">Among the colonial recruits:</strong> Lawrence Washington, half-brother of George Washington, served in Vernon&rsquo;s fleet. He survived and later named his Virginia estate &ldquo;Mount Vernon&rdquo; after the admiral. Without the defeat at Cartagena, American history might look very different.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 05 / WALK BACK THROUGH GETSEMANÍ -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="getsemani">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-wrap items-center gap-4 mb-4">
+            <span class="mono-label text-th-charcoal/40">05 / After the Fort</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-th-coral/10 border border-th-coral/20">
+                <span class="material-symbols-outlined text-th-coral text-sm">schedule</span>
+                <span class="mono-label text-[10px] text-th-coral">~18:30</span>
+            </span>
+        </div>
+        <h2 class="text-4xl font-display font-normal mb-6">Walk Back Through Getseман&iacute;</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">Instead of a taxi back, walk 20 minutes from the fortress through Getseман&iacute; to catch the street art murals in the golden-hour light. This is Cartagena&rsquo;s most bohemian neighbourhood &ndash; the murals tell stories of Afro-Colombian heritage, resistance, and identity.</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+
+            <!-- Calle de la Sierpe -->
+            <div class="glass-card p-6 rounded-2xl border-2 border-th-coral/20">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-coral text-2xl">palette</span>
+                    <div>
+                        <h3 class="font-display text-xl">Calle de la Sierpe</h3>
+                        <span class="mono-label text-[10px] text-th-coral">&ldquo;Serpent Street&rdquo; &bull; Epicentre of Cartagena street art</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">The winding &ldquo;Serpent Street&rdquo; is the epicentre of wall art in the city. The most photographed piece is the Grinning Afro-Colombian Woman by artist Dexs &ndash; a large, striking mural paying homage to Cartagena&rsquo;s African heritage. The street is an uninterrupted corridor of colour.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-coral/5 border border-th-coral/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-coral">Route:</strong> From the fortress, walk via Calle del Arsenal into Getseман&iacute;. Turn onto Calle 29 (Calle Sierpe). Continue to Callej&oacute;n Angosto for more murals.</p>
+                </div>
+            </div>
+
+            <!-- Callejón Angosto -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-sky text-2xl">photo_camera</span>
+                    <div>
+                        <h3 class="font-display text-xl">Callej&oacute;n Angosto &amp; Surrounds</h3>
+                        <span class="mono-label text-[10px] text-th-sky">Calle de las Sombrillas &bull; Plaza de la Trinidad</span>
+                    </div>
+                </div>
+                <p class="text-sm text-th-charcoal/60 font-light mb-3">Continue to Callej&oacute;n Angosto for more murals, then find Calle de las Sombrillas &ndash; overhung with colourful umbrellas that light up at night. End at Plaza de la Trinidad, the heart of Getseман&iacute;, where locals gather in the evening. The Maria Mulata sculpture sits in the square.</p>
+                <div class="mt-3 p-3 rounded-lg bg-th-sky/5 border border-th-sky/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-sky">Timing:</strong> Walking back from San Felipe at ~6:30 PM puts you in Getseман&iacute; as the light softens. The murals look best in late-afternoon/golden-hour light. Budget 20&ndash;30 min for the walk if you stop for photos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Walking route -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl">
+            <h3 class="font-display text-xl mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-th-charcoal/50">directions_walk</span>
+                The Walk
+            </h3>
+            <div class="flex flex-wrap items-center gap-3 text-sm text-th-charcoal/60 font-light">
+                <span class="px-3 py-1.5 rounded-full bg-th-amber/10 border border-th-amber/20 font-medium text-th-charcoal text-xs">Castillo San Felipe</span>
+                <span class="material-symbols-outlined text-th-charcoal/20 text-sm">arrow_forward</span>
+                <span class="px-3 py-1.5 rounded-full bg-white/60 border border-black/5 text-xs">Calle del Arsenal</span>
+                <span class="material-symbols-outlined text-th-charcoal/20 text-sm">arrow_forward</span>
+                <span class="px-3 py-1.5 rounded-full bg-th-coral/10 border border-th-coral/20 text-xs">Calle de la Sierpe</span>
+                <span class="material-symbols-outlined text-th-charcoal/20 text-sm">arrow_forward</span>
+                <span class="px-3 py-1.5 rounded-full bg-white/60 border border-black/5 text-xs">Callej&oacute;n Angosto</span>
+                <span class="material-symbols-outlined text-th-charcoal/20 text-sm">arrow_forward</span>
+                <span class="px-3 py-1.5 rounded-full bg-th-coral/10 border border-th-coral/20 font-medium text-th-charcoal text-xs">Plaza de la Trinidad</span>
+            </div>
+            <p class="text-xs text-th-charcoal/40 font-light mt-4">~20 minutes walking. Flat terrain. Or 10 minutes by taxi from the Old Town &ndash; but you&rsquo;d miss the murals.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 06 / ACTION ITEMS -->
+<section class="py-24 px-8" id="actions">
+    <div class="max-w-4xl mx-auto">
+        <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-4">Action Items</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Book Nexperience Street Food Tour</strong> &ndash; midday slot, 9 April. Book on Viator or GetYourGuide. Free cancellation up to 24 hrs.</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Only have coffee for breakfast</strong> &ndash; the food tour IS lunch. Epoca Espresso Bar in Getseман&iacute; for a light start.</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Withdraw cash for the day</strong> &ndash; COP 100,000&ndash;150,000 pp in small bills (San Felipe entry, audio guide, tips, drinks).</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Pack for the day</strong> &ndash; Comfortable walking shoes (uneven stone at San Felipe), hat, sunscreen, water, phone torch for tunnels.</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span><strong class="font-medium text-th-charcoal">Check Alqu&iacute;mico</strong> &ndash; reservation policy for Thu evening. Arrive ~9 PM for rooftop tables.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOURCES -->
+<section class="py-16 px-8 bg-th-beige/30">
+    <div class="max-w-4xl mx-auto">
+        <h3 class="mono-label text-th-charcoal/40 mb-6">Sources &amp; Useful Links</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-xs text-th-charcoal/50 font-light">
+            <div class="space-y-2">
+                <p class="font-medium text-th-charcoal/60 text-xs mb-3">Street Food Tour</p>
+                <p><a href="https://nexperience.com.co/en/street-food-tour-in-cartagena/" target="_blank" class="hover:text-th-emerald transition-colors underline">Nexperience &ndash; Official Site</a></p>
+                <p><a href="https://www.viator.com/tours/Cartagena/Street-Food-Tour-Shared/d4498-289461P5" target="_blank" class="hover:text-th-emerald transition-colors underline">Nexperience on Viator</a></p>
+                <p><a href="https://www.getyourguide.com/cartagena-l362/shared-street-food-tour-t440644/" target="_blank" class="hover:text-th-emerald transition-colors underline">Nexperience on GetYourGuide</a></p>
+                <p><a href="https://madisonsfootsteps.com/street-food-tour-in-cartagena/" target="_blank" class="hover:text-th-emerald transition-colors underline">Madison&rsquo;s Footsteps &ndash; Tour Review</a></p>
+            </div>
+            <div class="space-y-2">
+                <p class="font-medium text-th-charcoal/60 text-xs mb-3">Castillo San Felipe &amp; History</p>
+                <p><a href="https://en.wikipedia.org/wiki/Castillo_San_Felipe_de_Barajas" target="_blank" class="hover:text-th-emerald transition-colors underline">Castillo San Felipe &ndash; Wikipedia</a></p>
+                <p><a href="https://castlequestchronicles.com/castillo-san-felipe-de-barajas-cartagena/" target="_blank" class="hover:text-th-emerald transition-colors underline">Castle Quest Chronicles &ndash; Visitor Guide</a></p>
+                <p><a href="https://www.cartagenaexplorer.com/battle-of-cartagena-de-indias-history/" target="_blank" class="hover:text-th-emerald transition-colors underline">Cartagena Explorer &ndash; 1741 Battle History</a></p>
+                <p><a href="https://www.historic-uk.com/HistoryUK/HistoryofBritain/Battle-Of-Cartagena/" target="_blank" class="hover:text-th-emerald transition-colors underline">Historic UK &ndash; Battle of Cartagena</a></p>
+            </div>
+            <div class="space-y-2">
+                <p class="font-medium text-th-charcoal/60 text-xs mb-3">Getseман&iacute; Street Art</p>
+                <p><a href="https://nomapsorfoottracks.com/blog/street-art-getsemani" target="_blank" class="hover:text-th-emerald transition-colors underline">No Maps or Foot Tracks &ndash; Getseман&iacute; Street Art</a></p>
+                <p><a href="https://aldabaselection.com/a-walking-tour-of-cartagenas-street-art-getsemanis-graffiti-scene/" target="_blank" class="hover:text-th-emerald transition-colors underline">Aldaba &ndash; Graffiti Walking Tour</a></p>
+            </div>
+            <div class="space-y-2">
+                <p class="font-medium text-th-charcoal/60 text-xs mb-3">Portal de los Dulces</p>
+                <p><a href="https://hicartagena.com/portal-dulces/" target="_blank" class="hover:text-th-emerald transition-colors underline">Hi Cartagena &ndash; Portal de los Dulces</a></p>
+                <p><a href="https://cartagenacolombiarentals.com/2016/05/portal-de-los-dulces/" target="_blank" class="hover:text-th-emerald transition-colors underline">Cartagena Colombia Rentals &ndash; Portal History</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

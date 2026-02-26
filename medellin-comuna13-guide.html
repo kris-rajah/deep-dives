@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Medellín Day 3 Deep Dive – ATVs &amp; Comuna 13</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "th-sand": "#f4f1ee",
+                        "th-beige": "#e8e4e0",
+                        "th-charcoal": "#1a1a1a",
+                        "th-clay": "#d9c5b2",
+                        "th-emerald": "#059669",
+                        "th-amber": "#d97706",
+                        "th-coral": "#e67e5f",
+                        "th-sky": "#0ea5e9",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-th-sand text-th-charcoal font-sans antialiased;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .mono-label {
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="sticky top-0 z-50 w-full bg-th-sand/80 backdrop-blur-md border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="font-display font-semibold text-lg tracking-tight">Kris Rajah</span>
+            <span class="text-th-charcoal/30">|</span>
+            <a href="medellin-city-guide.html" class="mono-label text-th-charcoal/50 hover:text-th-charcoal transition-colors">Medell&iacute;n Guide</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#comuna-operators">Operators</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#comuna-stops">Key Stops</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#comuna-history">History</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#morning-activity">Morning</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#parque-arvi">Parque Arv&iacute;</a>
+            <a class="mono-label hover:text-th-emerald transition-colors" href="#actions">Actions</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[60vh] flex items-center justify-center py-24 px-8">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 rounded-full border border-black/10 mb-10">
+            <span class="mono-label text-th-charcoal/60">Day 3 &bull; Tue 7 Apr 2026 &bull; Deep Dive</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-display font-normal leading-[1.1] mb-8">
+            ATVs, Street Art<br/>&amp; Comuna 13
+        </h1>
+        <p class="text-xl md:text-2xl text-th-charcoal/60 font-light leading-relaxed max-w-3xl mx-auto">
+            Quad bikes through the hills in the morning, then the real highlight: outdoor escalators, world-class street art,
+            breakdancing, hip-hop, street food, and the story of a community that rebuilt itself from war.
+        </p>
+        <p class="mono-label text-th-charcoal/30 mt-6">Approx rates: 1 USD &asymp; 4,200 COP &asymp; &pound;0.79 GBP</p>
+    </div>
+</section>
+
+<!-- 05 / MORNING ACTIVITY – ATV / QUAD BIKE -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="morning-activity">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">01 / Morning Activity &ndash; 10:00 AM</span>
+        <h2 class="text-4xl font-display font-normal mb-6">ATV / Quad Bike Trails</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-4 max-w-3xl">Medell&iacute;n&rsquo;s surrounding hills are laced with off-road trails. Mud routes, river crossings, and jungle-edge paths with valley views. Most tours depart from the south of the city and include transport to the trail start point.</p>
+
+        <div class="flex flex-wrap gap-4 mb-12">
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 text-xs text-th-charcoal/60 font-light">
+                <span class="material-symbols-outlined text-sm text-th-emerald">terrain</span>
+                Mud, hills, river crossings, coffee farm stops
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 text-xs text-th-charcoal/60 font-light">
+                <span class="material-symbols-outlined text-sm text-th-emerald">shield</span>
+                Safety briefing included, no experience needed
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 text-xs text-th-charcoal/60 font-light">
+                <span class="material-symbols-outlined text-sm text-th-coral">checkroom</span>
+                Wear clothes you don&rsquo;t mind getting dirty. Trainers, not sandals.
+            </div>
+        </div>
+
+        <div class="space-y-6">
+
+            <!-- Cuatrimotos Medellín – Top Pick -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-2 border-th-emerald/30">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                    <div>
+                        <h3 class="font-display text-xl mb-1">Cuatrimotos Medell&iacute;n</h3>
+                        <span class="mono-label text-[10px] text-th-emerald">Caldas, Antioquia &bull; 30 min from city &bull; 4.9&#9733; 100+ Google reviews</span>
+                    </div>
+                    <span class="mono-label text-xs px-3 py-1 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Top Pick &ndash; Best Value</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Plan 1 &ndash; Pista</span>
+                            <span>200,000 COP (~$48 / ~&pound;38) pp &bull; 1.5 hrs</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Plan 2 &ndash; Premium</span>
+                            <span>250,000 COP (~$60 / ~&pound;47) pp &bull; 2.5 hrs</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">With co-pilot</span>
+                            <span>+49,000 COP (~$12 / ~&pound;9)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Machines</span>
+                            <span>Automatic 4x4, latest gen</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-medium text-th-charcoal">Booking</span>
+                            <span>WhatsApp +57 311 737 4180</span>
+                        </div>
+                    </div>
+                    <div class="text-sm text-th-charcoal/60 font-light">
+                        <p class="mb-2"><strong class="font-medium text-th-charcoal">Includes:</strong> Certified safety gear, full insurance, professional certified guide, fuel, automatic 4x4 ATV.</p>
+                        <p class="mb-2"><strong class="font-medium text-th-charcoal">Location:</strong> V&iacute;a Caldas&ndash;Amag&aacute;, Pacific Highway 1. Easy GPS access, ~30 min drive south of Medell&iacute;n.</p>
+                        <div class="p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10 mt-3">
+                            <p class="text-xs"><strong class="font-medium text-th-emerald">Why this one:</strong> Best value by far. Highest-rated on Google (4.9&#9733;, 100+ reviews). Automatic 4x4 quads, professional instructors, full insurance included. The 2.5-hr Premium plan fits the morning schedule perfectly&ndash;back in time for a late lunch before Comuna 13.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Operators Grid -->
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- Guanabana Tours -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="font-display text-lg mb-3">Guanabana Tours</h3>
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Price</span>
+                            <span>$165&ndash;205 pp (group dependent)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Duration</span>
+                            <span>2 hrs riding + transport</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Machines</span>
+                            <span>CAN AM Outlander 650cc (2025)</span>
+                        </div>
+                        <p class="text-xs text-th-charcoal/40 mt-2">Premium machines (biggest available). Door-to-door transport, waterfall visit, 10-min practice track. 1.5 hrs east of city at higher elevation. Min 2 ATVs to depart.</p>
+                    </div>
+                    <a href="https://guanabanatours.com/atv-tours-medellin/" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-black/10 hover:bg-black/5 transition-colors mt-3 inline-block">guanabanatours.com &rarr;</a>
+                </div>
+
+                <!-- Medellín ATV Tours -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="font-display text-lg mb-3">Medell&iacute;n ATV Tours</h3>
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Location</span>
+                            <span>15 min from El Poblado</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Duration</span>
+                            <span>1&ndash;2 hr options</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Group</span>
+                            <span>Private tours, up to 20 pax</span>
+                        </div>
+                        <p class="text-xs text-th-charcoal/40 mt-2">Closest trailhead to El Poblado. 500cc+ semi-automatics. Jungle and farmland trails, mud and creek crossings. Fleet of 10 ATVs. Ages 16+ (5+ as passenger). Contact for pricing.</p>
+                    </div>
+                    <a href="https://medellinatvtours.com/" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-black/10 hover:bg-black/5 transition-colors mt-3 inline-block">medellinatvtours.com &rarr;</a>
+                </div>
+
+                <!-- Medellín Sport Rentals -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="font-display text-lg mb-3">Medell&iacute;n Sport Rentals</h3>
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">1 hr</span>
+                            <span>$85 USD (~&pound;67)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">2 hrs</span>
+                            <span>$110 USD (~&pound;87)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Deposit</span>
+                            <span>$100 USD refundable</span>
+                        </div>
+                        <p class="text-xs text-th-charcoal/40 mt-2">American-owned, 6+ years running. Bilingual guides. 250cc&ndash;700cc semi-automatics. Transport NOT included (~30 min taxi from El Poblado). Passport/licence required.</p>
+                    </div>
+                    <a href="https://medellinscooterrentals.com/atv-tours-medellin/" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-black/10 hover:bg-black/5 transition-colors mt-3 inline-block">medellinscooterrentals.com &rarr;</a>
+                </div>
+
+            </div>
+
+            <!-- Platform note -->
+            <div class="glass-card p-4 rounded-xl">
+                <p class="text-xs text-th-charcoal/50 font-light"><strong class="font-medium text-th-charcoal">Also on GetYourGuide:</strong> &ldquo;Medell&iacute;n: 4x4 Quad Tour&rdquo; by Top 10 Tours &ndash; 4.9&#9733; (38 reviews), &pound;96pp, 9 hrs full-day with lunch, infinity pool, and private 4x4 track. Meets at Juan Valdez, Parque Lleras. Excellent tour but it&rsquo;s a full day, so won&rsquo;t fit if you&rsquo;re doing Comuna 13 in the afternoon.</p>
+            </div>
+
+        </div>
+
+        <!-- Alternatives -->
+        <div class="mt-12">
+            <h3 class="font-display text-2xl mb-6">If ATVs aren&rsquo;t your thing</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Coffee Farm Tour -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-th-amber text-2xl">local_cafe</span>
+                        <div>
+                            <h4 class="font-display text-lg">Half-Day Coffee Farm Tour</h4>
+                            <span class="mono-label text-[10px] text-th-charcoal/50">~&pound;43pp &bull; 4 hrs</span>
+                        </div>
+                    </div>
+                    <div class="text-sm text-th-charcoal/60 font-light space-y-2">
+                        <p>Tranv&iacute;a + Metro Cable to a family coffee farm in La Sierra. Hands-on: planting, roasting, tasting. The cable car ride alone is a highlight with panoramic views.</p>
+                        <p class="text-xs text-th-charcoal/40">Book at <a href="https://medellin-tours.com" target="_blank" class="underline hover:text-th-emerald transition-colors">medellin-tours.com</a>.</p>
+                    </div>
+                </div>
+
+                <!-- Paintball -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-th-coral text-2xl">sports</span>
+                        <div>
+                            <h4 class="font-display text-lg">Paintball</h4>
+                            <span class="mono-label text-[10px] text-th-charcoal/50">~&pound;36pp &bull; 3&ndash;4 hrs inc. transport</span>
+                        </div>
+                    </div>
+                    <div class="text-sm text-th-charcoal/60 font-light space-y-2">
+                        <p>Outdoor scenarios on the outskirts of the city. Pickup from El Poblado, 30-min drive to the camp. Full gear, marker, and 100 paintballs included. Good for a stag.</p>
+                        <p class="text-xs text-th-charcoal/40">Book via <a href="https://www.getyourguide.com/medellin-l1215/" target="_blank" class="underline hover:text-th-emerald transition-colors">GetYourGuide</a> or <a href="https://www.viator.com/Medellin/d4563-ttd" target="_blank" class="underline hover:text-th-emerald transition-colors">Viator</a>.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 06 / COMUNA 13 OVERVIEW & OPERATORS -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="comuna-operators">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">02 / Comuna 13 &ndash; Tour Operators</span>
+        <h2 class="text-4xl font-display font-normal mb-6">Community-Based, Money-Stays-Local Operators</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-4 max-w-3xl">Focus on operators run by residents of Comuna 13, where money stays in the community. Once the most dangerous neighbourhood in Medell&iacute;n, now the most visited site in the entire city.</p>
+        <div class="p-3 rounded-lg bg-th-amber/5 border border-th-amber/10 mb-12 max-w-3xl">
+            <p class="text-xs font-light"><strong class="font-medium text-th-amber">April weather note:</strong> One of Medell&iacute;n&rsquo;s wettest months (25+ rainy days). Expect 18&ndash;28&deg;C. Pack a lightweight rain jacket. Rain usually comes in short afternoon bursts&ndash;morning visits are drier, but your PM slot (14:00) should be fine.</p>
+        </div>
+
+        <div class="space-y-6">
+
+            <!-- Casa Kolacho -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl border-2 border-th-emerald/30">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                    <div>
+                        <h3 class="font-display text-xl mb-1">Casa Kolacho</h3>
+                        <span class="mono-label text-[10px] text-th-emerald">Founded by local hip-hop artists &bull; 15+ years in the community</span>
+                    </div>
+                    <span class="mono-label text-xs px-3 py-1 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Top Recommendation</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Price</span>
+                            <span>~60,000 COP (~$14 USD / ~&pound;11 GBP) pp</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Duration</span>
+                            <span>2.5&ndash;3 hours</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Guides</span>
+                            <span>Graffiti artists &amp; lifelong residents</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Booking</span>
+                            <span>48 hrs in advance (website, WhatsApp, or Toucan Caf&eacute;)</span>
+                        </div>
+                    </div>
+                    <div class="text-sm text-th-charcoal/60 font-light">
+                        <p class="mb-2"><strong class="font-medium text-th-charcoal">Includes:</strong> Walking tour, graffiti/mural explanations, escalator ride, hip-hop performances, community workshop (dance lesson or graffiti tag practice), street food samples.</p>
+                        <div class="p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10 mt-3">
+                            <p class="text-xs"><strong class="font-medium text-th-emerald">Why this one:</strong> The original Graffitour. Money goes directly to youth arts programmes (dance, painting, music classes). Guides ARE the community. Most authentic experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Operators Grid -->
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="font-display text-lg mb-3">Zippy Tours Comuna 13</h3>
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Price</span>
+                            <span>35,000&ndash;50,000 COP (~$8&ndash;12 USD)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Duration</span>
+                            <span>2.5&ndash;3 hours</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Meeting</span>
+                            <span>San Javier Metro, 1st floor</span>
+                        </div>
+                        <p class="text-xs text-th-charcoal/40 mt-2">Highly rated on TripAdvisor. 35k COP for Spanish, 50k COP for English tours.</p>
+                    </div>
+                    <a href="https://zippytourcomuna13.com" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-black/10 hover:bg-black/5 transition-colors mt-3 inline-block">zippytourcomuna13.com &rarr;</a>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="font-display text-lg mb-3">Graffiti Tour Comuna 13</h3>
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Price</span>
+                            <span>80,000&ndash;120,000 COP (~$19&ndash;29 USD)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Duration</span>
+                            <span>3&ndash;4 hours</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Includes</span>
+                            <span>Street food, gallery visit, performances</span>
+                        </div>
+                    </div>
+                    <a href="https://tourcomuna13.com" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-black/10 hover:bg-black/5 transition-colors mt-3 inline-block">tourcomuna13.com &rarr;</a>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="font-display text-lg mb-3">Toucan Caf&eacute; &amp; Tours</h3>
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <p>Uses a local guide who is a Comuna 13 resident and community leader, working with Casa Kolacho.</p>
+                        <p class="text-xs text-th-charcoal/40 mt-2">Good backup if Casa Kolacho is fully booked. Same guide network.</p>
+                    </div>
+                    <a href="https://toucantours.co" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-black/10 hover:bg-black/5 transition-colors mt-3 inline-block">toucantours.co &rarr;</a>
+                </div>
+
+            </div>
+
+            <!-- Full-Service Operators -->
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Pura Colombia -->
+                <div class="glass-card p-6 rounded-2xl border border-th-sky/20">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="font-display text-lg mb-1">Pura Colombia</h3>
+                            <span class="mono-label text-[10px] text-th-sky">Full-service operator &bull; Uses Casa Kolacho guides</span>
+                        </div>
+                        <span class="mono-label text-xs px-3 py-1 rounded-full bg-th-sky/10 text-th-sky border border-th-sky/20">All-Inclusive</span>
+                    </div>
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Duration</span>
+                            <span>~4 hours (9:00 AM &ndash; 1:00 PM)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Includes</span>
+                            <span>Hotel pickup/dropoff, cable car, Casa Kolacho guide + cultural centre</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Route</span>
+                            <span>San Javier &rarr; Gondola &rarr; Plan de Che &rarr; walking tour &rarr; Casa Kolacho HQ</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Contact</span>
+                            <span>WhatsApp +57 310 599 1163</span>
+                        </div>
+                        <p class="text-xs text-th-charcoal/40 mt-2">Bilingual guide + local Casa Kolacho graffitour guide. Medical insurance included. Private vehicle return. Good option if you want the full Casa Kolacho experience with zero logistics.</p>
+                    </div>
+                    <a href="https://puracolombia.com" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-black/10 hover:bg-black/5 transition-colors mt-3 inline-block">puracolombia.com &rarr;</a>
+                </div>
+
+                <!-- Comuna 13 Tour & Cable Car Ride (TripAdvisor) -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="font-display text-lg mb-1">Comuna 13 Tour &amp; Cable Car Ride</h3>
+                            <span class="mono-label text-[10px] text-th-charcoal/50">4.7&#9733; &bull; 1,028 TripAdvisor reviews &bull; #72 of 1,085 tours in Medell&iacute;n</span>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Price</span>
+                            <span>~&pound;21 pp (~$27 USD)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Duration</span>
+                            <span>4&ndash;5 hours</span>
+                        </div>
+                        <div class="flex justify-between border-b border-black/5 pb-2">
+                            <span class="font-medium text-th-charcoal">Includes</span>
+                            <span>Cable car ride, guided walking tour, free cancellation</span>
+                        </div>
+                        <p class="text-xs text-th-charcoal/40 mt-2">Massive review count with consistent praise for guides (Walter, Angel, Felipe, Christian all named in Feb 2026 reviews). Cable car included as standard. Book via Viator/TripAdvisor. 93% recommendation rate.</p>
+                    </div>
+                    <a href="https://www.tripadvisor.co.uk/Attraction_Review-g297478-d7178986-Reviews-Comuna_13_Tour_And_Cable_Car_Ride-Medellin_Antioquia_Department.html" target="_blank" class="mono-label text-xs px-3 py-1.5 rounded-full border border-black/10 hover:bg-black/5 transition-colors mt-3 inline-block">TripAdvisor &rarr;</a>
+                </div>
+
+            </div>
+
+            <div class="glass-card p-4 rounded-xl">
+                <p class="text-xs text-th-charcoal/50 font-light"><strong class="font-medium text-th-charcoal">Platform bookings (Viator / GetYourGuide):</strong> Multiple Comuna 13 tours from ~$15&ndash;55 USD, free cancellation up to 24 hours. However, platform tours often use local guides but the operator may not be from the community. For maximum community impact, book directly with Casa Kolacho or Zippy Tours.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 07 / COMUNA 13 KEY STOPS -->
+<section class="py-24 px-8 border-b border-black/5" id="comuna-stops">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">03 / Comuna 13 &ndash; Key Stops</span>
+        <h2 class="text-4xl font-display font-normal mb-6">Escalators, Murals, Performers &amp; Street Food</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">Everything is concentrated along the escalator corridor. You ride up through the heart of the neighbourhood, surrounded by art on every surface.</p>
+
+        <!-- Escalators -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl mb-8 border-2 border-th-coral/20">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="material-symbols-outlined text-th-coral text-2xl">escalator</span>
+                <div>
+                    <h3 class="font-display text-xl">The Outdoor Escalators (Escaleras El&eacute;ctricas)</h3>
+                    <span class="mono-label text-[10px] text-th-coral">World first &bull; Installed 2011 &bull; Free to ride</span>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Sections</span>
+                        <span>6 covered outdoor escalators</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Total length</span>
+                        <span>1,260 ft (384 metres)</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Replaces</span>
+                        <span>~350 concrete steps</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Time saved</span>
+                        <span>30-min climb &rarr; 5&ndash;6 min ride</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">New public space</span>
+                        <span>1,102 sq metres created</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-medium text-th-charcoal">Cost</span>
+                        <span class="text-th-emerald font-medium">Free</span>
+                    </div>
+                </div>
+                <div class="text-sm text-th-charcoal/60 font-light">
+                    <p class="mb-3">The world&rsquo;s first outdoor public escalators in a residential area. The concept has since been copied by Rio de Janeiro and Ankara.</p>
+                    <p class="mb-3"><strong class="font-medium text-th-charcoal">Significance:</strong> They physically connected an isolated, stigmatised community to the rest of Medell&iacute;n. Residents could now access jobs, schools, and services without the gruelling daily climb.</p>
+                    <p><strong class="font-medium text-th-charcoal">Experience:</strong> You ride up through the heart of the neighbourhood, surrounded by murals and street art on every surface. Each section deposits you at a small plaza before the next escalator begins. Street vendors, performers, and art stalls line the route.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Murals -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl mb-8">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="material-symbols-outlined text-th-coral text-2xl">brush</span>
+                <h3 class="font-display text-xl">Notable Murals &amp; Their Stories</h3>
+            </div>
+            <p class="text-sm text-th-charcoal/60 font-light mb-6">The murals are not just decoration&ndash;they are community memory, healing, and resistance.</p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="p-4 rounded-xl border border-th-coral/20 bg-th-coral/5">
+                    <span class="font-display">Operaci&oacute;n Ori&oacute;n Mural</span>
+                    <span class="mono-label text-[10px] text-th-coral ml-2">by Chota / @chota13</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-2">The most significant mural in Comuna 13. Depicts an African-Colombian girl alongside another girl with tears on her face, mourning the victims of the 2002 military operation. Plants growing around the figures symbolise the community&rsquo;s resilience and hope for a brighter future.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display">Artist: Chota (John Alexander Serna)</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-2">The most influential street artist of Comuna 13. Grew up in the sector of Independencias I when urban militias controlled the area. Created most of the major murals. His work documents the community&rsquo;s trauma and transformation.</p>
+                </div>
+            </div>
+
+            <div class="p-4 rounded-xl border border-black/5 bg-white/30 mb-6">
+                <span class="font-display">Common Symbols Throughout the Murals</span>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mt-3">
+                    <div class="text-center">
+                        <span class="text-2xl">&#128330;</span>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1"><strong class="font-medium text-th-charcoal">Birds</strong><br/>Peace</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-2xl">&#9723;</span>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1"><strong class="font-medium text-th-charcoal">White cloths</strong><br/>Mother&rsquo;s plea for ceasefire</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-2xl">&#127803;</span>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1"><strong class="font-medium text-th-charcoal">Flowers</strong><br/>Growth from trauma</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-2xl">&#128065;</span>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1"><strong class="font-medium text-th-charcoal">Children&rsquo;s eyes</strong><br/>Innocence &amp; hope</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-2xl">&#127467;&#127464;</span>
+                        <p class="text-xs text-th-charcoal/50 font-light mt-1"><strong class="font-medium text-th-charcoal">Flag colours</strong><br/>Woven through</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-xs text-th-charcoal/40 font-light"><strong class="font-medium text-th-charcoal">Other notable artists:</strong> @YesGraff, @Yorch.Art, @FateOne96&ndash;all renowned beyond the community.</p>
+        </div>
+
+        <!-- Viewpoints, Performers, Food, Shops -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <!-- Viewpoints -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-sky text-2xl">landscape</span>
+                    <h3 class="font-display text-lg">Viewpoints (Miradores)</h3>
+                </div>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Mirador de la Comuna 13:</strong> The main observation platform at the top of the escalator route. Uninterrupted panorama of Medell&iacute;n&rsquo;s urban landscape stretching across the Aburr&aacute; Valley. Open daily 9AM&ndash;5PM.</p>
+                    <p><strong class="font-medium text-th-charcoal">The Viaducto:</strong> A walking path above the neighbourhood lined with shops, street food vendors, and performers. Good second viewpoint.</p>
+                    <p><strong class="font-medium text-th-charcoal">Casa Neon:</strong> Interactive art gallery with neon paintings on the walls. Visitors get 3D glasses to view the art. Donation-based entry. Also sells clothes and souvenirs by local artists.</p>
+                </div>
+            </div>
+
+            <!-- Performers -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-coral text-2xl">music_note</span>
+                    <h3 class="font-display text-lg">Live Hip-Hop &amp; Breakdancing</h3>
+                </div>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Where:</strong> Plazas along the escalator route and at the top viewpoint areas. Performers set up at natural gathering points between escalator sections.</p>
+                    <p><strong class="font-medium text-th-charcoal">What to expect:</strong> Breakdancing (b-boys/b-girls), freestyle rappers, singers, poets. There are reportedly 1,000+ breakdancers in Comuna 13, including talented kids as young as 9&ndash;11.</p>
+                    <p><strong class="font-medium text-th-charcoal">Hip-hop&rsquo;s role:</strong> Central to Comuna 13&rsquo;s healing. Gave young people an alternative to gangs. The art form lets the community tell their stories.</p>
+                </div>
+                <div class="mt-3 p-3 rounded-lg bg-th-amber/5 border border-th-amber/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-amber">Tipping:</strong> If you stop to watch, you should tip. 5,000&ndash;10,000 COP (~$1&ndash;2.50 USD) per performance. This is how many performers earn their living. Have small bills ready.</p>
+                </div>
+            </div>
+
+            <!-- Street Food -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-amber text-2xl">restaurant</span>
+                    <h3 class="font-display text-lg">Street Food Stops</h3>
+                </div>
+                <div class="space-y-1.5 text-xs text-th-charcoal/60 font-light">
+                    <div class="flex items-start gap-2"><span class="text-th-amber shrink-0">&#9679;</span> <span><strong class="font-medium text-th-charcoal">Empanadas</strong> &ndash; Deep-fried cornmeal pockets (beef, cheese, chicken). ~2,000&ndash;4,000 COP ($0.50&ndash;1)</span></div>
+                    <div class="flex items-start gap-2"><span class="text-th-amber shrink-0">&#9679;</span> <span><strong class="font-medium text-th-charcoal">Mango verde popsicle</strong> &ndash; Tour staple, refreshing and iconic. Often included in tour price.</span></div>
+                    <div class="flex items-start gap-2"><span class="text-th-amber shrink-0">&#9679;</span> <span><strong class="font-medium text-th-charcoal">Empanadas de queso con leche condensada</strong> &ndash; Sweet-savoury combination, local specialty.</span></div>
+                    <div class="flex items-start gap-2"><span class="text-th-amber shrink-0">&#9679;</span> <span><strong class="font-medium text-th-charcoal">Patac&oacute;n</strong> &ndash; Fried plantain, often served as a base with toppings.</span></div>
+                    <div class="flex items-start gap-2"><span class="text-th-amber shrink-0">&#9679;</span> <span><strong class="font-medium text-th-charcoal">Chicharrones</strong> &ndash; Fried pork belly, Colombian street food classic.</span></div>
+                    <div class="flex items-start gap-2"><span class="text-th-amber shrink-0">&#9679;</span> <span><strong class="font-medium text-th-charcoal">Arepas</strong> &ndash; Corn cakes, the staple of Antioquian cuisine.</span></div>
+                    <div class="flex items-start gap-2"><span class="text-th-amber shrink-0">&#9679;</span> <span><strong class="font-medium text-th-charcoal">Colombian coffee</strong> &ndash; Served at small stops along the route.</span></div>
+                </div>
+                <p class="text-xs text-th-charcoal/40 font-light mt-3">Budget 20,000&ndash;40,000 COP (~$5&ndash;10 USD / &pound;4&ndash;8) for food beyond what the tour provides.</p>
+            </div>
+
+            <!-- Art & Shops -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-th-emerald text-2xl">storefront</span>
+                    <h3 class="font-display text-lg">Local Art &amp; Souvenir Shops</h3>
+                </div>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p>Prints of murals, hand-painted items, T-shirts, postcards, accessories, crafts. Many shops are just tables along the street&ndash;artists sell directly from their homes.</p>
+                    <p><strong class="font-medium text-th-charcoal">Family-run galleries:</strong> Many families run small galleries selling prints, crafts, and hand-painted items. Prices are fair and purchases directly support the community.</p>
+                </div>
+                <div class="mt-3 p-3 rounded-lg bg-th-emerald/5 border border-th-emerald/10">
+                    <p class="text-xs font-light"><strong class="font-medium text-th-emerald">Budget:</strong> Small prints and postcards from 5,000&ndash;15,000 COP. T-shirts from 30,000&ndash;50,000 COP. Buy from local artists rather than chain shops to keep money in the community.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 08 / OPERACION ORION & TRANSFORMATION -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="comuna-history">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">04 / Comuna 13 &ndash; History</span>
+        <h2 class="text-4xl font-display font-normal mb-6">Operaci&oacute;n Ori&oacute;n &amp; The Transformation</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-12 max-w-3xl">Understanding what happened here makes every mural, every breakdancer, every escalator ride infinitely more powerful. This is not ancient history&ndash;it was 2002.</p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+
+            <!-- Background -->
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="font-display text-xl mb-4">Background</h3>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p>Comuna 13 (San Javier) is a hillside neighbourhood on the western slopes of the Aburr&aacute; Valley. Its strategic location made it a coveted corridor for armed groups.</p>
+                    <p>Originally settled informally by displaced people fleeing rural violence, it became one of Medell&iacute;n&rsquo;s poorest and most marginalised neighbourhoods.</p>
+                    <p><strong class="font-medium text-th-charcoal">After Escobar&rsquo;s death (1993):</strong> A power vacuum created a bloody battle between left-wing guerrillas (FARC, ELN), right-wing paramilitaries (AUC), and local street gangs, all fighting for control.</p>
+                </div>
+            </div>
+
+            <!-- Operacion Orion -->
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-l-th-coral">
+                <h3 class="font-display text-xl mb-4">Operaci&oacute;n Ori&oacute;n (16&ndash;17 October 2002)</h3>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p>Under President &Aacute;lvaro Uribe&rsquo;s orders, the Colombian military launched Operation Orion to root out guerrilla groups from Comuna 13.</p>
+                    <p><strong class="font-medium text-th-charcoal">Scale:</strong> ~1,500 personnel from the Army, Police, DAS, CTI, and Special Anti-Terrorist Forces. Supported by tanks and armed helicopters. Extended through November into December 2002.</p>
+                    <p><strong class="font-medium text-th-coral">Major controversy:</strong> Soldiers fought hand-in-hand with brutal AUC paramilitary groups.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Civilian Toll -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl mb-8 border-l-4 border-l-th-coral">
+            <h3 class="font-display text-lg mb-4">Civilian Toll (per Corporaci&oacute;n Jur&iacute;dica Libertad)</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="text-center p-3 rounded-xl bg-th-coral/5 border border-th-coral/10">
+                    <span class="text-2xl font-display text-th-coral">80</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-1">Civilians wounded</p>
+                </div>
+                <div class="text-center p-3 rounded-xl bg-th-coral/5 border border-th-coral/10">
+                    <span class="text-2xl font-display text-th-coral">17</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-1">Killed by Public Forces</p>
+                </div>
+                <div class="text-center p-3 rounded-xl bg-th-coral/5 border border-th-coral/10">
+                    <span class="text-2xl font-display text-th-coral">71</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-1">Killed by AUC paramilitaries</p>
+                </div>
+                <div class="text-center p-3 rounded-xl bg-th-coral/5 border border-th-coral/10">
+                    <span class="text-2xl font-display text-th-coral">12</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-1">People tortured</p>
+                </div>
+                <div class="text-center p-3 rounded-xl bg-th-coral/5 border border-th-coral/10">
+                    <span class="text-2xl font-display text-th-coral">92</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-1">Forced disappearances</p>
+                </div>
+                <div class="text-center p-3 rounded-xl bg-th-coral/5 border border-th-coral/10">
+                    <span class="text-2xl font-display text-th-coral">370</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-1">Arbitrary detentions</p>
+                </div>
+            </div>
+            <p class="text-xs text-th-charcoal/40 font-light mt-4">Considered the most impactful armed action in an urban territory in Colombia&rsquo;s entire armed conflict. 22+ years later, many families still do not know what happened to their disappeared relatives. Mass grave sites have been discovered at La Escombrera.</p>
+        </div>
+
+        <!-- Transformation Timeline -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl border-2 border-th-emerald/20">
+            <h3 class="font-display text-xl mb-8 flex items-center gap-2">
+                <span class="material-symbols-outlined text-th-emerald">auto_awesome</span>
+                The Transformation
+            </h3>
+            <div class="relative">
+                <div class="absolute left-[23px] top-2 bottom-2 w-[2px] bg-th-emerald/20 hidden md:block"></div>
+                <div class="space-y-6">
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-charcoal/5 border border-th-charcoal/10 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-charcoal/50">02&ndash;10</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">Infrastructure &amp; Social Investment</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">Medell&iacute;n&rsquo;s mayors invested heavily in Comuna 13 infrastructure, education, and social programmes. Community organisations worked alongside government to reclaim public space. Over 80% reduction in homicide rates.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/20 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-emerald">2011</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">The Escalators</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">Installation of the escaleras el&eacute;ctricas&ndash;a game-changing moment that physically reconnected the isolated hillside to the city. 6 escalators replaced 350 steps. World first.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-coral/10 border border-th-coral/20 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-coral">2011+</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">Street Art Explosion &amp; Casa Kolacho</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">Local artists began painting murals depicting the violence and its aftermath. Government encouraged this. Casa Kolacho founded by local hip-hop artists&ndash;offering dance, painting, music classes, and guided tours. The Graffitour was born.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 md:gap-6">
+                        <div class="shrink-0 w-12 h-12 rounded-full bg-th-emerald/10 border border-th-emerald/20 flex items-center justify-center z-10">
+                            <span class="font-mono text-xs text-th-emerald">Now</span>
+                        </div>
+                        <div class="flex-1 pt-2">
+                            <span class="font-display">The Most Visited Site in Medell&iacute;n</span>
+                            <p class="text-sm text-th-charcoal/60 font-light mt-1">2024: Medell&iacute;n recorded its lowest homicide rate in 82 years. The Graffitour is now the most visited site in the entire city. Murals serve dual purpose: memorials for the community AND economic drivers through tourism.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Violence Stats -->
+            <div class="grid md:grid-cols-3 gap-4 mt-8">
+                <div class="text-center p-4 rounded-xl bg-th-coral/5 border border-th-coral/10">
+                    <span class="text-3xl font-display text-th-coral">6,809</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-2">Homicides in 1991. Rate: 381&ndash;416 per 100,000. Most dangerous city on Earth.</p>
+                </div>
+                <div class="text-center p-4 rounded-xl bg-th-amber/5 border border-th-amber/10">
+                    <span class="text-3xl font-display text-th-amber">~600</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-2">Annual violent deaths by 2013&ndash;2015. Down from 4,000 in 2002.</p>
+                </div>
+                <div class="text-center p-4 rounded-xl bg-th-emerald/5 border border-th-emerald/10">
+                    <span class="text-3xl font-display text-th-emerald">20</span>
+                    <p class="text-xs text-th-charcoal/50 font-light mt-2">Per 100,000 by 2015. Lowest rate in modern history. A 95% decrease from 1991.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 09 / COMUNA 13 PRACTICAL TIPS & GETTING THERE -->
+<section class="py-24 px-8 border-b border-black/5" id="comuna-practical">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">05 / Comuna 13 &ndash; Practical Tips &amp; Getting There</span>
+        <h2 class="text-4xl font-display font-normal mb-12">Everything You Need Before You Go</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+
+            <!-- What to Wear -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-coral">checkroom</span>
+                    <h3 class="font-display text-lg">What to Wear</h3>
+                </div>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Shoes:</strong> Comfortable walking shoes with good grip&ndash;essential. Steep, hilly, uneven surfaces. You will walk uphill even with the escalators.</p>
+                    <p><strong class="font-medium text-th-charcoal">Rain jacket:</strong> Lightweight, packable. April = peak rainy season.</p>
+                    <p><strong class="font-medium text-th-charcoal">Clothing:</strong> Light, breathable. T-shirt and shorts/light trousers.</p>
+                    <p><strong class="font-medium text-th-coral">Avoid:</strong> Flashy jewellery, expensive watches, designer gear. Dress down. This is a working-class neighbourhood.</p>
+                </div>
+            </div>
+
+            <!-- Photography -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-sky">photo_camera</span>
+                    <h3 class="font-display text-lg">Photography Etiquette</h3>
+                </div>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Murals &amp; street art:</strong> Fair game. Photograph freely.</p>
+                    <p><strong class="font-medium text-th-charcoal">People&rsquo;s faces and homes:</strong> Always ask. &ldquo;Puedo tomar una foto?&rdquo; goes a long way.</p>
+                    <p><strong class="font-medium text-th-charcoal">Performers:</strong> Welcome photos/video&ndash;but tip them if you do.</p>
+                    <p class="text-xs text-th-charcoal/40 mt-2">Remember this is a living neighbourhood, not a theme park. People&rsquo;s homes, laundry, and daily lives are right there.</p>
+                </div>
+            </div>
+
+            <!-- Safety -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-emerald">shield</span>
+                    <h3 class="font-display text-lg">Safety</h3>
+                </div>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Main route:</strong> The escalator corridor is safe. Well-organised, monitored, constant presence of locals, artists, guides, and visitors.</p>
+                    <p><strong class="font-medium text-th-charcoal">Don&rsquo;t:</strong> Wander far uphill or downhill on your own, especially off the escalator route.</p>
+                    <p><strong class="font-medium text-th-charcoal">After dark:</strong> Don&rsquo;t visit without a guide.</p>
+                    <p class="text-xs text-th-charcoal/40 mt-2">Safe for solo travellers, couples, and groups. Families with children visit regularly. Consider wearing your backpack on your front in crowded areas.</p>
+                </div>
+            </div>
+
+            <!-- Best Time -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-amber">schedule</span>
+                    <h3 class="font-display text-lg">Best Time to Visit</h3>
+                </div>
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Morning (9&ndash;11 AM):</strong> Fewest crowds, drier weather, cooler.</p>
+                    <p><strong class="font-medium text-th-charcoal">Late afternoon (4&ndash;5 PM):</strong> Golden light hits murals beautifully. More mellow vibe. Higher rain risk.</p>
+                    <p><strong class="font-medium text-th-coral">Avoid:</strong> Midday heat (12&ndash;2 PM).</p>
+                    <p class="text-xs text-th-charcoal/40 mt-2">Your Tue 7 Apr slot: 2&ndash;5 PM works well. Bring a rain jacket just in case. Allow 3&ndash;4 hours with food stops, art shopping, and viewpoints.</p>
+                </div>
+            </div>
+
+            <!-- Cash Breakdown -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-emerald">payments</span>
+                    <h3 class="font-display text-lg">Cash Breakdown (per person)</h3>
+                </div>
+                <div class="space-y-1.5 text-xs text-th-charcoal/60 font-light">
+                    <div class="flex justify-between border-b border-black/5 pb-1.5">
+                        <span>Tour fee (if paying on the day)</span>
+                        <span>35,000&ndash;120,000 COP</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-1.5">
+                        <span>Tips for performers</span>
+                        <span>5,000&ndash;10,000 COP per show</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-1.5">
+                        <span>Guide tip</span>
+                        <span>10,000&ndash;20,000 COP</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-1.5">
+                        <span>Street food / snacks</span>
+                        <span>20,000&ndash;40,000 COP</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-1.5">
+                        <span>Souvenirs / art</span>
+                        <span>20,000&ndash;100,000 COP</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-1.5">
+                        <span>Casa Neon donation</span>
+                        <span>5,000&ndash;10,000 COP</span>
+                    </div>
+                    <div class="flex justify-between pt-1.5 font-medium text-th-charcoal">
+                        <span>Total recommended</span>
+                        <span>100,000&ndash;150,000 COP (~$24&ndash;36 USD)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ethics -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-coral">favorite</span>
+                    <h3 class="font-display text-lg">Being a Respectful Visitor</h3>
+                </div>
+                <div class="space-y-1.5 text-xs text-th-charcoal/60 font-light">
+                    <div class="flex items-start gap-2"><span class="text-th-emerald shrink-0">&#10003;</span> Book with community-run operators (Casa Kolacho, Zippy Tours)</div>
+                    <div class="flex items-start gap-2"><span class="text-th-emerald shrink-0">&#10003;</span> Buy from local artists and vendors rather than chain shops</div>
+                    <div class="flex items-start gap-2"><span class="text-th-emerald shrink-0">&#10003;</span> Tip performers and guides generously</div>
+                    <div class="flex items-start gap-2"><span class="text-th-emerald shrink-0">&#10003;</span> Listen to the stories&ndash;murals and performances are testimony, not entertainment</div>
+                    <div class="flex items-start gap-2"><span class="text-th-coral shrink-0">&#10007;</span> Don&rsquo;t treat it as poverty tourism. Approach with admiration, not pity.</div>
+                    <div class="flex items-start gap-2"><span class="text-th-coral shrink-0">&#10007;</span> Don&rsquo;t wander into residential areas uninvited</div>
+                    <div class="flex items-start gap-2"><span class="text-th-coral shrink-0">&#10007;</span> Not everything is for your Instagram. Ask permission for people.</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Getting There -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl">
+            <h3 class="font-display text-xl mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-th-sky">directions</span>
+                Getting There from El Poblado
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <div class="p-4 rounded-xl border border-th-emerald/20 bg-th-emerald/5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-display">Option A: Metro</span>
+                        <span class="mono-label text-[10px] px-2 py-0.5 rounded-full bg-th-emerald/10 text-th-emerald border border-th-emerald/20">Recommended</span>
+                    </div>
+                    <div class="text-xs text-th-charcoal/60 font-light space-y-2">
+                        <p><strong class="font-medium text-th-charcoal">Route:</strong> Poblado &rarr; Line A (direction Niquia, 4 stops) &rarr; Change at San Antonio &rarr; Line B to last stop: San Javier.</p>
+                        <p><strong class="font-medium text-th-charcoal">Fare:</strong> 3,430 COP with C&iacute;vica card (~$0.82) or 3,900 COP without (~$0.93).</p>
+                        <p><strong class="font-medium text-th-charcoal">Time:</strong> ~25&ndash;30 minutes El Poblado to San Javier.</p>
+                        <p><strong class="font-medium text-th-charcoal">C&iacute;vica card:</strong> Free personalised card at San Javier, San Antonio, Niquia, or Itagui stations (Mon&ndash;Fri 6:30am&ndash;8:30pm, Sat 9:30am&ndash;4:30pm). Or 10,900 COP for rechargeable card at fare booths.</p>
+                        <p><strong class="font-medium text-th-charcoal">From San Javier to Comuna 13:</strong> 20&ndash;30 min walk uphill (safe, well-signposted), or green bus from outside the station (1,500&ndash;2,000 COP). Many tours meet at San Javier station.</p>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl border border-black/5 bg-white/30">
+                    <span class="font-display">Option B: Taxi / Uber / Didi</span>
+                    <div class="text-xs text-th-charcoal/60 font-light space-y-2 mt-2">
+                        <p><strong class="font-medium text-th-charcoal">From El Poblado:</strong> ~7,000&ndash;15,000 COP (~$2&ndash;4 USD) via Uber/Didi/Cabify.</p>
+                        <p><strong class="font-medium text-th-charcoal">Metered taxi:</strong> Slightly more, ~10,000&ndash;20,000 COP.</p>
+                        <p><strong class="font-medium text-th-charcoal">Time:</strong> 20&ndash;35 minutes depending on traffic.</p>
+                        <p><strong class="font-medium text-th-charcoal">Tip:</strong> Use Uber/Didi rather than hailing a taxi for transparent pricing. The apps work well in Medell&iacute;n.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 06 / PARQUE ARVÍ VIA METROCABLE -->
+<section class="bg-th-beige/30 py-24 px-8 border-b border-black/5" id="parque-arvi">
+    <div class="max-w-7xl mx-auto">
+        <span class="mono-label text-th-charcoal/40 mb-4 block">06 / Late Afternoon &ndash; ~17:00</span>
+        <h2 class="text-4xl font-display font-normal mb-6">Parque Arv&iacute; via MetroCable</h2>
+        <p class="text-lg text-th-charcoal/60 font-light mb-4 max-w-3xl">From Comuna 13, Uber to Acevedo metro station and take MetroCable Line L up into the cloud forest. 16,000 hectares of Andean forest above the city with 54 km of trails, butterfly gardens, and the Mercado Arv&iacute; artisan market. The cable car ride itself is a highlight &ndash; 20 minutes floating over green hillsides.</p>
+
+        <div class="flex flex-wrap gap-4 mb-12">
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 text-xs text-th-charcoal/60 font-light">
+                <span class="material-symbols-outlined text-sm text-th-emerald">confirmation_number</span>
+                ~12,000 COP one-way cable car
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 text-xs text-th-charcoal/60 font-light">
+                <span class="material-symbols-outlined text-sm text-th-emerald">forest</span>
+                16,000 ha cloud forest
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 text-xs text-th-charcoal/60 font-light">
+                <span class="material-symbols-outlined text-sm text-th-emerald">hiking</span>
+                54 km of trails
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 text-xs text-th-charcoal/60 font-light">
+                <span class="material-symbols-outlined text-sm text-th-coral">schedule</span>
+                Last cable car down 6 PM &ndash; don&rsquo;t miss it
+            </div>
+        </div>
+
+        <!-- Getting There -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl mb-6 border-2 border-th-sky/30">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="material-symbols-outlined text-th-sky text-2xl">cable_car</span>
+                <div>
+                    <h3 class="font-display text-xl">Getting There &ndash; MetroCable Line K &rarr; Line L</h3>
+                    <span class="mono-label text-[10px] text-th-sky">Open Tue&ndash;Sun &bull; Closed Mon (unless holiday, then closed Tue)</span>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2 text-sm text-th-charcoal/60 font-light">
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Step 1</span>
+                        <span>Uber from Comuna 13 to Acevedo Metro station</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Step 2</span>
+                        <span>Line K cable car up to Santo Domingo (3 stops)</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Step 3</span>
+                        <span>Transfer to Line L at Santo Domingo &rarr; Arv&iacute; station (~20 min)</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Metro + Line K</span>
+                        <span>~3,300 COP (~$0.80) with C&iacute;vica card</span>
+                    </div>
+                    <div class="flex justify-between border-b border-black/5 pb-2">
+                        <span class="font-medium text-th-charcoal">Line L fare</span>
+                        <span>~12,000 COP one-way / ~24,000 return (~$5.70)</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-medium text-th-charcoal">Total journey</span>
+                        <span>~50&ndash;60 min from El Poblado</span>
+                    </div>
+                </div>
+                <div class="text-sm text-th-charcoal/60 font-light">
+                    <p class="mb-2"><strong class="font-medium text-th-charcoal">The ride:</strong> Line L floats over the forest canopy with panoramic views of Medell&iacute;n and the green hillsides of Santa Elena. One of the best cable car rides in South America.</p>
+                    <p class="mb-2"><strong class="font-medium text-th-charcoal">Buy Line L tickets</strong> at Santo Domingo station before boarding.</p>
+                    <div class="p-3 rounded-lg bg-th-coral/5 border border-th-coral/10 mt-3">
+                        <p class="text-xs"><strong class="font-medium text-th-coral">Critical:</strong> Last cable car down is 6 PM. If you miss it, you&rsquo;ll need a taxi back (~45 min drive, ~50,000 COP). Plan to be at the Arv&iacute; station platform by 5:40 PM latest.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Things to Do Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+
+            <!-- Mercado Arví -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-amber text-2xl">storefront</span>
+                    <h3 class="font-display text-lg">Mercado Arv&iacute;</h3>
+                </div>
+                <div class="text-sm text-th-charcoal/60 font-light space-y-2">
+                    <p>Right next to the Arv&iacute; MetroCable station. Local farmers and vendors sell produce, cakes, coffee, jewellery, clothes, crafts and souvenirs.</p>
+                    <p><strong class="font-medium text-th-charcoal">Weekends:</strong> 40+ stands. <strong class="font-medium text-th-charcoal">Weekdays:</strong> ~10 stands. Bandeja paisa restaurant on weekends.</p>
+                </div>
+            </div>
+
+            <!-- Hiking Trails -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-emerald text-2xl">hiking</span>
+                    <h3 class="font-display text-lg">Hiking Trails</h3>
+                </div>
+                <div class="text-sm text-th-charcoal/60 font-light space-y-2">
+                    <p>13 trails across 54 km. Most are low-difficulty, 1&ndash;4 hours. Maps available near the station.</p>
+                    <p><strong class="font-medium text-th-charcoal">Top pick:</strong> Camino Cieza de Le&oacute;n (the &ldquo;Pre-Hispanic Trail&rdquo;) &ndash; a 1,500+ year old stone path with valley viewpoints. 2 hrs, low difficulty.</p>
+                    <p><strong class="font-medium text-th-charcoal">Guided tours:</strong> Depart every 30 min, 10 AM&ndash;4 PM. 50,000 COP (~$12) for foreigners.</p>
+                </div>
+            </div>
+
+            <!-- Biodiversity -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-emerald text-2xl">pets</span>
+                    <h3 class="font-display text-lg">Biodiversity</h3>
+                </div>
+                <div class="text-sm text-th-charcoal/60 font-light space-y-2">
+                    <p>70+ bird species, 72 butterfly species, 19 mammal species. Native orchids throughout.</p>
+                    <p><strong class="font-medium text-th-charcoal">Piedras Blancas:</strong> Separate eco-park with butterfly farm (20 species), insect museum (15,000+ specimens), lake with row boats, trails. Entry 20,700 COP.</p>
+                </div>
+            </div>
+
+            <!-- Comfama Adventure Park -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-coral text-2xl">sports_and_outdoors</span>
+                    <h3 class="font-display text-lg">Comfama Adventure Park</h3>
+                </div>
+                <div class="text-sm text-th-charcoal/60 font-light space-y-2">
+                    <p>Ropes courses in the trees (4 circuits, 45&ndash;90 min), zip line at 30m height, 4D cinema, interactive mining exhibit.</p>
+                    <p><strong class="font-medium text-th-charcoal">Price:</strong> 3,000&ndash;22,700 COP. Bus from Arv&iacute; station every 30 min on weekends. Open until 5 PM.</p>
+                </div>
+            </div>
+
+            <!-- Food & Coffee -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-amber text-2xl">restaurant</span>
+                    <h3 class="font-display text-lg">Food &amp; Coffee</h3>
+                </div>
+                <div class="text-sm text-th-charcoal/60 font-light space-y-2">
+                    <p><strong class="font-medium text-th-charcoal">Caf&eacute; Arv&iacute;:</strong> Colombian single-origin coffee in the Environmental &amp; Cultural Centre.</p>
+                    <p><strong class="font-medium text-th-charcoal">El Tambo Restaurante:</strong> Down the road from the station. Big portions of typical Colombian food &ndash; fish, meats, rice, beans, arepas.</p>
+                    <p><strong class="font-medium text-th-charcoal">Mercado Arv&iacute;:</strong> Street food and snacks at the market stalls.</p>
+                </div>
+            </div>
+
+            <!-- Other Activities -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-th-sky text-2xl">directions_bike</span>
+                    <h3 class="font-display text-lg">Bikes &amp; Horses</h3>
+                </div>
+                <div class="text-sm text-th-charcoal/60 font-light space-y-2">
+                    <p><strong class="font-medium text-th-charcoal">Horses:</strong> 30,000 COP / 30 min or 60,000 COP / 1 hr. Only go with someone who knows the park.</p>
+                    <p><strong class="font-medium text-th-charcoal">Bicycles:</strong> Available to rent. Reserve online in advance. Great way to cover the massive park.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Practical Tips -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl">
+            <h3 class="font-display text-xl mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-th-amber">tips_and_updates</span>
+                Practical Tips
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Temperature:</strong> ~10&deg;F / 5&ndash;6&deg;C cooler than Medell&iacute;n. Bring a jacket or sweater &ndash; it&rsquo;s cloud forest elevation.</p>
+                    <p><strong class="font-medium text-th-charcoal">What to bring:</strong> Rain jacket/umbrella (April = wet), comfortable shoes/trainers, sunscreen (stronger sun at altitude despite cooler air).</p>
+                    <p><strong class="font-medium text-th-charcoal">Budget 3&ndash;4 hours</strong> minimum to explore trails, market, and grab coffee.</p>
+                </div>
+                <div class="space-y-3 text-sm text-th-charcoal/60 font-light">
+                    <p><strong class="font-medium text-th-charcoal">Safety:</strong> Stick to trails with other people. Don&rsquo;t wander alone into remote sections. Weekends are busier and safer. Guided tours recommended.</p>
+                    <p><strong class="font-medium text-th-charcoal">Park entry:</strong> Free. You only pay for the cable car, guided tours, and Piedras Blancas/Comfama if you visit those.</p>
+                    <p><strong class="font-medium text-th-charcoal">Your Tue 7 Apr slot:</strong> Tuesday is fine (park open Tue&ndash;Sun). Arriving ~5 PM means you&rsquo;ll have about an hour &ndash; enough for the market, a short trail, and coffee, but not a long hike. Consider arriving earlier if the schedule allows.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 10 / ACTION ITEMS -->
+<section class="py-24 px-8" id="actions">
+    <div class="max-w-4xl mx-auto">
+        <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-l-th-sky">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-th-sky mt-1">checklist</span>
+                <div>
+                    <h4 class="font-display text-lg mb-4">Action Items</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2 text-sm text-th-charcoal/60 font-light">
+                            <span class="material-symbols-outlined text-th-sky text-lg">check_box_outline_blank</span>
+                            <span>[Optional] Book Sambombi Bistr&oacute; via WhatsApp (+57 305 487 5058) for Tue 7 Apr dinner.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 11 / SOURCES -->
+<section class="py-16 px-8 bg-th-beige/30">
+    <div class="max-w-4xl mx-auto">
+        <h3 class="mono-label text-th-charcoal/40 mb-6">Sources &amp; Useful Links</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-xs text-th-charcoal/50 font-light">
+            <div class="space-y-2">
+                <p class="font-medium text-th-charcoal/60 text-xs mb-3">Comuna 13 Tour</p>
+                <p><a href="https://zippytourcomuna13.com" target="_blank" class="hover:text-th-emerald transition-colors underline">Zippy Tours Comuna 13</a></p>
+                <p><a href="https://tourcomuna13.com" target="_blank" class="hover:text-th-emerald transition-colors underline">Graffiti Tour Comuna 13</a></p>
+                <p><a href="https://toucantours.co" target="_blank" class="hover:text-th-emerald transition-colors underline">Toucan Caf&eacute; &amp; Tours</a></p>
+                <p><a href="https://comuna13tours.com" target="_blank" class="hover:text-th-emerald transition-colors underline">Comuna Tours</a></p>
+            </div>
+            <div class="space-y-2">
+                <p class="font-medium text-th-charcoal/60 text-xs mb-3">ATV / Morning Activity</p>
+                <p><a href="https://cuatrimotosmedellin.com/en" target="_blank" class="hover:text-th-emerald transition-colors underline">Cuatrimotos Medell&iacute;n</a></p>
+                <p><a href="https://guanabanatours.com/atv-tours-medellin/" target="_blank" class="hover:text-th-emerald transition-colors underline">Guanabana Tours &ndash; ATV Medell&iacute;n</a></p>
+                <p><a href="https://medellinatvtours.com/" target="_blank" class="hover:text-th-emerald transition-colors underline">Medell&iacute;n ATV Tours</a></p>
+                <p><a href="https://medellinscooterrentals.com/atv-tours-medellin/" target="_blank" class="hover:text-th-emerald transition-colors underline">Medell&iacute;n Sport Rentals</a></p>
+                <p><a href="https://www.getyourguide.com/medellin-l1215/medellin-the-real-4x4-quad-tour-t299045/" target="_blank" class="hover:text-th-emerald transition-colors underline">GetYourGuide &ndash; The REAL 4x4 Quad Tour</a></p>
+            </div>
+            <div class="space-y-2">
+                <p class="font-medium text-th-charcoal/60 text-xs mb-3">Parque Arv&iacute;</p>
+                <p><a href="https://medellinguru.com/parque-arvi/" target="_blank" class="hover:text-th-emerald transition-colors underline">Medellin Guru &ndash; Parque Arv&iacute; Complete Guide</a></p>
+                <p><a href="https://parquearvi.org/en/" target="_blank" class="hover:text-th-emerald transition-colors underline">Parque Arv&iacute; Official Site</a></p>
+                <p><a href="https://www.metrodemedellin.gov.co/en/users/integrated-system/line-l" target="_blank" class="hover:text-th-emerald transition-colors underline">Metro de Medell&iacute;n &ndash; Line L</a></p>
+            </div>
+            <div class="space-y-2">
+                <p class="font-medium text-th-charcoal/60 text-xs mb-3">Research &amp; Context</p>
+                <p>Adam Isacson &ndash; Medell&iacute;n&rsquo;s Comuna 13, 22 Years After Operaci&oacute;n Ori&oacute;n</p>
+                <p>Atlas Obscura &ndash; Comuna 13</p>
+                <p>Brooklyn Street Art &ndash; Community Murals and the Violent History of Comuna 13</p>
+                <p>Brown Political Review &ndash; Comuna 13: Balancing Tourism and Community Preservation</p>
+                <p>Centro Nacional de Memoria Hist&oacute;rica &ndash; Operaci&oacute;n Ori&oacute;n</p>
+                <p>ColombiaOne &ndash; Medell&iacute;n Records Lowest Homicide Rate in 82 Years</p>
+                <p>Impulse Travel &ndash; The Dual Faces of Tourism in Comuna 13</p>
+                <p>Medell&iacute;n Guru &ndash; Metro Guide with 2025 Fares</p>
+                <p>TriplePundit &ndash; In Colombia, Comuna 13 Shows How to Get Inclusive Tourism Done Right</p>
+                <p>Wander-Lush &ndash; Comuna 13 Tour Tips</p>
+                <p>NYU CLACS &ndash; Comuna 13: Exploring Empowerment Through Tourism</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
